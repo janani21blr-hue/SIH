@@ -1,0 +1,944 @@
+{
+  "raw_records": [
+    {
+      "entity_id": "RAW_001",
+      "entity_type": "person",
+      "name": "Aditya Nair",
+      "phone": "8695753998",
+      "address": "Delhi"
+    },
+    {
+      "entity_id": "RAW_002",
+      "entity_type": "company",
+      "name": "Kulkarni Logistics Pvt Ltd",
+      "phone": "8570621944",
+      "address": "Bengaluru"
+    },
+    {
+      "entity_id": "RAW_003",
+      "entity_type": "company",
+      "name": "Kulkarni Enterprises Pvt Ltd",
+      "phone": "7161042648",
+      "address": "Bengaluru"
+    },
+    {
+      "entity_id": "RAW_004",
+      "entity_type": "company",
+      "name": "Menon Logistics Pvt Ltd",
+      "phone": "8033639716",
+      "address": "Bengaluru"
+    },
+    {
+      "entity_id": "RAW_005",
+      "entity_type": "company",
+      "name": "Menon Trading Pvt Ltd",
+      "phone": "7531725347",
+      "address": "Lucknow"
+    },
+    {
+      "entity_id": "RAW_006",
+      "entity_type": "person",
+      "name": "Sameer Bhat",
+      "phone": "7265695473",
+      "address": "Lucknow"
+    },
+    {
+      "entity_id": "RAW_007",
+      "entity_type": "person",
+      "name": "Priya Gowda",
+      "phone": "7200071088",
+      "address": "Jaipur"
+    },
+    {
+      "entity_id": "RAW_008",
+      "entity_type": "person",
+      "name": "Meera Menon",
+      "phone": "7619570852",
+      "address": "Jaipur"
+    },
+    {
+      "entity_id": "RAW_009",
+      "entity_type": "person",
+      "name": "Meera Kulkarni",
+      "phone": "9929179284",
+      "address": "Bengaluru"
+    },
+    {
+      "entity_id": "RAW_010",
+      "entity_type": "person",
+      "name": "Farhan Shetty",
+      "phone": "7806899909",
+      "address": "Hyderabad"
+    },
+    {
+      "entity_id": "RAW_011",
+      "entity_type": "person",
+      "name": "Rahul Reddy",
+      "phone": "9423943363",
+      "address": "Delhi"
+    },
+    {
+      "entity_id": "RAW_012",
+      "entity_type": "person",
+      "name": "Neha Gowda",
+      "phone": "9132084004",
+      "address": "Jaipur"
+    },
+    {
+      "entity_id": "RAW_013",
+      "entity_type": "person",
+      "name": "Pooja Patel",
+      "phone": "8999744784",
+      "address": "Lucknow"
+    },
+    {
+      "entity_id": "RAW_014",
+      "entity_type": "person",
+      "name": "Ravi Patel",
+      "phone": "8287489453",
+      "address": "Chennai"
+    },
+    {
+      "entity_id": "RAW_015",
+      "entity_type": "person",
+      "name": "Ananya Pillai",
+      "phone": "8048386555",
+      "address": "Mumbai"
+    },
+    {
+      "entity_id": "RAW_016",
+      "entity_type": "person",
+      "name": "Neha Rao",
+      "phone": "9490630939",
+      "address": "Ahmedabad"
+    },
+    {
+      "entity_id": "RAW_017",
+      "entity_type": "person",
+      "name": "Anjali Reddy",
+      "phone": "7260573195",
+      "address": "Kolkata"
+    },
+    {
+      "entity_id": "RAW_018",
+      "entity_type": "person",
+      "name": "Anjali Rao",
+      "phone": "8222328495",
+      "address": "Pune"
+    },
+    {
+      "entity_id": "RAW_019",
+      "entity_type": "person",
+      "name": "Anjali Patel",
+      "phone": "7096907015",
+      "address": "Ahmedabad"
+    },
+    {
+      "entity_id": "RAW_020",
+      "entity_type": "person",
+      "name": "Kavya Nair",
+      "phone": "9623879480",
+      "address": "Mumbai"
+    },
+    {
+      "entity_id": "RAW_021",
+      "entity_type": "person",
+      "name": "Lakshmi Sharma",
+      "phone": "7937195259",
+      "address": "Kolkata"
+    },
+    {
+      "entity_id": "RAW_022",
+      "entity_type": "person",
+      "name": "Karthik Pillai",
+      "phone": "8063497603",
+      "address": "Pune"
+    },
+    {
+      "entity_id": "RAW_023",
+      "entity_type": "person",
+      "name": "Manoj Rao",
+      "phone": "7346094055",
+      "address": "Bengaluru"
+    },
+    {
+      "entity_id": "RAW_024",
+      "entity_type": "person",
+      "name": "Ravi Menon",
+      "phone": "9359826449",
+      "address": "Kolkata"
+    },
+    {
+      "entity_id": "RAW_025",
+      "entity_type": "person",
+      "name": "Karthik Menon",
+      "phone": "9363175007",
+      "address": "Kolkata"
+    },
+    {
+      "entity_id": "RAW_026",
+      "entity_type": "person",
+      "name": "Rahul Menon",
+      "phone": "8540910400",
+      "address": "Pune"
+    },
+    {
+      "entity_id": "RAW_027",
+      "entity_type": "person",
+      "name": "Divya Nair",
+      "phone": "7356416554",
+      "address": "Bengaluru"
+    },
+    {
+      "entity_id": "RAW_028",
+      "entity_type": "person",
+      "name": "Karthik Gowda",
+      "phone": "9828307593",
+      "address": "Chennai"
+    },
+    {
+      "entity_id": "RAW_029",
+      "entity_type": "person",
+      "name": "Arjun Rao",
+      "phone": "9530266207",
+      "address": "Bengaluru"
+    },
+    {
+      "entity_id": "RAW_030",
+      "entity_type": "person",
+      "name": "Suresh Iyer",
+      "phone": "7017581913",
+      "address": "Bengaluru"
+    },
+    {
+      "entity_id": "RAW_031",
+      "entity_type": "person",
+      "name": "Pooja Kulkarni",
+      "phone": "8585932013",
+      "address": "Lucknow"
+    },
+    {
+      "entity_id": "RAW_032",
+      "entity_type": "person",
+      "name": "Farhan Patel",
+      "phone": "7538981926",
+      "address": "Jaipur"
+    },
+    {
+      "entity_id": "RAW_033",
+      "entity_type": "person",
+      "name": "Neha Shetty",
+      "phone": "9904257243",
+      "address": "Delhi"
+    },
+    {
+      "entity_id": "RAW_034",
+      "entity_type": "person",
+      "name": "Ravi Shetty",
+      "phone": "9402053832",
+      "address": "Pune"
+    },
+    {
+      "entity_id": "RAW_035",
+      "entity_type": "person",
+      "name": "Manoj Menon",
+      "phone": "8692732589",
+      "address": "Mumbai"
+    },
+    {
+      "entity_id": "RAW_036",
+      "entity_type": "person",
+      "name": "Lakshmi Shetty",
+      "phone": "8719888006",
+      "address": "Delhi"
+    },
+    {
+      "entity_id": "RAW_037",
+      "entity_type": "person",
+      "name": "Rohan Reddy",
+      "phone": "7896631050",
+      "address": "Ahmedabad"
+    },
+    {
+      "entity_id": "RAW_038",
+      "entity_type": "person",
+      "name": "Ananya Reddy",
+      "phone": "8460519317",
+      "address": "Lucknow"
+    },
+    {
+      "entity_id": "RAW_039",
+      "entity_type": "person",
+      "name": "Priya Reddy",
+      "phone": "7001001928",
+      "address": "Lucknow"
+    },
+    {
+      "entity_id": "RAW_040",
+      "entity_type": "person",
+      "name": "Karthik Kulkarni",
+      "phone": "7435786140",
+      "address": "Hyderabad"
+    },
+    {
+      "entity_id": "RAW_041",
+      "entity_type": "person",
+      "name": "Neha Sharma",
+      "phone": "7302003101",
+      "address": "Chennai"
+    },
+    {
+      "entity_id": "RAW_042",
+      "entity_type": "person",
+      "name": "Neha Menon",
+      "phone": "7638019485",
+      "address": "Kolkata"
+    },
+    {
+      "entity_id": "RAW_043",
+      "entity_type": "person",
+      "name": "Kavya Bhat",
+      "phone": "8564070056",
+      "address": "Ahmedabad"
+    },
+    {
+      "entity_id": "RAW_044",
+      "entity_type": "person",
+      "name": "Sneha Reddy",
+      "phone": "9096236324",
+      "address": "Ahmedabad"
+    },
+    {
+      "entity_id": "RAW_045",
+      "entity_type": "person",
+      "name": "Lakshmi Rao",
+      "phone": "8339395518",
+      "address": "Mumbai"
+    },
+    {
+      "entity_id": "RAW_046",
+      "entity_type": "person",
+      "name": "Karthik Reddy",
+      "phone": "8471609726",
+      "address": "Kolkata"
+    },
+    {
+      "entity_id": "RAW_047",
+      "entity_type": "person",
+      "name": "Lakshmi Pillai",
+      "phone": "7693373550",
+      "address": "Jaipur"
+    },
+    {
+      "entity_id": "RAW_048",
+      "entity_type": "person",
+      "name": "Arjun Gowda",
+      "phone": "9268848248",
+      "address": "Hyderabad"
+    },
+    {
+      "entity_id": "RAW_049",
+      "entity_type": "person",
+      "name": "Shreya Sharma",
+      "phone": "9268212773",
+      "address": "Kolkata"
+    },
+    {
+      "entity_id": "RAW_050",
+      "entity_type": "person",
+      "name": "Sameer Reddy",
+      "phone": "9990142407",
+      "address": "Kolkata"
+    },
+    {
+      "entity_id": "RAW_051",
+      "entity_type": "person",
+      "name": "Nikhil Patel",
+      "phone": "7717440070",
+      "address": "Hyderabad"
+    },
+    {
+      "entity_id": "RAW_052",
+      "entity_type": "person",
+      "name": "Divya Kulkarni",
+      "phone": "9326013068",
+      "address": "Jaipur"
+    },
+    {
+      "entity_id": "RAW_053",
+      "entity_type": "person",
+      "name": "Aditya Shetty",
+      "phone": "7957956674",
+      "address": "Lucknow"
+    },
+    {
+      "entity_id": "RAW_054",
+      "entity_type": "person",
+      "name": "Rohan Gowda",
+      "phone": "8720926262",
+      "address": "Chennai"
+    },
+    {
+      "entity_id": "RAW_055",
+      "entity_type": "person",
+      "name": "Rohan Kulkarni",
+      "phone": "9116481898",
+      "address": "Hyderabad"
+    },
+    {
+      "entity_id": "RAW_056",
+      "entity_type": "person",
+      "name": "Ishita Sharma",
+      "phone": "7119988828",
+      "address": "Kolkata"
+    },
+    {
+      "entity_id": "RAW_057",
+      "entity_type": "person",
+      "name": "Lakshmi Iyer",
+      "phone": "7831698692",
+      "address": "Lucknow"
+    },
+    {
+      "entity_id": "RAW_058",
+      "entity_type": "person",
+      "name": "Kavya Rao",
+      "phone": "8501175503",
+      "address": "Hyderabad"
+    },
+    {
+      "entity_id": "RAW_059",
+      "entity_type": "person",
+      "name": "Vikram Gowda",
+      "phone": "7438761609",
+      "address": "Chennai"
+    },
+    {
+      "entity_id": "RAW_060",
+      "entity_type": "person",
+      "name": "Lakshmi Gowda",
+      "phone": "8450571437",
+      "address": "Chennai"
+    },
+    {
+      "entity_id": "RAW_061",
+      "entity_type": "person",
+      "name": "Lakshmi Bhat",
+      "phone": "9621055949",
+      "address": "Delhi"
+    },
+    {
+      "entity_id": "RAW_062",
+      "entity_type": "person",
+      "name": "Kavya Shetty",
+      "phone": "7364120811",
+      "address": "Mumbai"
+    },
+    {
+      "entity_id": "RAW_063",
+      "entity_type": "person",
+      "name": "Manoj Pillai",
+      "phone": "7856070305",
+      "address": "Ahmedabad"
+    },
+    {
+      "entity_id": "RAW_064",
+      "entity_type": "person",
+      "name": "Ananya Menon",
+      "phone": "9730921541",
+      "address": "Hyderabad"
+    },
+    {
+      "entity_id": "RAW_065",
+      "entity_type": "person",
+      "name": "Vikram Pillai",
+      "phone": "8700113406",
+      "address": "Ahmedabad"
+    },
+    {
+      "entity_id": "RAW_066",
+      "entity_type": "person",
+      "name": "Ananya Nair",
+      "phone": "7545625652",
+      "address": "Delhi"
+    },
+    {
+      "entity_id": "RAW_067",
+      "entity_type": "person",
+      "name": "Karthik Bhat",
+      "phone": "8998679710",
+      "address": "Bengaluru"
+    },
+    {
+      "entity_id": "RAW_068",
+      "entity_type": "person",
+      "name": "Neha Bhat",
+      "phone": "9037347501",
+      "address": "Hyderabad"
+    },
+    {
+      "entity_id": "RAW_069",
+      "entity_type": "person",
+      "name": "Shreya Nair",
+      "phone": "7091898034",
+      "address": "Delhi"
+    },
+    {
+      "entity_id": "RAW_070",
+      "entity_type": "person",
+      "name": "Ishita Shetty",
+      "phone": "7441402617",
+      "address": "Jaipur"
+    },
+    {
+      "entity_id": "RAW_071",
+      "entity_type": "person",
+      "name": "Ishita Nair",
+      "phone": "8863197321",
+      "address": "Chennai"
+    },
+    {
+      "entity_id": "RAW_072",
+      "entity_type": "person",
+      "name": "Rohan Sharma",
+      "phone": "8081622282",
+      "address": "Chennai"
+    },
+    {
+      "entity_id": "RAW_073",
+      "entity_type": "person",
+      "name": "Divya Bhat",
+      "phone": "8400113410",
+      "address": "Kolkata"
+    },
+    {
+      "entity_id": "RAW_074",
+      "entity_type": "person",
+      "name": "Shreya Menon",
+      "phone": "7562957179",
+      "address": "Delhi"
+    },
+    {
+      "entity_id": "RAW_075",
+      "entity_type": "person",
+      "name": "Ishita Patel",
+      "phone": "8967786445",
+      "address": "Lucknow"
+    },
+    {
+      "entity_id": "RAW_076",
+      "entity_type": "person",
+      "name": "Nikhil Menon",
+      "phone": "9154565813",
+      "address": "Bengaluru"
+    },
+    {
+      "entity_id": "RAW_077",
+      "entity_type": "person",
+      "name": "Nikhil Kulkarni",
+      "phone": "7080336781",
+      "address": "Ahmedabad"
+    },
+    {
+      "entity_id": "RAW_078",
+      "entity_type": "person",
+      "name": "Ananya Bhat",
+      "phone": "7016889873",
+      "address": "Bengaluru"
+    },
+    {
+      "entity_id": "RAW_079",
+      "entity_type": "person",
+      "name": "Ishita Reddy",
+      "phone": "9390044639",
+      "address": "Delhi"
+    },
+    {
+      "entity_id": "RAW_080",
+      "entity_type": "person",
+      "name": "Shreya Rao",
+      "phone": "7455736473",
+      "address": "Jaipur"
+    },
+    {
+      "entity_id": "RAW_081",
+      "entity_type": "person",
+      "name": "Rohan Iyer",
+      "phone": "7181242849",
+      "address": "Mumbai"
+    },
+    {
+      "entity_id": "RAW_082",
+      "entity_type": "person",
+      "name": "Nikhil Rao",
+      "phone": "9412609344",
+      "address": "Delhi"
+    },
+    {
+      "entity_id": "RAW_083",
+      "entity_type": "person",
+      "name": "Vikram Rao",
+      "phone": "8398499907",
+      "address": "Lucknow"
+    },
+    {
+      "entity_id": "RAW_084",
+      "entity_type": "person",
+      "name": "Nikhil Bhat",
+      "phone": "9199716799",
+      "address": "Chennai"
+    },
+    {
+      "entity_id": "RAW_085",
+      "entity_type": "person",
+      "name": "Rahul Iyer",
+      "phone": "8942810371",
+      "address": "Jaipur"
+    },
+    {
+      "entity_id": "RAW_086",
+      "entity_type": "person",
+      "name": "Nikhil Gowda",
+      "phone": "9247168347",
+      "address": "Kolkata"
+    },
+    {
+      "entity_id": "RAW_087",
+      "entity_type": "person",
+      "name": "Shreya Gowda",
+      "phone": "8922119101",
+      "address": "Bengaluru"
+    },
+    {
+      "entity_id": "RAW_088",
+      "entity_type": "person",
+      "name": "Pooja Reddy",
+      "phone": "8685192164",
+      "address": "Ahmedabad"
+    },
+    {
+      "entity_id": "RAW_089",
+      "entity_type": "person",
+      "name": "Aditya Reddy",
+      "phone": "9882590715",
+      "address": "Chennai"
+    },
+    {
+      "entity_id": "RAW_090",
+      "entity_type": "person",
+      "name": "Rohan Shetty",
+      "phone": "8300430508",
+      "address": "Mumbai"
+    },
+    {
+      "entity_id": "RAW_091",
+      "entity_type": "person",
+      "name": "Sameer Shetty",
+      "phone": "8572745251",
+      "address": "Bengaluru"
+    },
+    {
+      "entity_id": "RAW_092",
+      "entity_type": "person",
+      "name": "Suresh Nair",
+      "phone": "9008910111",
+      "address": "Chennai"
+    },
+    {
+      "entity_id": "RAW_093",
+      "entity_type": "person",
+      "name": "Ananya Shetty",
+      "phone": "7960836459",
+      "address": "Bengaluru"
+    },
+    {
+      "entity_id": "RAW_094",
+      "entity_type": "person",
+      "name": "Aditya Menon",
+      "phone": "7840716950",
+      "address": "Hyderabad"
+    },
+    {
+      "entity_id": "RAW_095",
+      "entity_type": "person",
+      "name": "Arjun Patel",
+      "phone": "9379627705",
+      "address": "Ahmedabad"
+    },
+    {
+      "entity_id": "RAW_096",
+      "entity_type": "person",
+      "name": "Ravi Pillai",
+      "phone": "7077661511",
+      "address": "Pune"
+    },
+    {
+      "entity_id": "RAW_097",
+      "entity_type": "person",
+      "name": "Aditya Kulkarni",
+      "phone": "9679746384",
+      "address": "Kolkata"
+    },
+    {
+      "entity_id": "RAW_098",
+      "entity_type": "person",
+      "name": "Nikhil Reddy",
+      "phone": "7484686860",
+      "address": "Chennai"
+    },
+    {
+      "entity_id": "RAW_099",
+      "entity_type": "person",
+      "name": "Priya Nair",
+      "phone": "8161557137",
+      "address": "Bengaluru"
+    },
+    {
+      "entity_id": "RAW_100",
+      "entity_type": "person",
+      "name": "Pooja Shetty",
+      "phone": "8110717268",
+      "address": "Pune"
+    }
+  ],
+  "raw_relationships": [
+    {
+      "source": "RAW_001",
+      "target": "RAW_002",
+      "relationship": "DIRECTOR_OF",
+      "confidence": 0.92,
+      "evidence": "COMPANY_REGISTRY_RAW_002"
+    },
+    {
+      "source": "RAW_001",
+      "target": "RAW_003",
+      "relationship": "DIRECTOR_OF",
+      "confidence": 0.86,
+      "evidence": "COMPANY_REGISTRY_RAW_003"
+    },
+    {
+      "source": "RAW_001",
+      "target": "RAW_004",
+      "relationship": "DIRECTOR_OF",
+      "confidence": 0.86,
+      "evidence": "COMPANY_REGISTRY_RAW_004"
+    },
+    {
+      "source": "RAW_001",
+      "target": "RAW_005",
+      "relationship": "DIRECTOR_OF",
+      "confidence": 0.96,
+      "evidence": "COMPANY_REGISTRY_RAW_005"
+    },
+    {
+      "source": "RAW_006",
+      "target": "ACCT_94641177",
+      "relationship": "USES",
+      "confidence": 0.94,
+      "evidence": "BANK_STATEMENT_RAW_006"
+    },
+    {
+      "source": "RAW_007",
+      "target": "ACCT_94641177",
+      "relationship": "USES",
+      "confidence": 0.97,
+      "evidence": "BANK_STATEMENT_RAW_007"
+    },
+    {
+      "source": "RAW_008",
+      "target": "ACCT_94641177",
+      "relationship": "USES",
+      "confidence": 0.89,
+      "evidence": "BANK_STATEMENT_RAW_008"
+    },
+    {
+      "source": "RAW_009",
+      "target": "ACCT_94641177",
+      "relationship": "USES",
+      "confidence": 0.89,
+      "evidence": "BANK_STATEMENT_RAW_009"
+    },
+    {
+      "source": "RAW_010",
+      "target": "ACCT_94641177",
+      "relationship": "USES",
+      "confidence": 0.89,
+      "evidence": "BANK_STATEMENT_RAW_010"
+    },
+    {
+      "source": "RAW_011",
+      "target": "RAW_012",
+      "relationship": "TRANSACTED_WITH",
+      "confidence": 0.86,
+      "evidence": "CDR_LOG_RAW_011_RAW_012"
+    },
+    {
+      "source": "RAW_011",
+      "target": "RAW_014",
+      "relationship": "TRANSACTED_WITH",
+      "confidence": 0.81,
+      "evidence": "CDR_LOG_RAW_011_RAW_014"
+    },
+    {
+      "source": "RAW_012",
+      "target": "RAW_013",
+      "relationship": "TRANSACTED_WITH",
+      "confidence": 0.83,
+      "evidence": "CDR_LOG_RAW_012_RAW_013"
+    },
+    {
+      "source": "RAW_012",
+      "target": "RAW_014",
+      "relationship": "TRANSACTED_WITH",
+      "confidence": 0.78,
+      "evidence": "CDR_LOG_RAW_012_RAW_014"
+    },
+    {
+      "source": "RAW_012",
+      "target": "RAW_015",
+      "relationship": "TRANSACTED_WITH",
+      "confidence": 0.76,
+      "evidence": "CDR_LOG_RAW_012_RAW_015"
+    },
+    {
+      "source": "RAW_013",
+      "target": "RAW_014",
+      "relationship": "TRANSACTED_WITH",
+      "confidence": 0.9,
+      "evidence": "CDR_LOG_RAW_013_RAW_014"
+    },
+    {
+      "source": "RAW_013",
+      "target": "RAW_015",
+      "relationship": "TRANSACTED_WITH",
+      "confidence": 0.93,
+      "evidence": "CDR_LOG_RAW_013_RAW_015"
+    },
+    {
+      "source": "RAW_014",
+      "target": "RAW_015",
+      "relationship": "TRANSACTED_WITH",
+      "confidence": 0.89,
+      "evidence": "CDR_LOG_RAW_014_RAW_015"
+    },
+    {
+      "source": "RAW_016",
+      "target": "RAW_006",
+      "relationship": "KNOWS",
+      "confidence": 0.83,
+      "evidence": "SOCMINT_RAW_016"
+    },
+    {
+      "source": "RAW_016",
+      "target": "RAW_013",
+      "relationship": "KNOWS",
+      "confidence": 0.77,
+      "evidence": "SOCMINT_RAW_016"
+    },
+    {
+      "source": "RAW_036",
+      "target": "RAW_085",
+      "relationship": "CALLED",
+      "confidence": 0.71,
+      "evidence": "CDR_LOG_RAW_036_RAW_085"
+    },
+    {
+      "source": "RAW_028",
+      "target": "RAW_052",
+      "relationship": "KNOWS",
+      "confidence": 0.74,
+      "evidence": "CDR_LOG_RAW_028_RAW_052"
+    },
+    {
+      "source": "RAW_040",
+      "target": "RAW_071",
+      "relationship": "KNOWS",
+      "confidence": 0.58,
+      "evidence": "CDR_LOG_RAW_040_RAW_071"
+    },
+    {
+      "source": "RAW_019",
+      "target": "RAW_098",
+      "relationship": "KNOWS",
+      "confidence": 0.74,
+      "evidence": "CDR_LOG_RAW_019_RAW_098"
+    },
+    {
+      "source": "RAW_027",
+      "target": "RAW_094",
+      "relationship": "KNOWS",
+      "confidence": 0.52,
+      "evidence": "CDR_LOG_RAW_027_RAW_094"
+    },
+    {
+      "source": "RAW_032",
+      "target": "RAW_075",
+      "relationship": "KNOWS",
+      "confidence": 0.6,
+      "evidence": "CDR_LOG_RAW_032_RAW_075"
+    },
+    {
+      "source": "RAW_087",
+      "target": "RAW_070",
+      "relationship": "CALLED",
+      "confidence": 0.69,
+      "evidence": "CDR_LOG_RAW_087_RAW_070"
+    },
+    {
+      "source": "RAW_022",
+      "target": "RAW_084",
+      "relationship": "KNOWS",
+      "confidence": 0.78,
+      "evidence": "CDR_LOG_RAW_022_RAW_084"
+    },
+    {
+      "source": "RAW_037",
+      "target": "RAW_050",
+      "relationship": "KNOWS",
+      "confidence": 0.55,
+      "evidence": "CDR_LOG_RAW_037_RAW_050"
+    },
+    {
+      "source": "RAW_056",
+      "target": "RAW_097",
+      "relationship": "CALLED",
+      "confidence": 0.66,
+      "evidence": "CDR_LOG_RAW_056_RAW_097"
+    },
+    {
+      "source": "RAW_043",
+      "target": "RAW_054",
+      "relationship": "CALLED",
+      "confidence": 0.65,
+      "evidence": "CDR_LOG_RAW_043_RAW_054"
+    },
+    {
+      "source": "RAW_039",
+      "target": "RAW_051",
+      "relationship": "CALLED",
+      "confidence": 0.74,
+      "evidence": "CDR_LOG_RAW_039_RAW_051"
+    },
+    {
+      "source": "RAW_049",
+      "target": "RAW_021",
+      "relationship": "KNOWS",
+      "confidence": 0.51,
+      "evidence": "CDR_LOG_RAW_049_RAW_021"
+    },
+    {
+      "source": "RAW_081",
+      "target": "RAW_087",
+      "relationship": "KNOWS",
+      "confidence": 0.65,
+      "evidence": "CDR_LOG_RAW_081_RAW_087"
+    },
+    {
+      "source": "RAW_048",
+      "target": "RAW_074",
+      "relationship": "KNOWS",
+      "confidence": 0.7,
+      "evidence": "CDR_LOG_RAW_048_RAW_074"
+    }
+  ]
+}
