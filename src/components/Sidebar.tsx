@@ -9,10 +9,11 @@ function Sidebar() {
   ]
 
   return (
-    <aside className="w-64 border-r border-slate-800 bg-slate-900 p-4">
+    <aside className="hidden w-64 shrink-0 border-r border-slate-800 bg-slate-900 p-4 md:block">
       <div className="mb-8">
         <h2 className="text-lg font-bold">CNAS</h2>
-        <p className="text-xs text-slate-400">
+
+        <p className="mt-1 text-xs text-slate-400">
           Investigation Intelligence
         </p>
       </div>
@@ -23,10 +24,10 @@ function Sidebar() {
             key={item.path}
             to={item.path}
             className={({ isActive }) =>
-              `block w-full rounded-lg px-4 py-3 ${
+              `block rounded-lg px-4 py-3 text-sm transition ${
                 isActive
-                  ? "bg-slate-800 text-white"
-                  : "text-slate-300 hover:bg-slate-800"
+                  ? "bg-slate-800 font-medium text-white"
+                  : "text-slate-400 hover:bg-slate-800 hover:text-white"
               }`
             }
           >
