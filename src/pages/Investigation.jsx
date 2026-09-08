@@ -1,0 +1,2041 @@
+import {
+  useEffect,
+  useMemo,
+  useRef,
+  useState,
+} from "react";
+
+import {
+  Search,
+  Network,
+  User,
+  Phone,
+  CreditCard,
+  Car,
+  Building2,
+  MapPin,
+  Link2,
+  X,
+  ChevronRight,
+  RotateCcw,
+  GripVertical,
+} from "lucide-react";
+
+import NetworkGraph from "../components/NetworkGraph";
+import EntityDetails from "../components/EntityDetails";
+import InvestigationSummary from "../components/InvestigationSummary";
+
+import {
+  investigationGraph,
+} from "../data/graphData";
+
+/* ==================================================
+   ENTITY FILTERS
+================================================== */
+
+const ENTITY_FILTERS = [
+  {
+    key: "person",
+    label: "People",
+    icon: User,
+  },
+  {
+    key: "phone",
+    label: "Phones",
+    icon: Phone,
+  },
+  {
+    key: "account",
+    label: "Accounts",
+    icon: CreditCard,
+  },
+  {
+    key: "vehicle",
+    label: "Vehicles",
+    icon: Car,
+  },
+  {
+    key: "company",
+    label: "Companies",
+    icon: Building2,
+  },
+  {
+    key: "address",
+    label: "Addresses",
+    icon: MapPin,
+  },
+];
+
+/* ==================================================
+   RELATIONSHIP COLORS
+================================================== */
+
+const RELATIONSHIP_COLORS = {
+  DIRECTOR_OF: "#2dd4bf",
+  REGISTERED_AT: "#fb7185",
+  OWNS: "#c084fc",
+  USES: "#38bdf8",
+  ASSOCIATED_WITH: "#f59e0b",
+};
+
+/* ==================================================
+   HELPERS
+================================================== */
+
+function getNodeId(value) {
+  return typeof value === "object"
+    ? value?.id
+    : value;
+}
+
+function getNodeName(node) {
+  return (
+    node?.canonical_name ||
+    node?.name ||
+    node?.label ||
+    node?.id ||
+    "Unknown entity"
+  );
+}
+
+function getNodeType(node) {
+  return String(
+    node?.entity_type ||
+      node?.type ||
+      ""
+  ).toLowerCase();
+}
+
+/* ==================================================
+   INVESTIGATION
+================================================== */
+
+function Investigation() {
+
+  /* ==================================================
+     SELECTED NODE
+  ================================================== */
+
+  const [
+    selectedNode,
+    setSelectedNode,
+  ] = useState(
+    investigationGraph.nodes?.[0] ||
+      null
+  );
+
+  /* ==================================================
+     SEARCH
+  ================================================== */
+
+  const [
+    searchTerm,
+    setSearchTerm,
+  ] = useState("");
+
+  /* ==================================================
+     ENTITY FILTERS
+  ================================================== */
+
+  const [
+    activeFilters,
+    setActiveFilters,
+  ] = useState([
+    "person",
+    "phone",
+    "account",
+    "vehicle",
+    "company",
+    "address",
+  ]);
+
+  /* ==================================================
+     RELATIONSHIP FILTERS
+  ================================================== */
+
+  const [
+    activeRelationshipFilters,
+    setActiveRelationshipFilters,
+  ] = useState([]);
+
+  /* ==================================================
+     INVESTIGATION PATH
+  ================================================== */
+
+  const [
+    investigationPath,
+    setInvestigationPath,
+  ] = useState(
+    investigationGraph.nodes?.[0]
+      ? [
+          investigationGraph
+            .nodes[0],
+        ]
+      : []
+  );
+
+  /* ==================================================
+     RIGHT PANEL WIDTH
+
+     This is now controlled by
+     Investigation.jsx.
+
+     NOT by NetworkGraph.
+  ================================================== */
+
+  const [
+    detailsWidth,
+    setDetailsWidth,
+  ] = useState(390);
+
+  const [
+    isResizingDetails,
+    setIsResizingDetails,
+  ] = useState(false);
+
+  const resizeStartX =
+    useRef(0);
+
+  const resizeStartWidth =
+    useRef(390);
+
+  /* ==================================================
+     ENTITY MAP
+  ================================================== */
+
+  const entityMap =
+    useMemo(() => {
+      const map = {};
+
+      investigationGraph.nodes.forEach(
+        (node) => {
+          map[node.id] =
+            node;
+        }
+      );
+
+      return map;
+    }, []);
+
+  /* ==================================================
+     RELATIONSHIP TYPES
+  ================================================== */
+
+  const relationshipTypes =
+    useMemo(() => {
+      return [
+        ...new Set(
+          investigationGraph.links
+            .map(
+              (link) =>
+                link.relationship
+            )
+            .filter(Boolean)
+        ),
+      ].sort();
+    }, []);
+
+  /* ==================================================
+     SEARCH RESULTS
+  ================================================== */
+
+  const searchResults =
+    useMemo(() => {
+      const term =
+        searchTerm
+          .trim()
+          .toLowerCase();
+
+      if (!term) {
+        return [];
+      }
+
+      return investigationGraph.nodes
+        .filter((node) => {
+          const name =
+            getNodeName(
+              node
+            ).toLowerCase();
+
+          const id =
+            String(
+              node?.id || ""
+            ).toLowerCase();
+
+          const type =
+            getNodeType(node);
+
+          const aliases =
+            Array.isArray(
+              node?.aliases
+            )
+              ? node.aliases
+                  .join(" ")
+                  .toLowerCase()
+              : String(
+                  node?.aliases ||
+                    ""
+                ).toLowerCase();
+
+          return (
+            name.includes(
+              term
+            ) ||
+            id.includes(
+              term
+            ) ||
+            type.includes(
+              term
+            ) ||
+            aliases.includes(
+              term
+            )
+          );
+        })
+        .slice(0, 8);
+    }, [searchTerm]);
+
+  /* ==================================================
+     SELECTED RELATIONSHIPS
+  ================================================== */
+
+  const selectedRelationships =
+    useMemo(() => {
+      if (!selectedNode) {
+        return [];
+      }
+
+      return investigationGraph.links.filter(
+        (link) => {
+          const sourceId =
+            getNodeId(
+              link.source
+            );
+
+          const targetId =
+            getNodeId(
+              link.target
+            );
+
+          return (
+            sourceId ===
+              selectedNode.id ||
+            targetId ===
+              selectedNode.id
+          );
+        }
+      );
+    }, [selectedNode]);
+
+  /* ==================================================
+     PATH RELATIONSHIPS
+  ================================================== */
+
+  const pathRelationships =
+    useMemo(() => {
+      if (
+        investigationPath.length <
+        2
+      ) {
+        return [];
+      }
+
+      return investigationPath
+        .slice(
+          0,
+          -1
+        )
+        .map(
+          (
+            sourceNode,
+            index
+          ) => {
+            const targetNode =
+              investigationPath[
+                index + 1
+              ];
+
+            const relationship =
+              investigationGraph.links.find(
+                (link) => {
+                  const sourceId =
+                    getNodeId(
+                      link.source
+                    );
+
+                  const targetId =
+                    getNodeId(
+                      link.target
+                    );
+
+                  return (
+                    (
+                      sourceId ===
+                        sourceNode.id &&
+                      targetId ===
+                        targetNode.id
+                    ) ||
+                    (
+                      sourceId ===
+                        targetNode.id &&
+                      targetId ===
+                        sourceNode.id
+                    )
+                  );
+                }
+              );
+
+            return (
+              relationship?.relationship ||
+              null
+            );
+          }
+        );
+    }, [
+      investigationPath,
+    ]);
+
+  /* ==================================================
+     NODE SELECT
+  ================================================== */
+
+  const handleNodeSelect =
+    (node) => {
+
+      if (!node) {
+        setSelectedNode(
+          null
+        );
+
+        return;
+      }
+
+      setSelectedNode(
+        node
+      );
+
+      setInvestigationPath(
+        (currentPath) => {
+
+          const existingIndex =
+            currentPath.findIndex(
+              (item) =>
+                item.id ===
+                node.id
+            );
+
+          if (
+            existingIndex !==
+            -1
+          ) {
+            return currentPath.slice(
+              0,
+              existingIndex + 1
+            );
+          }
+
+          return [
+            ...currentPath,
+            node,
+          ];
+        }
+      );
+    };
+
+  /* ==================================================
+     CLOSE DETAILS
+  ================================================== */
+
+  const closeDetails =
+    () => {
+      setSelectedNode(
+        null
+      );
+    };
+
+  /* ==================================================
+     CLEAR PATH
+  ================================================== */
+
+  const clearPath =
+    () => {
+      if (selectedNode) {
+        setInvestigationPath([
+          selectedNode,
+        ]);
+      } else {
+        setInvestigationPath(
+          []
+        );
+      }
+    };
+
+  /* ==================================================
+     ENTITY FILTER
+  ================================================== */
+
+  const toggleEntityFilter =
+    (type) => {
+      setActiveFilters(
+        (current) => {
+
+          if (
+            current.includes(
+              type
+            )
+          ) {
+            if (
+              current.length ===
+              1
+            ) {
+              return current;
+            }
+
+            return current.filter(
+              (item) =>
+                item !== type
+            );
+          }
+
+          return [
+            ...current,
+            type,
+          ];
+        }
+      );
+    };
+
+  /* ==================================================
+     RELATIONSHIP FILTER
+  ================================================== */
+
+  const toggleRelationshipFilter =
+    (relationship) => {
+      setActiveRelationshipFilters(
+        (current) => {
+
+          if (
+            current.includes(
+              relationship
+            )
+          ) {
+            return current.filter(
+              (item) =>
+                item !==
+                relationship
+            );
+          }
+
+          return [
+            ...current,
+            relationship,
+          ];
+        }
+      );
+    };
+
+  /* ==================================================
+     RESET FILTERS
+  ================================================== */
+
+  const resetFilters =
+    () => {
+      setActiveFilters([
+        "person",
+        "phone",
+        "account",
+        "vehicle",
+        "company",
+        "address",
+      ]);
+
+      setActiveRelationshipFilters(
+        []
+      );
+    };
+
+  /* ==================================================
+     SEARCH SELECT
+  ================================================== */
+
+  const selectSearchResult =
+    (node) => {
+      setSearchTerm("");
+
+      handleNodeSelect(
+        node
+      );
+    };
+
+  /* ==================================================
+     RESIZE START
+  ================================================== */
+
+  const startDetailsResize =
+    (event) => {
+
+      event.preventDefault();
+      event.stopPropagation();
+
+      resizeStartX.current =
+        event.clientX;
+
+      resizeStartWidth.current =
+        detailsWidth;
+
+      setIsResizingDetails(
+        true
+      );
+
+      document.body.style.cursor =
+        "ew-resize";
+
+      document.body.style.userSelect =
+        "none";
+    };
+
+  /* ==================================================
+     RESIZE MOVE
+
+     Window listener means the cursor
+     can move anywhere while resizing.
+  ================================================== */
+
+  useMemo(() => {
+    return null;
+  }, []);
+
+  /* ==================================================
+     POINTER EVENTS
+
+     We attach these to window using
+     a regular effect below.
+  ================================================== */
+
+  const resizeMoveHandler =
+    (event) => {
+
+      const workspace =
+        document.querySelector(
+          ".sih-workspace"
+        );
+
+      if (!workspace) {
+        return;
+      }
+
+      const rect =
+        workspace.getBoundingClientRect();
+
+      const delta =
+        resizeStartX.current -
+        event.clientX;
+
+      const requestedWidth =
+        resizeStartWidth.current +
+        delta;
+
+      const minWidth = 300;
+
+      const maxWidth =
+        Math.min(
+          650,
+          rect.width * 0.5
+        );
+
+      const nextWidth =
+        Math.max(
+          minWidth,
+          Math.min(
+            maxWidth,
+            requestedWidth
+          )
+        );
+
+      setDetailsWidth(
+        nextWidth
+      );
+    };
+
+  const finishDetailsResize =
+    () => {
+
+      setIsResizingDetails(
+        false
+      );
+
+      document.body.style.cursor =
+        "";
+
+      document.body.style.userSelect =
+        "";
+    };
+
+  /* ==================================================
+     RETURN
+  ================================================== */
+
+  return (
+    <div
+      className="
+        sih-app
+        min-h-screen
+        text-slate-100
+      "
+    >
+
+      {/* ==================================================
+          BACKGROUND GRID
+      ================================================== */}
+
+      <div className="sih-grid" />
+
+      {/* ==================================================
+          BACKGROUND PARTICLES
+      ================================================== */}
+
+      <div className="sih-particles">
+
+        {Array.from({
+          length: 24,
+        }).map(
+          (_, index) => (
+            <span
+              key={index}
+              className="sih-particle"
+              style={{
+                left:
+                  `${
+                    (index * 37) %
+                    100
+                  }%`,
+
+                top:
+                  `${
+                    (index * 61) %
+                    100
+                  }%`,
+
+                animationDelay:
+                  `${
+                    (index % 8) *
+                    -1.4
+                  }s`,
+              }}
+            />
+          )
+        )}
+
+      </div>
+
+      {/* ==================================================
+          HEADER
+      ================================================== */}
+
+      <header className="sih-header">
+
+        <div
+          className="
+            mx-auto
+            flex
+            min-h-[76px]
+            w-full
+            items-center
+            gap-6
+            px-5
+            lg:px-7
+          "
+        >
+
+          <div
+            className="
+              flex
+              shrink-0
+              items-center
+              gap-3
+            "
+          >
+
+            <div
+              className="
+                flex
+                h-10
+                w-10
+                items-center
+                justify-center
+                rounded-xl
+                border
+                border-teal-400/30
+                bg-teal-400/10
+                text-teal-300
+              "
+            >
+              <Network size={21} />
+            </div>
+
+            <div>
+
+              <div
+                className="
+                  text-[16px]
+                  font-bold
+                  tracking-tight
+                  text-white
+                "
+              >
+                SIH26189
+              </div>
+
+              <div
+                className="
+                  text-[11px]
+                  text-slate-500
+                "
+              >
+                Criminal Network Analysis
+              </div>
+
+            </div>
+
+          </div>
+
+          {/* SEARCH */}
+
+          <div
+            className="
+              relative
+              mx-auto
+              w-full
+              max-w-[760px]
+            "
+          >
+
+            <Search
+              size={19}
+              className="
+                pointer-events-none
+                absolute
+                left-4
+                top-1/2
+                -translate-y-1/2
+                text-slate-500
+              "
+            />
+
+            <input
+              type="text"
+              value={
+                searchTerm
+              }
+              onChange={(
+                event
+              ) =>
+                setSearchTerm(
+                  event.target.value
+                )
+              }
+              placeholder="
+                Search entity, ID, alias,
+                phone, account, vehicle...
+              "
+              className="
+                h-12
+                w-full
+                rounded-xl
+                border
+                border-slate-700/70
+                bg-slate-950/60
+                pl-11
+                pr-4
+                text-sm
+                text-slate-200
+                outline-none
+                placeholder:text-slate-500
+                transition
+                focus:border-teal-400/50
+                focus:ring-2
+                focus:ring-teal-400/10
+              "
+            />
+
+            {/* SEARCH RESULTS */}
+
+            {searchTerm.trim() &&
+              searchResults.length >
+                0 && (
+                <div
+                  className="
+                    absolute
+                    left-0
+                    right-0
+                    top-[56px]
+                    z-[100]
+                    overflow-hidden
+                    rounded-xl
+                    border
+                    border-slate-700
+                    bg-[#071426]
+                    shadow-2xl
+                  "
+                >
+
+                  {searchResults.map(
+                    (node) => (
+                      <button
+                        key={
+                          node.id
+                        }
+                        type="button"
+                        onClick={() =>
+                          selectSearchResult(
+                            node
+                          )
+                        }
+                        className="
+                          flex
+                          w-full
+                          items-center
+                          justify-between
+                          gap-3
+                          border-b
+                          border-slate-800
+                          px-4
+                          py-3
+                          text-left
+                          transition
+                          last:border-b-0
+                          hover:bg-slate-800/60
+                        "
+                      >
+
+                        <div className="min-w-0">
+
+                          <div
+                            className="
+                              truncate
+                              text-sm
+                              font-semibold
+                              text-slate-200
+                            "
+                          >
+                            {
+                              getNodeName(
+                                node
+                              )
+                            }
+                          </div>
+
+                          <div
+                            className="
+                              mt-0.5
+                              text-[11px]
+                              text-slate-500
+                            "
+                          >
+                            {
+                              getNodeType(
+                                node
+                              )
+                            }{" "}
+                            ·{" "}
+                            {
+                              node.id
+                            }
+                          </div>
+
+                        </div>
+
+                        <ChevronRight
+                          size={16}
+                          className="
+                            shrink-0
+                            text-teal-400
+                          "
+                        />
+
+                      </button>
+                    )
+                  )}
+
+                </div>
+              )}
+
+            {searchTerm.trim() &&
+              searchResults.length ===
+                0 && (
+                <div
+                  className="
+                    absolute
+                    left-0
+                    right-0
+                    top-[56px]
+                    z-[100]
+                    rounded-xl
+                    border
+                    border-slate-700
+                    bg-[#071426]
+                    px-4
+                    py-4
+                    text-sm
+                    text-slate-500
+                    shadow-2xl
+                  "
+                >
+                  No matching entities found.
+                </div>
+              )}
+
+          </div>
+
+          {/* LIVE */}
+
+          <div
+            className="
+              hidden
+              shrink-0
+              items-center
+              gap-3
+              xl:flex
+            "
+          >
+
+            <div
+              className="
+                flex
+                items-center
+                gap-2
+                rounded-full
+                border
+                border-emerald-400/20
+                bg-emerald-400/5
+                px-4
+                py-2
+              "
+            >
+
+              <span
+                className="
+                  h-2
+                  w-2
+                  rounded-full
+                  bg-emerald-400
+                  shadow-[0_0_10px_rgba(52,211,153,.7)]
+                "
+              />
+
+              <span
+                className="
+                  text-xs
+                  font-semibold
+                  text-emerald-300
+                "
+              >
+                Live Analysis
+              </span>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </header>
+
+      {/* ==================================================
+          INVESTIGATION PATH
+      ================================================== */}
+
+      <div className="sih-path-bar">
+
+        <div
+          className="
+            flex
+            min-h-[66px]
+            items-center
+            gap-3
+            overflow-x-auto
+            px-5
+            lg:px-7
+          "
+        >
+
+          <div
+            className="
+              flex
+              shrink-0
+              items-center
+              gap-2
+            "
+          >
+
+            <Network
+              size={16}
+              className="text-teal-400"
+            />
+
+            <span
+              className="
+                text-[11px]
+                font-bold
+                tracking-[0.12em]
+                text-slate-500
+              "
+            >
+              INVESTIGATION PATH
+            </span>
+
+          </div>
+
+          <span className="text-slate-700">
+            /
+          </span>
+
+          {investigationPath.map(
+            (
+              node,
+              index
+            ) => {
+
+              const relationship =
+                pathRelationships[
+                  index - 1
+                ];
+
+              return (
+                <div
+                  key={`${node.id}-${index}`}
+                  className="
+                    flex
+                    shrink-0
+                    items-center
+                    gap-2
+                  "
+                >
+
+                  {index > 0 && (
+                    <>
+                      <ChevronRight
+                        size={15}
+                        className="text-slate-700"
+                      />
+
+                      {relationship && (
+                        <>
+                          <span
+                            className="
+                              rounded-lg
+                              border
+                              px-3
+                              py-1.5
+                              text-[10px]
+                              font-bold
+                              tracking-wide
+                            "
+                            style={{
+                              color:
+                                RELATIONSHIP_COLORS[
+                                  relationship
+                                ] ||
+                                "#94a3b8",
+
+                              borderColor:
+                                `${
+                                  RELATIONSHIP_COLORS[
+                                    relationship
+                                  ] ||
+                                  "#64748b"
+                                }55`,
+
+                              background:
+                                `${
+                                  RELATIONSHIP_COLORS[
+                                    relationship
+                                  ] ||
+                                  "#64748b"
+                                }12`,
+                            }}
+                          >
+                            {
+                              relationship
+                            }
+                          </span>
+
+                          <ChevronRight
+                            size={15}
+                            className="text-slate-700"
+                          />
+                        </>
+                      )}
+                    </>
+                  )}
+
+                  <button
+                    type="button"
+                    onClick={() =>
+                      handleNodeSelect(
+                        node
+                      )
+                    }
+                    className={`
+                      rounded-lg
+                      border
+                      px-4
+                      py-2
+                      text-xs
+                      font-semibold
+                      transition
+                      ${
+                        index ===
+                        investigationPath.length -
+                          1
+                          ? "border-teal-400/50 bg-teal-400/10 text-teal-300"
+                          : "border-slate-700 bg-slate-900/70 text-slate-300 hover:border-slate-600 hover:text-white"
+                      }
+                    `}
+                  >
+                    {
+                      getNodeName(
+                        node
+                      )
+                    }
+                  </button>
+
+                </div>
+              );
+            }
+          )}
+
+          {investigationPath.length >
+            1 && (
+            <button
+              type="button"
+              onClick={
+                clearPath
+              }
+              className="
+                ml-auto
+                flex
+                shrink-0
+                items-center
+                gap-1
+                text-xs
+                font-semibold
+                text-teal-400
+                transition
+                hover:text-teal-300
+              "
+            >
+              <X size={13} />
+              Clear path
+            </button>
+          )}
+
+        </div>
+
+      </div>
+
+      {/* ==================================================
+          WORKSPACE
+      ================================================== */}
+
+      <main
+        className={`
+          sih-workspace
+          ${
+            isResizingDetails
+              ? "select-none"
+              : ""
+          }
+        `}
+      >
+
+        {/* ==================================================
+            LEFT SIDEBAR
+        ================================================== */}
+
+        <aside className="sih-sidebar">
+
+          {/* FILTER PANEL */}
+
+          <section
+            className="
+              sih-dark-panel
+              sih-sidebar-filters
+              overflow-hidden
+            "
+          >
+
+            <div
+              className="
+                border-b
+                border-slate-800/80
+                px-4
+                py-4
+              "
+            >
+
+              <div
+                className="
+                  flex
+                  items-start
+                  justify-between
+                  gap-3
+                "
+              >
+
+                <div>
+
+                  <div
+                    className="
+                      flex
+                      items-center
+                      gap-2
+                    "
+                  >
+
+                    <Network
+                      size={16}
+                      className="text-teal-400"
+                    />
+
+                    <h2
+                      className="
+                        text-sm
+                        font-bold
+                        text-slate-100
+                      "
+                    >
+                      Network Filters
+                    </h2>
+
+                  </div>
+
+                  <p
+                    className="
+                      mt-1
+                      text-[11px]
+                      text-slate-500
+                    "
+                  >
+                    Control visible entities
+                  </p>
+
+                </div>
+
+                <button
+                  type="button"
+                  onClick={
+                    resetFilters
+                  }
+                  className="
+                    flex
+                    items-center
+                    gap-1.5
+                    rounded-lg
+                    border
+                    border-slate-700
+                    bg-slate-900/70
+                    px-2.5
+                    py-1.5
+                    text-[10px]
+                    font-semibold
+                    text-slate-400
+                    transition
+                    hover:border-teal-400/30
+                    hover:text-teal-300
+                  "
+                >
+                  <RotateCcw
+                    size={12}
+                  />
+                  Reset
+                </button>
+
+              </div>
+
+            </div>
+
+            <div className="p-3">
+
+              {/* ENTITY FILTERS */}
+
+              <div
+                className="
+                  grid
+                  grid-cols-2
+                  gap-2
+                "
+              >
+
+                {ENTITY_FILTERS.map(
+                  (filter) => {
+
+                    const Icon =
+                      filter.icon;
+
+                    const isActive =
+                      activeFilters.includes(
+                        filter.key
+                      );
+
+                    return (
+                      <button
+                        key={
+                          filter.key
+                        }
+                        type="button"
+                        onClick={() =>
+                          toggleEntityFilter(
+                            filter.key
+                          )
+                        }
+                        className={`
+                          flex
+                          min-h-[48px]
+                          items-center
+                          gap-2
+                          rounded-lg
+                          border
+                          px-3
+                          text-left
+                          text-xs
+                          font-semibold
+                          transition
+                          ${
+                            isActive
+                              ? "border-teal-400/50 bg-teal-400/10 text-teal-200"
+                              : "border-slate-700/80 bg-slate-950/40 text-slate-500 hover:border-slate-600 hover:text-slate-300"
+                          }
+                        `}
+                      >
+
+                        <Icon
+                          size={15}
+                          className={
+                            isActive
+                              ? "text-teal-300"
+                              : "text-slate-600"
+                          }
+                        />
+
+                        <span>
+                          {
+                            filter.label
+                          }
+                        </span>
+
+                      </button>
+                    );
+                  }
+                )}
+
+              </div>
+
+              {/* RELATIONSHIP FILTERS */}
+
+              {relationshipTypes.length >
+                0 && (
+                <div
+                  className="
+                    mt-4
+                    border-t
+                    border-slate-800
+                    pt-4
+                  "
+                >
+
+                  <div
+                    className="
+                      mb-3
+                      flex
+                      items-center
+                      gap-2
+                    "
+                  >
+
+                    <Link2
+                      size={15}
+                      className="text-slate-500"
+                    />
+
+                    <span
+                      className="
+                        text-xs
+                        font-bold
+                        text-slate-300
+                      "
+                    >
+                      Relationship Types
+                    </span>
+
+                  </div>
+
+                  <div
+                    className="
+                      flex
+                      flex-wrap
+                      gap-2
+                    "
+                  >
+
+                    {relationshipTypes.map(
+                      (
+                        relationship
+                      ) => {
+
+                        const isActive =
+                          activeRelationshipFilters.includes(
+                            relationship
+                          );
+
+                        const color =
+                          RELATIONSHIP_COLORS[
+                            relationship
+                          ] ||
+                          "#94a3b8";
+
+                        return (
+                          <button
+                            key={
+                              relationship
+                            }
+                            type="button"
+                            onClick={() =>
+                              toggleRelationshipFilter(
+                                relationship
+                              )
+                            }
+                            className="
+                              rounded-lg
+                              border
+                              px-2.5
+                              py-1.5
+                              text-[9px]
+                              font-bold
+                              tracking-wide
+                              transition
+                            "
+                            style={{
+                              color:
+                                isActive
+                                  ? color
+                                  : "#64748b",
+
+                              borderColor:
+                                isActive
+                                  ? `${color}66`
+                                  : "rgba(71,85,105,.7)",
+
+                              background:
+                                isActive
+                                  ? `${color}12`
+                                  : "rgba(2,8,23,.35)",
+                            }}
+                          >
+                            {
+                              relationship
+                            }
+                          </button>
+                        );
+                      }
+                    )}
+
+                  </div>
+
+                </div>
+              )}
+
+            </div>
+
+          </section>
+
+          {/* ==================================================
+              LEFT ENTITY DETAILS
+
+              This remains on the left.
+          ================================================== */}
+
+          <section
+            className="
+              sih-dark-panel
+              sih-sidebar-details
+              overflow-hidden
+            "
+          >
+
+            {selectedNode ? (
+              <EntityDetails
+                node={
+                  selectedNode
+                }
+
+                selectedNode={
+                  selectedNode
+                }
+
+                relationships={
+                  selectedRelationships
+                }
+
+                entityMap={
+                  entityMap
+                }
+
+                onNodeSelect={
+                  handleNodeSelect
+                }
+              />
+            ) : (
+              <div
+                className="
+                  flex
+                  h-full
+                  min-h-[300px]
+                  items-center
+                  justify-center
+                  p-6
+                  text-center
+                "
+              >
+
+                <div>
+
+                  <div
+                    className="
+                      mx-auto
+                      flex
+                      h-12
+                      w-12
+                      items-center
+                      justify-center
+                      rounded-xl
+                      border
+                      border-slate-700
+                      bg-slate-900
+                      text-slate-600
+                    "
+                  >
+                    <Network
+                      size={21}
+                    />
+                  </div>
+
+                  <p
+                    className="
+                      mt-3
+                      text-sm
+                      font-semibold
+                      text-slate-400
+                    "
+                  >
+                    No entity selected
+                  </p>
+
+                  <p
+                    className="
+                      mt-1
+                      text-xs
+                      text-slate-600
+                    "
+                  >
+                    Select an entity from the network.
+                  </p>
+
+                </div>
+
+              </div>
+            )}
+
+          </section>
+
+        </aside>
+
+        {/* ==================================================
+            CENTER GRAPH
+        ================================================== */}
+
+        <section
+          className="
+            min-w-0
+            overflow-hidden
+          "
+        >
+
+          <div
+            className="
+              sih-dark-panel
+              overflow-hidden
+            "
+          >
+
+            {/* GRAPH HEADER */}
+
+            <div
+              className="
+                flex
+                min-h-[82px]
+                items-center
+                justify-between
+                gap-4
+                border-b
+                border-slate-800/80
+                px-5
+              "
+            >
+
+              <div>
+
+                <div
+                  className="
+                    flex
+                    items-center
+                    gap-3
+                  "
+                >
+
+                  <h1
+                    className="
+                      text-[17px]
+                      font-bold
+                      text-white
+                    "
+                  >
+                    Investigation Network
+                  </h1>
+
+                  <span className="sih-live">
+                    LIVE
+                  </span>
+
+                </div>
+
+                <p
+                  className="
+                    mt-1
+                    text-xs
+                    text-slate-500
+                  "
+                >
+                  Interactive force-directed network visualization
+                </p>
+
+              </div>
+
+            </div>
+
+            {/* ==================================================
+                GRAPH + RIGHT DETAILS LAYOUT
+
+                The resize handle and details panel
+                are OUTSIDE NetworkGraph.
+            ================================================== */}
+
+            <div
+              className="
+                relative
+                flex
+                min-h-[620px]
+                w-full
+              "
+            >
+
+              {/* GRAPH */}
+
+              <div
+                className={`
+                  relative
+                  min-w-0
+                  flex-1
+                  ${
+                    isResizingDetails
+                      ? "pointer-events-none"
+                      : ""
+                  }
+                `}
+              >
+
+                <NetworkGraph
+                  selectedNode={
+                    selectedNode
+                  }
+
+                  onNodeSelect={
+                    handleNodeSelect
+                  }
+
+                  activeFilters={
+                    activeFilters
+                  }
+
+                  activeRelationshipFilters={
+                    activeRelationshipFilters
+                  }
+                />
+
+              </div>
+
+              {/* ==================================================
+                  RESIZE HANDLE
+
+                  IMPORTANT:
+                  This is a normal DOM element.
+                  It is NOT inside the graph.
+              ================================================== */}
+
+              {selectedNode && (
+                <div
+                  role="separator"
+                  aria-label="
+                    Resize entity details panel
+                  "
+                  onPointerDown={
+                    startDetailsResize
+                  }
+                  style={{
+                    width:
+                      "12px",
+
+                    flexShrink: 0,
+
+                    cursor:
+                      "ew-resize",
+
+                    touchAction:
+                      "none",
+
+                    userSelect:
+                      "none",
+
+                    zIndex:
+                      500,
+
+                    background:
+                      isResizingDetails
+                        ? "rgba(45,212,191,.28)"
+                        : "rgba(15,23,42,.85)",
+                  }}
+                  className="
+                    relative
+                    flex
+                    items-center
+                    justify-center
+                    border-l
+                    border-r
+                    border-slate-700/60
+                    transition-colors
+                    hover:bg-teal-400/20
+                  "
+                >
+
+                  <GripVertical
+                    size={14}
+                    className={`
+                      transition-colors
+                      ${
+                        isResizingDetails
+                          ? "text-teal-300"
+                          : "text-slate-600"
+                      }
+                    `}
+                  />
+
+                </div>
+              )}
+
+              {/* ==================================================
+                  RIGHT ENTITY DETAILS
+              ================================================== */}
+
+              {selectedNode && (
+                <aside
+                  className="
+                    relative
+                    shrink-0
+                    overflow-hidden
+                    bg-white
+                  "
+                  style={{
+                    width:
+                      `${detailsWidth}px`,
+                  }}
+                >
+
+                  {/* CLOSE */}
+
+                  <button
+                    type="button"
+                    aria-label="
+                      Close entity details
+                    "
+                    onClick={() =>
+                      closeDetails()
+                    }
+                    className="
+                      absolute
+                      right-4
+                      top-4
+                      z-[100]
+                      flex
+                      h-10
+                      w-10
+                      items-center
+                      justify-center
+                      rounded-xl
+                      border
+                      border-slate-300
+                      bg-white
+                      text-slate-500
+                      shadow-md
+                      transition
+                      hover:border-slate-400
+                      hover:bg-slate-50
+                      hover:text-slate-800
+                    "
+                  >
+                    <X size={20} />
+                  </button>
+
+                  {/* DETAILS CONTENT */}
+
+                  <div
+                    className="
+                      h-full
+                      overflow-y-auto
+                      overflow-x-hidden
+                      bg-white
+                    "
+                  >
+
+                    <EntityDetails
+                      node={
+                        selectedNode
+                      }
+
+                      selectedNode={
+                        selectedNode
+                      }
+
+                      relationships={
+                        selectedRelationships
+                      }
+
+                      entityMap={
+                        entityMap
+                      }
+
+                      onNodeSelect={
+                        handleNodeSelect
+                      }
+                    />
+
+                  </div>
+
+                </aside>
+              )}
+
+            </div>
+
+          </div>
+
+          {/* ==================================================
+              SUMMARY
+          ================================================== */}
+
+          <div className="mt-[18px]">
+
+            <InvestigationSummary
+              selectedNode={
+                selectedNode
+              }
+
+              relationships={
+                selectedRelationships
+              }
+
+              investigationPath={
+                investigationPath
+              }
+
+              graph={
+                investigationGraph
+              }
+            />
+
+          </div>
+
+        </section>
+
+      </main>
+
+      {/* ==================================================
+          RESIZE EVENT HANDLERS
+          
+          These are attached globally only while
+          the user is actively resizing.
+      ================================================== */}
+
+      {isResizingDetails && (
+        <ResizeListeners
+          onMove={
+            resizeMoveHandler
+          }
+          onEnd={
+            finishDetailsResize
+          }
+        />
+      )}
+
+    </div>
+  );
+}
+
+/* ==================================================
+   RESIZE LISTENERS
+
+   Separate component so the global listeners
+   exist only during resizing.
+================================================== */
+
+function ResizeListeners({
+  onMove,
+  onEnd,
+}) {
+  useEffect(() => {
+    window.addEventListener(
+      "pointermove",
+      onMove
+    );
+
+    window.addEventListener(
+      "pointerup",
+      onEnd
+    );
+
+    window.addEventListener(
+      "pointercancel",
+      onEnd
+    );
+
+    return () => {
+      window.removeEventListener(
+        "pointermove",
+        onMove
+      );
+
+      window.removeEventListener(
+        "pointerup",
+        onEnd
+      );
+
+      window.removeEventListener(
+        "pointercancel",
+        onEnd
+      );
+    };
+  }, [onMove, onEnd]);
+
+  return null;
+}
+
+
+export default Investigation;

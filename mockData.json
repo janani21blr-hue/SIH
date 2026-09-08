@@ -5,7 +5,10 @@
       "entity_type": "person",
       "canonical_name": "Rajesh Kumar",
       "aliases": ["R. Kumar", "Raj Kumar"],
-      "attributes": { "risk_score": 0.88, "location": "Delhi" },
+      "attributes": {
+        "risk_score": 0.88,
+        "location": "Delhi"
+      },
       "confidence": 0.94
     },
     {
@@ -13,7 +16,9 @@
       "entity_type": "phone",
       "canonical_name": "+91 9876543210",
       "aliases": [],
-      "attributes": { "provider": "Airtel" },
+      "attributes": {
+        "provider": "Airtel"
+      },
       "confidence": 0.99
     },
     {
@@ -21,7 +26,9 @@
       "entity_type": "company",
       "canonical_name": "Global Exports Ltd",
       "aliases": ["Global Exports"],
-      "attributes": { "registration": "U12345DL2023PTC123456" },
+      "attributes": {
+        "registration": "U12345DL2023PTC123456"
+      },
       "confidence": 0.87
     }
   ],
@@ -32,6 +39,13 @@
       "relationship": "USES",
       "confidence": 0.91,
       "evidence": "investigation_record_17"
+    },
+    {
+      "source": "PHONE_17",
+      "target": "COMP_05",
+      "relationship": "ASSOCIATED_WITH",
+      "confidence": 0.86,
+      "evidence": "telecom_company_link_17"
     },
     {
       "source": "P042",
