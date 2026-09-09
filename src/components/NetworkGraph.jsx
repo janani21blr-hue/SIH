@@ -1199,128 +1199,133 @@ function NetworkGraph({
           ctx,
           globalScale
         ) => {
-          const r =
-            getNodeRadius(
-              node
-            );
-
           ctx.fillStyle =
             color;
 
           ctx.beginPath();
 
+          const scale =
+            Math.max(
+              globalScale || 1,
+              0.45
+            );
+
           ctx.arc(
             node.x,
             node.y,
-            Math.max(
-              r + 10,
-              12
-            ),
+            24 / scale,
             0,
-            2 * Math.PI,
-            false
+            Math.PI * 2
           );
 
           ctx.fill();
         }}
 
-        nodeLabel={null}
+        /* LINKS */
 
-        linkCanvasObjectMode={() =>
-          "after"
+        linkColor={(link) =>
+          getRelationshipColor(
+            link.relationship
+          )
         }
 
-        linkCanvasObject={
-          renderLink
-        }
+        linkWidth={(link) => {
+          if (!selectedNode) {
+            return 2;
+          }
 
-        linkDirectionalParticles={(
-          link
-        ) => {
-          const s =
+          const connected =
             getNodeId(
               link.source
-            );
-
-          const t =
+            ) ===
+              selectedNode.id ||
             getNodeId(
               link.target
-            );
+            ) ===
+              selectedNode.id;
 
-          const isHighlighted =
-            highlightedLinks.has(
-              `${s}-${t}`
-            ) ||
-            highlightedLinks.has(
-              `${t}-${s}`
-            );
-
-          return isHighlighted
-            ? 5
-            : 0;
+          return connected
+            ? 3
+            : 2;
         }}
+
+        linkOpacity={0.92}
+
+        linkDirectionalArrowLength={
+          6
+        }
+
+        linkDirectionalArrowRelPos={
+          0.96
+        }
+
+        /* SELECTED LINK PARTICLES */
+
+        linkDirectionalParticles={
+          (link) => {
+            if (!selectedNode) {
+              return 0;
+            }
+
+            const connected =
+              getNodeId(
+                link.source
+              ) ===
+                selectedNode.id ||
+              getNodeId(
+                link.target
+              ) ===
+                selectedNode.id;
+
+            return connected
+              ? 2
+              : 0;
+          }
+        }
 
         linkDirectionalParticleWidth={
           2.5
         }
 
         linkDirectionalParticleSpeed={
-          0.007
+          0.005
         }
 
-        linkDirectionalParticleColor={() =>
-          "#2dd4bf"
+        linkCanvasObject={
+          renderLinkLabel
         }
 
-        onNodeClick={(
-          node,
-          event
-        ) => {
-          handleNodeClick(
-            node,
-            event
-          );
-        }}
+        linkCanvasObjectMode={
+          () => "after"
+        }
 
-        onNodeHover={(
-          node
-        ) => {
-          handleNodeHover(
+        /* NODE SELECT */
+
+        onNodeClick={(node) => {
+          onNodeSelect?.(
             node
           );
         }}
 
-        onLinkHover={(
-          link
-        ) => {
-          setHoveredLink(
-            link || null
+        onNodeHover={(node) => {
+          setHoveredNode(
+            node || null
           );
         }}
 
-        enableNodeDrag={
-          true
-        }
+        /* FORCE */
 
-        enableZoomInteraction={
-          true
-        }
+        d3AlphaDecay={0.018}
 
-        enablePanInteraction={
-          true
-        }
+        d3VelocityDecay={0.3}
 
-        cooldownTicks={
-          100
-        }
+        cooldownTicks={180}
 
-        d3AlphaDecay={
-          0.02
-        }
+        warmupTicks={100}
 
-        d3VelocityDecay={
-          0.3
-        }
+        minZoom={0.04}
+
+        maxZoom={12}
 
         onRenderFramePre={
           renderBackground
