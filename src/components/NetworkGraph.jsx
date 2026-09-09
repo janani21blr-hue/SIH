@@ -13,6 +13,9 @@ import {
   RotateCcw,
   Maximize2,
   Network,
+  X,
+  Eye,
+  EyeOff,
 } from "lucide-react";
 
 import { investigationGraph } from "../data/graphData";
@@ -548,21 +551,67 @@ function NetworkGraph({
     }, [selectedNode, graph]);
 
   /* ==================================================
+     ISOLATED SUBGRAPH (ONLY SELECTED & RELATED ENTITIES)
+  ================================================== */
+
+  const [isolateRelated, setIsolateRelated] = useState(true);
+
+  const relatedNodeIds = useMemo(() => {
+    if (!selectedNode) return null;
+    const ids = new Set([selectedNode.id]);
+    const allLinks = (graph && graph.links) || investigationGraph.links || [];
+    allLinks.forEach((link) => {
+      const s = getNodeId(link.source);
+      const t = getNodeId(link.target);
+      if (s === selectedNode.id) {
+        ids.add(t);
+      } else if (t === selectedNode.id) {
+        ids.add(s);
+      }
+    });
+    return ids;
+  }, [selectedNode?.id, graph]);
+
+  const displayedGraph = useMemo(() => {
+    if (!isolateRelated || !selectedNode || !relatedNodeIds) {
+      return filteredGraph;
+    }
+
+    const isolatedNodes = filteredGraph.nodes.filter((node) =>
+      relatedNodeIds.has(node.id)
+    );
+
+    const isolatedLinks = filteredGraph.links.filter((link) => {
+      const s = getNodeId(link.source);
+      const t = getNodeId(link.target);
+      return relatedNodeIds.has(s) && relatedNodeIds.has(t);
+    });
+
+    return {
+      nodes: isolatedNodes,
+      links: isolatedLinks,
+    };
+  }, [filteredGraph, isolateRelated, selectedNode?.id, relatedNodeIds]);
+
+  /* ==================================================
      SIMULATION FORCES (PREVENTS CROWDING)
   ================================================== */
 
   useEffect(() => {
     if (!graphRef.current) return;
-    // Disperse 400+ nodes to eliminate clumping & overlapping
     const charge = graphRef.current.d3Force("charge");
     if (charge) {
-      charge.strength(-340).distanceMax(900);
+      if (isolateRelated && selectedNode) {
+        charge.strength(-420).distanceMax(650);
+      } else {
+        charge.strength(-340).distanceMax(900);
+      }
     }
     const link = graphRef.current.d3Force("link");
     if (link) {
-      link.distance(70);
+      link.distance(isolateRelated && selectedNode ? 100 : 70);
     }
-  }, [filteredGraph]);
+  }, [displayedGraph, isolateRelated, selectedNode?.id]);
 
   /* ==================================================
      AUTO-FOCUS ON SELECTED NODE
@@ -587,20 +636,27 @@ function NetworkGraph({
     lastSelectedNodeIdRef.current = selectedNode.id;
     hasAutoFocusedInitialRef.current = true;
 
-    const targetNode = (filteredGraph.nodes || []).find(
-      (n) => n.id === selectedNode.id
-    );
-    if (
-      targetNode &&
-      typeof targetNode.x === "number" &&
-      typeof targetNode.y === "number" &&
-      !isNaN(targetNode.x) &&
-      !isNaN(targetNode.y)
-    ) {
-      graphRef.current.centerAt(targetNode.x, targetNode.y, 450);
-      graphRef.current.zoom(1.6, 450);
-    }
-  }, [selectedNode?.id, autoFocusNode]);
+    setTimeout(() => {
+      if (!graphRef.current) return;
+      if (isolateRelated) {
+        graphRef.current.zoomToFit(500, 90);
+      } else {
+        const targetNode = (displayedGraph.nodes || []).find(
+          (n) => n.id === selectedNode.id
+        );
+        if (
+          targetNode &&
+          typeof targetNode.x === "number" &&
+          typeof targetNode.y === "number" &&
+          !isNaN(targetNode.x) &&
+          !isNaN(targetNode.y)
+        ) {
+          graphRef.current.centerAt(targetNode.x, targetNode.y, 450);
+          graphRef.current.zoom(1.6, 450);
+        }
+      }
+    }, 120);
+  }, [selectedNode?.id, autoFocusNode, isolateRelated]);
 
   /* ==================================================
      ZOOM CONTROLS
@@ -1174,7 +1230,7 @@ function NetworkGraph({
         ref={graphRef}
 
         graphData={
-          filteredGraph
+          displayedGraph
         }
 
         width={
@@ -1331,6 +1387,10 @@ function NetworkGraph({
           renderBackground
         }
 
+        onBackgroundClick={() => {
+          onNodeSelect?.(null);
+        }}
+
         onEngineStop={() => {
           if (!hasFittedInitialRef.current && !autoFocusNode && graphRef.current) {
             hasFittedInitialRef.current = true;
@@ -1338,6 +1398,60 @@ function NetworkGraph({
           }
         }}
       />
+
+      {/* ==================================================
+          ISOLATED SUBGRAPH FOCUS BANNER
+      ================================================== */}
+
+      {selectedNode && (
+        <div className="absolute top-4 left-1/2 -translate-x-1/2 z-20 flex items-center gap-3 rounded-xl border border-teal-500/40 bg-slate-950/90 px-4 py-2 shadow-2xl backdrop-blur-md">
+          <div className="flex items-center gap-2">
+            <span className="relative flex h-2.5 w-2.5">
+              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-teal-400 opacity-75"></span>
+              <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-teal-500"></span>
+            </span>
+            <span className="text-xs font-medium text-slate-300">
+              Focused: <strong className="text-teal-300 font-semibold">{selectedNode.canonical_name || selectedNode.name || selectedNode.id}</strong>
+            </span>
+            <span className="rounded-md bg-teal-500/10 border border-teal-500/20 px-2 py-0.5 text-[11px] font-semibold text-teal-300">
+              {displayedGraph.nodes.length} entities • {displayedGraph.links.length} links
+            </span>
+          </div>
+
+          <div className="h-4 w-px bg-slate-800" />
+
+          <button
+            type="button"
+            onClick={() => setIsolateRelated((prev) => !prev)}
+            className={`flex items-center gap-1.5 rounded-lg px-2.5 py-1 text-xs font-semibold transition border ${
+              isolateRelated
+                ? "border-slate-700 bg-slate-800 text-slate-200 hover:border-teal-500/40 hover:text-white"
+                : "border-teal-500/40 bg-teal-500/20 text-teal-300"
+            }`}
+          >
+            {isolateRelated ? (
+              <>
+                <Eye size={13} className="text-teal-400" />
+                <span>Show Full Network</span>
+              </>
+            ) : (
+              <>
+                <EyeOff size={13} className="text-slate-400" />
+                <span>Show Related Only</span>
+              </>
+            )}
+          </button>
+
+          <button
+            type="button"
+            onClick={() => onNodeSelect?.(null)}
+            className="rounded-lg p-1 text-slate-400 hover:text-rose-400 hover:bg-rose-500/10 transition"
+            title="Clear focus and return to full graph"
+          >
+            <X size={14} />
+          </button>
+        </div>
+      )}
 
       {/* ==================================================
           NETWORK INFO
@@ -1390,7 +1504,7 @@ function NetworkGraph({
           <div className="mt-1 text-lg font-bold text-white">
 
             {
-              filteredGraph.nodes
+              displayedGraph.nodes
                 .length
             }{" "}
 
@@ -1403,7 +1517,7 @@ function NetworkGraph({
           <div className="text-xs text-slate-500">
 
             {
-              filteredGraph.links
+              displayedGraph.links
                 .length
             }{" "}
             relationships

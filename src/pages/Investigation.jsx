@@ -158,10 +158,7 @@ function Investigation() {
       const match = findMatchingNode(investigationGraph.nodes, entityIdFromUrl);
       if (match) return match;
     }
-    return (
-      investigationGraph.nodes?.[0] ||
-      null
-    );
+    return null;
   });
 
   useEffect(() => {
@@ -176,9 +173,9 @@ function Investigation() {
               const match = findMatchingNode(data.nodes, entityIdFromUrl);
               if (match) return match;
             }
-            if (!current) return data.nodes[0];
+            if (!current) return null;
             const exists = data.nodes.find((n) => n.id === current.id);
-            return exists || data.nodes[0];
+            return exists || null;
           });
           setInvestigationPath((currentPath) => {
             if (entityIdFromUrl) {
