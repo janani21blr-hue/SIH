@@ -70,18 +70,15 @@ function getNodeName(node) {
 function getNodeType(node) {
   return String(
     node?.entity_type ||
-      node?.type ||
-      ""
+    node?.type ||
+    ""
   ).toLowerCase();
 }
 
-function getRelationshipColor(
-  relationship
-) {
+function getRelationshipColor(relationship) {
   return (
-    RELATIONSHIP_COLORS[
-      relationship
-    ] || "#94a3b8"
+    RELATIONSHIP_COLORS[relationship] ||
+    "#94a3b8"
   );
 }
 
@@ -103,11 +100,10 @@ function drawEntityIcon(
   y,
   globalScale
 ) {
-  const scale =
-    Math.max(
-      globalScale,
-      0.45
-    );
+  const scale = Math.max(
+    globalScale,
+    0.45
+  );
 
   ctx.save();
 
@@ -449,15 +445,14 @@ function NetworkGraph({
     useMemo(() => {
       return filterGraph(
         graph || investigationGraph,
-        activeFilters ||
-          [
-            "person",
-            "phone",
-            "account",
-            "vehicle",
-            "company",
-            "address",
-          ]
+        activeFilters || [
+          "person",
+          "phone",
+          "account",
+          "vehicle",
+          "company",
+          "address",
+        ]
       );
     }, [graph, activeFilters]);
 
@@ -469,8 +464,7 @@ function NetworkGraph({
     useMemo(() => {
       if (
         !activeRelationshipFilters ||
-        activeRelationshipFilters.length ===
-          0
+        activeRelationshipFilters.length === 0
       ) {
         return entityFilteredGraph;
       }
@@ -488,15 +482,11 @@ function NetworkGraph({
 
       links.forEach((link) => {
         nodeIds.add(
-          getNodeId(
-            link.source
-          )
+          getNodeId(link.source)
         );
 
         nodeIds.add(
-          getNodeId(
-            link.target
-          )
+          getNodeId(link.target)
         );
       });
 
@@ -504,9 +494,7 @@ function NetworkGraph({
         nodes:
           entityFilteredGraph.nodes.filter(
             (node) =>
-              nodeIds.has(
-                node.id
-              )
+              nodeIds.has(node.id)
           ),
         links,
       };
@@ -525,40 +513,48 @@ function NetworkGraph({
         return [];
       }
 
-      return ((graph && graph.links) || investigationGraph.links).filter(
-        (link) => {
-          const sourceId =
-            getNodeId(
-              link.source
-            );
+      return (
+        (graph && graph.links) ||
+        investigationGraph.links
+      ).filter((link) => {
+        const sourceId =
+          getNodeId(link.source);
 
-          const targetId =
-            getNodeId(
-              link.target
-            );
+        const targetId =
+          getNodeId(link.target);
 
-          return (
-            sourceId ===
-              selectedNode.id ||
-            targetId ===
-              selectedNode.id
-          );
-        }
-      );
+        return (
+          sourceId === selectedNode.id ||
+          targetId === selectedNode.id
+        );
+      });
     }, [selectedNode, graph]);
 
   /* ==================================================
-     SIMULATION FORCES (PREVENTS CROWDING)
+     SIMULATION FORCES
   ================================================== */
 
   useEffect(() => {
-    if (!graphRef.current) return;
-    // Disperse 400+ nodes to eliminate clumping & overlapping
-    const charge = graphRef.current.d3Force("charge");
-    if (charge) {
-      charge.strength(-340).distanceMax(900);
+    if (!graphRef.current) {
+      return;
     }
-    const link = graphRef.current.d3Force("link");
+
+    const charge =
+      graphRef.current.d3Force(
+        "charge"
+      );
+
+    if (charge) {
+      charge
+        .strength(-180)
+        .distanceMax(600);
+    }
+
+    const link =
+      graphRef.current.d3Force(
+        "link"
+      );
+
     if (link) {
       link.distance(70);
     }
@@ -568,28 +564,55 @@ function NetworkGraph({
      AUTO-FOCUS ON SELECTED NODE
   ================================================== */
 
-  const hasAutoFocusedInitialRef = useRef(false);
-  const lastSelectedNodeIdRef = useRef(null);
-  const hasFittedInitialRef = useRef(false);
+  const hasAutoFocusedInitialRef =
+    useRef(false);
+
+  const lastSelectedNodeIdRef =
+    useRef(null);
+
+  const hasFittedInitialRef =
+    useRef(false);
 
   useEffect(() => {
-    if (!selectedNode || !graphRef.current) return;
-
-    // If initial mount without explicit URL autofocus requested, do not zoom
-    if (!autoFocusNode && !hasAutoFocusedInitialRef.current) {
-      hasAutoFocusedInitialRef.current = true;
-      lastSelectedNodeIdRef.current = selectedNode.id;
+    if (
+      !selectedNode ||
+      !graphRef.current
+    ) {
       return;
     }
 
-    // Only zoom when the selected node ID actually changes
-    if (lastSelectedNodeIdRef.current === selectedNode.id) return;
-    lastSelectedNodeIdRef.current = selectedNode.id;
-    hasAutoFocusedInitialRef.current = true;
+    if (
+      !autoFocusNode &&
+      !hasAutoFocusedInitialRef.current
+    ) {
+      hasAutoFocusedInitialRef.current =
+        true;
 
-    const targetNode = (filteredGraph.nodes || []).find(
-      (n) => n.id === selectedNode.id
-    );
+      lastSelectedNodeIdRef.current =
+        selectedNode.id;
+
+      return;
+    }
+
+    if (
+      lastSelectedNodeIdRef.current ===
+      selectedNode.id
+    ) {
+      return;
+    }
+
+    lastSelectedNodeIdRef.current =
+      selectedNode.id;
+
+    hasAutoFocusedInitialRef.current =
+      true;
+
+    const targetNode =
+      (filteredGraph.nodes || []).find(
+        (n) =>
+          n.id === selectedNode.id
+      );
+
     if (
       targetNode &&
       typeof targetNode.x === "number" &&
@@ -597,10 +620,22 @@ function NetworkGraph({
       !isNaN(targetNode.x) &&
       !isNaN(targetNode.y)
     ) {
-      graphRef.current.centerAt(targetNode.x, targetNode.y, 450);
-      graphRef.current.zoom(1.6, 450);
+      graphRef.current.centerAt(
+        targetNode.x,
+        targetNode.y,
+        450
+      );
+
+      graphRef.current.zoom(
+        1.6,
+        450
+      );
     }
-  }, [selectedNode?.id, autoFocusNode]);
+  }, [
+    selectedNode?.id,
+    autoFocusNode,
+    filteredGraph.nodes,
+  ]);
 
   /* ==================================================
      ZOOM CONTROLS
@@ -612,8 +647,7 @@ function NetworkGraph({
     }
 
     graphRef.current.zoom(
-      graphRef.current.zoom() *
-        1.35,
+      graphRef.current.zoom() * 1.35,
       250
     );
   };
@@ -624,8 +658,7 @@ function NetworkGraph({
     }
 
     graphRef.current.zoom(
-      graphRef.current.zoom() /
-        1.35,
+      graphRef.current.zoom() / 1.35,
       250
     );
   };
@@ -635,87 +668,6 @@ function NetworkGraph({
       500,
       80
     );
-  };
-
-  /* ==================================================
-     BACKGROUND
-  ================================================== */
-
-  const renderBackground = (
-    ctx,
-    globalScale
-  ) => {
-    const width =
-      dimensions.width;
-
-    const height =
-      dimensions.height;
-
-    ctx.save();
-
-    ctx.fillStyle =
-      "#020817";
-
-    ctx.fillRect(
-      0,
-      0,
-      width,
-      height
-    );
-
-    const gridSize = 52;
-
-    ctx.strokeStyle =
-      "rgba(56,189,248,.045)";
-
-    ctx.lineWidth =
-      1 /
-      Math.max(
-        globalScale,
-        0.45
-      );
-
-    for (
-      let x = -width;
-      x < width * 2;
-      x += gridSize
-    ) {
-      ctx.beginPath();
-
-      ctx.moveTo(
-        x,
-        -height
-      );
-
-      ctx.lineTo(
-        x,
-        height * 2
-      );
-
-      ctx.stroke();
-    }
-
-    for (
-      let y = -height;
-      y < height * 2;
-      y += gridSize
-    ) {
-      ctx.beginPath();
-
-      ctx.moveTo(
-        -width,
-        y
-      );
-
-      ctx.lineTo(
-        width * 2,
-        y
-      );
-
-      ctx.stroke();
-    }
-
-    ctx.restore();
   };
 
   /* ==================================================
@@ -732,38 +684,35 @@ function NetworkGraph({
     }
 
     const sourceId =
-      getNodeId(
-        link.source
-      );
+      getNodeId(link.source);
 
     const targetId =
-      getNodeId(
-        link.target
-      );
+      getNodeId(link.target);
 
     const connected =
-      sourceId ===
-        selectedNode.id ||
-      targetId ===
-        selectedNode.id;
+      sourceId === selectedNode.id ||
+      targetId === selectedNode.id;
 
     if (!connected) {
       return;
     }
 
-    if (globalScale < 0.72) {
+    /*
+      Only render relationship labels
+      when sufficiently zoomed in.
+    */
+
+    if (globalScale < 1.0) {
       return;
     }
 
     const source =
-      typeof link.source ===
-      "object"
+      typeof link.source === "object"
         ? link.source
         : null;
 
     const target =
-      typeof link.target ===
-      "object"
+      typeof link.target === "object"
         ? link.target
         : null;
 
@@ -772,14 +721,10 @@ function NetworkGraph({
     }
 
     const x =
-      (source.x +
-        target.x) /
-      2;
+      (source.x + target.x) / 2;
 
     const y =
-      (source.y +
-        target.y) /
-      2;
+      (source.y + target.y) / 2;
 
     const color =
       getRelationshipColor(
@@ -792,11 +737,10 @@ function NetworkGraph({
         Math.max(
           9,
           9 +
-            Math.max(
-              0,
-              globalScale - 0.7
-            ) *
-              3
+          Math.max(
+            0,
+            globalScale - 0.7
+          ) * 3
         )
       );
 
@@ -805,13 +749,11 @@ function NetworkGraph({
       globalScale;
 
     const paddingX =
-      (targetLinkFontSize *
-        0.5) /
+      (targetLinkFontSize * 0.5) /
       globalScale;
 
     const paddingY =
-      (targetLinkFontSize *
-        0.28) /
+      (targetLinkFontSize * 0.28) /
       globalScale;
 
     ctx.save();
@@ -839,28 +781,22 @@ function NetworkGraph({
       color;
 
     ctx.lineWidth =
-      1 /
-      globalScale;
+      1 / globalScale;
 
     ctx.beginPath();
 
     if (ctx.roundRect) {
       ctx.roundRect(
-        x -
-          boxWidth / 2,
-        y -
-          boxHeight / 2,
+        x - boxWidth / 2,
+        y - boxHeight / 2,
         boxWidth,
         boxHeight,
-        3 /
-          globalScale
+        3 / globalScale
       );
     } else {
       ctx.rect(
-        x -
-          boxWidth / 2,
-        y -
-          boxHeight / 2,
+        x - boxWidth / 2,
+        y - boxHeight / 2,
         boxWidth,
         boxHeight
       );
@@ -898,12 +834,10 @@ function NetworkGraph({
     globalScale
   ) => {
     const isSelected =
-      selectedNode?.id ===
-      node.id;
+      selectedNode?.id === node.id;
 
     const isHovered =
-      hoveredNode?.id ===
-      node.id;
+      hoveredNode?.id === node.id;
 
     const type =
       getNodeType(node);
@@ -918,7 +852,7 @@ function NetworkGraph({
       );
 
     /*
-      Bigger nodes & text for improved visibility.
+      Visible node size.
     */
 
     const screenRadius =
@@ -929,8 +863,7 @@ function NetworkGraph({
           : 16;
 
     const radius =
-      screenRadius /
-      scale;
+      screenRadius / scale;
 
     /* SELECTED RING */
 
@@ -943,8 +876,7 @@ function NetworkGraph({
         node.x,
         node.y,
         radius +
-          7 /
-            scale,
+        7 / scale,
         0,
         Math.PI * 2
       );
@@ -953,8 +885,7 @@ function NetworkGraph({
         "rgba(45,212,191,.5)";
 
       ctx.lineWidth =
-        2 /
-        scale;
+        2 / scale;
 
       ctx.stroke();
 
@@ -1003,13 +934,16 @@ function NetworkGraph({
       globalScale
     );
 
-    /* LABEL (RESPONSIVE TO ZOOM) */
+    /* LABEL */
 
     const shouldShowLabel =
       isSelected ||
       isHovered ||
       globalScale >= 0.7 ||
-      (type === "person" && globalScale >= 0.5);
+      (
+        type === "person" &&
+        globalScale >= 0.5
+      );
 
     if (!shouldShowLabel) {
       return;
@@ -1018,18 +952,16 @@ function NetworkGraph({
     const name =
       getNodeName(node);
 
-    // Font size scales dynamically with zoom: from 10.5px up to 16.5px on screen
     const targetScreenFontSize =
       Math.min(
         16.5,
         Math.max(
           10.5,
           10.5 +
-            Math.max(
-              0,
-              globalScale - 0.5
-            ) *
-              4
+          Math.max(
+            0,
+            globalScale - 0.5
+          ) * 4
         )
       );
 
@@ -1046,50 +978,114 @@ function NetworkGraph({
       isSelected
         ? 32
         : isHovered
-        ? 26
-        : globalScale > 1.2
-        ? 22
-        : 16;
+          ? 26
+          : globalScale > 1.2
+            ? 22
+            : 16;
 
     const displayName =
-      name.length > maxLen ? `${name.slice(0, maxLen - 1)}…` : name;
+      name.length > maxLen
+        ? `${name.slice(
+          0,
+          maxLen - 1
+        )}…`
+        : name;
 
-    const textWidth = ctx.measureText(displayName).width;
-    const paddingX = (targetScreenFontSize * 0.55) / globalScale;
-    const paddingY = (targetScreenFontSize * 0.28) / globalScale;
-    const pillHeight = labelSize + paddingY * 2;
-    const pillWidth = textWidth + paddingX * 2;
-    const pillX = node.x - pillWidth / 2;
-    const pillY = node.y + radius + 4 / scale;
+    const textWidth =
+      ctx.measureText(
+        displayName
+      ).width;
 
-    // Dark pill background for crisp readability
-    ctx.fillStyle = "rgba(2, 8, 23, 0.92)";
+    const paddingX =
+      (targetScreenFontSize * 0.55) /
+      globalScale;
+
+    const paddingY =
+      (targetScreenFontSize * 0.28) /
+      globalScale;
+
+    const pillHeight =
+      labelSize +
+      paddingY * 2;
+
+    const pillWidth =
+      textWidth +
+      paddingX * 2;
+
+    const pillX =
+      node.x -
+      pillWidth / 2;
+
+    const pillY =
+      node.y +
+      radius +
+      4 / scale;
+
+    /* LABEL BACKGROUND */
+
+    ctx.fillStyle =
+      "rgba(2, 8, 23, 0.92)";
+
     ctx.beginPath();
-    const pillRadius = Math.max(3, targetScreenFontSize * 0.3) / globalScale;
+
+    const pillRadius =
+      Math.max(
+        3,
+        targetScreenFontSize * 0.3
+      ) / globalScale;
+
     if (ctx.roundRect) {
-      ctx.roundRect(pillX, pillY, pillWidth, pillHeight, pillRadius);
+      ctx.roundRect(
+        pillX,
+        pillY,
+        pillWidth,
+        pillHeight,
+        pillRadius
+      );
     } else {
-      ctx.rect(pillX, pillY, pillWidth, pillHeight);
+      ctx.rect(
+        pillX,
+        pillY,
+        pillWidth,
+        pillHeight
+      );
     }
+
     ctx.fill();
 
-    ctx.strokeStyle = isSelected
-      ? "rgba(45, 212, 191, 0.7)"
-      : isHovered
-      ? "rgba(56, 189, 248, 0.7)"
-      : "rgba(71, 85, 105, 0.65)";
-    ctx.lineWidth = 1 / globalScale;
+    ctx.strokeStyle =
+      isSelected
+        ? "rgba(45, 212, 191, 0.7)"
+        : isHovered
+          ? "rgba(56, 189, 248, 0.7)"
+          : "rgba(71, 85, 105, 0.65)";
+
+    ctx.lineWidth =
+      1 / globalScale;
+
     ctx.stroke();
 
-    // Text inside pill
-    ctx.textAlign = "center";
-    ctx.textBaseline = "middle";
-    ctx.fillStyle = isSelected
-      ? "#ffffff"
-      : isHovered
-      ? "#f8fafc"
-      : "#e2e8f0";
-    ctx.fillText(displayName, node.x, pillY + pillHeight / 2);
+    /* LABEL TEXT */
+
+    ctx.textAlign =
+      "center";
+
+    ctx.textBaseline =
+      "middle";
+
+    ctx.fillStyle =
+      isSelected
+        ? "#ffffff"
+        : isHovered
+          ? "#f8fafc"
+          : "#e2e8f0";
+
+    ctx.fillText(
+      displayName,
+      node.x,
+      pillY +
+      pillHeight / 2
+    );
 
     /* SELECTED ID */
 
@@ -1106,11 +1102,10 @@ function NetworkGraph({
           Math.max(
             9,
             9 +
-              Math.max(
-                0,
-                globalScale - 0.5
-              ) *
-                3
+            Math.max(
+              0,
+              globalScale - 0.5
+            ) * 3
           )
         );
 
@@ -1121,32 +1116,76 @@ function NetworkGraph({
       ctx.font =
         `500 ${idSize}px Inter, Arial, sans-serif`;
 
-      const idWidth = ctx.measureText(id).width;
-      const idPillW = idWidth + (targetIdScreenSize * 0.75) / globalScale;
-      const idPillH = idSize + (targetIdScreenSize * 0.4) / globalScale;
-      const idPillY = pillY + pillHeight + 3.5 / globalScale;
+      const idWidth =
+        ctx.measureText(id).width;
 
-      ctx.fillStyle = "rgba(15, 23, 42, 0.94)";
+      const idPillW =
+        idWidth +
+        (targetIdScreenSize * 0.75) /
+        globalScale;
+
+      const idPillH =
+        idSize +
+        (targetIdScreenSize * 0.4) /
+        globalScale;
+
+      const idPillY =
+        pillY +
+        pillHeight +
+        3.5 / globalScale;
+
+      ctx.fillStyle =
+        "rgba(15, 23, 42, 0.94)";
+
       ctx.beginPath();
-      const idRadius = Math.max(2.5, targetIdScreenSize * 0.25) / globalScale;
+
+      const idRadius =
+        Math.max(
+          2.5,
+          targetIdScreenSize * 0.25
+        ) / globalScale;
+
       if (ctx.roundRect) {
-        ctx.roundRect(node.x - idPillW / 2, idPillY, idPillW, idPillH, idRadius);
+        ctx.roundRect(
+          node.x - idPillW / 2,
+          idPillY,
+          idPillW,
+          idPillH,
+          idRadius
+        );
       } else {
-        ctx.rect(node.x - idPillW / 2, idPillY, idPillW, idPillH);
+        ctx.rect(
+          node.x - idPillW / 2,
+          idPillY,
+          idPillW,
+          idPillH
+        );
       }
+
       ctx.fill();
 
-      ctx.strokeStyle = "rgba(45, 212, 191, 0.45)";
-      ctx.lineWidth = 0.9 / globalScale;
+      ctx.strokeStyle =
+        "rgba(45, 212, 191, 0.45)";
+
+      ctx.lineWidth =
+        0.9 / globalScale;
+
       ctx.stroke();
 
-      ctx.textAlign = "center";
-      ctx.textBaseline = "middle";
-      ctx.fillStyle = "#2dd4bf";
+      ctx.textAlign =
+        "center";
+
+      ctx.textBaseline =
+        "middle";
+
+      ctx.fillStyle =
+        "#2dd4bf";
+
       ctx.fillText(
         id,
         node.x,
-        idPillY + idPillH / 2
+        idPillY +
+        idPillH / 2
       );
     }
 
@@ -1193,6 +1232,11 @@ function NetworkGraph({
           renderNode
         }
 
+        /*
+          Larger invisible hit area.
+          This makes people easier to click.
+        */
+
         nodePointerAreaPaint={(
           node,
           color,
@@ -1213,7 +1257,7 @@ function NetworkGraph({
           ctx.arc(
             node.x,
             node.y,
-            24 / scale,
+            30 / scale,
             0,
             Math.PI * 2
           );
@@ -1221,7 +1265,9 @@ function NetworkGraph({
           ctx.fill();
         }}
 
-        /* LINKS */
+        /* ==================================================
+           LINKS
+        ================================================== */
 
         linkColor={(link) =>
           getRelationshipColor(
@@ -1238,11 +1284,11 @@ function NetworkGraph({
             getNodeId(
               link.source
             ) ===
-              selectedNode.id ||
+            selectedNode.id ||
             getNodeId(
               link.target
             ) ===
-              selectedNode.id;
+            selectedNode.id;
 
           return connected
             ? 3
@@ -1259,36 +1305,13 @@ function NetworkGraph({
           0.96
         }
 
-        /* SELECTED LINK PARTICLES */
+        /*
+          Particles disabled for
+          better browser performance.
+        */
 
         linkDirectionalParticles={
-          (link) => {
-            if (!selectedNode) {
-              return 0;
-            }
-
-            const connected =
-              getNodeId(
-                link.source
-              ) ===
-                selectedNode.id ||
-              getNodeId(
-                link.target
-              ) ===
-                selectedNode.id;
-
-            return connected
-              ? 2
-              : 0;
-          }
-        }
-
-        linkDirectionalParticleWidth={
-          2.5
-        }
-
-        linkDirectionalParticleSpeed={
-          0.005
+          0
         }
 
         linkCanvasObject={
@@ -1299,7 +1322,9 @@ function NetworkGraph({
           () => "after"
         }
 
-        /* NODE SELECT */
+        /* ==================================================
+           NODE SELECT
+        ================================================== */
 
         onNodeClick={(node) => {
           onNodeSelect?.(
@@ -1313,32 +1338,62 @@ function NetworkGraph({
           );
         }}
 
-        /* FORCE */
+        /* ==================================================
+           OPTIMIZED FORCE SIMULATION
+        ================================================== */
 
-        d3AlphaDecay={0.018}
+        d3AlphaDecay={
+          0.05
+        }
 
-        d3VelocityDecay={0.3}
+        d3VelocityDecay={
+          0.5
+        }
 
-        cooldownTicks={180}
+        cooldownTicks={
+          80
+        }
 
-        warmupTicks={100}
+        warmupTicks={
+          30
+        }
 
-        minZoom={0.04}
+        minZoom={
+          0.04
+        }
 
-        maxZoom={12}
+        maxZoom={
+          12
+        }
+
+        /*
+          Background grid removed from
+          per-frame rendering.
+        */
 
         onRenderFramePre={
-          renderBackground
+          null
         }
 
         onBackgroundClick={() => {
-          onNodeSelect?.(null);
+          onNodeSelect?.(
+            null
+          );
         }}
 
         onEngineStop={() => {
-          if (!hasFittedInitialRef.current && !autoFocusNode && graphRef.current) {
-            hasFittedInitialRef.current = true;
-            graphRef.current.zoomToFit(450, 60);
+          if (
+            !hasFittedInitialRef.current &&
+            !autoFocusNode &&
+            graphRef.current
+          ) {
+            hasFittedInitialRef.current =
+              true;
+
+            graphRef.current.zoomToFit(
+              450,
+              60
+            );
           }
         }}
       />
