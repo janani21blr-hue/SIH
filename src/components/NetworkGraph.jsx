@@ -1059,7 +1059,8 @@ function NetworkGraph({
         nodePointerAreaPaint={(
           node,
           color,
-          ctx
+          ctx,
+          globalScale
         ) => {
           ctx.fillStyle =
             color;
@@ -1068,7 +1069,7 @@ function NetworkGraph({
 
           const scale =
             Math.max(
-              globalScale,
+              globalScale || 1,
               0.45
             );
 
