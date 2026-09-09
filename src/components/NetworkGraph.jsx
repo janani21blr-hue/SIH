@@ -113,11 +113,13 @@ function drawEntityIcon(
 
   ctx.translate(x, y);
 
+  ctx.scale(1.4, 1.4);
+
   ctx.strokeStyle =
     getEntityColor(type);
 
   ctx.lineWidth =
-    1.15 / scale;
+    1.25 / scale;
 
   ctx.lineCap = "round";
   ctx.lineJoin = "round";
@@ -844,15 +846,15 @@ function NetworkGraph({
       );
 
     /*
-      Small nodes.
+      Bigger nodes & text for improved visibility.
     */
 
     const screenRadius =
       isSelected
-        ? 12
+        ? 20
         : isHovered
-          ? 11
-          : 9;
+          ? 17
+          : 14;
 
     const radius =
       screenRadius /
@@ -869,17 +871,17 @@ function NetworkGraph({
         node.x,
         node.y,
         radius +
-          5 /
+          7 /
             scale,
         0,
         Math.PI * 2
       );
 
       ctx.strokeStyle =
-        "rgba(45,212,191,.4)";
+        "rgba(45,212,191,.5)";
 
       ctx.lineWidth =
-        1.5 /
+        2 /
         scale;
 
       ctx.stroke();
@@ -911,8 +913,8 @@ function NetworkGraph({
 
     ctx.lineWidth =
       (isSelected
-        ? 2.1
-        : 1.7) /
+        ? 2.6
+        : 2.0) /
       scale;
 
     ctx.stroke();
@@ -931,7 +933,7 @@ function NetworkGraph({
 
     /* LABEL */
 
-    if (globalScale < 0.55) {
+    if (globalScale < 0.4) {
       return;
     }
 
@@ -939,60 +941,75 @@ function NetworkGraph({
       getNodeName(node);
 
     const labelSize =
-      9 /
+      12 /
       globalScale;
 
     ctx.save();
 
-    ctx.textAlign =
-      "center";
-
-    ctx.textBaseline =
-      "top";
-
     ctx.font =
       `600 ${labelSize}px Inter, Arial, sans-serif`;
 
-    ctx.fillStyle =
-      isSelected
-        ? "#f8fafc"
-        : "#cbd5e1";
+    const textWidth = ctx.measureText(name).width;
+    const paddingX = 6 / globalScale;
+    const paddingY = 3 / globalScale;
+    const pillHeight = labelSize + paddingY * 2;
+    const pillWidth = textWidth + paddingX * 2;
+    const pillX = node.x - pillWidth / 2;
+    const pillY = node.y + radius + 5 / scale;
 
-    ctx.fillText(
-      name,
-      node.x,
-      node.y +
-        radius +
-        5 /
-          scale
-    );
+    // Dark pill background for crisp readability
+    ctx.fillStyle = "rgba(2, 8, 23, 0.88)";
+    ctx.beginPath();
+    ctx.roundRect(pillX, pillY, pillWidth, pillHeight, 4 / globalScale);
+    ctx.fill();
+
+    ctx.strokeStyle = isSelected ? "rgba(45, 212, 191, 0.5)" : "rgba(51, 65, 85, 0.7)";
+    ctx.lineWidth = 1 / globalScale;
+    ctx.stroke();
+
+    // Text inside pill
+    ctx.textAlign = "center";
+    ctx.textBaseline = "middle";
+    ctx.fillStyle = isSelected ? "#ffffff" : "#f1f5f9";
+    ctx.fillText(name, node.x, pillY + pillHeight / 2);
 
     /* SELECTED ID */
 
     if (
       isSelected &&
-      globalScale > 0.9
+      globalScale > 0.75
     ) {
       const id =
         node?.id || "";
 
       const idSize =
-        7 /
+        9 /
         globalScale;
 
       ctx.font =
         `500 ${idSize}px Inter, Arial, sans-serif`;
 
-      ctx.fillStyle =
-        "#64748b";
+      const idWidth = ctx.measureText(id).width;
+      const idPillW = idWidth + 8 / globalScale;
+      const idPillH = idSize + 4 / globalScale;
+      const idPillY = pillY + pillHeight + 3 / globalScale;
 
+      ctx.fillStyle = "rgba(15, 23, 42, 0.92)";
+      ctx.beginPath();
+      ctx.roundRect(node.x - idPillW / 2, idPillY, idPillW, idPillH, 3 / globalScale);
+      ctx.fill();
+
+      ctx.strokeStyle = "rgba(45, 212, 191, 0.35)";
+      ctx.lineWidth = 0.8 / globalScale;
+      ctx.stroke();
+
+      ctx.textAlign = "center";
+      ctx.textBaseline = "middle";
+      ctx.fillStyle = "#2dd4bf";
       ctx.fillText(
         id,
         node.x,
-        node.y +
-          radius +
-          16 /
-            scale
+        idPillY + idPillH / 2
       );
     }
 
@@ -1049,10 +1066,16 @@ function NetworkGraph({
 
           ctx.beginPath();
 
+          const scale =
+            Math.max(
+              globalScale,
+              0.45
+            );
+
           ctx.arc(
             node.x,
             node.y,
-            18,
+            24 / scale,
             0,
             Math.PI * 2
           );

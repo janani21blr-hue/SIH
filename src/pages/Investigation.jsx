@@ -31,6 +31,7 @@ import {
 import {
   fetchGraphData,
 } from "../services/api";
+import { useNetworkFilters } from "../context/NetworkFilterContext";
 
 /* ==================================================
    ENTITY FILTERS
@@ -171,29 +172,13 @@ function Investigation() {
   ] = useState("");
 
   /* ==================================================
-     ENTITY FILTERS
+     NETWORK FILTERS (From Global Context)
   ================================================== */
 
-  const [
+  const {
     activeFilters,
-    setActiveFilters,
-  ] = useState([
-    "person",
-    "phone",
-    "account",
-    "vehicle",
-    "company",
-    "address",
-  ]);
-
-  /* ==================================================
-     RELATIONSHIP FILTERS
-  ================================================== */
-
-  const [
     activeRelationshipFilters,
-    setActiveRelationshipFilters,
-  ] = useState([]);
+  } = useNetworkFilters();
 
   /* ==================================================
      INVESTIGATION PATH
@@ -213,17 +198,12 @@ function Investigation() {
 
   /* ==================================================
      RIGHT PANEL WIDTH
-
-     This is now controlled by
-     Investigation.jsx.
-
-     NOT by NetworkGraph.
   ================================================== */
 
   const [
     detailsWidth,
     setDetailsWidth,
-  ] = useState(390);
+  ] = useState(460);
 
   const [
     isResizingDetails,
@@ -234,7 +214,7 @@ function Investigation() {
     useRef(0);
 
   const resizeStartWidth =
-    useRef(390);
+    useRef(460);
 
   /* ==================================================
      ENTITY MAP
@@ -509,90 +489,6 @@ function Investigation() {
     };
 
   /* ==================================================
-     ENTITY FILTER
-  ================================================== */
-
-  const toggleEntityFilter =
-    (type) => {
-      setActiveFilters(
-        (current) => {
-
-          if (
-            current.includes(
-              type
-            )
-          ) {
-            if (
-              current.length ===
-              1
-            ) {
-              return current;
-            }
-
-            return current.filter(
-              (item) =>
-                item !== type
-            );
-          }
-
-          return [
-            ...current,
-            type,
-          ];
-        }
-      );
-    };
-
-  /* ==================================================
-     RELATIONSHIP FILTER
-  ================================================== */
-
-  const toggleRelationshipFilter =
-    (relationship) => {
-      setActiveRelationshipFilters(
-        (current) => {
-
-          if (
-            current.includes(
-              relationship
-            )
-          ) {
-            return current.filter(
-              (item) =>
-                item !==
-                relationship
-            );
-          }
-
-          return [
-            ...current,
-            relationship,
-          ];
-        }
-      );
-    };
-
-  /* ==================================================
-     RESET FILTERS
-  ================================================== */
-
-  const resetFilters =
-    () => {
-      setActiveFilters([
-        "person",
-        "phone",
-        "account",
-        "vehicle",
-        "company",
-        "address",
-      ]);
-
-      setActiveRelationshipFilters(
-        []
-      );
-    };
-
-  /* ==================================================
      SEARCH SELECT
   ================================================== */
 
@@ -673,12 +569,12 @@ function Investigation() {
         resizeStartWidth.current +
         delta;
 
-      const minWidth = 300;
+      const minWidth = 320;
 
       const maxWidth =
         Math.min(
-          650,
-          rect.width * 0.5
+          750,
+          rect.width * 0.6
         );
 
       const nextWidth =
@@ -1290,413 +1186,13 @@ function Investigation() {
       >
 
         {/* ==================================================
-            LEFT SIDEBAR
-        ================================================== */}
-
-        <aside className="sih-sidebar">
-
-          {/* FILTER PANEL */}
-
-          <section
-            className="
-              sih-dark-panel
-              sih-sidebar-filters
-              overflow-hidden
-            "
-          >
-
-            <div
-              className="
-                border-b
-                border-slate-800/80
-                px-4
-                py-4
-              "
-            >
-
-              <div
-                className="
-                  flex
-                  items-start
-                  justify-between
-                  gap-3
-                "
-              >
-
-                <div>
-
-                  <div
-                    className="
-                      flex
-                      items-center
-                      gap-2
-                    "
-                  >
-
-                    <Network
-                      size={16}
-                      className="text-teal-400"
-                    />
-
-                    <h2
-                      className="
-                        text-sm
-                        font-bold
-                        text-slate-100
-                      "
-                    >
-                      Network Filters
-                    </h2>
-
-                  </div>
-
-                  <p
-                    className="
-                      mt-1
-                      text-[11px]
-                      text-slate-500
-                    "
-                  >
-                    Control visible entities
-                  </p>
-
-                </div>
-
-                <button
-                  type="button"
-                  onClick={
-                    resetFilters
-                  }
-                  className="
-                    flex
-                    items-center
-                    gap-1.5
-                    rounded-lg
-                    border
-                    border-slate-700
-                    bg-slate-900/70
-                    px-2.5
-                    py-1.5
-                    text-[10px]
-                    font-semibold
-                    text-slate-400
-                    transition
-                    hover:border-teal-400/30
-                    hover:text-teal-300
-                  "
-                >
-                  <RotateCcw
-                    size={12}
-                  />
-                  Reset
-                </button>
-
-              </div>
-
-            </div>
-
-            <div className="p-3">
-
-              {/* ENTITY FILTERS */}
-
-              <div
-                className="
-                  grid
-                  grid-cols-2
-                  gap-2
-                "
-              >
-
-                {ENTITY_FILTERS.map(
-                  (filter) => {
-
-                    const Icon =
-                      filter.icon;
-
-                    const isActive =
-                      activeFilters.includes(
-                        filter.key
-                      );
-
-                    return (
-                      <button
-                        key={
-                          filter.key
-                        }
-                        type="button"
-                        onClick={() =>
-                          toggleEntityFilter(
-                            filter.key
-                          )
-                        }
-                        className={`
-                          flex
-                          min-h-[48px]
-                          items-center
-                          gap-2
-                          rounded-lg
-                          border
-                          px-3
-                          text-left
-                          text-xs
-                          font-semibold
-                          transition
-                          ${
-                            isActive
-                              ? "border-teal-400/50 bg-teal-400/10 text-teal-200"
-                              : "border-slate-700/80 bg-slate-950/40 text-slate-500 hover:border-slate-600 hover:text-slate-300"
-                          }
-                        `}
-                      >
-
-                        <Icon
-                          size={15}
-                          className={
-                            isActive
-                              ? "text-teal-300"
-                              : "text-slate-600"
-                          }
-                        />
-
-                        <span>
-                          {
-                            filter.label
-                          }
-                        </span>
-
-                      </button>
-                    );
-                  }
-                )}
-
-              </div>
-
-              {/* RELATIONSHIP FILTERS */}
-
-              {relationshipTypes.length >
-                0 && (
-                <div
-                  className="
-                    mt-4
-                    border-t
-                    border-slate-800
-                    pt-4
-                  "
-                >
-
-                  <div
-                    className="
-                      mb-3
-                      flex
-                      items-center
-                      gap-2
-                    "
-                  >
-
-                    <Link2
-                      size={15}
-                      className="text-slate-500"
-                    />
-
-                    <span
-                      className="
-                        text-xs
-                        font-bold
-                        text-slate-300
-                      "
-                    >
-                      Relationship Types
-                    </span>
-
-                  </div>
-
-                  <div
-                    className="
-                      flex
-                      flex-wrap
-                      gap-2
-                    "
-                  >
-
-                    {relationshipTypes.map(
-                      (
-                        relationship
-                      ) => {
-
-                        const isActive =
-                          activeRelationshipFilters.includes(
-                            relationship
-                          );
-
-                        const color =
-                          RELATIONSHIP_COLORS[
-                            relationship
-                          ] ||
-                          "#94a3b8";
-
-                        return (
-                          <button
-                            key={
-                              relationship
-                            }
-                            type="button"
-                            onClick={() =>
-                              toggleRelationshipFilter(
-                                relationship
-                              )
-                            }
-                            className="
-                              rounded-lg
-                              border
-                              px-2.5
-                              py-1.5
-                              text-[9px]
-                              font-bold
-                              tracking-wide
-                              transition
-                            "
-                            style={{
-                              color:
-                                isActive
-                                  ? color
-                                  : "#64748b",
-
-                              borderColor:
-                                isActive
-                                  ? `${color}66`
-                                  : "rgba(71,85,105,.7)",
-
-                              background:
-                                isActive
-                                  ? `${color}12`
-                                  : "rgba(2,8,23,.35)",
-                            }}
-                          >
-                            {
-                              relationship
-                            }
-                          </button>
-                        );
-                      }
-                    )}
-
-                  </div>
-
-                </div>
-              )}
-
-            </div>
-
-          </section>
-
-          {/* ==================================================
-              LEFT ENTITY DETAILS
-
-              This remains on the left.
-          ================================================== */}
-
-          <section
-            className="
-              sih-dark-panel
-              sih-sidebar-details
-              overflow-hidden
-            "
-          >
-
-            {selectedNode ? (
-              <EntityDetails
-                node={
-                  selectedNode
-                }
-
-                selectedNode={
-                  selectedNode
-                }
-
-                relationships={
-                  selectedRelationships
-                }
-
-                entityMap={
-                  entityMap
-                }
-
-                onNodeSelect={
-                  handleNodeSelect
-                }
-              />
-            ) : (
-              <div
-                className="
-                  flex
-                  h-full
-                  min-h-[300px]
-                  items-center
-                  justify-center
-                  p-6
-                  text-center
-                "
-              >
-
-                <div>
-
-                  <div
-                    className="
-                      mx-auto
-                      flex
-                      h-12
-                      w-12
-                      items-center
-                      justify-center
-                      rounded-xl
-                      border
-                      border-slate-700
-                      bg-slate-900
-                      text-slate-600
-                    "
-                  >
-                    <Network
-                      size={21}
-                    />
-                  </div>
-
-                  <p
-                    className="
-                      mt-3
-                      text-sm
-                      font-semibold
-                      text-slate-400
-                    "
-                  >
-                    No entity selected
-                  </p>
-
-                  <p
-                    className="
-                      mt-1
-                      text-xs
-                      text-slate-600
-                    "
-                  >
-                    Select an entity from the network.
-                  </p>
-
-                </div>
-
-              </div>
-            )}
-
-          </section>
-
-        </aside>
-
-        {/* ==================================================
             CENTER GRAPH
         ================================================== */}
 
         <section
           className="
             min-w-0
+            w-full
             overflow-hidden
           "
         >

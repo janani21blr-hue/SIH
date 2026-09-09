@@ -1,10 +1,22 @@
 import { useState, useEffect } from "react"
 import { NavLink } from "react-router-dom"
-import { LayoutDashboard, Network, Users, FileText, ShieldAlert, Database } from "lucide-react"
+import { LayoutDashboard, Network, Users, FileText, ShieldAlert, Database, RotateCcw } from "lucide-react"
 import { checkBackendHealth, type HealthStatus } from "../services/api"
+import {
+  useNetworkFilters,
+  ENTITY_FILTERS,
+  RELATIONSHIP_TAGS,
+} from "../context/NetworkFilterContext"
 
 function Sidebar() {
   const [health, setHealth] = useState<HealthStatus>({ connected: false, status: "checking" })
+  const {
+    activeFilters,
+    activeRelationshipFilters,
+    toggleFilter,
+    toggleRelationshipFilter,
+    resetFilters,
+  } = useNetworkFilters()
 
   useEffect(() => {
     let mounted = true
@@ -69,6 +81,78 @@ function Sidebar() {
             )
           })}
         </nav>
+
+        {/* GRAPH & NODE FILTERS */}
+        <div className="mt-6 border-t border-slate-800/80 pt-4">
+          <div className="flex items-center justify-between px-1 mb-2">
+            <div>
+              <div className="flex items-center gap-1.5 text-xs font-bold text-teal-300">
+                <Network size={14} className="text-teal-400" />
+                <span>GRAPH & NODE FILTERS</span>
+              </div>
+              <p className="text-[10px] text-slate-500 mt-0.5">
+                Active node filters for graph canvas
+              </p>
+            </div>
+            <button
+              type="button"
+              onClick={resetFilters}
+              title="Reset all filters"
+              className="flex items-center gap-1 rounded border border-slate-800 bg-slate-900/80 px-1.5 py-1 text-[10px] text-slate-400 hover:text-teal-300 hover:border-teal-500/30 transition"
+            >
+              <RotateCcw size={10} />
+              <span>Reset</span>
+            </button>
+          </div>
+
+          <div className="grid grid-cols-2 gap-1.5 mt-2.5">
+            {ENTITY_FILTERS.map((f) => {
+              const Icon = f.icon
+              const isActive = activeFilters.includes(f.key)
+              return (
+                <button
+                  key={f.key}
+                  type="button"
+                  onClick={() => toggleFilter(f.key)}
+                  className={`flex items-center gap-1.5 rounded-lg px-2.5 py-2 text-xs font-medium transition border ${
+                    isActive
+                      ? "border-teal-500/40 bg-teal-500/15 text-teal-200 shadow-sm shadow-teal-950/20"
+                      : "border-slate-800/80 bg-slate-900/50 text-slate-500 hover:border-slate-700 hover:text-slate-300"
+                  }`}
+                >
+                  <Icon size={13} className={isActive ? f.color : "text-slate-500"} />
+                  <span className="capitalize">{f.label}</span>
+                </button>
+              )
+            })}
+          </div>
+
+          {/* Relationship Links */}
+          <div className="mt-3.5">
+            <div className="text-[10px] uppercase font-semibold tracking-wider text-slate-500 px-1 mb-1.5">
+              Relationship Links
+            </div>
+            <div className="flex flex-wrap gap-1">
+              {RELATIONSHIP_TAGS.map((rel) => {
+                const isActive = activeRelationshipFilters.length === 0 || activeRelationshipFilters.includes(rel.key)
+                return (
+                  <button
+                    key={rel.key}
+                    type="button"
+                    onClick={() => toggleRelationshipFilter(rel.key)}
+                    className={`rounded px-1.5 py-0.5 text-[10px] font-semibold transition border ${
+                      isActive
+                        ? `${rel.bg} ${rel.border} ${rel.text}`
+                        : "border-slate-800/80 bg-slate-900/40 text-slate-600 hover:text-slate-400"
+                    }`}
+                  >
+                    {rel.label}
+                  </button>
+                )
+              })}
+            </div>
+          </div>
+        </div>
       </div>
 
       <div className="space-y-2">
