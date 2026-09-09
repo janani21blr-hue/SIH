@@ -59,7 +59,11 @@ def seed():
             if entity_id in entities_dict:
                 return
             attrs = dict(attributes or {})
-            attrs["risk_score"] = round(max(0.05, min(0.95, 1.0 - confidence)), 2)
+            if "risk_score" in attrs:
+                risk = float(attrs["risk_score"])
+            else:
+                risk = round(max(0.05, min(0.95, 1.0 - confidence)), 2)
+            attrs["risk_score"] = risk
             ent = EntityModel(
                 entity_id=entity_id,
                 entity_type=entity_type,
@@ -132,16 +136,19 @@ def seed():
                 phone_num = raw.get("phone", "")
                 addr_city = raw.get("address", "")
 
+                raw_attrs = dict(raw.get("attributes", {}))
+                if phone_num:
+                    raw_attrs["phone"] = phone_num
+                if addr_city:
+                    raw_attrs["address"] = addr_city
+
                 add_entity(
                     entity_id=eid,
                     entity_type=etype,
                     canonical_name=name,
-                    aliases=[],
-                    attributes={
-                        "phone": phone_num,
-                        "address": addr_city,
-                    },
-                    confidence=0.92,
+                    aliases=raw.get("aliases", []),
+                    attributes=raw_attrs,
+                    confidence=raw.get("confidence", 0.92),
                 )
 
                 # Connect Person / Company to their Phone Entity
@@ -262,6 +269,31 @@ def seed():
                 conf = raw_rel.get("confidence", 0.88)
                 evid = raw_rel.get("evidence", "SYNTH_LOG_REF")
                 add_relationship(source=src, target=tgt, relationship=rel, confidence=conf, evidence=evid)
+
+        # 4.5. Enforce connection degree rules: >7 connections -> elevated risk, inverse confidence
+        from collections import Counter
+        degrees = Counter()
+        for src, tgt, _, _, _ in relationships_list:
+            degrees[src] += 1
+            degrees[tgt] += 1
+
+        for eid, ent in entities_dict.items():
+            deg = degrees[eid]
+            attrs = dict(ent.attributes or {})
+            if deg > 7:
+                risk = attrs.get("risk_score", 0.85)
+                if risk < 0.80:
+                    risk = round(random.uniform(0.82, 0.95), 2)
+                attrs["risk_score"] = risk
+                ent.attributes = attrs
+                ent.confidence = round(1.0 - risk, 2)
+            else:
+                risk = attrs.get("risk_score")
+                if risk is None:
+                    risk = round(random.uniform(0.10, 0.65), 2)
+                attrs["risk_score"] = risk
+                ent.attributes = attrs
+                ent.confidence = round(1.0 - risk, 2)
 
         # 5. Insert all relationships, ensuring BOTH source and target exist
         valid_rels_count = 0

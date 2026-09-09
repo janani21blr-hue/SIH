@@ -9,10 +9,10 @@
         "Raj Kumar"
       ],
       "attributes": {
-        "risk_score": 0.06,
+        "risk_score": 0.9,
         "location": "Delhi"
       },
-      "confidence": 0.94
+      "confidence": 0.1
     },
     {
       "entity_id": "PHONE_17",
@@ -21,9 +21,9 @@
       "aliases": [],
       "attributes": {
         "provider": "Airtel",
-        "risk_score": 0.05
+        "risk_score": 0.15
       },
-      "confidence": 0.99
+      "confidence": 0.85
     },
     {
       "entity_id": "COMP_05",
@@ -34,9 +34,9 @@
       ],
       "attributes": {
         "registration": "U12345DL2023PTC123456",
-        "risk_score": 0.13
+        "risk_score": 0.28
       },
-      "confidence": 0.87
+      "confidence": 0.72
     },
     {
       "entity_id": "P017",
@@ -47,9 +47,9 @@
       ],
       "attributes": {
         "location": "Delhi",
-        "risk_score": 0.09
+        "risk_score": 0.62
       },
-      "confidence": 0.91
+      "confidence": 0.38
     },
     {
       "entity_id": "P031",
@@ -60,9 +60,9 @@
       ],
       "attributes": {
         "location": "Gurgaon",
-        "risk_score": 0.11
+        "risk_score": 0.19
       },
-      "confidence": 0.89
+      "confidence": 0.81
     },
     {
       "entity_id": "PHONE_08",
@@ -72,9 +72,9 @@
       "attributes": {
         "provider": "Jio",
         "circle": "Delhi",
-        "risk_score": 0.05
+        "risk_score": 0.14
       },
-      "confidence": 0.97
+      "confidence": 0.86
     },
     {
       "entity_id": "PHONE_21",
@@ -84,9 +84,9 @@
       "attributes": {
         "provider": "Airtel",
         "circle": "Haryana",
-        "risk_score": 0.05
+        "risk_score": 0.09
       },
-      "confidence": 0.95
+      "confidence": 0.91
     },
     {
       "entity_id": "ACC_12",
@@ -96,9 +96,9 @@
       "attributes": {
         "bank": "HDFC Bank",
         "type": "Current",
-        "risk_score": 0.07
+        "risk_score": 0.26
       },
-      "confidence": 0.93
+      "confidence": 0.74
     },
     {
       "entity_id": "ACC_19",
@@ -108,9 +108,9 @@
       "attributes": {
         "bank": "ICICI Bank",
         "type": "Savings",
-        "risk_score": 0.1
+        "risk_score": 0.14
       },
-      "confidence": 0.9
+      "confidence": 0.86
     },
     {
       "entity_id": "VEH_07",
@@ -120,9 +120,9 @@
       "attributes": {
         "category": "SUV",
         "owner": "Anil Sharma",
-        "risk_score": 0.14
+        "risk_score": 0.59
       },
-      "confidence": 0.86
+      "confidence": 0.41
     },
     {
       "entity_id": "COMP_12",
@@ -133,9 +133,9 @@
       ],
       "attributes": {
         "registration": "DEMO-COMP-12",
-        "risk_score": 0.12
+        "risk_score": 0.3
       },
-      "confidence": 0.88
+      "confidence": 0.7
     },
     {
       "entity_id": "ADDR_04",
@@ -144,9 +144,9 @@
       "aliases": [],
       "attributes": {
         "city": "Gurgaon",
-        "risk_score": 0.16
+        "risk_score": 0.46
       },
-      "confidence": 0.84
+      "confidence": 0.54
     },
     {
       "entity_id": "ADDR_09",
@@ -157,9 +157,9 @@
       ],
       "attributes": {
         "city": "Delhi",
-        "risk_score": 0.1
+        "risk_score": 0.34
       },
-      "confidence": 0.9
+      "confidence": 0.66
     },
     {
       "entity_id": "ADDR_Delhi",
@@ -171,9 +171,9 @@
       "attributes": {
         "city": "Delhi",
         "zone": "Investigation Regional Hub",
-        "risk_score": 0.08
+        "risk_score": 0.86
       },
-      "confidence": 0.92
+      "confidence": 0.14
     },
     {
       "entity_id": "ADDR_Mumbai",
@@ -185,9 +185,9 @@
       "attributes": {
         "city": "Mumbai",
         "zone": "Investigation Regional Hub",
-        "risk_score": 0.08
+        "risk_score": 0.11
       },
-      "confidence": 0.92
+      "confidence": 0.89
     },
     {
       "entity_id": "ADDR_Bengaluru",
@@ -199,9 +199,9 @@
       "attributes": {
         "city": "Bengaluru",
         "zone": "Investigation Regional Hub",
-        "risk_score": 0.08
+        "risk_score": 0.93
       },
-      "confidence": 0.92
+      "confidence": 0.07
     },
     {
       "entity_id": "ADDR_Chennai",
@@ -213,9 +213,9 @@
       "attributes": {
         "city": "Chennai",
         "zone": "Investigation Regional Hub",
-        "risk_score": 0.08
+        "risk_score": 0.9
       },
-      "confidence": 0.92
+      "confidence": 0.1
     },
     {
       "entity_id": "ADDR_Kolkata",
@@ -227,9 +227,9 @@
       "attributes": {
         "city": "Kolkata",
         "zone": "Investigation Regional Hub",
-        "risk_score": 0.08
+        "risk_score": 0.92
       },
-      "confidence": 0.92
+      "confidence": 0.08
     },
     {
       "entity_id": "ADDR_Hyderabad",
@@ -241,9 +241,9 @@
       "attributes": {
         "city": "Hyderabad",
         "zone": "Investigation Regional Hub",
-        "risk_score": 0.08
+        "risk_score": 0.91
       },
-      "confidence": 0.92
+      "confidence": 0.09
     },
     {
       "entity_id": "ADDR_Pune",
@@ -255,9 +255,9 @@
       "attributes": {
         "city": "Pune",
         "zone": "Investigation Regional Hub",
-        "risk_score": 0.08
+        "risk_score": 0.34
       },
-      "confidence": 0.92
+      "confidence": 0.66
     },
     {
       "entity_id": "ADDR_Ahmedabad",
@@ -269,9 +269,9 @@
       "attributes": {
         "city": "Ahmedabad",
         "zone": "Investigation Regional Hub",
-        "risk_score": 0.08
+        "risk_score": 0.87
       },
-      "confidence": 0.92
+      "confidence": 0.13
     },
     {
       "entity_id": "ADDR_Jaipur",
@@ -283,9 +283,9 @@
       "attributes": {
         "city": "Jaipur",
         "zone": "Investigation Regional Hub",
-        "risk_score": 0.08
+        "risk_score": 0.89
       },
-      "confidence": 0.92
+      "confidence": 0.11
     },
     {
       "entity_id": "ADDR_Lucknow",
@@ -297,9 +297,9 @@
       "attributes": {
         "city": "Lucknow",
         "zone": "Investigation Regional Hub",
-        "risk_score": 0.08
+        "risk_score": 0.93
       },
-      "confidence": 0.92
+      "confidence": 0.07
     },
     {
       "entity_id": "RAW_001",
@@ -309,9 +309,9 @@
       "attributes": {
         "phone": "8695753998",
         "address": "Delhi",
-        "risk_score": 0.08
+        "risk_score": 0.9
       },
-      "confidence": 0.92,
+      "confidence": 0.1,
       "phone": "8695753998",
       "address": "Delhi"
     },
@@ -324,9 +324,9 @@
         "provider": "Vi",
         "circle": "Delhi",
         "sim_status": "Active",
-        "risk_score": 0.05
+        "risk_score": 0.72
       },
-      "confidence": 0.96
+      "confidence": 0.28
     },
     {
       "entity_id": "RAW_002",
@@ -336,9 +336,9 @@
       "attributes": {
         "phone": "8570621944",
         "address": "Bengaluru",
-        "risk_score": 0.08
+        "risk_score": 0.37
       },
-      "confidence": 0.92,
+      "confidence": 0.63,
       "phone": "8570621944",
       "address": "Bengaluru"
     },
@@ -351,9 +351,9 @@
         "provider": "Jio",
         "circle": "Bengaluru",
         "sim_status": "Active",
-        "risk_score": 0.05
+        "risk_score": 0.16
       },
-      "confidence": 0.96
+      "confidence": 0.84
     },
     {
       "entity_id": "RAW_003",
@@ -363,9 +363,9 @@
       "attributes": {
         "phone": "7161042648",
         "address": "Bengaluru",
-        "risk_score": 0.08
+        "risk_score": 0.14
       },
-      "confidence": 0.92,
+      "confidence": 0.86,
       "phone": "7161042648",
       "address": "Bengaluru"
     },
@@ -378,9 +378,9 @@
         "provider": "Jio",
         "circle": "Bengaluru",
         "sim_status": "Active",
-        "risk_score": 0.05
+        "risk_score": 0.16
       },
-      "confidence": 0.96
+      "confidence": 0.84
     },
     {
       "entity_id": "RAW_004",
@@ -390,9 +390,9 @@
       "attributes": {
         "phone": "8033639716",
         "address": "Bengaluru",
-        "risk_score": 0.08
+        "risk_score": 0.47
       },
-      "confidence": 0.92,
+      "confidence": 0.53,
       "phone": "8033639716",
       "address": "Bengaluru"
     },
@@ -405,9 +405,9 @@
         "provider": "Vi",
         "circle": "Bengaluru",
         "sim_status": "Active",
-        "risk_score": 0.05
+        "risk_score": 0.14
       },
-      "confidence": 0.96
+      "confidence": 0.86
     },
     {
       "entity_id": "RAW_005",
@@ -417,9 +417,9 @@
       "attributes": {
         "phone": "7531725347",
         "address": "Lucknow",
-        "risk_score": 0.08
+        "risk_score": 0.33
       },
-      "confidence": 0.92,
+      "confidence": 0.67,
       "phone": "7531725347",
       "address": "Lucknow"
     },
@@ -432,9 +432,9 @@
         "provider": "Airtel",
         "circle": "Lucknow",
         "sim_status": "Active",
-        "risk_score": 0.05
+        "risk_score": 0.54
       },
-      "confidence": 0.96
+      "confidence": 0.46
     },
     {
       "entity_id": "RAW_006",
@@ -444,9 +444,9 @@
       "attributes": {
         "phone": "7265695473",
         "address": "Lucknow",
-        "risk_score": 0.08
+        "risk_score": 0.84
       },
-      "confidence": 0.92,
+      "confidence": 0.16,
       "phone": "7265695473",
       "address": "Lucknow"
     },
@@ -459,9 +459,9 @@
         "provider": "Jio",
         "circle": "Lucknow",
         "sim_status": "Active",
-        "risk_score": 0.05
+        "risk_score": 0.41
       },
-      "confidence": 0.96
+      "confidence": 0.59
     },
     {
       "entity_id": "RAW_007",
@@ -471,9 +471,9 @@
       "attributes": {
         "phone": "7200071088",
         "address": "Jaipur",
-        "risk_score": 0.08
+        "risk_score": 0.35
       },
-      "confidence": 0.92,
+      "confidence": 0.65,
       "phone": "7200071088",
       "address": "Jaipur"
     },
@@ -486,9 +486,9 @@
         "provider": "Jio",
         "circle": "Jaipur",
         "sim_status": "Active",
-        "risk_score": 0.05
+        "risk_score": 0.52
       },
-      "confidence": 0.96
+      "confidence": 0.48
     },
     {
       "entity_id": "RAW_008",
@@ -498,9 +498,9 @@
       "attributes": {
         "phone": "7619570852",
         "address": "Jaipur",
-        "risk_score": 0.08
+        "risk_score": 0.6
       },
-      "confidence": 0.92,
+      "confidence": 0.4,
       "phone": "7619570852",
       "address": "Jaipur"
     },
@@ -513,9 +513,9 @@
         "provider": "Jio",
         "circle": "Jaipur",
         "sim_status": "Active",
-        "risk_score": 0.05
+        "risk_score": 0.43
       },
-      "confidence": 0.96
+      "confidence": 0.57
     },
     {
       "entity_id": "RAW_009",
@@ -525,9 +525,9 @@
       "attributes": {
         "phone": "9929179284",
         "address": "Bengaluru",
-        "risk_score": 0.08
+        "risk_score": 0.17
       },
-      "confidence": 0.92,
+      "confidence": 0.83,
       "phone": "9929179284",
       "address": "Bengaluru"
     },
@@ -540,9 +540,9 @@
         "provider": "Vi",
         "circle": "Bengaluru",
         "sim_status": "Active",
-        "risk_score": 0.05
+        "risk_score": 0.14
       },
-      "confidence": 0.96
+      "confidence": 0.86
     },
     {
       "entity_id": "RAW_010",
@@ -552,9 +552,9 @@
       "attributes": {
         "phone": "7806899909",
         "address": "Hyderabad",
-        "risk_score": 0.08
+        "risk_score": 0.76
       },
-      "confidence": 0.92,
+      "confidence": 0.24,
       "phone": "7806899909",
       "address": "Hyderabad"
     },
@@ -567,9 +567,9 @@
         "provider": "Jio",
         "circle": "Hyderabad",
         "sim_status": "Active",
-        "risk_score": 0.05
+        "risk_score": 0.26
       },
-      "confidence": 0.96
+      "confidence": 0.74
     },
     {
       "entity_id": "RAW_011",
@@ -579,9 +579,9 @@
       "attributes": {
         "phone": "9423943363",
         "address": "Delhi",
-        "risk_score": 0.08
+        "risk_score": 0.33
       },
-      "confidence": 0.92,
+      "confidence": 0.67,
       "phone": "9423943363",
       "address": "Delhi"
     },
@@ -594,9 +594,9 @@
         "provider": "Vi",
         "circle": "Delhi",
         "sim_status": "Active",
-        "risk_score": 0.05
+        "risk_score": 0.15
       },
-      "confidence": 0.96
+      "confidence": 0.85
     },
     {
       "entity_id": "RAW_012",
@@ -606,9 +606,9 @@
       "attributes": {
         "phone": "9132084004",
         "address": "Jaipur",
-        "risk_score": 0.08
+        "risk_score": 0.23
       },
-      "confidence": 0.92,
+      "confidence": 0.77,
       "phone": "9132084004",
       "address": "Jaipur"
     },
@@ -621,9 +621,9 @@
         "provider": "Vi",
         "circle": "Jaipur",
         "sim_status": "Active",
-        "risk_score": 0.05
+        "risk_score": 0.24
       },
-      "confidence": 0.96
+      "confidence": 0.76
     },
     {
       "entity_id": "RAW_013",
@@ -633,9 +633,9 @@
       "attributes": {
         "phone": "8999744784",
         "address": "Lucknow",
-        "risk_score": 0.08
+        "risk_score": 0.7
       },
-      "confidence": 0.92,
+      "confidence": 0.3,
       "phone": "8999744784",
       "address": "Lucknow"
     },
@@ -648,9 +648,9 @@
         "provider": "Vi",
         "circle": "Lucknow",
         "sim_status": "Active",
-        "risk_score": 0.05
+        "risk_score": 0.35
       },
-      "confidence": 0.96
+      "confidence": 0.65
     },
     {
       "entity_id": "RAW_014",
@@ -660,9 +660,9 @@
       "attributes": {
         "phone": "8287489453",
         "address": "Chennai",
-        "risk_score": 0.08
+        "risk_score": 0.1
       },
-      "confidence": 0.92,
+      "confidence": 0.9,
       "phone": "8287489453",
       "address": "Chennai"
     },
@@ -675,9 +675,9 @@
         "provider": "Jio",
         "circle": "Chennai",
         "sim_status": "Active",
-        "risk_score": 0.05
+        "risk_score": 0.11
       },
-      "confidence": 0.96
+      "confidence": 0.89
     },
     {
       "entity_id": "RAW_015",
@@ -687,9 +687,9 @@
       "attributes": {
         "phone": "8048386555",
         "address": "Mumbai",
-        "risk_score": 0.08
+        "risk_score": 0.59
       },
-      "confidence": 0.92,
+      "confidence": 0.41,
       "phone": "8048386555",
       "address": "Mumbai"
     },
@@ -702,9 +702,9 @@
         "provider": "Vi",
         "circle": "Mumbai",
         "sim_status": "Active",
-        "risk_score": 0.05
+        "risk_score": 0.1
       },
-      "confidence": 0.96
+      "confidence": 0.9
     },
     {
       "entity_id": "RAW_016",
@@ -714,9 +714,9 @@
       "attributes": {
         "phone": "9490630939",
         "address": "Ahmedabad",
-        "risk_score": 0.08
+        "risk_score": 0.35
       },
-      "confidence": 0.92,
+      "confidence": 0.65,
       "phone": "9490630939",
       "address": "Ahmedabad"
     },
@@ -729,9 +729,9 @@
         "provider": "Airtel",
         "circle": "Ahmedabad",
         "sim_status": "Active",
-        "risk_score": 0.05
+        "risk_score": 0.34
       },
-      "confidence": 0.96
+      "confidence": 0.66
     },
     {
       "entity_id": "RAW_017",
@@ -741,9 +741,9 @@
       "attributes": {
         "phone": "7260573195",
         "address": "Kolkata",
-        "risk_score": 0.08
+        "risk_score": 0.66
       },
-      "confidence": 0.92,
+      "confidence": 0.34,
       "phone": "7260573195",
       "address": "Kolkata"
     },
@@ -756,9 +756,9 @@
         "provider": "Jio",
         "circle": "Kolkata",
         "sim_status": "Active",
-        "risk_score": 0.05
+        "risk_score": 0.56
       },
-      "confidence": 0.96
+      "confidence": 0.44
     },
     {
       "entity_id": "RAW_018",
@@ -768,9 +768,9 @@
       "attributes": {
         "phone": "8222328495",
         "address": "Pune",
-        "risk_score": 0.08
+        "risk_score": 0.15
       },
-      "confidence": 0.92,
+      "confidence": 0.85,
       "phone": "8222328495",
       "address": "Pune"
     },
@@ -783,9 +783,9 @@
         "provider": "Jio",
         "circle": "Pune",
         "sim_status": "Active",
-        "risk_score": 0.05
+        "risk_score": 0.39
       },
-      "confidence": 0.96
+      "confidence": 0.61
     },
     {
       "entity_id": "RAW_019",
@@ -795,9 +795,9 @@
       "attributes": {
         "phone": "7096907015",
         "address": "Ahmedabad",
-        "risk_score": 0.08
+        "risk_score": 0.2
       },
-      "confidence": 0.92,
+      "confidence": 0.8,
       "phone": "7096907015",
       "address": "Ahmedabad"
     },
@@ -810,9 +810,9 @@
         "provider": "Jio",
         "circle": "Ahmedabad",
         "sim_status": "Active",
-        "risk_score": 0.05
+        "risk_score": 0.76
       },
-      "confidence": 0.96
+      "confidence": 0.24
     },
     {
       "entity_id": "RAW_020",
@@ -822,9 +822,9 @@
       "attributes": {
         "phone": "9623879480",
         "address": "Mumbai",
-        "risk_score": 0.08
+        "risk_score": 0.22
       },
-      "confidence": 0.92,
+      "confidence": 0.78,
       "phone": "9623879480",
       "address": "Mumbai"
     },
@@ -837,9 +837,9 @@
         "provider": "Jio",
         "circle": "Mumbai",
         "sim_status": "Active",
-        "risk_score": 0.05
+        "risk_score": 0.33
       },
-      "confidence": 0.96
+      "confidence": 0.67
     },
     {
       "entity_id": "RAW_021",
@@ -849,9 +849,9 @@
       "attributes": {
         "phone": "7937195259",
         "address": "Kolkata",
-        "risk_score": 0.08
+        "risk_score": 0.69
       },
-      "confidence": 0.92,
+      "confidence": 0.31,
       "phone": "7937195259",
       "address": "Kolkata"
     },
@@ -864,9 +864,9 @@
         "provider": "Jio",
         "circle": "Kolkata",
         "sim_status": "Active",
-        "risk_score": 0.05
+        "risk_score": 0.54
       },
-      "confidence": 0.96
+      "confidence": 0.46
     },
     {
       "entity_id": "RAW_022",
@@ -876,9 +876,9 @@
       "attributes": {
         "phone": "8063497603",
         "address": "Pune",
-        "risk_score": 0.08
+        "risk_score": 0.29
       },
-      "confidence": 0.92,
+      "confidence": 0.71,
       "phone": "8063497603",
       "address": "Pune"
     },
@@ -891,9 +891,9 @@
         "provider": "Vi",
         "circle": "Pune",
         "sim_status": "Active",
-        "risk_score": 0.05
+        "risk_score": 0.29
       },
-      "confidence": 0.96
+      "confidence": 0.71
     },
     {
       "entity_id": "RAW_023",
@@ -918,9 +918,9 @@
         "provider": "Vi",
         "circle": "Bengaluru",
         "sim_status": "Active",
-        "risk_score": 0.05
+        "risk_score": 0.09
       },
-      "confidence": 0.96
+      "confidence": 0.91
     },
     {
       "entity_id": "RAW_024",
@@ -930,9 +930,9 @@
       "attributes": {
         "phone": "9359826449",
         "address": "Kolkata",
-        "risk_score": 0.08
+        "risk_score": 0.76
       },
-      "confidence": 0.92,
+      "confidence": 0.24,
       "phone": "9359826449",
       "address": "Kolkata"
     },
@@ -945,9 +945,9 @@
         "provider": "Jio",
         "circle": "Kolkata",
         "sim_status": "Active",
-        "risk_score": 0.05
+        "risk_score": 0.45
       },
-      "confidence": 0.96
+      "confidence": 0.55
     },
     {
       "entity_id": "RAW_025",
@@ -957,9 +957,9 @@
       "attributes": {
         "phone": "9363175007",
         "address": "Kolkata",
-        "risk_score": 0.08
+        "risk_score": 0.32
       },
-      "confidence": 0.92,
+      "confidence": 0.68,
       "phone": "9363175007",
       "address": "Kolkata"
     },
@@ -972,9 +972,9 @@
         "provider": "Vi",
         "circle": "Kolkata",
         "sim_status": "Active",
-        "risk_score": 0.05
+        "risk_score": 0.67
       },
-      "confidence": 0.96
+      "confidence": 0.33
     },
     {
       "entity_id": "RAW_026",
@@ -984,9 +984,9 @@
       "attributes": {
         "phone": "8540910400",
         "address": "Pune",
-        "risk_score": 0.08
+        "risk_score": 0.1
       },
-      "confidence": 0.92,
+      "confidence": 0.9,
       "phone": "8540910400",
       "address": "Pune"
     },
@@ -999,9 +999,9 @@
         "provider": "Jio",
         "circle": "Pune",
         "sim_status": "Active",
-        "risk_score": 0.05
+        "risk_score": 0.58
       },
-      "confidence": 0.96
+      "confidence": 0.42
     },
     {
       "entity_id": "RAW_027",
@@ -1011,9 +1011,9 @@
       "attributes": {
         "phone": "7356416554",
         "address": "Bengaluru",
-        "risk_score": 0.08
+        "risk_score": 0.21
       },
-      "confidence": 0.92,
+      "confidence": 0.79,
       "phone": "7356416554",
       "address": "Bengaluru"
     },
@@ -1026,9 +1026,9 @@
         "provider": "Vi",
         "circle": "Bengaluru",
         "sim_status": "Active",
-        "risk_score": 0.05
+        "risk_score": 0.15
       },
-      "confidence": 0.96
+      "confidence": 0.85
     },
     {
       "entity_id": "RAW_028",
@@ -1038,9 +1038,9 @@
       "attributes": {
         "phone": "9828307593",
         "address": "Chennai",
-        "risk_score": 0.08
+        "risk_score": 0.71
       },
-      "confidence": 0.92,
+      "confidence": 0.29,
       "phone": "9828307593",
       "address": "Chennai"
     },
@@ -1053,9 +1053,9 @@
         "provider": "Vi",
         "circle": "Chennai",
         "sim_status": "Active",
-        "risk_score": 0.05
+        "risk_score": 0.23
       },
-      "confidence": 0.96
+      "confidence": 0.77
     },
     {
       "entity_id": "RAW_029",
@@ -1065,9 +1065,9 @@
       "attributes": {
         "phone": "9530266207",
         "address": "Bengaluru",
-        "risk_score": 0.08
+        "risk_score": 0.42
       },
-      "confidence": 0.92,
+      "confidence": 0.58,
       "phone": "9530266207",
       "address": "Bengaluru"
     },
@@ -1080,9 +1080,9 @@
         "provider": "Vi",
         "circle": "Bengaluru",
         "sim_status": "Active",
-        "risk_score": 0.05
+        "risk_score": 0.35
       },
-      "confidence": 0.96
+      "confidence": 0.65
     },
     {
       "entity_id": "RAW_030",
@@ -1092,9 +1092,9 @@
       "attributes": {
         "phone": "7017581913",
         "address": "Bengaluru",
-        "risk_score": 0.08
+        "risk_score": 0.49
       },
-      "confidence": 0.92,
+      "confidence": 0.51,
       "phone": "7017581913",
       "address": "Bengaluru"
     },
@@ -1107,9 +1107,9 @@
         "provider": "Vi",
         "circle": "Bengaluru",
         "sim_status": "Active",
-        "risk_score": 0.05
+        "risk_score": 0.11
       },
-      "confidence": 0.96
+      "confidence": 0.89
     },
     {
       "entity_id": "RAW_031",
@@ -1119,9 +1119,9 @@
       "attributes": {
         "phone": "8585932013",
         "address": "Lucknow",
-        "risk_score": 0.08
+        "risk_score": 0.17
       },
-      "confidence": 0.92,
+      "confidence": 0.83,
       "phone": "8585932013",
       "address": "Lucknow"
     },
@@ -1134,9 +1134,9 @@
         "provider": "Airtel",
         "circle": "Lucknow",
         "sim_status": "Active",
-        "risk_score": 0.05
+        "risk_score": 0.43
       },
-      "confidence": 0.96
+      "confidence": 0.57
     },
     {
       "entity_id": "RAW_032",
@@ -1146,9 +1146,9 @@
       "attributes": {
         "phone": "7538981926",
         "address": "Jaipur",
-        "risk_score": 0.08
+        "risk_score": 0.1
       },
-      "confidence": 0.92,
+      "confidence": 0.9,
       "phone": "7538981926",
       "address": "Jaipur"
     },
@@ -1161,9 +1161,9 @@
         "provider": "Jio",
         "circle": "Jaipur",
         "sim_status": "Active",
-        "risk_score": 0.05
+        "risk_score": 0.43
       },
-      "confidence": 0.96
+      "confidence": 0.57
     },
     {
       "entity_id": "RAW_033",
@@ -1173,9 +1173,9 @@
       "attributes": {
         "phone": "9904257243",
         "address": "Delhi",
-        "risk_score": 0.08
+        "risk_score": 0.75
       },
-      "confidence": 0.92,
+      "confidence": 0.25,
       "phone": "9904257243",
       "address": "Delhi"
     },
@@ -1188,9 +1188,9 @@
         "provider": "Airtel",
         "circle": "Delhi",
         "sim_status": "Active",
-        "risk_score": 0.05
+        "risk_score": 0.14
       },
-      "confidence": 0.96
+      "confidence": 0.86
     },
     {
       "entity_id": "RAW_034",
@@ -1200,9 +1200,9 @@
       "attributes": {
         "phone": "9402053832",
         "address": "Pune",
-        "risk_score": 0.08
+        "risk_score": 0.42
       },
-      "confidence": 0.92,
+      "confidence": 0.58,
       "phone": "9402053832",
       "address": "Pune"
     },
@@ -1215,9 +1215,9 @@
         "provider": "Vi",
         "circle": "Pune",
         "sim_status": "Active",
-        "risk_score": 0.05
+        "risk_score": 0.33
       },
-      "confidence": 0.96
+      "confidence": 0.67
     },
     {
       "entity_id": "RAW_035",
@@ -1227,9 +1227,9 @@
       "attributes": {
         "phone": "8692732589",
         "address": "Mumbai",
-        "risk_score": 0.08
+        "risk_score": 0.5
       },
-      "confidence": 0.92,
+      "confidence": 0.5,
       "phone": "8692732589",
       "address": "Mumbai"
     },
@@ -1242,9 +1242,9 @@
         "provider": "Airtel",
         "circle": "Mumbai",
         "sim_status": "Active",
-        "risk_score": 0.05
+        "risk_score": 0.59
       },
-      "confidence": 0.96
+      "confidence": 0.41
     },
     {
       "entity_id": "RAW_036",
@@ -1254,9 +1254,9 @@
       "attributes": {
         "phone": "8719888006",
         "address": "Delhi",
-        "risk_score": 0.08
+        "risk_score": 0.11
       },
-      "confidence": 0.92,
+      "confidence": 0.89,
       "phone": "8719888006",
       "address": "Delhi"
     },
@@ -1269,9 +1269,9 @@
         "provider": "Jio",
         "circle": "Delhi",
         "sim_status": "Active",
-        "risk_score": 0.05
+        "risk_score": 0.19
       },
-      "confidence": 0.96
+      "confidence": 0.81
     },
     {
       "entity_id": "RAW_037",
@@ -1281,9 +1281,9 @@
       "attributes": {
         "phone": "7896631050",
         "address": "Ahmedabad",
-        "risk_score": 0.08
+        "risk_score": 0.28
       },
-      "confidence": 0.92,
+      "confidence": 0.72,
       "phone": "7896631050",
       "address": "Ahmedabad"
     },
@@ -1296,9 +1296,9 @@
         "provider": "Jio",
         "circle": "Ahmedabad",
         "sim_status": "Active",
-        "risk_score": 0.05
+        "risk_score": 0.65
       },
-      "confidence": 0.96
+      "confidence": 0.35
     },
     {
       "entity_id": "RAW_038",
@@ -1308,9 +1308,9 @@
       "attributes": {
         "phone": "8460519317",
         "address": "Lucknow",
-        "risk_score": 0.08
+        "risk_score": 0.19
       },
-      "confidence": 0.92,
+      "confidence": 0.81,
       "phone": "8460519317",
       "address": "Lucknow"
     },
@@ -1323,9 +1323,9 @@
         "provider": "Vi",
         "circle": "Lucknow",
         "sim_status": "Active",
-        "risk_score": 0.05
+        "risk_score": 0.31
       },
-      "confidence": 0.96
+      "confidence": 0.69
     },
     {
       "entity_id": "RAW_039",
@@ -1335,9 +1335,9 @@
       "attributes": {
         "phone": "7001001928",
         "address": "Lucknow",
-        "risk_score": 0.08
+        "risk_score": 0.13
       },
-      "confidence": 0.92,
+      "confidence": 0.87,
       "phone": "7001001928",
       "address": "Lucknow"
     },
@@ -1350,9 +1350,9 @@
         "provider": "Airtel",
         "circle": "Lucknow",
         "sim_status": "Active",
-        "risk_score": 0.05
+        "risk_score": 0.19
       },
-      "confidence": 0.96
+      "confidence": 0.81
     },
     {
       "entity_id": "RAW_040",
@@ -1362,9 +1362,9 @@
       "attributes": {
         "phone": "7435786140",
         "address": "Hyderabad",
-        "risk_score": 0.08
+        "risk_score": 0.15
       },
-      "confidence": 0.92,
+      "confidence": 0.85,
       "phone": "7435786140",
       "address": "Hyderabad"
     },
@@ -1377,9 +1377,9 @@
         "provider": "Airtel",
         "circle": "Hyderabad",
         "sim_status": "Active",
-        "risk_score": 0.05
+        "risk_score": 0.71
       },
-      "confidence": 0.96
+      "confidence": 0.29
     },
     {
       "entity_id": "RAW_041",
@@ -1389,9 +1389,9 @@
       "attributes": {
         "phone": "7302003101",
         "address": "Chennai",
-        "risk_score": 0.08
+        "risk_score": 0.72
       },
-      "confidence": 0.92,
+      "confidence": 0.28,
       "phone": "7302003101",
       "address": "Chennai"
     },
@@ -1404,9 +1404,9 @@
         "provider": "Airtel",
         "circle": "Chennai",
         "sim_status": "Active",
-        "risk_score": 0.05
+        "risk_score": 0.35
       },
-      "confidence": 0.96
+      "confidence": 0.65
     },
     {
       "entity_id": "RAW_042",
@@ -1416,9 +1416,9 @@
       "attributes": {
         "phone": "7638019485",
         "address": "Kolkata",
-        "risk_score": 0.08
+        "risk_score": 0.64
       },
-      "confidence": 0.92,
+      "confidence": 0.36,
       "phone": "7638019485",
       "address": "Kolkata"
     },
@@ -1431,9 +1431,9 @@
         "provider": "Jio",
         "circle": "Kolkata",
         "sim_status": "Active",
-        "risk_score": 0.05
+        "risk_score": 0.75
       },
-      "confidence": 0.96
+      "confidence": 0.25
     },
     {
       "entity_id": "RAW_043",
@@ -1443,9 +1443,9 @@
       "attributes": {
         "phone": "8564070056",
         "address": "Ahmedabad",
-        "risk_score": 0.08
+        "risk_score": 0.21
       },
-      "confidence": 0.92,
+      "confidence": 0.79,
       "phone": "8564070056",
       "address": "Ahmedabad"
     },
@@ -1458,9 +1458,9 @@
         "provider": "Jio",
         "circle": "Ahmedabad",
         "sim_status": "Active",
-        "risk_score": 0.05
+        "risk_score": 0.19
       },
-      "confidence": 0.96
+      "confidence": 0.81
     },
     {
       "entity_id": "RAW_044",
@@ -1470,9 +1470,9 @@
       "attributes": {
         "phone": "9096236324",
         "address": "Ahmedabad",
-        "risk_score": 0.08
+        "risk_score": 0.18
       },
-      "confidence": 0.92,
+      "confidence": 0.82,
       "phone": "9096236324",
       "address": "Ahmedabad"
     },
@@ -1485,9 +1485,9 @@
         "provider": "Airtel",
         "circle": "Ahmedabad",
         "sim_status": "Active",
-        "risk_score": 0.05
+        "risk_score": 0.69
       },
-      "confidence": 0.96
+      "confidence": 0.31
     },
     {
       "entity_id": "RAW_045",
@@ -1497,9 +1497,9 @@
       "attributes": {
         "phone": "8339395518",
         "address": "Mumbai",
-        "risk_score": 0.08
+        "risk_score": 0.49
       },
-      "confidence": 0.92,
+      "confidence": 0.51,
       "phone": "8339395518",
       "address": "Mumbai"
     },
@@ -1512,9 +1512,9 @@
         "provider": "Jio",
         "circle": "Mumbai",
         "sim_status": "Active",
-        "risk_score": 0.05
+        "risk_score": 0.34
       },
-      "confidence": 0.96
+      "confidence": 0.66
     },
     {
       "entity_id": "RAW_046",
@@ -1524,9 +1524,9 @@
       "attributes": {
         "phone": "8471609726",
         "address": "Kolkata",
-        "risk_score": 0.08
+        "risk_score": 0.72
       },
-      "confidence": 0.92,
+      "confidence": 0.28,
       "phone": "8471609726",
       "address": "Kolkata"
     },
@@ -1539,9 +1539,9 @@
         "provider": "Jio",
         "circle": "Kolkata",
         "sim_status": "Active",
-        "risk_score": 0.05
+        "risk_score": 0.4
       },
-      "confidence": 0.96
+      "confidence": 0.6
     },
     {
       "entity_id": "RAW_047",
@@ -1551,9 +1551,9 @@
       "attributes": {
         "phone": "7693373550",
         "address": "Jaipur",
-        "risk_score": 0.08
+        "risk_score": 0.34
       },
-      "confidence": 0.92,
+      "confidence": 0.66,
       "phone": "7693373550",
       "address": "Jaipur"
     },
@@ -1566,9 +1566,9 @@
         "provider": "Airtel",
         "circle": "Jaipur",
         "sim_status": "Active",
-        "risk_score": 0.05
+        "risk_score": 0.52
       },
-      "confidence": 0.96
+      "confidence": 0.48
     },
     {
       "entity_id": "RAW_048",
@@ -1578,9 +1578,9 @@
       "attributes": {
         "phone": "9268848248",
         "address": "Hyderabad",
-        "risk_score": 0.08
+        "risk_score": 0.38
       },
-      "confidence": 0.92,
+      "confidence": 0.62,
       "phone": "9268848248",
       "address": "Hyderabad"
     },
@@ -1593,9 +1593,9 @@
         "provider": "Jio",
         "circle": "Hyderabad",
         "sim_status": "Active",
-        "risk_score": 0.05
+        "risk_score": 0.51
       },
-      "confidence": 0.96
+      "confidence": 0.49
     },
     {
       "entity_id": "RAW_049",
@@ -1605,9 +1605,9 @@
       "attributes": {
         "phone": "9268212773",
         "address": "Kolkata",
-        "risk_score": 0.08
+        "risk_score": 0.68
       },
-      "confidence": 0.92,
+      "confidence": 0.32,
       "phone": "9268212773",
       "address": "Kolkata"
     },
@@ -1620,9 +1620,9 @@
         "provider": "Airtel",
         "circle": "Kolkata",
         "sim_status": "Active",
-        "risk_score": 0.05
+        "risk_score": 0.67
       },
-      "confidence": 0.96
+      "confidence": 0.33
     },
     {
       "entity_id": "RAW_050",
@@ -1632,9 +1632,9 @@
       "attributes": {
         "phone": "9990142407",
         "address": "Kolkata",
-        "risk_score": 0.08
+        "risk_score": 0.24
       },
-      "confidence": 0.92,
+      "confidence": 0.76,
       "phone": "9990142407",
       "address": "Kolkata"
     },
@@ -1647,9 +1647,9 @@
         "provider": "Airtel",
         "circle": "Kolkata",
         "sim_status": "Active",
-        "risk_score": 0.05
+        "risk_score": 0.43
       },
-      "confidence": 0.96
+      "confidence": 0.57
     },
     {
       "entity_id": "RAW_051",
@@ -1659,9 +1659,9 @@
       "attributes": {
         "phone": "7717440070",
         "address": "Hyderabad",
-        "risk_score": 0.08
+        "risk_score": 0.32
       },
-      "confidence": 0.92,
+      "confidence": 0.68,
       "phone": "7717440070",
       "address": "Hyderabad"
     },
@@ -1674,9 +1674,9 @@
         "provider": "Vi",
         "circle": "Hyderabad",
         "sim_status": "Active",
-        "risk_score": 0.05
+        "risk_score": 0.24
       },
-      "confidence": 0.96
+      "confidence": 0.76
     },
     {
       "entity_id": "RAW_052",
@@ -1686,9 +1686,9 @@
       "attributes": {
         "phone": "9326013068",
         "address": "Jaipur",
-        "risk_score": 0.08
+        "risk_score": 0.48
       },
-      "confidence": 0.92,
+      "confidence": 0.52,
       "phone": "9326013068",
       "address": "Jaipur"
     },
@@ -1701,9 +1701,9 @@
         "provider": "Airtel",
         "circle": "Jaipur",
         "sim_status": "Active",
-        "risk_score": 0.05
+        "risk_score": 0.51
       },
-      "confidence": 0.96
+      "confidence": 0.49
     },
     {
       "entity_id": "RAW_053",
@@ -1713,9 +1713,9 @@
       "attributes": {
         "phone": "7957956674",
         "address": "Lucknow",
-        "risk_score": 0.08
+        "risk_score": 0.68
       },
-      "confidence": 0.92,
+      "confidence": 0.32,
       "phone": "7957956674",
       "address": "Lucknow"
     },
@@ -1728,9 +1728,9 @@
         "provider": "Jio",
         "circle": "Lucknow",
         "sim_status": "Active",
-        "risk_score": 0.05
+        "risk_score": 0.43
       },
-      "confidence": 0.96
+      "confidence": 0.57
     },
     {
       "entity_id": "RAW_054",
@@ -1740,9 +1740,9 @@
       "attributes": {
         "phone": "8720926262",
         "address": "Chennai",
-        "risk_score": 0.08
+        "risk_score": 0.26
       },
-      "confidence": 0.92,
+      "confidence": 0.74,
       "phone": "8720926262",
       "address": "Chennai"
     },
@@ -1755,9 +1755,9 @@
         "provider": "Vi",
         "circle": "Chennai",
         "sim_status": "Active",
-        "risk_score": 0.05
+        "risk_score": 0.17
       },
-      "confidence": 0.96
+      "confidence": 0.83
     },
     {
       "entity_id": "RAW_055",
@@ -1767,9 +1767,9 @@
       "attributes": {
         "phone": "9116481898",
         "address": "Hyderabad",
-        "risk_score": 0.08
+        "risk_score": 0.38
       },
-      "confidence": 0.92,
+      "confidence": 0.62,
       "phone": "9116481898",
       "address": "Hyderabad"
     },
@@ -1782,9 +1782,9 @@
         "provider": "Airtel",
         "circle": "Hyderabad",
         "sim_status": "Active",
-        "risk_score": 0.05
+        "risk_score": 0.35
       },
-      "confidence": 0.96
+      "confidence": 0.65
     },
     {
       "entity_id": "RAW_056",
@@ -1794,9 +1794,9 @@
       "attributes": {
         "phone": "7119988828",
         "address": "Kolkata",
-        "risk_score": 0.08
+        "risk_score": 0.67
       },
-      "confidence": 0.92,
+      "confidence": 0.33,
       "phone": "7119988828",
       "address": "Kolkata"
     },
@@ -1809,9 +1809,9 @@
         "provider": "Vi",
         "circle": "Kolkata",
         "sim_status": "Active",
-        "risk_score": 0.05
+        "risk_score": 0.15
       },
-      "confidence": 0.96
+      "confidence": 0.85
     },
     {
       "entity_id": "RAW_057",
@@ -1821,9 +1821,9 @@
       "attributes": {
         "phone": "7831698692",
         "address": "Lucknow",
-        "risk_score": 0.08
+        "risk_score": 0.76
       },
-      "confidence": 0.92,
+      "confidence": 0.24,
       "phone": "7831698692",
       "address": "Lucknow"
     },
@@ -1836,9 +1836,9 @@
         "provider": "Jio",
         "circle": "Lucknow",
         "sim_status": "Active",
-        "risk_score": 0.05
+        "risk_score": 0.7
       },
-      "confidence": 0.96
+      "confidence": 0.3
     },
     {
       "entity_id": "RAW_058",
@@ -1848,9 +1848,9 @@
       "attributes": {
         "phone": "8501175503",
         "address": "Hyderabad",
-        "risk_score": 0.08
+        "risk_score": 0.31
       },
-      "confidence": 0.92,
+      "confidence": 0.69,
       "phone": "8501175503",
       "address": "Hyderabad"
     },
@@ -1863,9 +1863,9 @@
         "provider": "Airtel",
         "circle": "Hyderabad",
         "sim_status": "Active",
-        "risk_score": 0.05
+        "risk_score": 0.54
       },
-      "confidence": 0.96
+      "confidence": 0.46
     },
     {
       "entity_id": "RAW_059",
@@ -1875,9 +1875,9 @@
       "attributes": {
         "phone": "7438761609",
         "address": "Chennai",
-        "risk_score": 0.08
+        "risk_score": 0.73
       },
-      "confidence": 0.92,
+      "confidence": 0.27,
       "phone": "7438761609",
       "address": "Chennai"
     },
@@ -1890,9 +1890,9 @@
         "provider": "Jio",
         "circle": "Chennai",
         "sim_status": "Active",
-        "risk_score": 0.05
+        "risk_score": 0.3
       },
-      "confidence": 0.96
+      "confidence": 0.7
     },
     {
       "entity_id": "RAW_060",
@@ -1902,9 +1902,9 @@
       "attributes": {
         "phone": "8450571437",
         "address": "Chennai",
-        "risk_score": 0.08
+        "risk_score": 0.26
       },
-      "confidence": 0.92,
+      "confidence": 0.74,
       "phone": "8450571437",
       "address": "Chennai"
     },
@@ -1917,9 +1917,9 @@
         "provider": "Vi",
         "circle": "Chennai",
         "sim_status": "Active",
-        "risk_score": 0.05
+        "risk_score": 0.67
       },
-      "confidence": 0.96
+      "confidence": 0.33
     },
     {
       "entity_id": "RAW_061",
@@ -1929,9 +1929,9 @@
       "attributes": {
         "phone": "9621055949",
         "address": "Delhi",
-        "risk_score": 0.08
+        "risk_score": 0.11
       },
-      "confidence": 0.92,
+      "confidence": 0.89,
       "phone": "9621055949",
       "address": "Delhi"
     },
@@ -1944,9 +1944,9 @@
         "provider": "Airtel",
         "circle": "Delhi",
         "sim_status": "Active",
-        "risk_score": 0.05
+        "risk_score": 0.44
       },
-      "confidence": 0.96
+      "confidence": 0.56
     },
     {
       "entity_id": "RAW_062",
@@ -1956,9 +1956,9 @@
       "attributes": {
         "phone": "7364120811",
         "address": "Mumbai",
-        "risk_score": 0.08
+        "risk_score": 0.57
       },
-      "confidence": 0.92,
+      "confidence": 0.43,
       "phone": "7364120811",
       "address": "Mumbai"
     },
@@ -1971,9 +1971,9 @@
         "provider": "Vi",
         "circle": "Mumbai",
         "sim_status": "Active",
-        "risk_score": 0.05
+        "risk_score": 0.25
       },
-      "confidence": 0.96
+      "confidence": 0.75
     },
     {
       "entity_id": "RAW_063",
@@ -1983,9 +1983,9 @@
       "attributes": {
         "phone": "7856070305",
         "address": "Ahmedabad",
-        "risk_score": 0.08
+        "risk_score": 0.21
       },
-      "confidence": 0.92,
+      "confidence": 0.79,
       "phone": "7856070305",
       "address": "Ahmedabad"
     },
@@ -1998,9 +1998,9 @@
         "provider": "Vi",
         "circle": "Ahmedabad",
         "sim_status": "Active",
-        "risk_score": 0.05
+        "risk_score": 0.75
       },
-      "confidence": 0.96
+      "confidence": 0.25
     },
     {
       "entity_id": "RAW_064",
@@ -2010,9 +2010,9 @@
       "attributes": {
         "phone": "9730921541",
         "address": "Hyderabad",
-        "risk_score": 0.08
+        "risk_score": 0.19
       },
-      "confidence": 0.92,
+      "confidence": 0.81,
       "phone": "9730921541",
       "address": "Hyderabad"
     },
@@ -2025,9 +2025,9 @@
         "provider": "Airtel",
         "circle": "Hyderabad",
         "sim_status": "Active",
-        "risk_score": 0.05
+        "risk_score": 0.08
       },
-      "confidence": 0.96
+      "confidence": 0.92
     },
     {
       "entity_id": "RAW_065",
@@ -2037,9 +2037,9 @@
       "attributes": {
         "phone": "8700113406",
         "address": "Ahmedabad",
-        "risk_score": 0.08
+        "risk_score": 0.54
       },
-      "confidence": 0.92,
+      "confidence": 0.46,
       "phone": "8700113406",
       "address": "Ahmedabad"
     },
@@ -2052,9 +2052,9 @@
         "provider": "Vi",
         "circle": "Ahmedabad",
         "sim_status": "Active",
-        "risk_score": 0.05
+        "risk_score": 0.28
       },
-      "confidence": 0.96
+      "confidence": 0.72
     },
     {
       "entity_id": "RAW_066",
@@ -2064,9 +2064,9 @@
       "attributes": {
         "phone": "7545625652",
         "address": "Delhi",
-        "risk_score": 0.08
+        "risk_score": 0.48
       },
-      "confidence": 0.92,
+      "confidence": 0.52,
       "phone": "7545625652",
       "address": "Delhi"
     },
@@ -2079,9 +2079,9 @@
         "provider": "Jio",
         "circle": "Delhi",
         "sim_status": "Active",
-        "risk_score": 0.05
+        "risk_score": 0.1
       },
-      "confidence": 0.96
+      "confidence": 0.9
     },
     {
       "entity_id": "RAW_067",
@@ -2091,9 +2091,9 @@
       "attributes": {
         "phone": "8998679710",
         "address": "Bengaluru",
-        "risk_score": 0.08
+        "risk_score": 0.76
       },
-      "confidence": 0.92,
+      "confidence": 0.24,
       "phone": "8998679710",
       "address": "Bengaluru"
     },
@@ -2106,9 +2106,9 @@
         "provider": "Vi",
         "circle": "Bengaluru",
         "sim_status": "Active",
-        "risk_score": 0.05
+        "risk_score": 0.31
       },
-      "confidence": 0.96
+      "confidence": 0.69
     },
     {
       "entity_id": "RAW_068",
@@ -2118,9 +2118,9 @@
       "attributes": {
         "phone": "9037347501",
         "address": "Hyderabad",
-        "risk_score": 0.08
+        "risk_score": 0.4
       },
-      "confidence": 0.92,
+      "confidence": 0.6,
       "phone": "9037347501",
       "address": "Hyderabad"
     },
@@ -2133,9 +2133,9 @@
         "provider": "Jio",
         "circle": "Hyderabad",
         "sim_status": "Active",
-        "risk_score": 0.05
+        "risk_score": 0.16
       },
-      "confidence": 0.96
+      "confidence": 0.84
     },
     {
       "entity_id": "RAW_069",
@@ -2145,9 +2145,9 @@
       "attributes": {
         "phone": "7091898034",
         "address": "Delhi",
-        "risk_score": 0.08
+        "risk_score": 0.75
       },
-      "confidence": 0.92,
+      "confidence": 0.25,
       "phone": "7091898034",
       "address": "Delhi"
     },
@@ -2160,9 +2160,9 @@
         "provider": "Jio",
         "circle": "Delhi",
         "sim_status": "Active",
-        "risk_score": 0.05
+        "risk_score": 0.76
       },
-      "confidence": 0.96
+      "confidence": 0.24
     },
     {
       "entity_id": "RAW_070",
@@ -2172,9 +2172,9 @@
       "attributes": {
         "phone": "7441402617",
         "address": "Jaipur",
-        "risk_score": 0.08
+        "risk_score": 0.15
       },
-      "confidence": 0.92,
+      "confidence": 0.85,
       "phone": "7441402617",
       "address": "Jaipur"
     },
@@ -2187,9 +2187,9 @@
         "provider": "Vi",
         "circle": "Jaipur",
         "sim_status": "Active",
-        "risk_score": 0.05
+        "risk_score": 0.29
       },
-      "confidence": 0.96
+      "confidence": 0.71
     },
     {
       "entity_id": "RAW_071",
@@ -2199,9 +2199,9 @@
       "attributes": {
         "phone": "8863197321",
         "address": "Chennai",
-        "risk_score": 0.08
+        "risk_score": 0.7
       },
-      "confidence": 0.92,
+      "confidence": 0.3,
       "phone": "8863197321",
       "address": "Chennai"
     },
@@ -2214,9 +2214,9 @@
         "provider": "Jio",
         "circle": "Chennai",
         "sim_status": "Active",
-        "risk_score": 0.05
+        "risk_score": 0.4
       },
-      "confidence": 0.96
+      "confidence": 0.6
     },
     {
       "entity_id": "RAW_072",
@@ -2226,9 +2226,9 @@
       "attributes": {
         "phone": "8081622282",
         "address": "Chennai",
-        "risk_score": 0.08
+        "risk_score": 0.76
       },
-      "confidence": 0.92,
+      "confidence": 0.24,
       "phone": "8081622282",
       "address": "Chennai"
     },
@@ -2241,9 +2241,9 @@
         "provider": "Airtel",
         "circle": "Chennai",
         "sim_status": "Active",
-        "risk_score": 0.05
+        "risk_score": 0.75
       },
-      "confidence": 0.96
+      "confidence": 0.25
     },
     {
       "entity_id": "RAW_073",
@@ -2253,9 +2253,9 @@
       "attributes": {
         "phone": "8400113410",
         "address": "Kolkata",
-        "risk_score": 0.08
+        "risk_score": 0.66
       },
-      "confidence": 0.92,
+      "confidence": 0.34,
       "phone": "8400113410",
       "address": "Kolkata"
     },
@@ -2268,9 +2268,9 @@
         "provider": "Jio",
         "circle": "Kolkata",
         "sim_status": "Active",
-        "risk_score": 0.05
+        "risk_score": 0.46
       },
-      "confidence": 0.96
+      "confidence": 0.54
     },
     {
       "entity_id": "RAW_074",
@@ -2280,9 +2280,9 @@
       "attributes": {
         "phone": "7562957179",
         "address": "Delhi",
-        "risk_score": 0.08
+        "risk_score": 0.75
       },
-      "confidence": 0.92,
+      "confidence": 0.25,
       "phone": "7562957179",
       "address": "Delhi"
     },
@@ -2295,9 +2295,9 @@
         "provider": "Jio",
         "circle": "Delhi",
         "sim_status": "Active",
-        "risk_score": 0.05
+        "risk_score": 0.75
       },
-      "confidence": 0.96
+      "confidence": 0.25
     },
     {
       "entity_id": "RAW_075",
@@ -2307,9 +2307,9 @@
       "attributes": {
         "phone": "8967786445",
         "address": "Lucknow",
-        "risk_score": 0.08
+        "risk_score": 0.29
       },
-      "confidence": 0.92,
+      "confidence": 0.71,
       "phone": "8967786445",
       "address": "Lucknow"
     },
@@ -2322,9 +2322,9 @@
         "provider": "Jio",
         "circle": "Lucknow",
         "sim_status": "Active",
-        "risk_score": 0.05
+        "risk_score": 0.32
       },
-      "confidence": 0.96
+      "confidence": 0.68
     },
     {
       "entity_id": "RAW_076",
@@ -2334,9 +2334,9 @@
       "attributes": {
         "phone": "9154565813",
         "address": "Bengaluru",
-        "risk_score": 0.08
+        "risk_score": 0.68
       },
-      "confidence": 0.92,
+      "confidence": 0.32,
       "phone": "9154565813",
       "address": "Bengaluru"
     },
@@ -2349,9 +2349,9 @@
         "provider": "Airtel",
         "circle": "Bengaluru",
         "sim_status": "Active",
-        "risk_score": 0.05
+        "risk_score": 0.49
       },
-      "confidence": 0.96
+      "confidence": 0.51
     },
     {
       "entity_id": "RAW_077",
@@ -2361,9 +2361,9 @@
       "attributes": {
         "phone": "7080336781",
         "address": "Ahmedabad",
-        "risk_score": 0.08
+        "risk_score": 0.29
       },
-      "confidence": 0.92,
+      "confidence": 0.71,
       "phone": "7080336781",
       "address": "Ahmedabad"
     },
@@ -2376,9 +2376,9 @@
         "provider": "Airtel",
         "circle": "Ahmedabad",
         "sim_status": "Active",
-        "risk_score": 0.05
+        "risk_score": 0.09
       },
-      "confidence": 0.96
+      "confidence": 0.91
     },
     {
       "entity_id": "RAW_078",
@@ -2388,9 +2388,9 @@
       "attributes": {
         "phone": "7016889873",
         "address": "Bengaluru",
-        "risk_score": 0.08
+        "risk_score": 0.17
       },
-      "confidence": 0.92,
+      "confidence": 0.83,
       "phone": "7016889873",
       "address": "Bengaluru"
     },
@@ -2403,9 +2403,9 @@
         "provider": "Airtel",
         "circle": "Bengaluru",
         "sim_status": "Active",
-        "risk_score": 0.05
+        "risk_score": 0.77
       },
-      "confidence": 0.96
+      "confidence": 0.23
     },
     {
       "entity_id": "RAW_079",
@@ -2415,9 +2415,9 @@
       "attributes": {
         "phone": "9390044639",
         "address": "Delhi",
-        "risk_score": 0.08
+        "risk_score": 0.25
       },
-      "confidence": 0.92,
+      "confidence": 0.75,
       "phone": "9390044639",
       "address": "Delhi"
     },
@@ -2430,9 +2430,9 @@
         "provider": "Vi",
         "circle": "Delhi",
         "sim_status": "Active",
-        "risk_score": 0.05
+        "risk_score": 0.34
       },
-      "confidence": 0.96
+      "confidence": 0.66
     },
     {
       "entity_id": "RAW_080",
@@ -2442,9 +2442,9 @@
       "attributes": {
         "phone": "7455736473",
         "address": "Jaipur",
-        "risk_score": 0.08
+        "risk_score": 0.33
       },
-      "confidence": 0.92,
+      "confidence": 0.67,
       "phone": "7455736473",
       "address": "Jaipur"
     },
@@ -2457,9 +2457,9 @@
         "provider": "Airtel",
         "circle": "Jaipur",
         "sim_status": "Active",
-        "risk_score": 0.05
+        "risk_score": 0.34
       },
-      "confidence": 0.96
+      "confidence": 0.66
     },
     {
       "entity_id": "RAW_081",
@@ -2469,9 +2469,9 @@
       "attributes": {
         "phone": "7181242849",
         "address": "Mumbai",
-        "risk_score": 0.08
+        "risk_score": 0.34
       },
-      "confidence": 0.92,
+      "confidence": 0.66,
       "phone": "7181242849",
       "address": "Mumbai"
     },
@@ -2484,9 +2484,9 @@
         "provider": "Jio",
         "circle": "Mumbai",
         "sim_status": "Active",
-        "risk_score": 0.05
+        "risk_score": 0.11
       },
-      "confidence": 0.96
+      "confidence": 0.89
     },
     {
       "entity_id": "RAW_082",
@@ -2496,9 +2496,9 @@
       "attributes": {
         "phone": "9412609344",
         "address": "Delhi",
-        "risk_score": 0.08
+        "risk_score": 0.28
       },
-      "confidence": 0.92,
+      "confidence": 0.72,
       "phone": "9412609344",
       "address": "Delhi"
     },
@@ -2511,9 +2511,9 @@
         "provider": "Airtel",
         "circle": "Delhi",
         "sim_status": "Active",
-        "risk_score": 0.05
+        "risk_score": 0.24
       },
-      "confidence": 0.96
+      "confidence": 0.76
     },
     {
       "entity_id": "RAW_083",
@@ -2523,9 +2523,9 @@
       "attributes": {
         "phone": "8398499907",
         "address": "Lucknow",
-        "risk_score": 0.08
+        "risk_score": 0.18
       },
-      "confidence": 0.92,
+      "confidence": 0.82,
       "phone": "8398499907",
       "address": "Lucknow"
     },
@@ -2538,9 +2538,9 @@
         "provider": "Airtel",
         "circle": "Lucknow",
         "sim_status": "Active",
-        "risk_score": 0.05
+        "risk_score": 0.43
       },
-      "confidence": 0.96
+      "confidence": 0.57
     },
     {
       "entity_id": "RAW_084",
@@ -2550,9 +2550,9 @@
       "attributes": {
         "phone": "9199716799",
         "address": "Chennai",
-        "risk_score": 0.08
+        "risk_score": 0.36
       },
-      "confidence": 0.92,
+      "confidence": 0.64,
       "phone": "9199716799",
       "address": "Chennai"
     },
@@ -2565,9 +2565,9 @@
         "provider": "Jio",
         "circle": "Chennai",
         "sim_status": "Active",
-        "risk_score": 0.05
+        "risk_score": 0.72
       },
-      "confidence": 0.96
+      "confidence": 0.28
     },
     {
       "entity_id": "RAW_085",
@@ -2577,9 +2577,9 @@
       "attributes": {
         "phone": "8942810371",
         "address": "Jaipur",
-        "risk_score": 0.08
+        "risk_score": 0.58
       },
-      "confidence": 0.92,
+      "confidence": 0.42,
       "phone": "8942810371",
       "address": "Jaipur"
     },
@@ -2592,9 +2592,9 @@
         "provider": "Vi",
         "circle": "Jaipur",
         "sim_status": "Active",
-        "risk_score": 0.05
+        "risk_score": 0.47
       },
-      "confidence": 0.96
+      "confidence": 0.53
     },
     {
       "entity_id": "RAW_086",
@@ -2604,9 +2604,9 @@
       "attributes": {
         "phone": "9247168347",
         "address": "Kolkata",
-        "risk_score": 0.08
+        "risk_score": 0.26
       },
-      "confidence": 0.92,
+      "confidence": 0.74,
       "phone": "9247168347",
       "address": "Kolkata"
     },
@@ -2619,9 +2619,9 @@
         "provider": "Airtel",
         "circle": "Kolkata",
         "sim_status": "Active",
-        "risk_score": 0.05
+        "risk_score": 0.16
       },
-      "confidence": 0.96
+      "confidence": 0.84
     },
     {
       "entity_id": "RAW_087",
@@ -2631,9 +2631,9 @@
       "attributes": {
         "phone": "8922119101",
         "address": "Bengaluru",
-        "risk_score": 0.08
+        "risk_score": 0.57
       },
-      "confidence": 0.92,
+      "confidence": 0.43,
       "phone": "8922119101",
       "address": "Bengaluru"
     },
@@ -2646,9 +2646,9 @@
         "provider": "Vi",
         "circle": "Bengaluru",
         "sim_status": "Active",
-        "risk_score": 0.05
+        "risk_score": 0.16
       },
-      "confidence": 0.96
+      "confidence": 0.84
     },
     {
       "entity_id": "RAW_088",
@@ -2658,9 +2658,9 @@
       "attributes": {
         "phone": "8685192164",
         "address": "Ahmedabad",
-        "risk_score": 0.08
+        "risk_score": 0.19
       },
-      "confidence": 0.92,
+      "confidence": 0.81,
       "phone": "8685192164",
       "address": "Ahmedabad"
     },
@@ -2673,9 +2673,9 @@
         "provider": "Vi",
         "circle": "Ahmedabad",
         "sim_status": "Active",
-        "risk_score": 0.05
+        "risk_score": 0.11
       },
-      "confidence": 0.96
+      "confidence": 0.89
     },
     {
       "entity_id": "RAW_089",
@@ -2685,9 +2685,9 @@
       "attributes": {
         "phone": "9882590715",
         "address": "Chennai",
-        "risk_score": 0.08
+        "risk_score": 0.33
       },
-      "confidence": 0.92,
+      "confidence": 0.67,
       "phone": "9882590715",
       "address": "Chennai"
     },
@@ -2700,9 +2700,9 @@
         "provider": "Vi",
         "circle": "Chennai",
         "sim_status": "Active",
-        "risk_score": 0.05
+        "risk_score": 0.62
       },
-      "confidence": 0.96
+      "confidence": 0.38
     },
     {
       "entity_id": "RAW_090",
@@ -2712,9 +2712,9 @@
       "attributes": {
         "phone": "8300430508",
         "address": "Mumbai",
-        "risk_score": 0.08
+        "risk_score": 0.45
       },
-      "confidence": 0.92,
+      "confidence": 0.55,
       "phone": "8300430508",
       "address": "Mumbai"
     },
@@ -2727,9 +2727,9 @@
         "provider": "Jio",
         "circle": "Mumbai",
         "sim_status": "Active",
-        "risk_score": 0.05
+        "risk_score": 0.08
       },
-      "confidence": 0.96
+      "confidence": 0.92
     },
     {
       "entity_id": "RAW_091",
@@ -2739,9 +2739,9 @@
       "attributes": {
         "phone": "8572745251",
         "address": "Bengaluru",
-        "risk_score": 0.08
+        "risk_score": 0.2
       },
-      "confidence": 0.92,
+      "confidence": 0.8,
       "phone": "8572745251",
       "address": "Bengaluru"
     },
@@ -2754,9 +2754,9 @@
         "provider": "Vi",
         "circle": "Bengaluru",
         "sim_status": "Active",
-        "risk_score": 0.05
+        "risk_score": 0.55
       },
-      "confidence": 0.96
+      "confidence": 0.45
     },
     {
       "entity_id": "RAW_092",
@@ -2766,9 +2766,9 @@
       "attributes": {
         "phone": "9008910111",
         "address": "Chennai",
-        "risk_score": 0.08
+        "risk_score": 0.2
       },
-      "confidence": 0.92,
+      "confidence": 0.8,
       "phone": "9008910111",
       "address": "Chennai"
     },
@@ -2781,9 +2781,9 @@
         "provider": "Vi",
         "circle": "Chennai",
         "sim_status": "Active",
-        "risk_score": 0.05
+        "risk_score": 0.21
       },
-      "confidence": 0.96
+      "confidence": 0.79
     },
     {
       "entity_id": "RAW_093",
@@ -2793,9 +2793,9 @@
       "attributes": {
         "phone": "7960836459",
         "address": "Bengaluru",
-        "risk_score": 0.08
+        "risk_score": 0.75
       },
-      "confidence": 0.92,
+      "confidence": 0.25,
       "phone": "7960836459",
       "address": "Bengaluru"
     },
@@ -2808,9 +2808,9 @@
         "provider": "Jio",
         "circle": "Bengaluru",
         "sim_status": "Active",
-        "risk_score": 0.05
+        "risk_score": 0.1
       },
-      "confidence": 0.96
+      "confidence": 0.9
     },
     {
       "entity_id": "RAW_094",
@@ -2820,9 +2820,9 @@
       "attributes": {
         "phone": "7840716950",
         "address": "Hyderabad",
-        "risk_score": 0.08
+        "risk_score": 0.25
       },
-      "confidence": 0.92,
+      "confidence": 0.75,
       "phone": "7840716950",
       "address": "Hyderabad"
     },
@@ -2835,9 +2835,9 @@
         "provider": "Vi",
         "circle": "Hyderabad",
         "sim_status": "Active",
-        "risk_score": 0.05
+        "risk_score": 0.3
       },
-      "confidence": 0.96
+      "confidence": 0.7
     },
     {
       "entity_id": "RAW_095",
@@ -2847,9 +2847,9 @@
       "attributes": {
         "phone": "9379627705",
         "address": "Ahmedabad",
-        "risk_score": 0.08
+        "risk_score": 0.56
       },
-      "confidence": 0.92,
+      "confidence": 0.44,
       "phone": "9379627705",
       "address": "Ahmedabad"
     },
@@ -2862,9 +2862,9 @@
         "provider": "Vi",
         "circle": "Ahmedabad",
         "sim_status": "Active",
-        "risk_score": 0.05
+        "risk_score": 0.13
       },
-      "confidence": 0.96
+      "confidence": 0.87
     },
     {
       "entity_id": "RAW_096",
@@ -2874,9 +2874,9 @@
       "attributes": {
         "phone": "7077661511",
         "address": "Pune",
-        "risk_score": 0.08
+        "risk_score": 0.15
       },
-      "confidence": 0.92,
+      "confidence": 0.85,
       "phone": "7077661511",
       "address": "Pune"
     },
@@ -2889,9 +2889,9 @@
         "provider": "Jio",
         "circle": "Pune",
         "sim_status": "Active",
-        "risk_score": 0.05
+        "risk_score": 0.31
       },
-      "confidence": 0.96
+      "confidence": 0.69
     },
     {
       "entity_id": "RAW_097",
@@ -2901,9 +2901,9 @@
       "attributes": {
         "phone": "9679746384",
         "address": "Kolkata",
-        "risk_score": 0.08
+        "risk_score": 0.19
       },
-      "confidence": 0.92,
+      "confidence": 0.81,
       "phone": "9679746384",
       "address": "Kolkata"
     },
@@ -2916,9 +2916,9 @@
         "provider": "Jio",
         "circle": "Kolkata",
         "sim_status": "Active",
-        "risk_score": 0.05
+        "risk_score": 0.42
       },
-      "confidence": 0.96
+      "confidence": 0.58
     },
     {
       "entity_id": "RAW_098",
@@ -2928,9 +2928,9 @@
       "attributes": {
         "phone": "7484686860",
         "address": "Chennai",
-        "risk_score": 0.08
+        "risk_score": 0.5
       },
-      "confidence": 0.92,
+      "confidence": 0.5,
       "phone": "7484686860",
       "address": "Chennai"
     },
@@ -2943,9 +2943,9 @@
         "provider": "Airtel",
         "circle": "Chennai",
         "sim_status": "Active",
-        "risk_score": 0.05
+        "risk_score": 0.26
       },
-      "confidence": 0.96
+      "confidence": 0.74
     },
     {
       "entity_id": "RAW_099",
@@ -2955,9 +2955,9 @@
       "attributes": {
         "phone": "8161557137",
         "address": "Bengaluru",
-        "risk_score": 0.08
+        "risk_score": 0.28
       },
-      "confidence": 0.92,
+      "confidence": 0.72,
       "phone": "8161557137",
       "address": "Bengaluru"
     },
@@ -2970,9 +2970,9 @@
         "provider": "Airtel",
         "circle": "Bengaluru",
         "sim_status": "Active",
-        "risk_score": 0.05
+        "risk_score": 0.39
       },
-      "confidence": 0.96
+      "confidence": 0.61
     },
     {
       "entity_id": "RAW_100",
@@ -2982,9 +2982,9 @@
       "attributes": {
         "phone": "8110717268",
         "address": "Pune",
-        "risk_score": 0.08
+        "risk_score": 0.13
       },
-      "confidence": 0.92,
+      "confidence": 0.87,
       "phone": "8110717268",
       "address": "Pune"
     },
@@ -2997,9 +2997,9 @@
         "provider": "Airtel",
         "circle": "Pune",
         "sim_status": "Active",
-        "risk_score": 0.05
+        "risk_score": 0.72
       },
-      "confidence": 0.96
+      "confidence": 0.28
     },
     {
       "entity_id": "ACCT_94641177",
@@ -3013,9 +3013,9 @@
         "branch": "Central Commercial Branch",
         "flag": "High-Risk Shared Mule Account",
         "reported_balance": "\u20b942,50,000",
-        "risk_score": 0.05
+        "risk_score": 0.15
       },
-      "confidence": 0.98
+      "confidence": 0.85
     },
     {
       "entity_id": "ACCT_RAW_001",
@@ -3026,9 +3026,9 @@
         "bank": "Kotak Mahindra Bank",
         "account_type": "Savings/Current",
         "status": "Monitored",
-        "risk_score": 0.07
+        "risk_score": 0.49
       },
-      "confidence": 0.93
+      "confidence": 0.51
     },
     {
       "entity_id": "ACCT_RAW_004",
@@ -3039,9 +3039,9 @@
         "bank": "ICICI Bank",
         "account_type": "Savings/Current",
         "status": "Monitored",
-        "risk_score": 0.07
+        "risk_score": 0.55
       },
-      "confidence": 0.93
+      "confidence": 0.45
     },
     {
       "entity_id": "ACCT_RAW_006",
@@ -3052,9 +3052,9 @@
         "bank": "Axis Bank",
         "account_type": "Savings/Current",
         "status": "Monitored",
-        "risk_score": 0.07
+        "risk_score": 0.73
       },
-      "confidence": 0.93
+      "confidence": 0.27
     },
     {
       "entity_id": "ACCT_RAW_007",
@@ -3065,9 +3065,9 @@
         "bank": "HDFC Bank",
         "account_type": "Savings/Current",
         "status": "Monitored",
-        "risk_score": 0.07
+        "risk_score": 0.76
       },
-      "confidence": 0.93
+      "confidence": 0.24
     },
     {
       "entity_id": "ACCT_RAW_008",
@@ -3078,9 +3078,9 @@
         "bank": "ICICI Bank",
         "account_type": "Savings/Current",
         "status": "Monitored",
-        "risk_score": 0.07
+        "risk_score": 0.57
       },
-      "confidence": 0.93
+      "confidence": 0.43
     },
     {
       "entity_id": "ACCT_RAW_009",
@@ -3091,9 +3091,9 @@
         "bank": "HDFC Bank",
         "account_type": "Savings/Current",
         "status": "Monitored",
-        "risk_score": 0.07
+        "risk_score": 0.3
       },
-      "confidence": 0.93
+      "confidence": 0.7
     },
     {
       "entity_id": "ACCT_RAW_010",
@@ -3104,9 +3104,9 @@
         "bank": "Axis Bank",
         "account_type": "Savings/Current",
         "status": "Monitored",
-        "risk_score": 0.07
+        "risk_score": 0.32
       },
-      "confidence": 0.93
+      "confidence": 0.68
     },
     {
       "entity_id": "ACCT_RAW_013",
@@ -3117,9 +3117,9 @@
         "bank": "Punjab National Bank",
         "account_type": "Savings/Current",
         "status": "Monitored",
-        "risk_score": 0.07
+        "risk_score": 0.5
       },
-      "confidence": 0.93
+      "confidence": 0.5
     },
     {
       "entity_id": "ACCT_RAW_016",
@@ -3130,9 +3130,9 @@
         "bank": "Axis Bank",
         "account_type": "Savings/Current",
         "status": "Monitored",
-        "risk_score": 0.07
+        "risk_score": 0.15
       },
-      "confidence": 0.93
+      "confidence": 0.85
     },
     {
       "entity_id": "ACCT_RAW_019",
@@ -3143,9 +3143,9 @@
         "bank": "HDFC Bank",
         "account_type": "Savings/Current",
         "status": "Monitored",
-        "risk_score": 0.07
+        "risk_score": 0.58
       },
-      "confidence": 0.93
+      "confidence": 0.42
     },
     {
       "entity_id": "ACCT_RAW_022",
@@ -3156,9 +3156,9 @@
         "bank": "ICICI Bank",
         "account_type": "Savings/Current",
         "status": "Monitored",
-        "risk_score": 0.07
+        "risk_score": 0.25
       },
-      "confidence": 0.93
+      "confidence": 0.75
     },
     {
       "entity_id": "ACCT_RAW_025",
@@ -3169,9 +3169,9 @@
         "bank": "Kotak Mahindra Bank",
         "account_type": "Savings/Current",
         "status": "Monitored",
-        "risk_score": 0.07
+        "risk_score": 0.1
       },
-      "confidence": 0.93
+      "confidence": 0.9
     },
     {
       "entity_id": "ACCT_RAW_028",
@@ -3182,9 +3182,9 @@
         "bank": "Axis Bank",
         "account_type": "Savings/Current",
         "status": "Monitored",
-        "risk_score": 0.07
+        "risk_score": 0.15
       },
-      "confidence": 0.93
+      "confidence": 0.85
     },
     {
       "entity_id": "ACCT_RAW_031",
@@ -3195,9 +3195,9 @@
         "bank": "ICICI Bank",
         "account_type": "Savings/Current",
         "status": "Monitored",
-        "risk_score": 0.07
+        "risk_score": 0.23
       },
-      "confidence": 0.93
+      "confidence": 0.77
     },
     {
       "entity_id": "ACCT_RAW_034",
@@ -3208,9 +3208,9 @@
         "bank": "Punjab National Bank",
         "account_type": "Savings/Current",
         "status": "Monitored",
-        "risk_score": 0.07
+        "risk_score": 0.14
       },
-      "confidence": 0.93
+      "confidence": 0.86
     },
     {
       "entity_id": "ACCT_RAW_037",
@@ -3221,9 +3221,9 @@
         "bank": "Punjab National Bank",
         "account_type": "Savings/Current",
         "status": "Monitored",
-        "risk_score": 0.07
+        "risk_score": 0.56
       },
-      "confidence": 0.93
+      "confidence": 0.44
     },
     {
       "entity_id": "ACCT_RAW_040",
@@ -3234,9 +3234,9 @@
         "bank": "Punjab National Bank",
         "account_type": "Savings/Current",
         "status": "Monitored",
-        "risk_score": 0.07
+        "risk_score": 0.19
       },
-      "confidence": 0.93
+      "confidence": 0.81
     },
     {
       "entity_id": "ACCT_RAW_043",
@@ -3247,9 +3247,9 @@
         "bank": "ICICI Bank",
         "account_type": "Savings/Current",
         "status": "Monitored",
-        "risk_score": 0.07
+        "risk_score": 0.19
       },
-      "confidence": 0.93
+      "confidence": 0.81
     },
     {
       "entity_id": "ACCT_RAW_046",
@@ -3260,9 +3260,9 @@
         "bank": "Axis Bank",
         "account_type": "Savings/Current",
         "status": "Monitored",
-        "risk_score": 0.07
+        "risk_score": 0.19
       },
-      "confidence": 0.93
+      "confidence": 0.81
     },
     {
       "entity_id": "ACCT_RAW_049",
@@ -3273,9 +3273,9 @@
         "bank": "ICICI Bank",
         "account_type": "Savings/Current",
         "status": "Monitored",
-        "risk_score": 0.07
+        "risk_score": 0.72
       },
-      "confidence": 0.93
+      "confidence": 0.28
     },
     {
       "entity_id": "ACCT_RAW_052",
@@ -3286,9 +3286,9 @@
         "bank": "ICICI Bank",
         "account_type": "Savings/Current",
         "status": "Monitored",
-        "risk_score": 0.07
+        "risk_score": 0.61
       },
-      "confidence": 0.93
+      "confidence": 0.39
     },
     {
       "entity_id": "ACCT_RAW_055",
@@ -3299,9 +3299,9 @@
         "bank": "Kotak Mahindra Bank",
         "account_type": "Savings/Current",
         "status": "Monitored",
-        "risk_score": 0.07
+        "risk_score": 0.47
       },
-      "confidence": 0.93
+      "confidence": 0.53
     },
     {
       "entity_id": "ACCT_RAW_058",
@@ -3312,9 +3312,9 @@
         "bank": "Kotak Mahindra Bank",
         "account_type": "Savings/Current",
         "status": "Monitored",
-        "risk_score": 0.07
+        "risk_score": 0.17
       },
-      "confidence": 0.93
+      "confidence": 0.83
     },
     {
       "entity_id": "ACCT_RAW_061",
@@ -3325,9 +3325,9 @@
         "bank": "Axis Bank",
         "account_type": "Savings/Current",
         "status": "Monitored",
-        "risk_score": 0.07
+        "risk_score": 0.61
       },
-      "confidence": 0.93
+      "confidence": 0.39
     },
     {
       "entity_id": "ACCT_RAW_064",
@@ -3338,9 +3338,9 @@
         "bank": "Kotak Mahindra Bank",
         "account_type": "Savings/Current",
         "status": "Monitored",
-        "risk_score": 0.07
+        "risk_score": 0.71
       },
-      "confidence": 0.93
+      "confidence": 0.29
     },
     {
       "entity_id": "ACCT_RAW_065",
@@ -3351,9 +3351,9 @@
         "bank": "Punjab National Bank",
         "account_type": "Savings/Current",
         "status": "Monitored",
-        "risk_score": 0.07
+        "risk_score": 0.52
       },
-      "confidence": 0.93
+      "confidence": 0.48
     },
     {
       "entity_id": "ACCT_RAW_067",
@@ -3364,9 +3364,9 @@
         "bank": "Kotak Mahindra Bank",
         "account_type": "Savings/Current",
         "status": "Monitored",
-        "risk_score": 0.07
+        "risk_score": 0.42
       },
-      "confidence": 0.93
+      "confidence": 0.58
     },
     {
       "entity_id": "ACCT_RAW_070",
@@ -3377,9 +3377,9 @@
         "bank": "Punjab National Bank",
         "account_type": "Savings/Current",
         "status": "Monitored",
-        "risk_score": 0.07
+        "risk_score": 0.2
       },
-      "confidence": 0.93
+      "confidence": 0.8
     },
     {
       "entity_id": "ACCT_RAW_073",
@@ -3390,9 +3390,9 @@
         "bank": "Axis Bank",
         "account_type": "Savings/Current",
         "status": "Monitored",
-        "risk_score": 0.07
+        "risk_score": 0.17
       },
-      "confidence": 0.93
+      "confidence": 0.83
     },
     {
       "entity_id": "ACCT_RAW_076",
@@ -3403,9 +3403,9 @@
         "bank": "ICICI Bank",
         "account_type": "Savings/Current",
         "status": "Monitored",
-        "risk_score": 0.07
+        "risk_score": 0.48
       },
-      "confidence": 0.93
+      "confidence": 0.52
     },
     {
       "entity_id": "ACCT_RAW_079",
@@ -3416,9 +3416,9 @@
         "bank": "ICICI Bank",
         "account_type": "Savings/Current",
         "status": "Monitored",
-        "risk_score": 0.07
+        "risk_score": 0.21
       },
-      "confidence": 0.93
+      "confidence": 0.79
     },
     {
       "entity_id": "ACCT_RAW_082",
@@ -3429,9 +3429,9 @@
         "bank": "Kotak Mahindra Bank",
         "account_type": "Savings/Current",
         "status": "Monitored",
-        "risk_score": 0.07
+        "risk_score": 0.25
       },
-      "confidence": 0.93
+      "confidence": 0.75
     },
     {
       "entity_id": "ACCT_RAW_085",
@@ -3442,9 +3442,9 @@
         "bank": "Punjab National Bank",
         "account_type": "Savings/Current",
         "status": "Monitored",
-        "risk_score": 0.07
+        "risk_score": 0.19
       },
-      "confidence": 0.93
+      "confidence": 0.81
     },
     {
       "entity_id": "ACCT_RAW_088",
@@ -3455,9 +3455,9 @@
         "bank": "HDFC Bank",
         "account_type": "Savings/Current",
         "status": "Monitored",
-        "risk_score": 0.07
+        "risk_score": 0.37
       },
-      "confidence": 0.93
+      "confidence": 0.63
     },
     {
       "entity_id": "ACCT_RAW_091",
@@ -3468,9 +3468,9 @@
         "bank": "HDFC Bank",
         "account_type": "Savings/Current",
         "status": "Monitored",
-        "risk_score": 0.07
+        "risk_score": 0.4
       },
-      "confidence": 0.93
+      "confidence": 0.6
     },
     {
       "entity_id": "ACCT_RAW_094",
@@ -3481,9 +3481,9 @@
         "bank": "HDFC Bank",
         "account_type": "Savings/Current",
         "status": "Monitored",
-        "risk_score": 0.07
+        "risk_score": 0.09
       },
-      "confidence": 0.93
+      "confidence": 0.91
     },
     {
       "entity_id": "ACCT_RAW_097",
@@ -3494,9 +3494,9 @@
         "bank": "ICICI Bank",
         "account_type": "Savings/Current",
         "status": "Monitored",
-        "risk_score": 0.07
+        "risk_score": 0.14
       },
-      "confidence": 0.93
+      "confidence": 0.86
     },
     {
       "entity_id": "ACCT_RAW_100",
@@ -3507,9 +3507,9 @@
         "bank": "ICICI Bank",
         "account_type": "Savings/Current",
         "status": "Monitored",
-        "risk_score": 0.07
+        "risk_score": 0.29
       },
-      "confidence": 0.93
+      "confidence": 0.71
     },
     {
       "entity_id": "VEH_RAW_001",
@@ -3522,9 +3522,9 @@
         "category": "Commercial Truck/SUV",
         "toll_plaza_hit": "NH48 Toll Plaza",
         "status": "ANPR Monitored",
-        "risk_score": 0.09
+        "risk_score": 0.28
       },
-      "confidence": 0.91
+      "confidence": 0.72
     },
     {
       "entity_id": "VEH_RAW_006",
@@ -3537,9 +3537,9 @@
         "category": "Commercial Truck/SUV",
         "toll_plaza_hit": "NH48 Toll Plaza",
         "status": "ANPR Monitored",
-        "risk_score": 0.09
+        "risk_score": 0.43
       },
-      "confidence": 0.91
+      "confidence": 0.57
     },
     {
       "entity_id": "VEH_RAW_011",
@@ -3567,9 +3567,9 @@
         "category": "Commercial Truck/SUV",
         "toll_plaza_hit": "NH48 Toll Plaza",
         "status": "ANPR Monitored",
-        "risk_score": 0.09
+        "risk_score": 0.35
       },
-      "confidence": 0.91
+      "confidence": 0.65
     },
     {
       "entity_id": "VEH_RAW_021",
@@ -3582,9 +3582,9 @@
         "category": "Commercial Truck/SUV",
         "toll_plaza_hit": "NH48 Toll Plaza",
         "status": "ANPR Monitored",
-        "risk_score": 0.09
+        "risk_score": 0.26
       },
-      "confidence": 0.91
+      "confidence": 0.74
     },
     {
       "entity_id": "VEH_RAW_026",
@@ -3597,9 +3597,9 @@
         "category": "Commercial Truck/SUV",
         "toll_plaza_hit": "NH48 Toll Plaza",
         "status": "ANPR Monitored",
-        "risk_score": 0.09
+        "risk_score": 0.55
       },
-      "confidence": 0.91
+      "confidence": 0.45
     },
     {
       "entity_id": "VEH_RAW_031",
@@ -3612,9 +3612,9 @@
         "category": "Commercial Truck/SUV",
         "toll_plaza_hit": "NH48 Toll Plaza",
         "status": "ANPR Monitored",
-        "risk_score": 0.09
+        "risk_score": 0.64
       },
-      "confidence": 0.91
+      "confidence": 0.36
     },
     {
       "entity_id": "VEH_RAW_036",
@@ -3642,9 +3642,9 @@
         "category": "Commercial Truck/SUV",
         "toll_plaza_hit": "NH48 Toll Plaza",
         "status": "ANPR Monitored",
-        "risk_score": 0.09
+        "risk_score": 0.11
       },
-      "confidence": 0.91
+      "confidence": 0.89
     },
     {
       "entity_id": "VEH_RAW_046",
@@ -3657,9 +3657,9 @@
         "category": "Commercial Truck/SUV",
         "toll_plaza_hit": "NH48 Toll Plaza",
         "status": "ANPR Monitored",
-        "risk_score": 0.09
+        "risk_score": 0.52
       },
-      "confidence": 0.91
+      "confidence": 0.48
     },
     {
       "entity_id": "VEH_RAW_051",
@@ -3672,9 +3672,9 @@
         "category": "Commercial Truck/SUV",
         "toll_plaza_hit": "NH48 Toll Plaza",
         "status": "ANPR Monitored",
-        "risk_score": 0.09
+        "risk_score": 0.27
       },
-      "confidence": 0.91
+      "confidence": 0.73
     },
     {
       "entity_id": "VEH_RAW_056",
@@ -3687,9 +3687,9 @@
         "category": "Commercial Truck/SUV",
         "toll_plaza_hit": "NH48 Toll Plaza",
         "status": "ANPR Monitored",
-        "risk_score": 0.09
+        "risk_score": 0.41
       },
-      "confidence": 0.91
+      "confidence": 0.59
     },
     {
       "entity_id": "VEH_RAW_061",
@@ -3702,9 +3702,9 @@
         "category": "Commercial Truck/SUV",
         "toll_plaza_hit": "NH48 Toll Plaza",
         "status": "ANPR Monitored",
-        "risk_score": 0.09
+        "risk_score": 0.58
       },
-      "confidence": 0.91
+      "confidence": 0.42
     },
     {
       "entity_id": "VEH_RAW_065",
@@ -3717,9 +3717,9 @@
         "category": "Commercial Truck/SUV",
         "toll_plaza_hit": "NH48 Toll Plaza",
         "status": "ANPR Monitored",
-        "risk_score": 0.09
+        "risk_score": 0.3
       },
-      "confidence": 0.91
+      "confidence": 0.7
     },
     {
       "entity_id": "VEH_RAW_066",
@@ -3732,9 +3732,9 @@
         "category": "Commercial Truck/SUV",
         "toll_plaza_hit": "NH48 Toll Plaza",
         "status": "ANPR Monitored",
-        "risk_score": 0.09
+        "risk_score": 0.67
       },
-      "confidence": 0.91
+      "confidence": 0.33
     },
     {
       "entity_id": "VEH_RAW_071",
@@ -3747,9 +3747,9 @@
         "category": "Commercial Truck/SUV",
         "toll_plaza_hit": "NH48 Toll Plaza",
         "status": "ANPR Monitored",
-        "risk_score": 0.09
+        "risk_score": 0.16
       },
-      "confidence": 0.91
+      "confidence": 0.84
     },
     {
       "entity_id": "VEH_RAW_076",
@@ -3762,9 +3762,9 @@
         "category": "Commercial Truck/SUV",
         "toll_plaza_hit": "NH48 Toll Plaza",
         "status": "ANPR Monitored",
-        "risk_score": 0.09
+        "risk_score": 0.64
       },
-      "confidence": 0.91
+      "confidence": 0.36
     },
     {
       "entity_id": "VEH_RAW_081",
@@ -3777,9 +3777,9 @@
         "category": "Commercial Truck/SUV",
         "toll_plaza_hit": "NH48 Toll Plaza",
         "status": "ANPR Monitored",
-        "risk_score": 0.09
+        "risk_score": 0.27
       },
-      "confidence": 0.91
+      "confidence": 0.73
     },
     {
       "entity_id": "VEH_RAW_086",
@@ -3792,9 +3792,9 @@
         "category": "Commercial Truck/SUV",
         "toll_plaza_hit": "NH48 Toll Plaza",
         "status": "ANPR Monitored",
-        "risk_score": 0.09
+        "risk_score": 0.27
       },
-      "confidence": 0.91
+      "confidence": 0.73
     },
     {
       "entity_id": "VEH_RAW_091",
@@ -3807,9 +3807,9 @@
         "category": "Commercial Truck/SUV",
         "toll_plaza_hit": "NH48 Toll Plaza",
         "status": "ANPR Monitored",
-        "risk_score": 0.09
+        "risk_score": 0.39
       },
-      "confidence": 0.91
+      "confidence": 0.61
     },
     {
       "entity_id": "VEH_RAW_096",
@@ -3822,9 +3822,9 @@
         "category": "Commercial Truck/SUV",
         "toll_plaza_hit": "NH48 Toll Plaza",
         "status": "ANPR Monitored",
-        "risk_score": 0.09
+        "risk_score": 0.61
       },
-      "confidence": 0.91
+      "confidence": 0.39
     }
   ],
   "raw_relationships": [
@@ -5969,6 +5969,62 @@
       "relationship": "KNOWS",
       "confidence": 0.7,
       "evidence": "CDR_LOG_RAW_048_RAW_074"
+    },
+    {
+      "source": "P042",
+      "target": "ACC_12",
+      "relationship": "OWNS",
+      "confidence": 0.89,
+      "evidence": "PRIMARY_BANK_STATEMENT_P042"
+    },
+    {
+      "source": "P042",
+      "target": "VEH_07",
+      "relationship": "USES",
+      "confidence": 0.87,
+      "evidence": "ANPR_VEHICLE_TRACK_P042"
+    },
+    {
+      "source": "P042",
+      "target": "P017",
+      "relationship": "KNOWS",
+      "confidence": 0.91,
+      "evidence": "SYNDICATE_COORDINATION_LOG_017"
+    },
+    {
+      "source": "P042",
+      "target": "P031",
+      "relationship": "TRANSACTED_WITH",
+      "confidence": 0.88,
+      "evidence": "HAWALA_TRANSFER_LOG_031"
+    },
+    {
+      "source": "P042",
+      "target": "ACCT_94641177",
+      "relationship": "TRANSACTED_WITH",
+      "confidence": 0.94,
+      "evidence": "MULE_RING_FUNDS_TRANSFER_042"
+    },
+    {
+      "source": "P042",
+      "target": "ADDR_Delhi",
+      "relationship": "LOCATED_AT",
+      "confidence": 0.9,
+      "evidence": "SURVEILLANCE_LOG_DELHI_042"
+    },
+    {
+      "source": "RAW_006",
+      "target": "ADDR_04",
+      "relationship": "ASSOCIATED_WITH",
+      "confidence": 0.84,
+      "evidence": "TRANSIT_HOTEL_LOG_006"
+    },
+    {
+      "source": "RAW_006",
+      "target": "P017",
+      "relationship": "CALLED",
+      "confidence": 0.89,
+      "evidence": "CDR_MULE_CALL_006_017"
     }
   ]
 }
