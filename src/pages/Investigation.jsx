@@ -76,9 +76,13 @@ const ENTITY_FILTERS = [
 const RELATIONSHIP_COLORS = {
   DIRECTOR_OF: "#2dd4bf",
   REGISTERED_AT: "#fb7185",
+  LOCATED_AT: "#fb7185",
   OWNS: "#c084fc",
   USES: "#38bdf8",
   ASSOCIATED_WITH: "#f59e0b",
+  CALLED: "#06b6d4",
+  TRANSACTED_WITH: "#a855f7",
+  KNOWS: "#64748b",
 };
 
 /* ==================================================

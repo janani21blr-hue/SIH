@@ -1,707 +1,5457 @@
 {
   "raw_records": [
     {
+      "entity_id": "P042",
+      "entity_type": "person",
+      "name": "Rajesh Kumar",
+      "aliases": [
+        "R. Kumar",
+        "Raj Kumar"
+      ],
+      "attributes": {
+        "risk_score": 0.88,
+        "location": "Delhi"
+      },
+      "confidence": 0.94
+    },
+    {
+      "entity_id": "PHONE_17",
+      "entity_type": "phone",
+      "name": "+91 9876543210",
+      "aliases": [],
+      "attributes": {
+        "provider": "Airtel"
+      },
+      "confidence": 0.99
+    },
+    {
+      "entity_id": "COMP_05",
+      "entity_type": "company",
+      "name": "Global Exports Ltd",
+      "aliases": [
+        "Global Exports"
+      ],
+      "attributes": {
+        "registration": "U12345DL2023PTC123456"
+      },
+      "confidence": 0.87
+    },
+    {
+      "entity_id": "P017",
+      "entity_type": "person",
+      "name": "Anil Sharma",
+      "aliases": [
+        "A. Sharma"
+      ],
+      "attributes": {
+        "location": "Delhi",
+        "risk_score": 0.91
+      },
+      "confidence": 0.91
+    },
+    {
+      "entity_id": "P031",
+      "entity_type": "person",
+      "name": "Vikram Singh",
+      "aliases": [
+        "V. Singh"
+      ],
+      "attributes": {
+        "location": "Gurgaon",
+        "risk_score": 0.89
+      },
+      "confidence": 0.89
+    },
+    {
+      "entity_id": "PHONE_08",
+      "entity_type": "phone",
+      "name": "+91 9811122233",
+      "aliases": [],
+      "attributes": {
+        "provider": "Jio",
+        "circle": "Delhi"
+      },
+      "confidence": 0.97
+    },
+    {
+      "entity_id": "PHONE_21",
+      "entity_type": "phone",
+      "name": "+91 9898989898",
+      "aliases": [],
+      "attributes": {
+        "provider": "Airtel",
+        "circle": "Haryana"
+      },
+      "confidence": 0.95
+    },
+    {
+      "entity_id": "ACC_12",
+      "entity_type": "account",
+      "name": "HDFC Bank \u2022\u2022\u2022\u2022 4821",
+      "aliases": [],
+      "attributes": {
+        "bank": "HDFC Bank",
+        "type": "Current"
+      },
+      "confidence": 0.93
+    },
+    {
+      "entity_id": "ACC_19",
+      "entity_type": "account",
+      "name": "ICICI Bank \u2022\u2022\u2022\u2022 7714",
+      "aliases": [],
+      "attributes": {
+        "bank": "ICICI Bank",
+        "type": "Savings"
+      },
+      "confidence": 0.9
+    },
+    {
+      "entity_id": "VEH_07",
+      "entity_type": "vehicle",
+      "name": "DL 3C AB 4821",
+      "aliases": [],
+      "attributes": {
+        "category": "SUV",
+        "owner": "Anil Sharma"
+      },
+      "confidence": 0.86
+    },
+    {
+      "entity_id": "COMP_12",
+      "entity_type": "company",
+      "name": "North Star Trading Pvt Ltd",
+      "aliases": [
+        "North Star"
+      ],
+      "attributes": {
+        "registration": "DEMO-COMP-12"
+      },
+      "confidence": 0.88
+    },
+    {
+      "entity_id": "ADDR_04",
+      "entity_type": "address",
+      "name": "Sector 18, Gurgaon Hub",
+      "aliases": [],
+      "attributes": {
+        "city": "Gurgaon"
+      },
+      "confidence": 0.84
+    },
+    {
+      "entity_id": "ADDR_09",
+      "entity_type": "address",
+      "name": "Connaught Place, Delhi Hub",
+      "aliases": [
+        "CP Delhi"
+      ],
+      "attributes": {
+        "city": "Delhi"
+      },
+      "confidence": 0.9
+    },
+    {
+      "entity_id": "ADDR_Delhi",
+      "entity_type": "address",
+      "name": "Delhi NCR Investigation Corridor",
+      "aliases": [
+        "Delhi Central"
+      ],
+      "attributes": {
+        "city": "Delhi",
+        "zone": "Investigation Regional Hub"
+      },
+      "confidence": 0.92
+    },
+    {
+      "entity_id": "ADDR_Mumbai",
+      "entity_type": "address",
+      "name": "BKC Financial Hub, Mumbai",
+      "aliases": [
+        "Mumbai Central"
+      ],
+      "attributes": {
+        "city": "Mumbai",
+        "zone": "Investigation Regional Hub"
+      },
+      "confidence": 0.92
+    },
+    {
+      "entity_id": "ADDR_Bengaluru",
+      "entity_type": "address",
+      "name": "Koramangala Commercial Hub, Bengaluru",
+      "aliases": [
+        "Bengaluru Central"
+      ],
+      "attributes": {
+        "city": "Bengaluru",
+        "zone": "Investigation Regional Hub"
+      },
+      "confidence": 0.92
+    },
+    {
+      "entity_id": "ADDR_Chennai",
+      "entity_type": "address",
+      "name": "Anna Salai Business Belt, Chennai",
+      "aliases": [
+        "Chennai Central"
+      ],
+      "attributes": {
+        "city": "Chennai",
+        "zone": "Investigation Regional Hub"
+      },
+      "confidence": 0.92
+    },
+    {
+      "entity_id": "ADDR_Kolkata",
+      "entity_type": "address",
+      "name": "Salt Lake Sector V, Kolkata",
+      "aliases": [
+        "Kolkata Central"
+      ],
+      "attributes": {
+        "city": "Kolkata",
+        "zone": "Investigation Regional Hub"
+      },
+      "confidence": 0.92
+    },
+    {
+      "entity_id": "ADDR_Hyderabad",
+      "entity_type": "address",
+      "name": "HITEC City Logistics Corridor, Hyderabad",
+      "aliases": [
+        "Hyderabad Central"
+      ],
+      "attributes": {
+        "city": "Hyderabad",
+        "zone": "Investigation Regional Hub"
+      },
+      "confidence": 0.92
+    },
+    {
+      "entity_id": "ADDR_Pune",
+      "entity_type": "address",
+      "name": "Hinjawadi Commercial Park, Pune",
+      "aliases": [
+        "Pune Central"
+      ],
+      "attributes": {
+        "city": "Pune",
+        "zone": "Investigation Regional Hub"
+      },
+      "confidence": 0.92
+    },
+    {
+      "entity_id": "ADDR_Ahmedabad",
+      "entity_type": "address",
+      "name": "Ellis Bridge Transit Hub, Ahmedabad",
+      "aliases": [
+        "Ahmedabad Central"
+      ],
+      "attributes": {
+        "city": "Ahmedabad",
+        "zone": "Investigation Regional Hub"
+      },
+      "confidence": 0.92
+    },
+    {
+      "entity_id": "ADDR_Jaipur",
+      "entity_type": "address",
+      "name": "MI Road Financial District, Jaipur",
+      "aliases": [
+        "Jaipur Central"
+      ],
+      "attributes": {
+        "city": "Jaipur",
+        "zone": "Investigation Regional Hub"
+      },
+      "confidence": 0.92
+    },
+    {
+      "entity_id": "ADDR_Lucknow",
+      "entity_type": "address",
+      "name": "Hazratganj Central District, Lucknow",
+      "aliases": [
+        "Lucknow Central"
+      ],
+      "attributes": {
+        "city": "Lucknow",
+        "zone": "Investigation Regional Hub"
+      },
+      "confidence": 0.92
+    },
+    {
       "entity_id": "RAW_001",
       "entity_type": "person",
       "name": "Aditya Nair",
+      "aliases": [],
+      "attributes": {
+        "phone": "8695753998",
+        "address": "Delhi"
+      },
+      "confidence": 0.92,
       "phone": "8695753998",
       "address": "Delhi"
+    },
+    {
+      "entity_id": "PHONE_8695753998",
+      "entity_type": "phone",
+      "name": "+91 8695753998",
+      "aliases": [],
+      "attributes": {
+        "provider": "Vi",
+        "circle": "Delhi",
+        "sim_status": "Active"
+      },
+      "confidence": 0.96
     },
     {
       "entity_id": "RAW_002",
       "entity_type": "company",
       "name": "Kulkarni Logistics Pvt Ltd",
+      "aliases": [],
+      "attributes": {
+        "phone": "8570621944",
+        "address": "Bengaluru"
+      },
+      "confidence": 0.92,
       "phone": "8570621944",
       "address": "Bengaluru"
+    },
+    {
+      "entity_id": "PHONE_8570621944",
+      "entity_type": "phone",
+      "name": "+91 8570621944",
+      "aliases": [],
+      "attributes": {
+        "provider": "Jio",
+        "circle": "Bengaluru",
+        "sim_status": "Active"
+      },
+      "confidence": 0.96
     },
     {
       "entity_id": "RAW_003",
       "entity_type": "company",
       "name": "Kulkarni Enterprises Pvt Ltd",
+      "aliases": [],
+      "attributes": {
+        "phone": "7161042648",
+        "address": "Bengaluru"
+      },
+      "confidence": 0.92,
       "phone": "7161042648",
       "address": "Bengaluru"
+    },
+    {
+      "entity_id": "PHONE_7161042648",
+      "entity_type": "phone",
+      "name": "+91 7161042648",
+      "aliases": [],
+      "attributes": {
+        "provider": "Jio",
+        "circle": "Bengaluru",
+        "sim_status": "Active"
+      },
+      "confidence": 0.96
     },
     {
       "entity_id": "RAW_004",
       "entity_type": "company",
       "name": "Menon Logistics Pvt Ltd",
+      "aliases": [],
+      "attributes": {
+        "phone": "8033639716",
+        "address": "Bengaluru"
+      },
+      "confidence": 0.92,
       "phone": "8033639716",
       "address": "Bengaluru"
+    },
+    {
+      "entity_id": "PHONE_8033639716",
+      "entity_type": "phone",
+      "name": "+91 8033639716",
+      "aliases": [],
+      "attributes": {
+        "provider": "Vi",
+        "circle": "Bengaluru",
+        "sim_status": "Active"
+      },
+      "confidence": 0.96
     },
     {
       "entity_id": "RAW_005",
       "entity_type": "company",
       "name": "Menon Trading Pvt Ltd",
+      "aliases": [],
+      "attributes": {
+        "phone": "7531725347",
+        "address": "Lucknow"
+      },
+      "confidence": 0.92,
       "phone": "7531725347",
       "address": "Lucknow"
+    },
+    {
+      "entity_id": "PHONE_7531725347",
+      "entity_type": "phone",
+      "name": "+91 7531725347",
+      "aliases": [],
+      "attributes": {
+        "provider": "Airtel",
+        "circle": "Lucknow",
+        "sim_status": "Active"
+      },
+      "confidence": 0.96
     },
     {
       "entity_id": "RAW_006",
       "entity_type": "person",
       "name": "Sameer Bhat",
+      "aliases": [],
+      "attributes": {
+        "phone": "7265695473",
+        "address": "Lucknow"
+      },
+      "confidence": 0.92,
       "phone": "7265695473",
       "address": "Lucknow"
+    },
+    {
+      "entity_id": "PHONE_7265695473",
+      "entity_type": "phone",
+      "name": "+91 7265695473",
+      "aliases": [],
+      "attributes": {
+        "provider": "Jio",
+        "circle": "Lucknow",
+        "sim_status": "Active"
+      },
+      "confidence": 0.96
     },
     {
       "entity_id": "RAW_007",
       "entity_type": "person",
       "name": "Priya Gowda",
+      "aliases": [],
+      "attributes": {
+        "phone": "7200071088",
+        "address": "Jaipur"
+      },
+      "confidence": 0.92,
       "phone": "7200071088",
       "address": "Jaipur"
+    },
+    {
+      "entity_id": "PHONE_7200071088",
+      "entity_type": "phone",
+      "name": "+91 7200071088",
+      "aliases": [],
+      "attributes": {
+        "provider": "Jio",
+        "circle": "Jaipur",
+        "sim_status": "Active"
+      },
+      "confidence": 0.96
     },
     {
       "entity_id": "RAW_008",
       "entity_type": "person",
       "name": "Meera Menon",
+      "aliases": [],
+      "attributes": {
+        "phone": "7619570852",
+        "address": "Jaipur"
+      },
+      "confidence": 0.92,
       "phone": "7619570852",
       "address": "Jaipur"
+    },
+    {
+      "entity_id": "PHONE_7619570852",
+      "entity_type": "phone",
+      "name": "+91 7619570852",
+      "aliases": [],
+      "attributes": {
+        "provider": "Jio",
+        "circle": "Jaipur",
+        "sim_status": "Active"
+      },
+      "confidence": 0.96
     },
     {
       "entity_id": "RAW_009",
       "entity_type": "person",
       "name": "Meera Kulkarni",
+      "aliases": [],
+      "attributes": {
+        "phone": "9929179284",
+        "address": "Bengaluru"
+      },
+      "confidence": 0.92,
       "phone": "9929179284",
       "address": "Bengaluru"
+    },
+    {
+      "entity_id": "PHONE_9929179284",
+      "entity_type": "phone",
+      "name": "+91 9929179284",
+      "aliases": [],
+      "attributes": {
+        "provider": "Vi",
+        "circle": "Bengaluru",
+        "sim_status": "Active"
+      },
+      "confidence": 0.96
     },
     {
       "entity_id": "RAW_010",
       "entity_type": "person",
       "name": "Farhan Shetty",
+      "aliases": [],
+      "attributes": {
+        "phone": "7806899909",
+        "address": "Hyderabad"
+      },
+      "confidence": 0.92,
       "phone": "7806899909",
       "address": "Hyderabad"
+    },
+    {
+      "entity_id": "PHONE_7806899909",
+      "entity_type": "phone",
+      "name": "+91 7806899909",
+      "aliases": [],
+      "attributes": {
+        "provider": "Jio",
+        "circle": "Hyderabad",
+        "sim_status": "Active"
+      },
+      "confidence": 0.96
     },
     {
       "entity_id": "RAW_011",
       "entity_type": "person",
       "name": "Rahul Reddy",
+      "aliases": [],
+      "attributes": {
+        "phone": "9423943363",
+        "address": "Delhi"
+      },
+      "confidence": 0.92,
       "phone": "9423943363",
       "address": "Delhi"
+    },
+    {
+      "entity_id": "PHONE_9423943363",
+      "entity_type": "phone",
+      "name": "+91 9423943363",
+      "aliases": [],
+      "attributes": {
+        "provider": "Vi",
+        "circle": "Delhi",
+        "sim_status": "Active"
+      },
+      "confidence": 0.96
     },
     {
       "entity_id": "RAW_012",
       "entity_type": "person",
       "name": "Neha Gowda",
+      "aliases": [],
+      "attributes": {
+        "phone": "9132084004",
+        "address": "Jaipur"
+      },
+      "confidence": 0.92,
       "phone": "9132084004",
       "address": "Jaipur"
+    },
+    {
+      "entity_id": "PHONE_9132084004",
+      "entity_type": "phone",
+      "name": "+91 9132084004",
+      "aliases": [],
+      "attributes": {
+        "provider": "Vi",
+        "circle": "Jaipur",
+        "sim_status": "Active"
+      },
+      "confidence": 0.96
     },
     {
       "entity_id": "RAW_013",
       "entity_type": "person",
       "name": "Pooja Patel",
+      "aliases": [],
+      "attributes": {
+        "phone": "8999744784",
+        "address": "Lucknow"
+      },
+      "confidence": 0.92,
       "phone": "8999744784",
       "address": "Lucknow"
+    },
+    {
+      "entity_id": "PHONE_8999744784",
+      "entity_type": "phone",
+      "name": "+91 8999744784",
+      "aliases": [],
+      "attributes": {
+        "provider": "Vi",
+        "circle": "Lucknow",
+        "sim_status": "Active"
+      },
+      "confidence": 0.96
     },
     {
       "entity_id": "RAW_014",
       "entity_type": "person",
       "name": "Ravi Patel",
+      "aliases": [],
+      "attributes": {
+        "phone": "8287489453",
+        "address": "Chennai"
+      },
+      "confidence": 0.92,
       "phone": "8287489453",
       "address": "Chennai"
+    },
+    {
+      "entity_id": "PHONE_8287489453",
+      "entity_type": "phone",
+      "name": "+91 8287489453",
+      "aliases": [],
+      "attributes": {
+        "provider": "Jio",
+        "circle": "Chennai",
+        "sim_status": "Active"
+      },
+      "confidence": 0.96
     },
     {
       "entity_id": "RAW_015",
       "entity_type": "person",
       "name": "Ananya Pillai",
+      "aliases": [],
+      "attributes": {
+        "phone": "8048386555",
+        "address": "Mumbai"
+      },
+      "confidence": 0.92,
       "phone": "8048386555",
       "address": "Mumbai"
+    },
+    {
+      "entity_id": "PHONE_8048386555",
+      "entity_type": "phone",
+      "name": "+91 8048386555",
+      "aliases": [],
+      "attributes": {
+        "provider": "Vi",
+        "circle": "Mumbai",
+        "sim_status": "Active"
+      },
+      "confidence": 0.96
     },
     {
       "entity_id": "RAW_016",
       "entity_type": "person",
       "name": "Neha Rao",
+      "aliases": [],
+      "attributes": {
+        "phone": "9490630939",
+        "address": "Ahmedabad"
+      },
+      "confidence": 0.92,
       "phone": "9490630939",
       "address": "Ahmedabad"
+    },
+    {
+      "entity_id": "PHONE_9490630939",
+      "entity_type": "phone",
+      "name": "+91 9490630939",
+      "aliases": [],
+      "attributes": {
+        "provider": "Airtel",
+        "circle": "Ahmedabad",
+        "sim_status": "Active"
+      },
+      "confidence": 0.96
     },
     {
       "entity_id": "RAW_017",
       "entity_type": "person",
       "name": "Anjali Reddy",
+      "aliases": [],
+      "attributes": {
+        "phone": "7260573195",
+        "address": "Kolkata"
+      },
+      "confidence": 0.92,
       "phone": "7260573195",
       "address": "Kolkata"
+    },
+    {
+      "entity_id": "PHONE_7260573195",
+      "entity_type": "phone",
+      "name": "+91 7260573195",
+      "aliases": [],
+      "attributes": {
+        "provider": "Jio",
+        "circle": "Kolkata",
+        "sim_status": "Active"
+      },
+      "confidence": 0.96
     },
     {
       "entity_id": "RAW_018",
       "entity_type": "person",
       "name": "Anjali Rao",
+      "aliases": [],
+      "attributes": {
+        "phone": "8222328495",
+        "address": "Pune"
+      },
+      "confidence": 0.92,
       "phone": "8222328495",
       "address": "Pune"
+    },
+    {
+      "entity_id": "PHONE_8222328495",
+      "entity_type": "phone",
+      "name": "+91 8222328495",
+      "aliases": [],
+      "attributes": {
+        "provider": "Jio",
+        "circle": "Pune",
+        "sim_status": "Active"
+      },
+      "confidence": 0.96
     },
     {
       "entity_id": "RAW_019",
       "entity_type": "person",
       "name": "Anjali Patel",
+      "aliases": [],
+      "attributes": {
+        "phone": "7096907015",
+        "address": "Ahmedabad"
+      },
+      "confidence": 0.92,
       "phone": "7096907015",
       "address": "Ahmedabad"
+    },
+    {
+      "entity_id": "PHONE_7096907015",
+      "entity_type": "phone",
+      "name": "+91 7096907015",
+      "aliases": [],
+      "attributes": {
+        "provider": "Jio",
+        "circle": "Ahmedabad",
+        "sim_status": "Active"
+      },
+      "confidence": 0.96
     },
     {
       "entity_id": "RAW_020",
       "entity_type": "person",
       "name": "Kavya Nair",
+      "aliases": [],
+      "attributes": {
+        "phone": "9623879480",
+        "address": "Mumbai"
+      },
+      "confidence": 0.92,
       "phone": "9623879480",
       "address": "Mumbai"
+    },
+    {
+      "entity_id": "PHONE_9623879480",
+      "entity_type": "phone",
+      "name": "+91 9623879480",
+      "aliases": [],
+      "attributes": {
+        "provider": "Jio",
+        "circle": "Mumbai",
+        "sim_status": "Active"
+      },
+      "confidence": 0.96
     },
     {
       "entity_id": "RAW_021",
       "entity_type": "person",
       "name": "Lakshmi Sharma",
+      "aliases": [],
+      "attributes": {
+        "phone": "7937195259",
+        "address": "Kolkata"
+      },
+      "confidence": 0.92,
       "phone": "7937195259",
       "address": "Kolkata"
+    },
+    {
+      "entity_id": "PHONE_7937195259",
+      "entity_type": "phone",
+      "name": "+91 7937195259",
+      "aliases": [],
+      "attributes": {
+        "provider": "Jio",
+        "circle": "Kolkata",
+        "sim_status": "Active"
+      },
+      "confidence": 0.96
     },
     {
       "entity_id": "RAW_022",
       "entity_type": "person",
       "name": "Karthik Pillai",
+      "aliases": [],
+      "attributes": {
+        "phone": "8063497603",
+        "address": "Pune"
+      },
+      "confidence": 0.92,
       "phone": "8063497603",
       "address": "Pune"
+    },
+    {
+      "entity_id": "PHONE_8063497603",
+      "entity_type": "phone",
+      "name": "+91 8063497603",
+      "aliases": [],
+      "attributes": {
+        "provider": "Vi",
+        "circle": "Pune",
+        "sim_status": "Active"
+      },
+      "confidence": 0.96
     },
     {
       "entity_id": "RAW_023",
       "entity_type": "person",
       "name": "Manoj Rao",
+      "aliases": [],
+      "attributes": {
+        "phone": "7346094055",
+        "address": "Bengaluru"
+      },
+      "confidence": 0.92,
       "phone": "7346094055",
       "address": "Bengaluru"
+    },
+    {
+      "entity_id": "PHONE_7346094055",
+      "entity_type": "phone",
+      "name": "+91 7346094055",
+      "aliases": [],
+      "attributes": {
+        "provider": "Vi",
+        "circle": "Bengaluru",
+        "sim_status": "Active"
+      },
+      "confidence": 0.96
     },
     {
       "entity_id": "RAW_024",
       "entity_type": "person",
       "name": "Ravi Menon",
+      "aliases": [],
+      "attributes": {
+        "phone": "9359826449",
+        "address": "Kolkata"
+      },
+      "confidence": 0.92,
       "phone": "9359826449",
       "address": "Kolkata"
+    },
+    {
+      "entity_id": "PHONE_9359826449",
+      "entity_type": "phone",
+      "name": "+91 9359826449",
+      "aliases": [],
+      "attributes": {
+        "provider": "Jio",
+        "circle": "Kolkata",
+        "sim_status": "Active"
+      },
+      "confidence": 0.96
     },
     {
       "entity_id": "RAW_025",
       "entity_type": "person",
       "name": "Karthik Menon",
+      "aliases": [],
+      "attributes": {
+        "phone": "9363175007",
+        "address": "Kolkata"
+      },
+      "confidence": 0.92,
       "phone": "9363175007",
       "address": "Kolkata"
+    },
+    {
+      "entity_id": "PHONE_9363175007",
+      "entity_type": "phone",
+      "name": "+91 9363175007",
+      "aliases": [],
+      "attributes": {
+        "provider": "Vi",
+        "circle": "Kolkata",
+        "sim_status": "Active"
+      },
+      "confidence": 0.96
     },
     {
       "entity_id": "RAW_026",
       "entity_type": "person",
       "name": "Rahul Menon",
+      "aliases": [],
+      "attributes": {
+        "phone": "8540910400",
+        "address": "Pune"
+      },
+      "confidence": 0.92,
       "phone": "8540910400",
       "address": "Pune"
+    },
+    {
+      "entity_id": "PHONE_8540910400",
+      "entity_type": "phone",
+      "name": "+91 8540910400",
+      "aliases": [],
+      "attributes": {
+        "provider": "Jio",
+        "circle": "Pune",
+        "sim_status": "Active"
+      },
+      "confidence": 0.96
     },
     {
       "entity_id": "RAW_027",
       "entity_type": "person",
       "name": "Divya Nair",
+      "aliases": [],
+      "attributes": {
+        "phone": "7356416554",
+        "address": "Bengaluru"
+      },
+      "confidence": 0.92,
       "phone": "7356416554",
       "address": "Bengaluru"
+    },
+    {
+      "entity_id": "PHONE_7356416554",
+      "entity_type": "phone",
+      "name": "+91 7356416554",
+      "aliases": [],
+      "attributes": {
+        "provider": "Vi",
+        "circle": "Bengaluru",
+        "sim_status": "Active"
+      },
+      "confidence": 0.96
     },
     {
       "entity_id": "RAW_028",
       "entity_type": "person",
       "name": "Karthik Gowda",
+      "aliases": [],
+      "attributes": {
+        "phone": "9828307593",
+        "address": "Chennai"
+      },
+      "confidence": 0.92,
       "phone": "9828307593",
       "address": "Chennai"
+    },
+    {
+      "entity_id": "PHONE_9828307593",
+      "entity_type": "phone",
+      "name": "+91 9828307593",
+      "aliases": [],
+      "attributes": {
+        "provider": "Vi",
+        "circle": "Chennai",
+        "sim_status": "Active"
+      },
+      "confidence": 0.96
     },
     {
       "entity_id": "RAW_029",
       "entity_type": "person",
       "name": "Arjun Rao",
+      "aliases": [],
+      "attributes": {
+        "phone": "9530266207",
+        "address": "Bengaluru"
+      },
+      "confidence": 0.92,
       "phone": "9530266207",
       "address": "Bengaluru"
+    },
+    {
+      "entity_id": "PHONE_9530266207",
+      "entity_type": "phone",
+      "name": "+91 9530266207",
+      "aliases": [],
+      "attributes": {
+        "provider": "Vi",
+        "circle": "Bengaluru",
+        "sim_status": "Active"
+      },
+      "confidence": 0.96
     },
     {
       "entity_id": "RAW_030",
       "entity_type": "person",
       "name": "Suresh Iyer",
+      "aliases": [],
+      "attributes": {
+        "phone": "7017581913",
+        "address": "Bengaluru"
+      },
+      "confidence": 0.92,
       "phone": "7017581913",
       "address": "Bengaluru"
+    },
+    {
+      "entity_id": "PHONE_7017581913",
+      "entity_type": "phone",
+      "name": "+91 7017581913",
+      "aliases": [],
+      "attributes": {
+        "provider": "Vi",
+        "circle": "Bengaluru",
+        "sim_status": "Active"
+      },
+      "confidence": 0.96
     },
     {
       "entity_id": "RAW_031",
       "entity_type": "person",
       "name": "Pooja Kulkarni",
+      "aliases": [],
+      "attributes": {
+        "phone": "8585932013",
+        "address": "Lucknow"
+      },
+      "confidence": 0.92,
       "phone": "8585932013",
       "address": "Lucknow"
+    },
+    {
+      "entity_id": "PHONE_8585932013",
+      "entity_type": "phone",
+      "name": "+91 8585932013",
+      "aliases": [],
+      "attributes": {
+        "provider": "Airtel",
+        "circle": "Lucknow",
+        "sim_status": "Active"
+      },
+      "confidence": 0.96
     },
     {
       "entity_id": "RAW_032",
       "entity_type": "person",
       "name": "Farhan Patel",
+      "aliases": [],
+      "attributes": {
+        "phone": "7538981926",
+        "address": "Jaipur"
+      },
+      "confidence": 0.92,
       "phone": "7538981926",
       "address": "Jaipur"
+    },
+    {
+      "entity_id": "PHONE_7538981926",
+      "entity_type": "phone",
+      "name": "+91 7538981926",
+      "aliases": [],
+      "attributes": {
+        "provider": "Jio",
+        "circle": "Jaipur",
+        "sim_status": "Active"
+      },
+      "confidence": 0.96
     },
     {
       "entity_id": "RAW_033",
       "entity_type": "person",
       "name": "Neha Shetty",
+      "aliases": [],
+      "attributes": {
+        "phone": "9904257243",
+        "address": "Delhi"
+      },
+      "confidence": 0.92,
       "phone": "9904257243",
       "address": "Delhi"
+    },
+    {
+      "entity_id": "PHONE_9904257243",
+      "entity_type": "phone",
+      "name": "+91 9904257243",
+      "aliases": [],
+      "attributes": {
+        "provider": "Airtel",
+        "circle": "Delhi",
+        "sim_status": "Active"
+      },
+      "confidence": 0.96
     },
     {
       "entity_id": "RAW_034",
       "entity_type": "person",
       "name": "Ravi Shetty",
+      "aliases": [],
+      "attributes": {
+        "phone": "9402053832",
+        "address": "Pune"
+      },
+      "confidence": 0.92,
       "phone": "9402053832",
       "address": "Pune"
+    },
+    {
+      "entity_id": "PHONE_9402053832",
+      "entity_type": "phone",
+      "name": "+91 9402053832",
+      "aliases": [],
+      "attributes": {
+        "provider": "Vi",
+        "circle": "Pune",
+        "sim_status": "Active"
+      },
+      "confidence": 0.96
     },
     {
       "entity_id": "RAW_035",
       "entity_type": "person",
       "name": "Manoj Menon",
+      "aliases": [],
+      "attributes": {
+        "phone": "8692732589",
+        "address": "Mumbai"
+      },
+      "confidence": 0.92,
       "phone": "8692732589",
       "address": "Mumbai"
+    },
+    {
+      "entity_id": "PHONE_8692732589",
+      "entity_type": "phone",
+      "name": "+91 8692732589",
+      "aliases": [],
+      "attributes": {
+        "provider": "Airtel",
+        "circle": "Mumbai",
+        "sim_status": "Active"
+      },
+      "confidence": 0.96
     },
     {
       "entity_id": "RAW_036",
       "entity_type": "person",
       "name": "Lakshmi Shetty",
+      "aliases": [],
+      "attributes": {
+        "phone": "8719888006",
+        "address": "Delhi"
+      },
+      "confidence": 0.92,
       "phone": "8719888006",
       "address": "Delhi"
+    },
+    {
+      "entity_id": "PHONE_8719888006",
+      "entity_type": "phone",
+      "name": "+91 8719888006",
+      "aliases": [],
+      "attributes": {
+        "provider": "Jio",
+        "circle": "Delhi",
+        "sim_status": "Active"
+      },
+      "confidence": 0.96
     },
     {
       "entity_id": "RAW_037",
       "entity_type": "person",
       "name": "Rohan Reddy",
+      "aliases": [],
+      "attributes": {
+        "phone": "7896631050",
+        "address": "Ahmedabad"
+      },
+      "confidence": 0.92,
       "phone": "7896631050",
       "address": "Ahmedabad"
+    },
+    {
+      "entity_id": "PHONE_7896631050",
+      "entity_type": "phone",
+      "name": "+91 7896631050",
+      "aliases": [],
+      "attributes": {
+        "provider": "Jio",
+        "circle": "Ahmedabad",
+        "sim_status": "Active"
+      },
+      "confidence": 0.96
     },
     {
       "entity_id": "RAW_038",
       "entity_type": "person",
       "name": "Ananya Reddy",
+      "aliases": [],
+      "attributes": {
+        "phone": "8460519317",
+        "address": "Lucknow"
+      },
+      "confidence": 0.92,
       "phone": "8460519317",
       "address": "Lucknow"
+    },
+    {
+      "entity_id": "PHONE_8460519317",
+      "entity_type": "phone",
+      "name": "+91 8460519317",
+      "aliases": [],
+      "attributes": {
+        "provider": "Vi",
+        "circle": "Lucknow",
+        "sim_status": "Active"
+      },
+      "confidence": 0.96
     },
     {
       "entity_id": "RAW_039",
       "entity_type": "person",
       "name": "Priya Reddy",
+      "aliases": [],
+      "attributes": {
+        "phone": "7001001928",
+        "address": "Lucknow"
+      },
+      "confidence": 0.92,
       "phone": "7001001928",
       "address": "Lucknow"
+    },
+    {
+      "entity_id": "PHONE_7001001928",
+      "entity_type": "phone",
+      "name": "+91 7001001928",
+      "aliases": [],
+      "attributes": {
+        "provider": "Airtel",
+        "circle": "Lucknow",
+        "sim_status": "Active"
+      },
+      "confidence": 0.96
     },
     {
       "entity_id": "RAW_040",
       "entity_type": "person",
       "name": "Karthik Kulkarni",
+      "aliases": [],
+      "attributes": {
+        "phone": "7435786140",
+        "address": "Hyderabad"
+      },
+      "confidence": 0.92,
       "phone": "7435786140",
       "address": "Hyderabad"
+    },
+    {
+      "entity_id": "PHONE_7435786140",
+      "entity_type": "phone",
+      "name": "+91 7435786140",
+      "aliases": [],
+      "attributes": {
+        "provider": "Airtel",
+        "circle": "Hyderabad",
+        "sim_status": "Active"
+      },
+      "confidence": 0.96
     },
     {
       "entity_id": "RAW_041",
       "entity_type": "person",
       "name": "Neha Sharma",
+      "aliases": [],
+      "attributes": {
+        "phone": "7302003101",
+        "address": "Chennai"
+      },
+      "confidence": 0.92,
       "phone": "7302003101",
       "address": "Chennai"
+    },
+    {
+      "entity_id": "PHONE_7302003101",
+      "entity_type": "phone",
+      "name": "+91 7302003101",
+      "aliases": [],
+      "attributes": {
+        "provider": "Airtel",
+        "circle": "Chennai",
+        "sim_status": "Active"
+      },
+      "confidence": 0.96
     },
     {
       "entity_id": "RAW_042",
       "entity_type": "person",
       "name": "Neha Menon",
+      "aliases": [],
+      "attributes": {
+        "phone": "7638019485",
+        "address": "Kolkata"
+      },
+      "confidence": 0.92,
       "phone": "7638019485",
       "address": "Kolkata"
+    },
+    {
+      "entity_id": "PHONE_7638019485",
+      "entity_type": "phone",
+      "name": "+91 7638019485",
+      "aliases": [],
+      "attributes": {
+        "provider": "Jio",
+        "circle": "Kolkata",
+        "sim_status": "Active"
+      },
+      "confidence": 0.96
     },
     {
       "entity_id": "RAW_043",
       "entity_type": "person",
       "name": "Kavya Bhat",
+      "aliases": [],
+      "attributes": {
+        "phone": "8564070056",
+        "address": "Ahmedabad"
+      },
+      "confidence": 0.92,
       "phone": "8564070056",
       "address": "Ahmedabad"
+    },
+    {
+      "entity_id": "PHONE_8564070056",
+      "entity_type": "phone",
+      "name": "+91 8564070056",
+      "aliases": [],
+      "attributes": {
+        "provider": "Jio",
+        "circle": "Ahmedabad",
+        "sim_status": "Active"
+      },
+      "confidence": 0.96
     },
     {
       "entity_id": "RAW_044",
       "entity_type": "person",
       "name": "Sneha Reddy",
+      "aliases": [],
+      "attributes": {
+        "phone": "9096236324",
+        "address": "Ahmedabad"
+      },
+      "confidence": 0.92,
       "phone": "9096236324",
       "address": "Ahmedabad"
+    },
+    {
+      "entity_id": "PHONE_9096236324",
+      "entity_type": "phone",
+      "name": "+91 9096236324",
+      "aliases": [],
+      "attributes": {
+        "provider": "Airtel",
+        "circle": "Ahmedabad",
+        "sim_status": "Active"
+      },
+      "confidence": 0.96
     },
     {
       "entity_id": "RAW_045",
       "entity_type": "person",
       "name": "Lakshmi Rao",
+      "aliases": [],
+      "attributes": {
+        "phone": "8339395518",
+        "address": "Mumbai"
+      },
+      "confidence": 0.92,
       "phone": "8339395518",
       "address": "Mumbai"
+    },
+    {
+      "entity_id": "PHONE_8339395518",
+      "entity_type": "phone",
+      "name": "+91 8339395518",
+      "aliases": [],
+      "attributes": {
+        "provider": "Jio",
+        "circle": "Mumbai",
+        "sim_status": "Active"
+      },
+      "confidence": 0.96
     },
     {
       "entity_id": "RAW_046",
       "entity_type": "person",
       "name": "Karthik Reddy",
+      "aliases": [],
+      "attributes": {
+        "phone": "8471609726",
+        "address": "Kolkata"
+      },
+      "confidence": 0.92,
       "phone": "8471609726",
       "address": "Kolkata"
+    },
+    {
+      "entity_id": "PHONE_8471609726",
+      "entity_type": "phone",
+      "name": "+91 8471609726",
+      "aliases": [],
+      "attributes": {
+        "provider": "Jio",
+        "circle": "Kolkata",
+        "sim_status": "Active"
+      },
+      "confidence": 0.96
     },
     {
       "entity_id": "RAW_047",
       "entity_type": "person",
       "name": "Lakshmi Pillai",
+      "aliases": [],
+      "attributes": {
+        "phone": "7693373550",
+        "address": "Jaipur"
+      },
+      "confidence": 0.92,
       "phone": "7693373550",
       "address": "Jaipur"
+    },
+    {
+      "entity_id": "PHONE_7693373550",
+      "entity_type": "phone",
+      "name": "+91 7693373550",
+      "aliases": [],
+      "attributes": {
+        "provider": "Airtel",
+        "circle": "Jaipur",
+        "sim_status": "Active"
+      },
+      "confidence": 0.96
     },
     {
       "entity_id": "RAW_048",
       "entity_type": "person",
       "name": "Arjun Gowda",
+      "aliases": [],
+      "attributes": {
+        "phone": "9268848248",
+        "address": "Hyderabad"
+      },
+      "confidence": 0.92,
       "phone": "9268848248",
       "address": "Hyderabad"
+    },
+    {
+      "entity_id": "PHONE_9268848248",
+      "entity_type": "phone",
+      "name": "+91 9268848248",
+      "aliases": [],
+      "attributes": {
+        "provider": "Jio",
+        "circle": "Hyderabad",
+        "sim_status": "Active"
+      },
+      "confidence": 0.96
     },
     {
       "entity_id": "RAW_049",
       "entity_type": "person",
       "name": "Shreya Sharma",
+      "aliases": [],
+      "attributes": {
+        "phone": "9268212773",
+        "address": "Kolkata"
+      },
+      "confidence": 0.92,
       "phone": "9268212773",
       "address": "Kolkata"
+    },
+    {
+      "entity_id": "PHONE_9268212773",
+      "entity_type": "phone",
+      "name": "+91 9268212773",
+      "aliases": [],
+      "attributes": {
+        "provider": "Airtel",
+        "circle": "Kolkata",
+        "sim_status": "Active"
+      },
+      "confidence": 0.96
     },
     {
       "entity_id": "RAW_050",
       "entity_type": "person",
       "name": "Sameer Reddy",
+      "aliases": [],
+      "attributes": {
+        "phone": "9990142407",
+        "address": "Kolkata"
+      },
+      "confidence": 0.92,
       "phone": "9990142407",
       "address": "Kolkata"
+    },
+    {
+      "entity_id": "PHONE_9990142407",
+      "entity_type": "phone",
+      "name": "+91 9990142407",
+      "aliases": [],
+      "attributes": {
+        "provider": "Airtel",
+        "circle": "Kolkata",
+        "sim_status": "Active"
+      },
+      "confidence": 0.96
     },
     {
       "entity_id": "RAW_051",
       "entity_type": "person",
       "name": "Nikhil Patel",
+      "aliases": [],
+      "attributes": {
+        "phone": "7717440070",
+        "address": "Hyderabad"
+      },
+      "confidence": 0.92,
       "phone": "7717440070",
       "address": "Hyderabad"
+    },
+    {
+      "entity_id": "PHONE_7717440070",
+      "entity_type": "phone",
+      "name": "+91 7717440070",
+      "aliases": [],
+      "attributes": {
+        "provider": "Vi",
+        "circle": "Hyderabad",
+        "sim_status": "Active"
+      },
+      "confidence": 0.96
     },
     {
       "entity_id": "RAW_052",
       "entity_type": "person",
       "name": "Divya Kulkarni",
+      "aliases": [],
+      "attributes": {
+        "phone": "9326013068",
+        "address": "Jaipur"
+      },
+      "confidence": 0.92,
       "phone": "9326013068",
       "address": "Jaipur"
+    },
+    {
+      "entity_id": "PHONE_9326013068",
+      "entity_type": "phone",
+      "name": "+91 9326013068",
+      "aliases": [],
+      "attributes": {
+        "provider": "Airtel",
+        "circle": "Jaipur",
+        "sim_status": "Active"
+      },
+      "confidence": 0.96
     },
     {
       "entity_id": "RAW_053",
       "entity_type": "person",
       "name": "Aditya Shetty",
+      "aliases": [],
+      "attributes": {
+        "phone": "7957956674",
+        "address": "Lucknow"
+      },
+      "confidence": 0.92,
       "phone": "7957956674",
       "address": "Lucknow"
+    },
+    {
+      "entity_id": "PHONE_7957956674",
+      "entity_type": "phone",
+      "name": "+91 7957956674",
+      "aliases": [],
+      "attributes": {
+        "provider": "Jio",
+        "circle": "Lucknow",
+        "sim_status": "Active"
+      },
+      "confidence": 0.96
     },
     {
       "entity_id": "RAW_054",
       "entity_type": "person",
       "name": "Rohan Gowda",
+      "aliases": [],
+      "attributes": {
+        "phone": "8720926262",
+        "address": "Chennai"
+      },
+      "confidence": 0.92,
       "phone": "8720926262",
       "address": "Chennai"
+    },
+    {
+      "entity_id": "PHONE_8720926262",
+      "entity_type": "phone",
+      "name": "+91 8720926262",
+      "aliases": [],
+      "attributes": {
+        "provider": "Vi",
+        "circle": "Chennai",
+        "sim_status": "Active"
+      },
+      "confidence": 0.96
     },
     {
       "entity_id": "RAW_055",
       "entity_type": "person",
       "name": "Rohan Kulkarni",
+      "aliases": [],
+      "attributes": {
+        "phone": "9116481898",
+        "address": "Hyderabad"
+      },
+      "confidence": 0.92,
       "phone": "9116481898",
       "address": "Hyderabad"
+    },
+    {
+      "entity_id": "PHONE_9116481898",
+      "entity_type": "phone",
+      "name": "+91 9116481898",
+      "aliases": [],
+      "attributes": {
+        "provider": "Airtel",
+        "circle": "Hyderabad",
+        "sim_status": "Active"
+      },
+      "confidence": 0.96
     },
     {
       "entity_id": "RAW_056",
       "entity_type": "person",
       "name": "Ishita Sharma",
+      "aliases": [],
+      "attributes": {
+        "phone": "7119988828",
+        "address": "Kolkata"
+      },
+      "confidence": 0.92,
       "phone": "7119988828",
       "address": "Kolkata"
+    },
+    {
+      "entity_id": "PHONE_7119988828",
+      "entity_type": "phone",
+      "name": "+91 7119988828",
+      "aliases": [],
+      "attributes": {
+        "provider": "Vi",
+        "circle": "Kolkata",
+        "sim_status": "Active"
+      },
+      "confidence": 0.96
     },
     {
       "entity_id": "RAW_057",
       "entity_type": "person",
       "name": "Lakshmi Iyer",
+      "aliases": [],
+      "attributes": {
+        "phone": "7831698692",
+        "address": "Lucknow"
+      },
+      "confidence": 0.92,
       "phone": "7831698692",
       "address": "Lucknow"
+    },
+    {
+      "entity_id": "PHONE_7831698692",
+      "entity_type": "phone",
+      "name": "+91 7831698692",
+      "aliases": [],
+      "attributes": {
+        "provider": "Jio",
+        "circle": "Lucknow",
+        "sim_status": "Active"
+      },
+      "confidence": 0.96
     },
     {
       "entity_id": "RAW_058",
       "entity_type": "person",
       "name": "Kavya Rao",
+      "aliases": [],
+      "attributes": {
+        "phone": "8501175503",
+        "address": "Hyderabad"
+      },
+      "confidence": 0.92,
       "phone": "8501175503",
       "address": "Hyderabad"
+    },
+    {
+      "entity_id": "PHONE_8501175503",
+      "entity_type": "phone",
+      "name": "+91 8501175503",
+      "aliases": [],
+      "attributes": {
+        "provider": "Airtel",
+        "circle": "Hyderabad",
+        "sim_status": "Active"
+      },
+      "confidence": 0.96
     },
     {
       "entity_id": "RAW_059",
       "entity_type": "person",
       "name": "Vikram Gowda",
+      "aliases": [],
+      "attributes": {
+        "phone": "7438761609",
+        "address": "Chennai"
+      },
+      "confidence": 0.92,
       "phone": "7438761609",
       "address": "Chennai"
+    },
+    {
+      "entity_id": "PHONE_7438761609",
+      "entity_type": "phone",
+      "name": "+91 7438761609",
+      "aliases": [],
+      "attributes": {
+        "provider": "Jio",
+        "circle": "Chennai",
+        "sim_status": "Active"
+      },
+      "confidence": 0.96
     },
     {
       "entity_id": "RAW_060",
       "entity_type": "person",
       "name": "Lakshmi Gowda",
+      "aliases": [],
+      "attributes": {
+        "phone": "8450571437",
+        "address": "Chennai"
+      },
+      "confidence": 0.92,
       "phone": "8450571437",
       "address": "Chennai"
+    },
+    {
+      "entity_id": "PHONE_8450571437",
+      "entity_type": "phone",
+      "name": "+91 8450571437",
+      "aliases": [],
+      "attributes": {
+        "provider": "Vi",
+        "circle": "Chennai",
+        "sim_status": "Active"
+      },
+      "confidence": 0.96
     },
     {
       "entity_id": "RAW_061",
       "entity_type": "person",
       "name": "Lakshmi Bhat",
+      "aliases": [],
+      "attributes": {
+        "phone": "9621055949",
+        "address": "Delhi"
+      },
+      "confidence": 0.92,
       "phone": "9621055949",
       "address": "Delhi"
+    },
+    {
+      "entity_id": "PHONE_9621055949",
+      "entity_type": "phone",
+      "name": "+91 9621055949",
+      "aliases": [],
+      "attributes": {
+        "provider": "Airtel",
+        "circle": "Delhi",
+        "sim_status": "Active"
+      },
+      "confidence": 0.96
     },
     {
       "entity_id": "RAW_062",
       "entity_type": "person",
       "name": "Kavya Shetty",
+      "aliases": [],
+      "attributes": {
+        "phone": "7364120811",
+        "address": "Mumbai"
+      },
+      "confidence": 0.92,
       "phone": "7364120811",
       "address": "Mumbai"
+    },
+    {
+      "entity_id": "PHONE_7364120811",
+      "entity_type": "phone",
+      "name": "+91 7364120811",
+      "aliases": [],
+      "attributes": {
+        "provider": "Vi",
+        "circle": "Mumbai",
+        "sim_status": "Active"
+      },
+      "confidence": 0.96
     },
     {
       "entity_id": "RAW_063",
       "entity_type": "person",
       "name": "Manoj Pillai",
+      "aliases": [],
+      "attributes": {
+        "phone": "7856070305",
+        "address": "Ahmedabad"
+      },
+      "confidence": 0.92,
       "phone": "7856070305",
       "address": "Ahmedabad"
+    },
+    {
+      "entity_id": "PHONE_7856070305",
+      "entity_type": "phone",
+      "name": "+91 7856070305",
+      "aliases": [],
+      "attributes": {
+        "provider": "Vi",
+        "circle": "Ahmedabad",
+        "sim_status": "Active"
+      },
+      "confidence": 0.96
     },
     {
       "entity_id": "RAW_064",
       "entity_type": "person",
       "name": "Ananya Menon",
+      "aliases": [],
+      "attributes": {
+        "phone": "9730921541",
+        "address": "Hyderabad"
+      },
+      "confidence": 0.92,
       "phone": "9730921541",
       "address": "Hyderabad"
+    },
+    {
+      "entity_id": "PHONE_9730921541",
+      "entity_type": "phone",
+      "name": "+91 9730921541",
+      "aliases": [],
+      "attributes": {
+        "provider": "Airtel",
+        "circle": "Hyderabad",
+        "sim_status": "Active"
+      },
+      "confidence": 0.96
     },
     {
       "entity_id": "RAW_065",
       "entity_type": "person",
       "name": "Vikram Pillai",
+      "aliases": [],
+      "attributes": {
+        "phone": "8700113406",
+        "address": "Ahmedabad"
+      },
+      "confidence": 0.92,
       "phone": "8700113406",
       "address": "Ahmedabad"
+    },
+    {
+      "entity_id": "PHONE_8700113406",
+      "entity_type": "phone",
+      "name": "+91 8700113406",
+      "aliases": [],
+      "attributes": {
+        "provider": "Vi",
+        "circle": "Ahmedabad",
+        "sim_status": "Active"
+      },
+      "confidence": 0.96
     },
     {
       "entity_id": "RAW_066",
       "entity_type": "person",
       "name": "Ananya Nair",
+      "aliases": [],
+      "attributes": {
+        "phone": "7545625652",
+        "address": "Delhi"
+      },
+      "confidence": 0.92,
       "phone": "7545625652",
       "address": "Delhi"
+    },
+    {
+      "entity_id": "PHONE_7545625652",
+      "entity_type": "phone",
+      "name": "+91 7545625652",
+      "aliases": [],
+      "attributes": {
+        "provider": "Jio",
+        "circle": "Delhi",
+        "sim_status": "Active"
+      },
+      "confidence": 0.96
     },
     {
       "entity_id": "RAW_067",
       "entity_type": "person",
       "name": "Karthik Bhat",
+      "aliases": [],
+      "attributes": {
+        "phone": "8998679710",
+        "address": "Bengaluru"
+      },
+      "confidence": 0.92,
       "phone": "8998679710",
       "address": "Bengaluru"
+    },
+    {
+      "entity_id": "PHONE_8998679710",
+      "entity_type": "phone",
+      "name": "+91 8998679710",
+      "aliases": [],
+      "attributes": {
+        "provider": "Vi",
+        "circle": "Bengaluru",
+        "sim_status": "Active"
+      },
+      "confidence": 0.96
     },
     {
       "entity_id": "RAW_068",
       "entity_type": "person",
       "name": "Neha Bhat",
+      "aliases": [],
+      "attributes": {
+        "phone": "9037347501",
+        "address": "Hyderabad"
+      },
+      "confidence": 0.92,
       "phone": "9037347501",
       "address": "Hyderabad"
+    },
+    {
+      "entity_id": "PHONE_9037347501",
+      "entity_type": "phone",
+      "name": "+91 9037347501",
+      "aliases": [],
+      "attributes": {
+        "provider": "Jio",
+        "circle": "Hyderabad",
+        "sim_status": "Active"
+      },
+      "confidence": 0.96
     },
     {
       "entity_id": "RAW_069",
       "entity_type": "person",
       "name": "Shreya Nair",
+      "aliases": [],
+      "attributes": {
+        "phone": "7091898034",
+        "address": "Delhi"
+      },
+      "confidence": 0.92,
       "phone": "7091898034",
       "address": "Delhi"
+    },
+    {
+      "entity_id": "PHONE_7091898034",
+      "entity_type": "phone",
+      "name": "+91 7091898034",
+      "aliases": [],
+      "attributes": {
+        "provider": "Jio",
+        "circle": "Delhi",
+        "sim_status": "Active"
+      },
+      "confidence": 0.96
     },
     {
       "entity_id": "RAW_070",
       "entity_type": "person",
       "name": "Ishita Shetty",
+      "aliases": [],
+      "attributes": {
+        "phone": "7441402617",
+        "address": "Jaipur"
+      },
+      "confidence": 0.92,
       "phone": "7441402617",
       "address": "Jaipur"
+    },
+    {
+      "entity_id": "PHONE_7441402617",
+      "entity_type": "phone",
+      "name": "+91 7441402617",
+      "aliases": [],
+      "attributes": {
+        "provider": "Vi",
+        "circle": "Jaipur",
+        "sim_status": "Active"
+      },
+      "confidence": 0.96
     },
     {
       "entity_id": "RAW_071",
       "entity_type": "person",
       "name": "Ishita Nair",
+      "aliases": [],
+      "attributes": {
+        "phone": "8863197321",
+        "address": "Chennai"
+      },
+      "confidence": 0.92,
       "phone": "8863197321",
       "address": "Chennai"
+    },
+    {
+      "entity_id": "PHONE_8863197321",
+      "entity_type": "phone",
+      "name": "+91 8863197321",
+      "aliases": [],
+      "attributes": {
+        "provider": "Jio",
+        "circle": "Chennai",
+        "sim_status": "Active"
+      },
+      "confidence": 0.96
     },
     {
       "entity_id": "RAW_072",
       "entity_type": "person",
       "name": "Rohan Sharma",
+      "aliases": [],
+      "attributes": {
+        "phone": "8081622282",
+        "address": "Chennai"
+      },
+      "confidence": 0.92,
       "phone": "8081622282",
       "address": "Chennai"
+    },
+    {
+      "entity_id": "PHONE_8081622282",
+      "entity_type": "phone",
+      "name": "+91 8081622282",
+      "aliases": [],
+      "attributes": {
+        "provider": "Airtel",
+        "circle": "Chennai",
+        "sim_status": "Active"
+      },
+      "confidence": 0.96
     },
     {
       "entity_id": "RAW_073",
       "entity_type": "person",
       "name": "Divya Bhat",
+      "aliases": [],
+      "attributes": {
+        "phone": "8400113410",
+        "address": "Kolkata"
+      },
+      "confidence": 0.92,
       "phone": "8400113410",
       "address": "Kolkata"
+    },
+    {
+      "entity_id": "PHONE_8400113410",
+      "entity_type": "phone",
+      "name": "+91 8400113410",
+      "aliases": [],
+      "attributes": {
+        "provider": "Jio",
+        "circle": "Kolkata",
+        "sim_status": "Active"
+      },
+      "confidence": 0.96
     },
     {
       "entity_id": "RAW_074",
       "entity_type": "person",
       "name": "Shreya Menon",
+      "aliases": [],
+      "attributes": {
+        "phone": "7562957179",
+        "address": "Delhi"
+      },
+      "confidence": 0.92,
       "phone": "7562957179",
       "address": "Delhi"
+    },
+    {
+      "entity_id": "PHONE_7562957179",
+      "entity_type": "phone",
+      "name": "+91 7562957179",
+      "aliases": [],
+      "attributes": {
+        "provider": "Jio",
+        "circle": "Delhi",
+        "sim_status": "Active"
+      },
+      "confidence": 0.96
     },
     {
       "entity_id": "RAW_075",
       "entity_type": "person",
       "name": "Ishita Patel",
+      "aliases": [],
+      "attributes": {
+        "phone": "8967786445",
+        "address": "Lucknow"
+      },
+      "confidence": 0.92,
       "phone": "8967786445",
       "address": "Lucknow"
+    },
+    {
+      "entity_id": "PHONE_8967786445",
+      "entity_type": "phone",
+      "name": "+91 8967786445",
+      "aliases": [],
+      "attributes": {
+        "provider": "Jio",
+        "circle": "Lucknow",
+        "sim_status": "Active"
+      },
+      "confidence": 0.96
     },
     {
       "entity_id": "RAW_076",
       "entity_type": "person",
       "name": "Nikhil Menon",
+      "aliases": [],
+      "attributes": {
+        "phone": "9154565813",
+        "address": "Bengaluru"
+      },
+      "confidence": 0.92,
       "phone": "9154565813",
       "address": "Bengaluru"
+    },
+    {
+      "entity_id": "PHONE_9154565813",
+      "entity_type": "phone",
+      "name": "+91 9154565813",
+      "aliases": [],
+      "attributes": {
+        "provider": "Airtel",
+        "circle": "Bengaluru",
+        "sim_status": "Active"
+      },
+      "confidence": 0.96
     },
     {
       "entity_id": "RAW_077",
       "entity_type": "person",
       "name": "Nikhil Kulkarni",
+      "aliases": [],
+      "attributes": {
+        "phone": "7080336781",
+        "address": "Ahmedabad"
+      },
+      "confidence": 0.92,
       "phone": "7080336781",
       "address": "Ahmedabad"
+    },
+    {
+      "entity_id": "PHONE_7080336781",
+      "entity_type": "phone",
+      "name": "+91 7080336781",
+      "aliases": [],
+      "attributes": {
+        "provider": "Airtel",
+        "circle": "Ahmedabad",
+        "sim_status": "Active"
+      },
+      "confidence": 0.96
     },
     {
       "entity_id": "RAW_078",
       "entity_type": "person",
       "name": "Ananya Bhat",
+      "aliases": [],
+      "attributes": {
+        "phone": "7016889873",
+        "address": "Bengaluru"
+      },
+      "confidence": 0.92,
       "phone": "7016889873",
       "address": "Bengaluru"
+    },
+    {
+      "entity_id": "PHONE_7016889873",
+      "entity_type": "phone",
+      "name": "+91 7016889873",
+      "aliases": [],
+      "attributes": {
+        "provider": "Airtel",
+        "circle": "Bengaluru",
+        "sim_status": "Active"
+      },
+      "confidence": 0.96
     },
     {
       "entity_id": "RAW_079",
       "entity_type": "person",
       "name": "Ishita Reddy",
+      "aliases": [],
+      "attributes": {
+        "phone": "9390044639",
+        "address": "Delhi"
+      },
+      "confidence": 0.92,
       "phone": "9390044639",
       "address": "Delhi"
+    },
+    {
+      "entity_id": "PHONE_9390044639",
+      "entity_type": "phone",
+      "name": "+91 9390044639",
+      "aliases": [],
+      "attributes": {
+        "provider": "Vi",
+        "circle": "Delhi",
+        "sim_status": "Active"
+      },
+      "confidence": 0.96
     },
     {
       "entity_id": "RAW_080",
       "entity_type": "person",
       "name": "Shreya Rao",
+      "aliases": [],
+      "attributes": {
+        "phone": "7455736473",
+        "address": "Jaipur"
+      },
+      "confidence": 0.92,
       "phone": "7455736473",
       "address": "Jaipur"
+    },
+    {
+      "entity_id": "PHONE_7455736473",
+      "entity_type": "phone",
+      "name": "+91 7455736473",
+      "aliases": [],
+      "attributes": {
+        "provider": "Airtel",
+        "circle": "Jaipur",
+        "sim_status": "Active"
+      },
+      "confidence": 0.96
     },
     {
       "entity_id": "RAW_081",
       "entity_type": "person",
       "name": "Rohan Iyer",
+      "aliases": [],
+      "attributes": {
+        "phone": "7181242849",
+        "address": "Mumbai"
+      },
+      "confidence": 0.92,
       "phone": "7181242849",
       "address": "Mumbai"
+    },
+    {
+      "entity_id": "PHONE_7181242849",
+      "entity_type": "phone",
+      "name": "+91 7181242849",
+      "aliases": [],
+      "attributes": {
+        "provider": "Jio",
+        "circle": "Mumbai",
+        "sim_status": "Active"
+      },
+      "confidence": 0.96
     },
     {
       "entity_id": "RAW_082",
       "entity_type": "person",
       "name": "Nikhil Rao",
+      "aliases": [],
+      "attributes": {
+        "phone": "9412609344",
+        "address": "Delhi"
+      },
+      "confidence": 0.92,
       "phone": "9412609344",
       "address": "Delhi"
+    },
+    {
+      "entity_id": "PHONE_9412609344",
+      "entity_type": "phone",
+      "name": "+91 9412609344",
+      "aliases": [],
+      "attributes": {
+        "provider": "Airtel",
+        "circle": "Delhi",
+        "sim_status": "Active"
+      },
+      "confidence": 0.96
     },
     {
       "entity_id": "RAW_083",
       "entity_type": "person",
       "name": "Vikram Rao",
+      "aliases": [],
+      "attributes": {
+        "phone": "8398499907",
+        "address": "Lucknow"
+      },
+      "confidence": 0.92,
       "phone": "8398499907",
       "address": "Lucknow"
+    },
+    {
+      "entity_id": "PHONE_8398499907",
+      "entity_type": "phone",
+      "name": "+91 8398499907",
+      "aliases": [],
+      "attributes": {
+        "provider": "Airtel",
+        "circle": "Lucknow",
+        "sim_status": "Active"
+      },
+      "confidence": 0.96
     },
     {
       "entity_id": "RAW_084",
       "entity_type": "person",
       "name": "Nikhil Bhat",
+      "aliases": [],
+      "attributes": {
+        "phone": "9199716799",
+        "address": "Chennai"
+      },
+      "confidence": 0.92,
       "phone": "9199716799",
       "address": "Chennai"
+    },
+    {
+      "entity_id": "PHONE_9199716799",
+      "entity_type": "phone",
+      "name": "+91 9199716799",
+      "aliases": [],
+      "attributes": {
+        "provider": "Jio",
+        "circle": "Chennai",
+        "sim_status": "Active"
+      },
+      "confidence": 0.96
     },
     {
       "entity_id": "RAW_085",
       "entity_type": "person",
       "name": "Rahul Iyer",
+      "aliases": [],
+      "attributes": {
+        "phone": "8942810371",
+        "address": "Jaipur"
+      },
+      "confidence": 0.92,
       "phone": "8942810371",
       "address": "Jaipur"
+    },
+    {
+      "entity_id": "PHONE_8942810371",
+      "entity_type": "phone",
+      "name": "+91 8942810371",
+      "aliases": [],
+      "attributes": {
+        "provider": "Vi",
+        "circle": "Jaipur",
+        "sim_status": "Active"
+      },
+      "confidence": 0.96
     },
     {
       "entity_id": "RAW_086",
       "entity_type": "person",
       "name": "Nikhil Gowda",
+      "aliases": [],
+      "attributes": {
+        "phone": "9247168347",
+        "address": "Kolkata"
+      },
+      "confidence": 0.92,
       "phone": "9247168347",
       "address": "Kolkata"
+    },
+    {
+      "entity_id": "PHONE_9247168347",
+      "entity_type": "phone",
+      "name": "+91 9247168347",
+      "aliases": [],
+      "attributes": {
+        "provider": "Airtel",
+        "circle": "Kolkata",
+        "sim_status": "Active"
+      },
+      "confidence": 0.96
     },
     {
       "entity_id": "RAW_087",
       "entity_type": "person",
       "name": "Shreya Gowda",
+      "aliases": [],
+      "attributes": {
+        "phone": "8922119101",
+        "address": "Bengaluru"
+      },
+      "confidence": 0.92,
       "phone": "8922119101",
       "address": "Bengaluru"
+    },
+    {
+      "entity_id": "PHONE_8922119101",
+      "entity_type": "phone",
+      "name": "+91 8922119101",
+      "aliases": [],
+      "attributes": {
+        "provider": "Vi",
+        "circle": "Bengaluru",
+        "sim_status": "Active"
+      },
+      "confidence": 0.96
     },
     {
       "entity_id": "RAW_088",
       "entity_type": "person",
       "name": "Pooja Reddy",
+      "aliases": [],
+      "attributes": {
+        "phone": "8685192164",
+        "address": "Ahmedabad"
+      },
+      "confidence": 0.92,
       "phone": "8685192164",
       "address": "Ahmedabad"
+    },
+    {
+      "entity_id": "PHONE_8685192164",
+      "entity_type": "phone",
+      "name": "+91 8685192164",
+      "aliases": [],
+      "attributes": {
+        "provider": "Vi",
+        "circle": "Ahmedabad",
+        "sim_status": "Active"
+      },
+      "confidence": 0.96
     },
     {
       "entity_id": "RAW_089",
       "entity_type": "person",
       "name": "Aditya Reddy",
+      "aliases": [],
+      "attributes": {
+        "phone": "9882590715",
+        "address": "Chennai"
+      },
+      "confidence": 0.92,
       "phone": "9882590715",
       "address": "Chennai"
+    },
+    {
+      "entity_id": "PHONE_9882590715",
+      "entity_type": "phone",
+      "name": "+91 9882590715",
+      "aliases": [],
+      "attributes": {
+        "provider": "Vi",
+        "circle": "Chennai",
+        "sim_status": "Active"
+      },
+      "confidence": 0.96
     },
     {
       "entity_id": "RAW_090",
       "entity_type": "person",
       "name": "Rohan Shetty",
+      "aliases": [],
+      "attributes": {
+        "phone": "8300430508",
+        "address": "Mumbai"
+      },
+      "confidence": 0.92,
       "phone": "8300430508",
       "address": "Mumbai"
+    },
+    {
+      "entity_id": "PHONE_8300430508",
+      "entity_type": "phone",
+      "name": "+91 8300430508",
+      "aliases": [],
+      "attributes": {
+        "provider": "Jio",
+        "circle": "Mumbai",
+        "sim_status": "Active"
+      },
+      "confidence": 0.96
     },
     {
       "entity_id": "RAW_091",
       "entity_type": "person",
       "name": "Sameer Shetty",
+      "aliases": [],
+      "attributes": {
+        "phone": "8572745251",
+        "address": "Bengaluru"
+      },
+      "confidence": 0.92,
       "phone": "8572745251",
       "address": "Bengaluru"
+    },
+    {
+      "entity_id": "PHONE_8572745251",
+      "entity_type": "phone",
+      "name": "+91 8572745251",
+      "aliases": [],
+      "attributes": {
+        "provider": "Vi",
+        "circle": "Bengaluru",
+        "sim_status": "Active"
+      },
+      "confidence": 0.96
     },
     {
       "entity_id": "RAW_092",
       "entity_type": "person",
       "name": "Suresh Nair",
+      "aliases": [],
+      "attributes": {
+        "phone": "9008910111",
+        "address": "Chennai"
+      },
+      "confidence": 0.92,
       "phone": "9008910111",
       "address": "Chennai"
+    },
+    {
+      "entity_id": "PHONE_9008910111",
+      "entity_type": "phone",
+      "name": "+91 9008910111",
+      "aliases": [],
+      "attributes": {
+        "provider": "Vi",
+        "circle": "Chennai",
+        "sim_status": "Active"
+      },
+      "confidence": 0.96
     },
     {
       "entity_id": "RAW_093",
       "entity_type": "person",
       "name": "Ananya Shetty",
+      "aliases": [],
+      "attributes": {
+        "phone": "7960836459",
+        "address": "Bengaluru"
+      },
+      "confidence": 0.92,
       "phone": "7960836459",
       "address": "Bengaluru"
+    },
+    {
+      "entity_id": "PHONE_7960836459",
+      "entity_type": "phone",
+      "name": "+91 7960836459",
+      "aliases": [],
+      "attributes": {
+        "provider": "Jio",
+        "circle": "Bengaluru",
+        "sim_status": "Active"
+      },
+      "confidence": 0.96
     },
     {
       "entity_id": "RAW_094",
       "entity_type": "person",
       "name": "Aditya Menon",
+      "aliases": [],
+      "attributes": {
+        "phone": "7840716950",
+        "address": "Hyderabad"
+      },
+      "confidence": 0.92,
       "phone": "7840716950",
       "address": "Hyderabad"
+    },
+    {
+      "entity_id": "PHONE_7840716950",
+      "entity_type": "phone",
+      "name": "+91 7840716950",
+      "aliases": [],
+      "attributes": {
+        "provider": "Vi",
+        "circle": "Hyderabad",
+        "sim_status": "Active"
+      },
+      "confidence": 0.96
     },
     {
       "entity_id": "RAW_095",
       "entity_type": "person",
       "name": "Arjun Patel",
+      "aliases": [],
+      "attributes": {
+        "phone": "9379627705",
+        "address": "Ahmedabad"
+      },
+      "confidence": 0.92,
       "phone": "9379627705",
       "address": "Ahmedabad"
+    },
+    {
+      "entity_id": "PHONE_9379627705",
+      "entity_type": "phone",
+      "name": "+91 9379627705",
+      "aliases": [],
+      "attributes": {
+        "provider": "Vi",
+        "circle": "Ahmedabad",
+        "sim_status": "Active"
+      },
+      "confidence": 0.96
     },
     {
       "entity_id": "RAW_096",
       "entity_type": "person",
       "name": "Ravi Pillai",
+      "aliases": [],
+      "attributes": {
+        "phone": "7077661511",
+        "address": "Pune"
+      },
+      "confidence": 0.92,
       "phone": "7077661511",
       "address": "Pune"
+    },
+    {
+      "entity_id": "PHONE_7077661511",
+      "entity_type": "phone",
+      "name": "+91 7077661511",
+      "aliases": [],
+      "attributes": {
+        "provider": "Jio",
+        "circle": "Pune",
+        "sim_status": "Active"
+      },
+      "confidence": 0.96
     },
     {
       "entity_id": "RAW_097",
       "entity_type": "person",
       "name": "Aditya Kulkarni",
+      "aliases": [],
+      "attributes": {
+        "phone": "9679746384",
+        "address": "Kolkata"
+      },
+      "confidence": 0.92,
       "phone": "9679746384",
       "address": "Kolkata"
+    },
+    {
+      "entity_id": "PHONE_9679746384",
+      "entity_type": "phone",
+      "name": "+91 9679746384",
+      "aliases": [],
+      "attributes": {
+        "provider": "Jio",
+        "circle": "Kolkata",
+        "sim_status": "Active"
+      },
+      "confidence": 0.96
     },
     {
       "entity_id": "RAW_098",
       "entity_type": "person",
       "name": "Nikhil Reddy",
+      "aliases": [],
+      "attributes": {
+        "phone": "7484686860",
+        "address": "Chennai"
+      },
+      "confidence": 0.92,
       "phone": "7484686860",
       "address": "Chennai"
+    },
+    {
+      "entity_id": "PHONE_7484686860",
+      "entity_type": "phone",
+      "name": "+91 7484686860",
+      "aliases": [],
+      "attributes": {
+        "provider": "Airtel",
+        "circle": "Chennai",
+        "sim_status": "Active"
+      },
+      "confidence": 0.96
     },
     {
       "entity_id": "RAW_099",
       "entity_type": "person",
       "name": "Priya Nair",
+      "aliases": [],
+      "attributes": {
+        "phone": "8161557137",
+        "address": "Bengaluru"
+      },
+      "confidence": 0.92,
       "phone": "8161557137",
       "address": "Bengaluru"
+    },
+    {
+      "entity_id": "PHONE_8161557137",
+      "entity_type": "phone",
+      "name": "+91 8161557137",
+      "aliases": [],
+      "attributes": {
+        "provider": "Airtel",
+        "circle": "Bengaluru",
+        "sim_status": "Active"
+      },
+      "confidence": 0.96
     },
     {
       "entity_id": "RAW_100",
       "entity_type": "person",
       "name": "Pooja Shetty",
+      "aliases": [],
+      "attributes": {
+        "phone": "8110717268",
+        "address": "Pune"
+      },
+      "confidence": 0.92,
       "phone": "8110717268",
       "address": "Pune"
+    },
+    {
+      "entity_id": "PHONE_8110717268",
+      "entity_type": "phone",
+      "name": "+91 8110717268",
+      "aliases": [],
+      "attributes": {
+        "provider": "Airtel",
+        "circle": "Pune",
+        "sim_status": "Active"
+      },
+      "confidence": 0.96
+    },
+    {
+      "entity_id": "ACCT_94641177",
+      "entity_type": "account",
+      "name": "SBI \u2022\u2022\u2022\u2022 1177 (Syndicate Mule Account)",
+      "aliases": [
+        "Mule Account #1177"
+      ],
+      "attributes": {
+        "bank": "State Bank of India",
+        "branch": "Central Commercial Branch",
+        "flag": "High-Risk Shared Mule Account",
+        "reported_balance": "\u20b942,50,000"
+      },
+      "confidence": 0.98
+    },
+    {
+      "entity_id": "ACCT_RAW_001",
+      "entity_type": "account",
+      "name": "Kotak Mahindra Bank \u2022\u2022\u2022\u2022 3998",
+      "aliases": [],
+      "attributes": {
+        "bank": "Kotak Mahindra Bank",
+        "account_type": "Savings/Current",
+        "status": "Monitored"
+      },
+      "confidence": 0.93
+    },
+    {
+      "entity_id": "ACCT_RAW_004",
+      "entity_type": "account",
+      "name": "ICICI Bank \u2022\u2022\u2022\u2022 9716",
+      "aliases": [],
+      "attributes": {
+        "bank": "ICICI Bank",
+        "account_type": "Savings/Current",
+        "status": "Monitored"
+      },
+      "confidence": 0.93
+    },
+    {
+      "entity_id": "ACCT_RAW_006",
+      "entity_type": "account",
+      "name": "Axis Bank \u2022\u2022\u2022\u2022 5473",
+      "aliases": [],
+      "attributes": {
+        "bank": "Axis Bank",
+        "account_type": "Savings/Current",
+        "status": "Monitored"
+      },
+      "confidence": 0.93
+    },
+    {
+      "entity_id": "ACCT_RAW_007",
+      "entity_type": "account",
+      "name": "HDFC Bank \u2022\u2022\u2022\u2022 1088",
+      "aliases": [],
+      "attributes": {
+        "bank": "HDFC Bank",
+        "account_type": "Savings/Current",
+        "status": "Monitored"
+      },
+      "confidence": 0.93
+    },
+    {
+      "entity_id": "ACCT_RAW_008",
+      "entity_type": "account",
+      "name": "ICICI Bank \u2022\u2022\u2022\u2022 0852",
+      "aliases": [],
+      "attributes": {
+        "bank": "ICICI Bank",
+        "account_type": "Savings/Current",
+        "status": "Monitored"
+      },
+      "confidence": 0.93
+    },
+    {
+      "entity_id": "ACCT_RAW_009",
+      "entity_type": "account",
+      "name": "HDFC Bank \u2022\u2022\u2022\u2022 9284",
+      "aliases": [],
+      "attributes": {
+        "bank": "HDFC Bank",
+        "account_type": "Savings/Current",
+        "status": "Monitored"
+      },
+      "confidence": 0.93
+    },
+    {
+      "entity_id": "ACCT_RAW_010",
+      "entity_type": "account",
+      "name": "Axis Bank \u2022\u2022\u2022\u2022 9909",
+      "aliases": [],
+      "attributes": {
+        "bank": "Axis Bank",
+        "account_type": "Savings/Current",
+        "status": "Monitored"
+      },
+      "confidence": 0.93
+    },
+    {
+      "entity_id": "ACCT_RAW_013",
+      "entity_type": "account",
+      "name": "Punjab National Bank \u2022\u2022\u2022\u2022 4784",
+      "aliases": [],
+      "attributes": {
+        "bank": "Punjab National Bank",
+        "account_type": "Savings/Current",
+        "status": "Monitored"
+      },
+      "confidence": 0.93
+    },
+    {
+      "entity_id": "ACCT_RAW_016",
+      "entity_type": "account",
+      "name": "Axis Bank \u2022\u2022\u2022\u2022 0939",
+      "aliases": [],
+      "attributes": {
+        "bank": "Axis Bank",
+        "account_type": "Savings/Current",
+        "status": "Monitored"
+      },
+      "confidence": 0.93
+    },
+    {
+      "entity_id": "ACCT_RAW_019",
+      "entity_type": "account",
+      "name": "HDFC Bank \u2022\u2022\u2022\u2022 7015",
+      "aliases": [],
+      "attributes": {
+        "bank": "HDFC Bank",
+        "account_type": "Savings/Current",
+        "status": "Monitored"
+      },
+      "confidence": 0.93
+    },
+    {
+      "entity_id": "ACCT_RAW_022",
+      "entity_type": "account",
+      "name": "ICICI Bank \u2022\u2022\u2022\u2022 7603",
+      "aliases": [],
+      "attributes": {
+        "bank": "ICICI Bank",
+        "account_type": "Savings/Current",
+        "status": "Monitored"
+      },
+      "confidence": 0.93
+    },
+    {
+      "entity_id": "ACCT_RAW_025",
+      "entity_type": "account",
+      "name": "Kotak Mahindra Bank \u2022\u2022\u2022\u2022 5007",
+      "aliases": [],
+      "attributes": {
+        "bank": "Kotak Mahindra Bank",
+        "account_type": "Savings/Current",
+        "status": "Monitored"
+      },
+      "confidence": 0.93
+    },
+    {
+      "entity_id": "ACCT_RAW_028",
+      "entity_type": "account",
+      "name": "Axis Bank \u2022\u2022\u2022\u2022 7593",
+      "aliases": [],
+      "attributes": {
+        "bank": "Axis Bank",
+        "account_type": "Savings/Current",
+        "status": "Monitored"
+      },
+      "confidence": 0.93
+    },
+    {
+      "entity_id": "ACCT_RAW_031",
+      "entity_type": "account",
+      "name": "ICICI Bank \u2022\u2022\u2022\u2022 2013",
+      "aliases": [],
+      "attributes": {
+        "bank": "ICICI Bank",
+        "account_type": "Savings/Current",
+        "status": "Monitored"
+      },
+      "confidence": 0.93
+    },
+    {
+      "entity_id": "ACCT_RAW_034",
+      "entity_type": "account",
+      "name": "Punjab National Bank \u2022\u2022\u2022\u2022 3832",
+      "aliases": [],
+      "attributes": {
+        "bank": "Punjab National Bank",
+        "account_type": "Savings/Current",
+        "status": "Monitored"
+      },
+      "confidence": 0.93
+    },
+    {
+      "entity_id": "ACCT_RAW_037",
+      "entity_type": "account",
+      "name": "Punjab National Bank \u2022\u2022\u2022\u2022 1050",
+      "aliases": [],
+      "attributes": {
+        "bank": "Punjab National Bank",
+        "account_type": "Savings/Current",
+        "status": "Monitored"
+      },
+      "confidence": 0.93
+    },
+    {
+      "entity_id": "ACCT_RAW_040",
+      "entity_type": "account",
+      "name": "Punjab National Bank \u2022\u2022\u2022\u2022 6140",
+      "aliases": [],
+      "attributes": {
+        "bank": "Punjab National Bank",
+        "account_type": "Savings/Current",
+        "status": "Monitored"
+      },
+      "confidence": 0.93
+    },
+    {
+      "entity_id": "ACCT_RAW_043",
+      "entity_type": "account",
+      "name": "ICICI Bank \u2022\u2022\u2022\u2022 0056",
+      "aliases": [],
+      "attributes": {
+        "bank": "ICICI Bank",
+        "account_type": "Savings/Current",
+        "status": "Monitored"
+      },
+      "confidence": 0.93
+    },
+    {
+      "entity_id": "ACCT_RAW_046",
+      "entity_type": "account",
+      "name": "Axis Bank \u2022\u2022\u2022\u2022 9726",
+      "aliases": [],
+      "attributes": {
+        "bank": "Axis Bank",
+        "account_type": "Savings/Current",
+        "status": "Monitored"
+      },
+      "confidence": 0.93
+    },
+    {
+      "entity_id": "ACCT_RAW_049",
+      "entity_type": "account",
+      "name": "ICICI Bank \u2022\u2022\u2022\u2022 2773",
+      "aliases": [],
+      "attributes": {
+        "bank": "ICICI Bank",
+        "account_type": "Savings/Current",
+        "status": "Monitored"
+      },
+      "confidence": 0.93
+    },
+    {
+      "entity_id": "ACCT_RAW_052",
+      "entity_type": "account",
+      "name": "ICICI Bank \u2022\u2022\u2022\u2022 3068",
+      "aliases": [],
+      "attributes": {
+        "bank": "ICICI Bank",
+        "account_type": "Savings/Current",
+        "status": "Monitored"
+      },
+      "confidence": 0.93
+    },
+    {
+      "entity_id": "ACCT_RAW_055",
+      "entity_type": "account",
+      "name": "Kotak Mahindra Bank \u2022\u2022\u2022\u2022 1898",
+      "aliases": [],
+      "attributes": {
+        "bank": "Kotak Mahindra Bank",
+        "account_type": "Savings/Current",
+        "status": "Monitored"
+      },
+      "confidence": 0.93
+    },
+    {
+      "entity_id": "ACCT_RAW_058",
+      "entity_type": "account",
+      "name": "Kotak Mahindra Bank \u2022\u2022\u2022\u2022 5503",
+      "aliases": [],
+      "attributes": {
+        "bank": "Kotak Mahindra Bank",
+        "account_type": "Savings/Current",
+        "status": "Monitored"
+      },
+      "confidence": 0.93
+    },
+    {
+      "entity_id": "ACCT_RAW_061",
+      "entity_type": "account",
+      "name": "Axis Bank \u2022\u2022\u2022\u2022 5949",
+      "aliases": [],
+      "attributes": {
+        "bank": "Axis Bank",
+        "account_type": "Savings/Current",
+        "status": "Monitored"
+      },
+      "confidence": 0.93
+    },
+    {
+      "entity_id": "ACCT_RAW_064",
+      "entity_type": "account",
+      "name": "Kotak Mahindra Bank \u2022\u2022\u2022\u2022 1541",
+      "aliases": [],
+      "attributes": {
+        "bank": "Kotak Mahindra Bank",
+        "account_type": "Savings/Current",
+        "status": "Monitored"
+      },
+      "confidence": 0.93
+    },
+    {
+      "entity_id": "ACCT_RAW_065",
+      "entity_type": "account",
+      "name": "Punjab National Bank \u2022\u2022\u2022\u2022 3406",
+      "aliases": [],
+      "attributes": {
+        "bank": "Punjab National Bank",
+        "account_type": "Savings/Current",
+        "status": "Monitored"
+      },
+      "confidence": 0.93
+    },
+    {
+      "entity_id": "ACCT_RAW_067",
+      "entity_type": "account",
+      "name": "Kotak Mahindra Bank \u2022\u2022\u2022\u2022 9710",
+      "aliases": [],
+      "attributes": {
+        "bank": "Kotak Mahindra Bank",
+        "account_type": "Savings/Current",
+        "status": "Monitored"
+      },
+      "confidence": 0.93
+    },
+    {
+      "entity_id": "ACCT_RAW_070",
+      "entity_type": "account",
+      "name": "Punjab National Bank \u2022\u2022\u2022\u2022 2617",
+      "aliases": [],
+      "attributes": {
+        "bank": "Punjab National Bank",
+        "account_type": "Savings/Current",
+        "status": "Monitored"
+      },
+      "confidence": 0.93
+    },
+    {
+      "entity_id": "ACCT_RAW_073",
+      "entity_type": "account",
+      "name": "Axis Bank \u2022\u2022\u2022\u2022 3410",
+      "aliases": [],
+      "attributes": {
+        "bank": "Axis Bank",
+        "account_type": "Savings/Current",
+        "status": "Monitored"
+      },
+      "confidence": 0.93
+    },
+    {
+      "entity_id": "ACCT_RAW_076",
+      "entity_type": "account",
+      "name": "ICICI Bank \u2022\u2022\u2022\u2022 5813",
+      "aliases": [],
+      "attributes": {
+        "bank": "ICICI Bank",
+        "account_type": "Savings/Current",
+        "status": "Monitored"
+      },
+      "confidence": 0.93
+    },
+    {
+      "entity_id": "ACCT_RAW_079",
+      "entity_type": "account",
+      "name": "ICICI Bank \u2022\u2022\u2022\u2022 4639",
+      "aliases": [],
+      "attributes": {
+        "bank": "ICICI Bank",
+        "account_type": "Savings/Current",
+        "status": "Monitored"
+      },
+      "confidence": 0.93
+    },
+    {
+      "entity_id": "ACCT_RAW_082",
+      "entity_type": "account",
+      "name": "Kotak Mahindra Bank \u2022\u2022\u2022\u2022 9344",
+      "aliases": [],
+      "attributes": {
+        "bank": "Kotak Mahindra Bank",
+        "account_type": "Savings/Current",
+        "status": "Monitored"
+      },
+      "confidence": 0.93
+    },
+    {
+      "entity_id": "ACCT_RAW_085",
+      "entity_type": "account",
+      "name": "Punjab National Bank \u2022\u2022\u2022\u2022 0371",
+      "aliases": [],
+      "attributes": {
+        "bank": "Punjab National Bank",
+        "account_type": "Savings/Current",
+        "status": "Monitored"
+      },
+      "confidence": 0.93
+    },
+    {
+      "entity_id": "ACCT_RAW_088",
+      "entity_type": "account",
+      "name": "HDFC Bank \u2022\u2022\u2022\u2022 2164",
+      "aliases": [],
+      "attributes": {
+        "bank": "HDFC Bank",
+        "account_type": "Savings/Current",
+        "status": "Monitored"
+      },
+      "confidence": 0.93
+    },
+    {
+      "entity_id": "ACCT_RAW_091",
+      "entity_type": "account",
+      "name": "HDFC Bank \u2022\u2022\u2022\u2022 5251",
+      "aliases": [],
+      "attributes": {
+        "bank": "HDFC Bank",
+        "account_type": "Savings/Current",
+        "status": "Monitored"
+      },
+      "confidence": 0.93
+    },
+    {
+      "entity_id": "ACCT_RAW_094",
+      "entity_type": "account",
+      "name": "HDFC Bank \u2022\u2022\u2022\u2022 6950",
+      "aliases": [],
+      "attributes": {
+        "bank": "HDFC Bank",
+        "account_type": "Savings/Current",
+        "status": "Monitored"
+      },
+      "confidence": 0.93
+    },
+    {
+      "entity_id": "ACCT_RAW_097",
+      "entity_type": "account",
+      "name": "ICICI Bank \u2022\u2022\u2022\u2022 6384",
+      "aliases": [],
+      "attributes": {
+        "bank": "ICICI Bank",
+        "account_type": "Savings/Current",
+        "status": "Monitored"
+      },
+      "confidence": 0.93
+    },
+    {
+      "entity_id": "ACCT_RAW_100",
+      "entity_type": "account",
+      "name": "ICICI Bank \u2022\u2022\u2022\u2022 7268",
+      "aliases": [],
+      "attributes": {
+        "bank": "ICICI Bank",
+        "account_type": "Savings/Current",
+        "status": "Monitored"
+      },
+      "confidence": 0.93
+    },
+    {
+      "entity_id": "VEH_RAW_001",
+      "entity_type": "vehicle",
+      "name": "DL 01 AB 3998",
+      "aliases": [
+        "Vehicle DL 01 AB 3998"
+      ],
+      "attributes": {
+        "category": "Commercial Truck/SUV",
+        "toll_plaza_hit": "NH48 Toll Plaza",
+        "status": "ANPR Monitored"
+      },
+      "confidence": 0.91
+    },
+    {
+      "entity_id": "VEH_RAW_006",
+      "entity_type": "vehicle",
+      "name": "UP 32 AB 5473",
+      "aliases": [
+        "Vehicle UP 32 AB 5473"
+      ],
+      "attributes": {
+        "category": "Commercial Truck/SUV",
+        "toll_plaza_hit": "NH48 Toll Plaza",
+        "status": "ANPR Monitored"
+      },
+      "confidence": 0.91
+    },
+    {
+      "entity_id": "VEH_RAW_011",
+      "entity_type": "vehicle",
+      "name": "DL 01 AB 3363",
+      "aliases": [
+        "Vehicle DL 01 AB 3363"
+      ],
+      "attributes": {
+        "category": "Commercial Truck/SUV",
+        "toll_plaza_hit": "NH48 Toll Plaza",
+        "status": "ANPR Monitored"
+      },
+      "confidence": 0.91
+    },
+    {
+      "entity_id": "VEH_RAW_016",
+      "entity_type": "vehicle",
+      "name": "GJ 01 AB 0939",
+      "aliases": [
+        "Vehicle GJ 01 AB 0939"
+      ],
+      "attributes": {
+        "category": "Commercial Truck/SUV",
+        "toll_plaza_hit": "NH48 Toll Plaza",
+        "status": "ANPR Monitored"
+      },
+      "confidence": 0.91
+    },
+    {
+      "entity_id": "VEH_RAW_021",
+      "entity_type": "vehicle",
+      "name": "WB 01 AB 5259",
+      "aliases": [
+        "Vehicle WB 01 AB 5259"
+      ],
+      "attributes": {
+        "category": "Commercial Truck/SUV",
+        "toll_plaza_hit": "NH48 Toll Plaza",
+        "status": "ANPR Monitored"
+      },
+      "confidence": 0.91
+    },
+    {
+      "entity_id": "VEH_RAW_026",
+      "entity_type": "vehicle",
+      "name": "MH 12 AB 0400",
+      "aliases": [
+        "Vehicle MH 12 AB 0400"
+      ],
+      "attributes": {
+        "category": "Commercial Truck/SUV",
+        "toll_plaza_hit": "NH48 Toll Plaza",
+        "status": "ANPR Monitored"
+      },
+      "confidence": 0.91
+    },
+    {
+      "entity_id": "VEH_RAW_031",
+      "entity_type": "vehicle",
+      "name": "UP 32 AB 2013",
+      "aliases": [
+        "Vehicle UP 32 AB 2013"
+      ],
+      "attributes": {
+        "category": "Commercial Truck/SUV",
+        "toll_plaza_hit": "NH48 Toll Plaza",
+        "status": "ANPR Monitored"
+      },
+      "confidence": 0.91
+    },
+    {
+      "entity_id": "VEH_RAW_036",
+      "entity_type": "vehicle",
+      "name": "DL 01 AB 8006",
+      "aliases": [
+        "Vehicle DL 01 AB 8006"
+      ],
+      "attributes": {
+        "category": "Commercial Truck/SUV",
+        "toll_plaza_hit": "NH48 Toll Plaza",
+        "status": "ANPR Monitored"
+      },
+      "confidence": 0.91
+    },
+    {
+      "entity_id": "VEH_RAW_041",
+      "entity_type": "vehicle",
+      "name": "TN 01 AB 3101",
+      "aliases": [
+        "Vehicle TN 01 AB 3101"
+      ],
+      "attributes": {
+        "category": "Commercial Truck/SUV",
+        "toll_plaza_hit": "NH48 Toll Plaza",
+        "status": "ANPR Monitored"
+      },
+      "confidence": 0.91
+    },
+    {
+      "entity_id": "VEH_RAW_046",
+      "entity_type": "vehicle",
+      "name": "WB 01 AB 9726",
+      "aliases": [
+        "Vehicle WB 01 AB 9726"
+      ],
+      "attributes": {
+        "category": "Commercial Truck/SUV",
+        "toll_plaza_hit": "NH48 Toll Plaza",
+        "status": "ANPR Monitored"
+      },
+      "confidence": 0.91
+    },
+    {
+      "entity_id": "VEH_RAW_051",
+      "entity_type": "vehicle",
+      "name": "TS 01 AB 0070",
+      "aliases": [
+        "Vehicle TS 01 AB 0070"
+      ],
+      "attributes": {
+        "category": "Commercial Truck/SUV",
+        "toll_plaza_hit": "NH48 Toll Plaza",
+        "status": "ANPR Monitored"
+      },
+      "confidence": 0.91
+    },
+    {
+      "entity_id": "VEH_RAW_056",
+      "entity_type": "vehicle",
+      "name": "WB 01 AB 8828",
+      "aliases": [
+        "Vehicle WB 01 AB 8828"
+      ],
+      "attributes": {
+        "category": "Commercial Truck/SUV",
+        "toll_plaza_hit": "NH48 Toll Plaza",
+        "status": "ANPR Monitored"
+      },
+      "confidence": 0.91
+    },
+    {
+      "entity_id": "VEH_RAW_061",
+      "entity_type": "vehicle",
+      "name": "DL 01 AB 5949",
+      "aliases": [
+        "Vehicle DL 01 AB 5949"
+      ],
+      "attributes": {
+        "category": "Commercial Truck/SUV",
+        "toll_plaza_hit": "NH48 Toll Plaza",
+        "status": "ANPR Monitored"
+      },
+      "confidence": 0.91
+    },
+    {
+      "entity_id": "VEH_RAW_065",
+      "entity_type": "vehicle",
+      "name": "GJ 01 AB 3406",
+      "aliases": [
+        "Vehicle GJ 01 AB 3406"
+      ],
+      "attributes": {
+        "category": "Commercial Truck/SUV",
+        "toll_plaza_hit": "NH48 Toll Plaza",
+        "status": "ANPR Monitored"
+      },
+      "confidence": 0.91
+    },
+    {
+      "entity_id": "VEH_RAW_066",
+      "entity_type": "vehicle",
+      "name": "DL 01 AB 5652",
+      "aliases": [
+        "Vehicle DL 01 AB 5652"
+      ],
+      "attributes": {
+        "category": "Commercial Truck/SUV",
+        "toll_plaza_hit": "NH48 Toll Plaza",
+        "status": "ANPR Monitored"
+      },
+      "confidence": 0.91
+    },
+    {
+      "entity_id": "VEH_RAW_071",
+      "entity_type": "vehicle",
+      "name": "TN 01 AB 7321",
+      "aliases": [
+        "Vehicle TN 01 AB 7321"
+      ],
+      "attributes": {
+        "category": "Commercial Truck/SUV",
+        "toll_plaza_hit": "NH48 Toll Plaza",
+        "status": "ANPR Monitored"
+      },
+      "confidence": 0.91
+    },
+    {
+      "entity_id": "VEH_RAW_076",
+      "entity_type": "vehicle",
+      "name": "KA 01 AB 5813",
+      "aliases": [
+        "Vehicle KA 01 AB 5813"
+      ],
+      "attributes": {
+        "category": "Commercial Truck/SUV",
+        "toll_plaza_hit": "NH48 Toll Plaza",
+        "status": "ANPR Monitored"
+      },
+      "confidence": 0.91
+    },
+    {
+      "entity_id": "VEH_RAW_081",
+      "entity_type": "vehicle",
+      "name": "MH 01 AB 2849",
+      "aliases": [
+        "Vehicle MH 01 AB 2849"
+      ],
+      "attributes": {
+        "category": "Commercial Truck/SUV",
+        "toll_plaza_hit": "NH48 Toll Plaza",
+        "status": "ANPR Monitored"
+      },
+      "confidence": 0.91
+    },
+    {
+      "entity_id": "VEH_RAW_086",
+      "entity_type": "vehicle",
+      "name": "WB 01 AB 8347",
+      "aliases": [
+        "Vehicle WB 01 AB 8347"
+      ],
+      "attributes": {
+        "category": "Commercial Truck/SUV",
+        "toll_plaza_hit": "NH48 Toll Plaza",
+        "status": "ANPR Monitored"
+      },
+      "confidence": 0.91
+    },
+    {
+      "entity_id": "VEH_RAW_091",
+      "entity_type": "vehicle",
+      "name": "KA 01 AB 5251",
+      "aliases": [
+        "Vehicle KA 01 AB 5251"
+      ],
+      "attributes": {
+        "category": "Commercial Truck/SUV",
+        "toll_plaza_hit": "NH48 Toll Plaza",
+        "status": "ANPR Monitored"
+      },
+      "confidence": 0.91
+    },
+    {
+      "entity_id": "VEH_RAW_096",
+      "entity_type": "vehicle",
+      "name": "MH 12 AB 1511",
+      "aliases": [
+        "Vehicle MH 12 AB 1511"
+      ],
+      "attributes": {
+        "category": "Commercial Truck/SUV",
+        "toll_plaza_hit": "NH48 Toll Plaza",
+        "status": "ANPR Monitored"
+      },
+      "confidence": 0.91
     }
   ],
   "raw_relationships": [
+    {
+      "source": "P042",
+      "target": "PHONE_17",
+      "relationship": "USES",
+      "confidence": 0.91,
+      "evidence": "investigation_record_17"
+    },
+    {
+      "source": "PHONE_17",
+      "target": "COMP_05",
+      "relationship": "ASSOCIATED_WITH",
+      "confidence": 0.86,
+      "evidence": "telecom_company_link_17"
+    },
+    {
+      "source": "P042",
+      "target": "COMP_05",
+      "relationship": "DIRECTOR_OF",
+      "confidence": 0.95,
+      "evidence": "mca_database_record_05"
+    },
+    {
+      "source": "P017",
+      "target": "PHONE_08",
+      "relationship": "USES",
+      "confidence": 0.94,
+      "evidence": "TELECOM_CDR_LOG_P017"
+    },
+    {
+      "source": "P017",
+      "target": "ACC_12",
+      "relationship": "OWNS",
+      "confidence": 0.89,
+      "evidence": "BANK_STATEMENT_P017"
+    },
+    {
+      "source": "P017",
+      "target": "VEH_07",
+      "relationship": "USES",
+      "confidence": 0.86,
+      "evidence": "ANPR_TOLL_RECORD_P017"
+    },
+    {
+      "source": "P017",
+      "target": "ADDR_04",
+      "relationship": "ASSOCIATED_WITH",
+      "confidence": 0.82,
+      "evidence": "RESIDENCE_RECORD_P017"
+    },
+    {
+      "source": "P031",
+      "target": "PHONE_21",
+      "relationship": "USES",
+      "confidence": 0.92,
+      "evidence": "TELECOM_CDR_LOG_P031"
+    },
+    {
+      "source": "P031",
+      "target": "ACC_19",
+      "relationship": "OWNS",
+      "confidence": 0.87,
+      "evidence": "BANK_STATEMENT_P031"
+    },
+    {
+      "source": "P031",
+      "target": "COMP_12",
+      "relationship": "DIRECTOR_OF",
+      "confidence": 0.9,
+      "evidence": "MCA_REGISTRY_P031"
+    },
+    {
+      "source": "P031",
+      "target": "ADDR_04",
+      "relationship": "ASSOCIATED_WITH",
+      "confidence": 0.79,
+      "evidence": "RESIDENCE_RECORD_P031"
+    },
+    {
+      "source": "COMP_12",
+      "target": "ADDR_09",
+      "relationship": "REGISTERED_AT",
+      "confidence": 0.91,
+      "evidence": "MCA_OFFICE_REGISTRY_COMP12"
+    },
+    {
+      "source": "P042",
+      "target": "ADDR_09",
+      "relationship": "ASSOCIATED_WITH",
+      "confidence": 0.83,
+      "evidence": "OFFICE_LEASE_RECORD_P042"
+    },
+    {
+      "source": "RAW_001",
+      "target": "PHONE_8695753998",
+      "relationship": "USES",
+      "confidence": 0.95,
+      "evidence": "CDR_SUBSCRIBER_LOG_RAW_001"
+    },
+    {
+      "source": "RAW_001",
+      "target": "ADDR_Delhi",
+      "relationship": "LOCATED_AT",
+      "confidence": 0.9,
+      "evidence": "GEO_LOCATION_RECORD_RAW_001"
+    },
+    {
+      "source": "RAW_002",
+      "target": "PHONE_8570621944",
+      "relationship": "USES",
+      "confidence": 0.95,
+      "evidence": "CDR_SUBSCRIBER_LOG_RAW_002"
+    },
+    {
+      "source": "RAW_002",
+      "target": "ADDR_Bengaluru",
+      "relationship": "REGISTERED_AT",
+      "confidence": 0.9,
+      "evidence": "GEO_LOCATION_RECORD_RAW_002"
+    },
+    {
+      "source": "RAW_003",
+      "target": "PHONE_7161042648",
+      "relationship": "USES",
+      "confidence": 0.95,
+      "evidence": "CDR_SUBSCRIBER_LOG_RAW_003"
+    },
+    {
+      "source": "RAW_003",
+      "target": "ADDR_Bengaluru",
+      "relationship": "REGISTERED_AT",
+      "confidence": 0.9,
+      "evidence": "GEO_LOCATION_RECORD_RAW_003"
+    },
+    {
+      "source": "RAW_004",
+      "target": "PHONE_8033639716",
+      "relationship": "USES",
+      "confidence": 0.95,
+      "evidence": "CDR_SUBSCRIBER_LOG_RAW_004"
+    },
+    {
+      "source": "RAW_004",
+      "target": "ADDR_Bengaluru",
+      "relationship": "REGISTERED_AT",
+      "confidence": 0.9,
+      "evidence": "GEO_LOCATION_RECORD_RAW_004"
+    },
+    {
+      "source": "RAW_005",
+      "target": "PHONE_7531725347",
+      "relationship": "USES",
+      "confidence": 0.95,
+      "evidence": "CDR_SUBSCRIBER_LOG_RAW_005"
+    },
+    {
+      "source": "RAW_005",
+      "target": "ADDR_Lucknow",
+      "relationship": "REGISTERED_AT",
+      "confidence": 0.9,
+      "evidence": "GEO_LOCATION_RECORD_RAW_005"
+    },
+    {
+      "source": "RAW_006",
+      "target": "PHONE_7265695473",
+      "relationship": "USES",
+      "confidence": 0.95,
+      "evidence": "CDR_SUBSCRIBER_LOG_RAW_006"
+    },
+    {
+      "source": "RAW_006",
+      "target": "ADDR_Lucknow",
+      "relationship": "LOCATED_AT",
+      "confidence": 0.9,
+      "evidence": "GEO_LOCATION_RECORD_RAW_006"
+    },
+    {
+      "source": "RAW_007",
+      "target": "PHONE_7200071088",
+      "relationship": "USES",
+      "confidence": 0.95,
+      "evidence": "CDR_SUBSCRIBER_LOG_RAW_007"
+    },
+    {
+      "source": "RAW_007",
+      "target": "ADDR_Jaipur",
+      "relationship": "LOCATED_AT",
+      "confidence": 0.9,
+      "evidence": "GEO_LOCATION_RECORD_RAW_007"
+    },
+    {
+      "source": "RAW_008",
+      "target": "PHONE_7619570852",
+      "relationship": "USES",
+      "confidence": 0.95,
+      "evidence": "CDR_SUBSCRIBER_LOG_RAW_008"
+    },
+    {
+      "source": "RAW_008",
+      "target": "ADDR_Jaipur",
+      "relationship": "LOCATED_AT",
+      "confidence": 0.9,
+      "evidence": "GEO_LOCATION_RECORD_RAW_008"
+    },
+    {
+      "source": "RAW_009",
+      "target": "PHONE_9929179284",
+      "relationship": "USES",
+      "confidence": 0.95,
+      "evidence": "CDR_SUBSCRIBER_LOG_RAW_009"
+    },
+    {
+      "source": "RAW_009",
+      "target": "ADDR_Bengaluru",
+      "relationship": "LOCATED_AT",
+      "confidence": 0.9,
+      "evidence": "GEO_LOCATION_RECORD_RAW_009"
+    },
+    {
+      "source": "RAW_010",
+      "target": "PHONE_7806899909",
+      "relationship": "USES",
+      "confidence": 0.95,
+      "evidence": "CDR_SUBSCRIBER_LOG_RAW_010"
+    },
+    {
+      "source": "RAW_010",
+      "target": "ADDR_Hyderabad",
+      "relationship": "LOCATED_AT",
+      "confidence": 0.9,
+      "evidence": "GEO_LOCATION_RECORD_RAW_010"
+    },
+    {
+      "source": "RAW_011",
+      "target": "PHONE_9423943363",
+      "relationship": "USES",
+      "confidence": 0.95,
+      "evidence": "CDR_SUBSCRIBER_LOG_RAW_011"
+    },
+    {
+      "source": "RAW_011",
+      "target": "ADDR_Delhi",
+      "relationship": "LOCATED_AT",
+      "confidence": 0.9,
+      "evidence": "GEO_LOCATION_RECORD_RAW_011"
+    },
+    {
+      "source": "RAW_012",
+      "target": "PHONE_9132084004",
+      "relationship": "USES",
+      "confidence": 0.95,
+      "evidence": "CDR_SUBSCRIBER_LOG_RAW_012"
+    },
+    {
+      "source": "RAW_012",
+      "target": "ADDR_Jaipur",
+      "relationship": "LOCATED_AT",
+      "confidence": 0.9,
+      "evidence": "GEO_LOCATION_RECORD_RAW_012"
+    },
+    {
+      "source": "RAW_013",
+      "target": "PHONE_8999744784",
+      "relationship": "USES",
+      "confidence": 0.95,
+      "evidence": "CDR_SUBSCRIBER_LOG_RAW_013"
+    },
+    {
+      "source": "RAW_013",
+      "target": "ADDR_Lucknow",
+      "relationship": "LOCATED_AT",
+      "confidence": 0.9,
+      "evidence": "GEO_LOCATION_RECORD_RAW_013"
+    },
+    {
+      "source": "RAW_014",
+      "target": "PHONE_8287489453",
+      "relationship": "USES",
+      "confidence": 0.95,
+      "evidence": "CDR_SUBSCRIBER_LOG_RAW_014"
+    },
+    {
+      "source": "RAW_014",
+      "target": "ADDR_Chennai",
+      "relationship": "LOCATED_AT",
+      "confidence": 0.9,
+      "evidence": "GEO_LOCATION_RECORD_RAW_014"
+    },
+    {
+      "source": "RAW_015",
+      "target": "PHONE_8048386555",
+      "relationship": "USES",
+      "confidence": 0.95,
+      "evidence": "CDR_SUBSCRIBER_LOG_RAW_015"
+    },
+    {
+      "source": "RAW_015",
+      "target": "ADDR_Mumbai",
+      "relationship": "LOCATED_AT",
+      "confidence": 0.9,
+      "evidence": "GEO_LOCATION_RECORD_RAW_015"
+    },
+    {
+      "source": "RAW_016",
+      "target": "PHONE_9490630939",
+      "relationship": "USES",
+      "confidence": 0.95,
+      "evidence": "CDR_SUBSCRIBER_LOG_RAW_016"
+    },
+    {
+      "source": "RAW_016",
+      "target": "ADDR_Ahmedabad",
+      "relationship": "LOCATED_AT",
+      "confidence": 0.9,
+      "evidence": "GEO_LOCATION_RECORD_RAW_016"
+    },
+    {
+      "source": "RAW_017",
+      "target": "PHONE_7260573195",
+      "relationship": "USES",
+      "confidence": 0.95,
+      "evidence": "CDR_SUBSCRIBER_LOG_RAW_017"
+    },
+    {
+      "source": "RAW_017",
+      "target": "ADDR_Kolkata",
+      "relationship": "LOCATED_AT",
+      "confidence": 0.9,
+      "evidence": "GEO_LOCATION_RECORD_RAW_017"
+    },
+    {
+      "source": "RAW_018",
+      "target": "PHONE_8222328495",
+      "relationship": "USES",
+      "confidence": 0.95,
+      "evidence": "CDR_SUBSCRIBER_LOG_RAW_018"
+    },
+    {
+      "source": "RAW_018",
+      "target": "ADDR_Pune",
+      "relationship": "LOCATED_AT",
+      "confidence": 0.9,
+      "evidence": "GEO_LOCATION_RECORD_RAW_018"
+    },
+    {
+      "source": "RAW_019",
+      "target": "PHONE_7096907015",
+      "relationship": "USES",
+      "confidence": 0.95,
+      "evidence": "CDR_SUBSCRIBER_LOG_RAW_019"
+    },
+    {
+      "source": "RAW_019",
+      "target": "ADDR_Ahmedabad",
+      "relationship": "LOCATED_AT",
+      "confidence": 0.9,
+      "evidence": "GEO_LOCATION_RECORD_RAW_019"
+    },
+    {
+      "source": "RAW_020",
+      "target": "PHONE_9623879480",
+      "relationship": "USES",
+      "confidence": 0.95,
+      "evidence": "CDR_SUBSCRIBER_LOG_RAW_020"
+    },
+    {
+      "source": "RAW_020",
+      "target": "ADDR_Mumbai",
+      "relationship": "LOCATED_AT",
+      "confidence": 0.9,
+      "evidence": "GEO_LOCATION_RECORD_RAW_020"
+    },
+    {
+      "source": "RAW_021",
+      "target": "PHONE_7937195259",
+      "relationship": "USES",
+      "confidence": 0.95,
+      "evidence": "CDR_SUBSCRIBER_LOG_RAW_021"
+    },
+    {
+      "source": "RAW_021",
+      "target": "ADDR_Kolkata",
+      "relationship": "LOCATED_AT",
+      "confidence": 0.9,
+      "evidence": "GEO_LOCATION_RECORD_RAW_021"
+    },
+    {
+      "source": "RAW_022",
+      "target": "PHONE_8063497603",
+      "relationship": "USES",
+      "confidence": 0.95,
+      "evidence": "CDR_SUBSCRIBER_LOG_RAW_022"
+    },
+    {
+      "source": "RAW_022",
+      "target": "ADDR_Pune",
+      "relationship": "LOCATED_AT",
+      "confidence": 0.9,
+      "evidence": "GEO_LOCATION_RECORD_RAW_022"
+    },
+    {
+      "source": "RAW_023",
+      "target": "PHONE_7346094055",
+      "relationship": "USES",
+      "confidence": 0.95,
+      "evidence": "CDR_SUBSCRIBER_LOG_RAW_023"
+    },
+    {
+      "source": "RAW_023",
+      "target": "ADDR_Bengaluru",
+      "relationship": "LOCATED_AT",
+      "confidence": 0.9,
+      "evidence": "GEO_LOCATION_RECORD_RAW_023"
+    },
+    {
+      "source": "RAW_024",
+      "target": "PHONE_9359826449",
+      "relationship": "USES",
+      "confidence": 0.95,
+      "evidence": "CDR_SUBSCRIBER_LOG_RAW_024"
+    },
+    {
+      "source": "RAW_024",
+      "target": "ADDR_Kolkata",
+      "relationship": "LOCATED_AT",
+      "confidence": 0.9,
+      "evidence": "GEO_LOCATION_RECORD_RAW_024"
+    },
+    {
+      "source": "RAW_025",
+      "target": "PHONE_9363175007",
+      "relationship": "USES",
+      "confidence": 0.95,
+      "evidence": "CDR_SUBSCRIBER_LOG_RAW_025"
+    },
+    {
+      "source": "RAW_025",
+      "target": "ADDR_Kolkata",
+      "relationship": "LOCATED_AT",
+      "confidence": 0.9,
+      "evidence": "GEO_LOCATION_RECORD_RAW_025"
+    },
+    {
+      "source": "RAW_026",
+      "target": "PHONE_8540910400",
+      "relationship": "USES",
+      "confidence": 0.95,
+      "evidence": "CDR_SUBSCRIBER_LOG_RAW_026"
+    },
+    {
+      "source": "RAW_026",
+      "target": "ADDR_Pune",
+      "relationship": "LOCATED_AT",
+      "confidence": 0.9,
+      "evidence": "GEO_LOCATION_RECORD_RAW_026"
+    },
+    {
+      "source": "RAW_027",
+      "target": "PHONE_7356416554",
+      "relationship": "USES",
+      "confidence": 0.95,
+      "evidence": "CDR_SUBSCRIBER_LOG_RAW_027"
+    },
+    {
+      "source": "RAW_027",
+      "target": "ADDR_Bengaluru",
+      "relationship": "LOCATED_AT",
+      "confidence": 0.9,
+      "evidence": "GEO_LOCATION_RECORD_RAW_027"
+    },
+    {
+      "source": "RAW_028",
+      "target": "PHONE_9828307593",
+      "relationship": "USES",
+      "confidence": 0.95,
+      "evidence": "CDR_SUBSCRIBER_LOG_RAW_028"
+    },
+    {
+      "source": "RAW_028",
+      "target": "ADDR_Chennai",
+      "relationship": "LOCATED_AT",
+      "confidence": 0.9,
+      "evidence": "GEO_LOCATION_RECORD_RAW_028"
+    },
+    {
+      "source": "RAW_029",
+      "target": "PHONE_9530266207",
+      "relationship": "USES",
+      "confidence": 0.95,
+      "evidence": "CDR_SUBSCRIBER_LOG_RAW_029"
+    },
+    {
+      "source": "RAW_029",
+      "target": "ADDR_Bengaluru",
+      "relationship": "LOCATED_AT",
+      "confidence": 0.9,
+      "evidence": "GEO_LOCATION_RECORD_RAW_029"
+    },
+    {
+      "source": "RAW_030",
+      "target": "PHONE_7017581913",
+      "relationship": "USES",
+      "confidence": 0.95,
+      "evidence": "CDR_SUBSCRIBER_LOG_RAW_030"
+    },
+    {
+      "source": "RAW_030",
+      "target": "ADDR_Bengaluru",
+      "relationship": "LOCATED_AT",
+      "confidence": 0.9,
+      "evidence": "GEO_LOCATION_RECORD_RAW_030"
+    },
+    {
+      "source": "RAW_031",
+      "target": "PHONE_8585932013",
+      "relationship": "USES",
+      "confidence": 0.95,
+      "evidence": "CDR_SUBSCRIBER_LOG_RAW_031"
+    },
+    {
+      "source": "RAW_031",
+      "target": "ADDR_Lucknow",
+      "relationship": "LOCATED_AT",
+      "confidence": 0.9,
+      "evidence": "GEO_LOCATION_RECORD_RAW_031"
+    },
+    {
+      "source": "RAW_032",
+      "target": "PHONE_7538981926",
+      "relationship": "USES",
+      "confidence": 0.95,
+      "evidence": "CDR_SUBSCRIBER_LOG_RAW_032"
+    },
+    {
+      "source": "RAW_032",
+      "target": "ADDR_Jaipur",
+      "relationship": "LOCATED_AT",
+      "confidence": 0.9,
+      "evidence": "GEO_LOCATION_RECORD_RAW_032"
+    },
+    {
+      "source": "RAW_033",
+      "target": "PHONE_9904257243",
+      "relationship": "USES",
+      "confidence": 0.95,
+      "evidence": "CDR_SUBSCRIBER_LOG_RAW_033"
+    },
+    {
+      "source": "RAW_033",
+      "target": "ADDR_Delhi",
+      "relationship": "LOCATED_AT",
+      "confidence": 0.9,
+      "evidence": "GEO_LOCATION_RECORD_RAW_033"
+    },
+    {
+      "source": "RAW_034",
+      "target": "PHONE_9402053832",
+      "relationship": "USES",
+      "confidence": 0.95,
+      "evidence": "CDR_SUBSCRIBER_LOG_RAW_034"
+    },
+    {
+      "source": "RAW_034",
+      "target": "ADDR_Pune",
+      "relationship": "LOCATED_AT",
+      "confidence": 0.9,
+      "evidence": "GEO_LOCATION_RECORD_RAW_034"
+    },
+    {
+      "source": "RAW_035",
+      "target": "PHONE_8692732589",
+      "relationship": "USES",
+      "confidence": 0.95,
+      "evidence": "CDR_SUBSCRIBER_LOG_RAW_035"
+    },
+    {
+      "source": "RAW_035",
+      "target": "ADDR_Mumbai",
+      "relationship": "LOCATED_AT",
+      "confidence": 0.9,
+      "evidence": "GEO_LOCATION_RECORD_RAW_035"
+    },
+    {
+      "source": "RAW_036",
+      "target": "PHONE_8719888006",
+      "relationship": "USES",
+      "confidence": 0.95,
+      "evidence": "CDR_SUBSCRIBER_LOG_RAW_036"
+    },
+    {
+      "source": "RAW_036",
+      "target": "ADDR_Delhi",
+      "relationship": "LOCATED_AT",
+      "confidence": 0.9,
+      "evidence": "GEO_LOCATION_RECORD_RAW_036"
+    },
+    {
+      "source": "RAW_037",
+      "target": "PHONE_7896631050",
+      "relationship": "USES",
+      "confidence": 0.95,
+      "evidence": "CDR_SUBSCRIBER_LOG_RAW_037"
+    },
+    {
+      "source": "RAW_037",
+      "target": "ADDR_Ahmedabad",
+      "relationship": "LOCATED_AT",
+      "confidence": 0.9,
+      "evidence": "GEO_LOCATION_RECORD_RAW_037"
+    },
+    {
+      "source": "RAW_038",
+      "target": "PHONE_8460519317",
+      "relationship": "USES",
+      "confidence": 0.95,
+      "evidence": "CDR_SUBSCRIBER_LOG_RAW_038"
+    },
+    {
+      "source": "RAW_038",
+      "target": "ADDR_Lucknow",
+      "relationship": "LOCATED_AT",
+      "confidence": 0.9,
+      "evidence": "GEO_LOCATION_RECORD_RAW_038"
+    },
+    {
+      "source": "RAW_039",
+      "target": "PHONE_7001001928",
+      "relationship": "USES",
+      "confidence": 0.95,
+      "evidence": "CDR_SUBSCRIBER_LOG_RAW_039"
+    },
+    {
+      "source": "RAW_039",
+      "target": "ADDR_Lucknow",
+      "relationship": "LOCATED_AT",
+      "confidence": 0.9,
+      "evidence": "GEO_LOCATION_RECORD_RAW_039"
+    },
+    {
+      "source": "RAW_040",
+      "target": "PHONE_7435786140",
+      "relationship": "USES",
+      "confidence": 0.95,
+      "evidence": "CDR_SUBSCRIBER_LOG_RAW_040"
+    },
+    {
+      "source": "RAW_040",
+      "target": "ADDR_Hyderabad",
+      "relationship": "LOCATED_AT",
+      "confidence": 0.9,
+      "evidence": "GEO_LOCATION_RECORD_RAW_040"
+    },
+    {
+      "source": "RAW_041",
+      "target": "PHONE_7302003101",
+      "relationship": "USES",
+      "confidence": 0.95,
+      "evidence": "CDR_SUBSCRIBER_LOG_RAW_041"
+    },
+    {
+      "source": "RAW_041",
+      "target": "ADDR_Chennai",
+      "relationship": "LOCATED_AT",
+      "confidence": 0.9,
+      "evidence": "GEO_LOCATION_RECORD_RAW_041"
+    },
+    {
+      "source": "RAW_042",
+      "target": "PHONE_7638019485",
+      "relationship": "USES",
+      "confidence": 0.95,
+      "evidence": "CDR_SUBSCRIBER_LOG_RAW_042"
+    },
+    {
+      "source": "RAW_042",
+      "target": "ADDR_Kolkata",
+      "relationship": "LOCATED_AT",
+      "confidence": 0.9,
+      "evidence": "GEO_LOCATION_RECORD_RAW_042"
+    },
+    {
+      "source": "RAW_043",
+      "target": "PHONE_8564070056",
+      "relationship": "USES",
+      "confidence": 0.95,
+      "evidence": "CDR_SUBSCRIBER_LOG_RAW_043"
+    },
+    {
+      "source": "RAW_043",
+      "target": "ADDR_Ahmedabad",
+      "relationship": "LOCATED_AT",
+      "confidence": 0.9,
+      "evidence": "GEO_LOCATION_RECORD_RAW_043"
+    },
+    {
+      "source": "RAW_044",
+      "target": "PHONE_9096236324",
+      "relationship": "USES",
+      "confidence": 0.95,
+      "evidence": "CDR_SUBSCRIBER_LOG_RAW_044"
+    },
+    {
+      "source": "RAW_044",
+      "target": "ADDR_Ahmedabad",
+      "relationship": "LOCATED_AT",
+      "confidence": 0.9,
+      "evidence": "GEO_LOCATION_RECORD_RAW_044"
+    },
+    {
+      "source": "RAW_045",
+      "target": "PHONE_8339395518",
+      "relationship": "USES",
+      "confidence": 0.95,
+      "evidence": "CDR_SUBSCRIBER_LOG_RAW_045"
+    },
+    {
+      "source": "RAW_045",
+      "target": "ADDR_Mumbai",
+      "relationship": "LOCATED_AT",
+      "confidence": 0.9,
+      "evidence": "GEO_LOCATION_RECORD_RAW_045"
+    },
+    {
+      "source": "RAW_046",
+      "target": "PHONE_8471609726",
+      "relationship": "USES",
+      "confidence": 0.95,
+      "evidence": "CDR_SUBSCRIBER_LOG_RAW_046"
+    },
+    {
+      "source": "RAW_046",
+      "target": "ADDR_Kolkata",
+      "relationship": "LOCATED_AT",
+      "confidence": 0.9,
+      "evidence": "GEO_LOCATION_RECORD_RAW_046"
+    },
+    {
+      "source": "RAW_047",
+      "target": "PHONE_7693373550",
+      "relationship": "USES",
+      "confidence": 0.95,
+      "evidence": "CDR_SUBSCRIBER_LOG_RAW_047"
+    },
+    {
+      "source": "RAW_047",
+      "target": "ADDR_Jaipur",
+      "relationship": "LOCATED_AT",
+      "confidence": 0.9,
+      "evidence": "GEO_LOCATION_RECORD_RAW_047"
+    },
+    {
+      "source": "RAW_048",
+      "target": "PHONE_9268848248",
+      "relationship": "USES",
+      "confidence": 0.95,
+      "evidence": "CDR_SUBSCRIBER_LOG_RAW_048"
+    },
+    {
+      "source": "RAW_048",
+      "target": "ADDR_Hyderabad",
+      "relationship": "LOCATED_AT",
+      "confidence": 0.9,
+      "evidence": "GEO_LOCATION_RECORD_RAW_048"
+    },
+    {
+      "source": "RAW_049",
+      "target": "PHONE_9268212773",
+      "relationship": "USES",
+      "confidence": 0.95,
+      "evidence": "CDR_SUBSCRIBER_LOG_RAW_049"
+    },
+    {
+      "source": "RAW_049",
+      "target": "ADDR_Kolkata",
+      "relationship": "LOCATED_AT",
+      "confidence": 0.9,
+      "evidence": "GEO_LOCATION_RECORD_RAW_049"
+    },
+    {
+      "source": "RAW_050",
+      "target": "PHONE_9990142407",
+      "relationship": "USES",
+      "confidence": 0.95,
+      "evidence": "CDR_SUBSCRIBER_LOG_RAW_050"
+    },
+    {
+      "source": "RAW_050",
+      "target": "ADDR_Kolkata",
+      "relationship": "LOCATED_AT",
+      "confidence": 0.9,
+      "evidence": "GEO_LOCATION_RECORD_RAW_050"
+    },
+    {
+      "source": "RAW_051",
+      "target": "PHONE_7717440070",
+      "relationship": "USES",
+      "confidence": 0.95,
+      "evidence": "CDR_SUBSCRIBER_LOG_RAW_051"
+    },
+    {
+      "source": "RAW_051",
+      "target": "ADDR_Hyderabad",
+      "relationship": "LOCATED_AT",
+      "confidence": 0.9,
+      "evidence": "GEO_LOCATION_RECORD_RAW_051"
+    },
+    {
+      "source": "RAW_052",
+      "target": "PHONE_9326013068",
+      "relationship": "USES",
+      "confidence": 0.95,
+      "evidence": "CDR_SUBSCRIBER_LOG_RAW_052"
+    },
+    {
+      "source": "RAW_052",
+      "target": "ADDR_Jaipur",
+      "relationship": "LOCATED_AT",
+      "confidence": 0.9,
+      "evidence": "GEO_LOCATION_RECORD_RAW_052"
+    },
+    {
+      "source": "RAW_053",
+      "target": "PHONE_7957956674",
+      "relationship": "USES",
+      "confidence": 0.95,
+      "evidence": "CDR_SUBSCRIBER_LOG_RAW_053"
+    },
+    {
+      "source": "RAW_053",
+      "target": "ADDR_Lucknow",
+      "relationship": "LOCATED_AT",
+      "confidence": 0.9,
+      "evidence": "GEO_LOCATION_RECORD_RAW_053"
+    },
+    {
+      "source": "RAW_054",
+      "target": "PHONE_8720926262",
+      "relationship": "USES",
+      "confidence": 0.95,
+      "evidence": "CDR_SUBSCRIBER_LOG_RAW_054"
+    },
+    {
+      "source": "RAW_054",
+      "target": "ADDR_Chennai",
+      "relationship": "LOCATED_AT",
+      "confidence": 0.9,
+      "evidence": "GEO_LOCATION_RECORD_RAW_054"
+    },
+    {
+      "source": "RAW_055",
+      "target": "PHONE_9116481898",
+      "relationship": "USES",
+      "confidence": 0.95,
+      "evidence": "CDR_SUBSCRIBER_LOG_RAW_055"
+    },
+    {
+      "source": "RAW_055",
+      "target": "ADDR_Hyderabad",
+      "relationship": "LOCATED_AT",
+      "confidence": 0.9,
+      "evidence": "GEO_LOCATION_RECORD_RAW_055"
+    },
+    {
+      "source": "RAW_056",
+      "target": "PHONE_7119988828",
+      "relationship": "USES",
+      "confidence": 0.95,
+      "evidence": "CDR_SUBSCRIBER_LOG_RAW_056"
+    },
+    {
+      "source": "RAW_056",
+      "target": "ADDR_Kolkata",
+      "relationship": "LOCATED_AT",
+      "confidence": 0.9,
+      "evidence": "GEO_LOCATION_RECORD_RAW_056"
+    },
+    {
+      "source": "RAW_057",
+      "target": "PHONE_7831698692",
+      "relationship": "USES",
+      "confidence": 0.95,
+      "evidence": "CDR_SUBSCRIBER_LOG_RAW_057"
+    },
+    {
+      "source": "RAW_057",
+      "target": "ADDR_Lucknow",
+      "relationship": "LOCATED_AT",
+      "confidence": 0.9,
+      "evidence": "GEO_LOCATION_RECORD_RAW_057"
+    },
+    {
+      "source": "RAW_058",
+      "target": "PHONE_8501175503",
+      "relationship": "USES",
+      "confidence": 0.95,
+      "evidence": "CDR_SUBSCRIBER_LOG_RAW_058"
+    },
+    {
+      "source": "RAW_058",
+      "target": "ADDR_Hyderabad",
+      "relationship": "LOCATED_AT",
+      "confidence": 0.9,
+      "evidence": "GEO_LOCATION_RECORD_RAW_058"
+    },
+    {
+      "source": "RAW_059",
+      "target": "PHONE_7438761609",
+      "relationship": "USES",
+      "confidence": 0.95,
+      "evidence": "CDR_SUBSCRIBER_LOG_RAW_059"
+    },
+    {
+      "source": "RAW_059",
+      "target": "ADDR_Chennai",
+      "relationship": "LOCATED_AT",
+      "confidence": 0.9,
+      "evidence": "GEO_LOCATION_RECORD_RAW_059"
+    },
+    {
+      "source": "RAW_060",
+      "target": "PHONE_8450571437",
+      "relationship": "USES",
+      "confidence": 0.95,
+      "evidence": "CDR_SUBSCRIBER_LOG_RAW_060"
+    },
+    {
+      "source": "RAW_060",
+      "target": "ADDR_Chennai",
+      "relationship": "LOCATED_AT",
+      "confidence": 0.9,
+      "evidence": "GEO_LOCATION_RECORD_RAW_060"
+    },
+    {
+      "source": "RAW_061",
+      "target": "PHONE_9621055949",
+      "relationship": "USES",
+      "confidence": 0.95,
+      "evidence": "CDR_SUBSCRIBER_LOG_RAW_061"
+    },
+    {
+      "source": "RAW_061",
+      "target": "ADDR_Delhi",
+      "relationship": "LOCATED_AT",
+      "confidence": 0.9,
+      "evidence": "GEO_LOCATION_RECORD_RAW_061"
+    },
+    {
+      "source": "RAW_062",
+      "target": "PHONE_7364120811",
+      "relationship": "USES",
+      "confidence": 0.95,
+      "evidence": "CDR_SUBSCRIBER_LOG_RAW_062"
+    },
+    {
+      "source": "RAW_062",
+      "target": "ADDR_Mumbai",
+      "relationship": "LOCATED_AT",
+      "confidence": 0.9,
+      "evidence": "GEO_LOCATION_RECORD_RAW_062"
+    },
+    {
+      "source": "RAW_063",
+      "target": "PHONE_7856070305",
+      "relationship": "USES",
+      "confidence": 0.95,
+      "evidence": "CDR_SUBSCRIBER_LOG_RAW_063"
+    },
+    {
+      "source": "RAW_063",
+      "target": "ADDR_Ahmedabad",
+      "relationship": "LOCATED_AT",
+      "confidence": 0.9,
+      "evidence": "GEO_LOCATION_RECORD_RAW_063"
+    },
+    {
+      "source": "RAW_064",
+      "target": "PHONE_9730921541",
+      "relationship": "USES",
+      "confidence": 0.95,
+      "evidence": "CDR_SUBSCRIBER_LOG_RAW_064"
+    },
+    {
+      "source": "RAW_064",
+      "target": "ADDR_Hyderabad",
+      "relationship": "LOCATED_AT",
+      "confidence": 0.9,
+      "evidence": "GEO_LOCATION_RECORD_RAW_064"
+    },
+    {
+      "source": "RAW_065",
+      "target": "PHONE_8700113406",
+      "relationship": "USES",
+      "confidence": 0.95,
+      "evidence": "CDR_SUBSCRIBER_LOG_RAW_065"
+    },
+    {
+      "source": "RAW_065",
+      "target": "ADDR_Ahmedabad",
+      "relationship": "LOCATED_AT",
+      "confidence": 0.9,
+      "evidence": "GEO_LOCATION_RECORD_RAW_065"
+    },
+    {
+      "source": "RAW_066",
+      "target": "PHONE_7545625652",
+      "relationship": "USES",
+      "confidence": 0.95,
+      "evidence": "CDR_SUBSCRIBER_LOG_RAW_066"
+    },
+    {
+      "source": "RAW_066",
+      "target": "ADDR_Delhi",
+      "relationship": "LOCATED_AT",
+      "confidence": 0.9,
+      "evidence": "GEO_LOCATION_RECORD_RAW_066"
+    },
+    {
+      "source": "RAW_067",
+      "target": "PHONE_8998679710",
+      "relationship": "USES",
+      "confidence": 0.95,
+      "evidence": "CDR_SUBSCRIBER_LOG_RAW_067"
+    },
+    {
+      "source": "RAW_067",
+      "target": "ADDR_Bengaluru",
+      "relationship": "LOCATED_AT",
+      "confidence": 0.9,
+      "evidence": "GEO_LOCATION_RECORD_RAW_067"
+    },
+    {
+      "source": "RAW_068",
+      "target": "PHONE_9037347501",
+      "relationship": "USES",
+      "confidence": 0.95,
+      "evidence": "CDR_SUBSCRIBER_LOG_RAW_068"
+    },
+    {
+      "source": "RAW_068",
+      "target": "ADDR_Hyderabad",
+      "relationship": "LOCATED_AT",
+      "confidence": 0.9,
+      "evidence": "GEO_LOCATION_RECORD_RAW_068"
+    },
+    {
+      "source": "RAW_069",
+      "target": "PHONE_7091898034",
+      "relationship": "USES",
+      "confidence": 0.95,
+      "evidence": "CDR_SUBSCRIBER_LOG_RAW_069"
+    },
+    {
+      "source": "RAW_069",
+      "target": "ADDR_Delhi",
+      "relationship": "LOCATED_AT",
+      "confidence": 0.9,
+      "evidence": "GEO_LOCATION_RECORD_RAW_069"
+    },
+    {
+      "source": "RAW_070",
+      "target": "PHONE_7441402617",
+      "relationship": "USES",
+      "confidence": 0.95,
+      "evidence": "CDR_SUBSCRIBER_LOG_RAW_070"
+    },
+    {
+      "source": "RAW_070",
+      "target": "ADDR_Jaipur",
+      "relationship": "LOCATED_AT",
+      "confidence": 0.9,
+      "evidence": "GEO_LOCATION_RECORD_RAW_070"
+    },
+    {
+      "source": "RAW_071",
+      "target": "PHONE_8863197321",
+      "relationship": "USES",
+      "confidence": 0.95,
+      "evidence": "CDR_SUBSCRIBER_LOG_RAW_071"
+    },
+    {
+      "source": "RAW_071",
+      "target": "ADDR_Chennai",
+      "relationship": "LOCATED_AT",
+      "confidence": 0.9,
+      "evidence": "GEO_LOCATION_RECORD_RAW_071"
+    },
+    {
+      "source": "RAW_072",
+      "target": "PHONE_8081622282",
+      "relationship": "USES",
+      "confidence": 0.95,
+      "evidence": "CDR_SUBSCRIBER_LOG_RAW_072"
+    },
+    {
+      "source": "RAW_072",
+      "target": "ADDR_Chennai",
+      "relationship": "LOCATED_AT",
+      "confidence": 0.9,
+      "evidence": "GEO_LOCATION_RECORD_RAW_072"
+    },
+    {
+      "source": "RAW_073",
+      "target": "PHONE_8400113410",
+      "relationship": "USES",
+      "confidence": 0.95,
+      "evidence": "CDR_SUBSCRIBER_LOG_RAW_073"
+    },
+    {
+      "source": "RAW_073",
+      "target": "ADDR_Kolkata",
+      "relationship": "LOCATED_AT",
+      "confidence": 0.9,
+      "evidence": "GEO_LOCATION_RECORD_RAW_073"
+    },
+    {
+      "source": "RAW_074",
+      "target": "PHONE_7562957179",
+      "relationship": "USES",
+      "confidence": 0.95,
+      "evidence": "CDR_SUBSCRIBER_LOG_RAW_074"
+    },
+    {
+      "source": "RAW_074",
+      "target": "ADDR_Delhi",
+      "relationship": "LOCATED_AT",
+      "confidence": 0.9,
+      "evidence": "GEO_LOCATION_RECORD_RAW_074"
+    },
+    {
+      "source": "RAW_075",
+      "target": "PHONE_8967786445",
+      "relationship": "USES",
+      "confidence": 0.95,
+      "evidence": "CDR_SUBSCRIBER_LOG_RAW_075"
+    },
+    {
+      "source": "RAW_075",
+      "target": "ADDR_Lucknow",
+      "relationship": "LOCATED_AT",
+      "confidence": 0.9,
+      "evidence": "GEO_LOCATION_RECORD_RAW_075"
+    },
+    {
+      "source": "RAW_076",
+      "target": "PHONE_9154565813",
+      "relationship": "USES",
+      "confidence": 0.95,
+      "evidence": "CDR_SUBSCRIBER_LOG_RAW_076"
+    },
+    {
+      "source": "RAW_076",
+      "target": "ADDR_Bengaluru",
+      "relationship": "LOCATED_AT",
+      "confidence": 0.9,
+      "evidence": "GEO_LOCATION_RECORD_RAW_076"
+    },
+    {
+      "source": "RAW_077",
+      "target": "PHONE_7080336781",
+      "relationship": "USES",
+      "confidence": 0.95,
+      "evidence": "CDR_SUBSCRIBER_LOG_RAW_077"
+    },
+    {
+      "source": "RAW_077",
+      "target": "ADDR_Ahmedabad",
+      "relationship": "LOCATED_AT",
+      "confidence": 0.9,
+      "evidence": "GEO_LOCATION_RECORD_RAW_077"
+    },
+    {
+      "source": "RAW_078",
+      "target": "PHONE_7016889873",
+      "relationship": "USES",
+      "confidence": 0.95,
+      "evidence": "CDR_SUBSCRIBER_LOG_RAW_078"
+    },
+    {
+      "source": "RAW_078",
+      "target": "ADDR_Bengaluru",
+      "relationship": "LOCATED_AT",
+      "confidence": 0.9,
+      "evidence": "GEO_LOCATION_RECORD_RAW_078"
+    },
+    {
+      "source": "RAW_079",
+      "target": "PHONE_9390044639",
+      "relationship": "USES",
+      "confidence": 0.95,
+      "evidence": "CDR_SUBSCRIBER_LOG_RAW_079"
+    },
+    {
+      "source": "RAW_079",
+      "target": "ADDR_Delhi",
+      "relationship": "LOCATED_AT",
+      "confidence": 0.9,
+      "evidence": "GEO_LOCATION_RECORD_RAW_079"
+    },
+    {
+      "source": "RAW_080",
+      "target": "PHONE_7455736473",
+      "relationship": "USES",
+      "confidence": 0.95,
+      "evidence": "CDR_SUBSCRIBER_LOG_RAW_080"
+    },
+    {
+      "source": "RAW_080",
+      "target": "ADDR_Jaipur",
+      "relationship": "LOCATED_AT",
+      "confidence": 0.9,
+      "evidence": "GEO_LOCATION_RECORD_RAW_080"
+    },
+    {
+      "source": "RAW_081",
+      "target": "PHONE_7181242849",
+      "relationship": "USES",
+      "confidence": 0.95,
+      "evidence": "CDR_SUBSCRIBER_LOG_RAW_081"
+    },
+    {
+      "source": "RAW_081",
+      "target": "ADDR_Mumbai",
+      "relationship": "LOCATED_AT",
+      "confidence": 0.9,
+      "evidence": "GEO_LOCATION_RECORD_RAW_081"
+    },
+    {
+      "source": "RAW_082",
+      "target": "PHONE_9412609344",
+      "relationship": "USES",
+      "confidence": 0.95,
+      "evidence": "CDR_SUBSCRIBER_LOG_RAW_082"
+    },
+    {
+      "source": "RAW_082",
+      "target": "ADDR_Delhi",
+      "relationship": "LOCATED_AT",
+      "confidence": 0.9,
+      "evidence": "GEO_LOCATION_RECORD_RAW_082"
+    },
+    {
+      "source": "RAW_083",
+      "target": "PHONE_8398499907",
+      "relationship": "USES",
+      "confidence": 0.95,
+      "evidence": "CDR_SUBSCRIBER_LOG_RAW_083"
+    },
+    {
+      "source": "RAW_083",
+      "target": "ADDR_Lucknow",
+      "relationship": "LOCATED_AT",
+      "confidence": 0.9,
+      "evidence": "GEO_LOCATION_RECORD_RAW_083"
+    },
+    {
+      "source": "RAW_084",
+      "target": "PHONE_9199716799",
+      "relationship": "USES",
+      "confidence": 0.95,
+      "evidence": "CDR_SUBSCRIBER_LOG_RAW_084"
+    },
+    {
+      "source": "RAW_084",
+      "target": "ADDR_Chennai",
+      "relationship": "LOCATED_AT",
+      "confidence": 0.9,
+      "evidence": "GEO_LOCATION_RECORD_RAW_084"
+    },
+    {
+      "source": "RAW_085",
+      "target": "PHONE_8942810371",
+      "relationship": "USES",
+      "confidence": 0.95,
+      "evidence": "CDR_SUBSCRIBER_LOG_RAW_085"
+    },
+    {
+      "source": "RAW_085",
+      "target": "ADDR_Jaipur",
+      "relationship": "LOCATED_AT",
+      "confidence": 0.9,
+      "evidence": "GEO_LOCATION_RECORD_RAW_085"
+    },
+    {
+      "source": "RAW_086",
+      "target": "PHONE_9247168347",
+      "relationship": "USES",
+      "confidence": 0.95,
+      "evidence": "CDR_SUBSCRIBER_LOG_RAW_086"
+    },
+    {
+      "source": "RAW_086",
+      "target": "ADDR_Kolkata",
+      "relationship": "LOCATED_AT",
+      "confidence": 0.9,
+      "evidence": "GEO_LOCATION_RECORD_RAW_086"
+    },
+    {
+      "source": "RAW_087",
+      "target": "PHONE_8922119101",
+      "relationship": "USES",
+      "confidence": 0.95,
+      "evidence": "CDR_SUBSCRIBER_LOG_RAW_087"
+    },
+    {
+      "source": "RAW_087",
+      "target": "ADDR_Bengaluru",
+      "relationship": "LOCATED_AT",
+      "confidence": 0.9,
+      "evidence": "GEO_LOCATION_RECORD_RAW_087"
+    },
+    {
+      "source": "RAW_088",
+      "target": "PHONE_8685192164",
+      "relationship": "USES",
+      "confidence": 0.95,
+      "evidence": "CDR_SUBSCRIBER_LOG_RAW_088"
+    },
+    {
+      "source": "RAW_088",
+      "target": "ADDR_Ahmedabad",
+      "relationship": "LOCATED_AT",
+      "confidence": 0.9,
+      "evidence": "GEO_LOCATION_RECORD_RAW_088"
+    },
+    {
+      "source": "RAW_089",
+      "target": "PHONE_9882590715",
+      "relationship": "USES",
+      "confidence": 0.95,
+      "evidence": "CDR_SUBSCRIBER_LOG_RAW_089"
+    },
+    {
+      "source": "RAW_089",
+      "target": "ADDR_Chennai",
+      "relationship": "LOCATED_AT",
+      "confidence": 0.9,
+      "evidence": "GEO_LOCATION_RECORD_RAW_089"
+    },
+    {
+      "source": "RAW_090",
+      "target": "PHONE_8300430508",
+      "relationship": "USES",
+      "confidence": 0.95,
+      "evidence": "CDR_SUBSCRIBER_LOG_RAW_090"
+    },
+    {
+      "source": "RAW_090",
+      "target": "ADDR_Mumbai",
+      "relationship": "LOCATED_AT",
+      "confidence": 0.9,
+      "evidence": "GEO_LOCATION_RECORD_RAW_090"
+    },
+    {
+      "source": "RAW_091",
+      "target": "PHONE_8572745251",
+      "relationship": "USES",
+      "confidence": 0.95,
+      "evidence": "CDR_SUBSCRIBER_LOG_RAW_091"
+    },
+    {
+      "source": "RAW_091",
+      "target": "ADDR_Bengaluru",
+      "relationship": "LOCATED_AT",
+      "confidence": 0.9,
+      "evidence": "GEO_LOCATION_RECORD_RAW_091"
+    },
+    {
+      "source": "RAW_092",
+      "target": "PHONE_9008910111",
+      "relationship": "USES",
+      "confidence": 0.95,
+      "evidence": "CDR_SUBSCRIBER_LOG_RAW_092"
+    },
+    {
+      "source": "RAW_092",
+      "target": "ADDR_Chennai",
+      "relationship": "LOCATED_AT",
+      "confidence": 0.9,
+      "evidence": "GEO_LOCATION_RECORD_RAW_092"
+    },
+    {
+      "source": "RAW_093",
+      "target": "PHONE_7960836459",
+      "relationship": "USES",
+      "confidence": 0.95,
+      "evidence": "CDR_SUBSCRIBER_LOG_RAW_093"
+    },
+    {
+      "source": "RAW_093",
+      "target": "ADDR_Bengaluru",
+      "relationship": "LOCATED_AT",
+      "confidence": 0.9,
+      "evidence": "GEO_LOCATION_RECORD_RAW_093"
+    },
+    {
+      "source": "RAW_094",
+      "target": "PHONE_7840716950",
+      "relationship": "USES",
+      "confidence": 0.95,
+      "evidence": "CDR_SUBSCRIBER_LOG_RAW_094"
+    },
+    {
+      "source": "RAW_094",
+      "target": "ADDR_Hyderabad",
+      "relationship": "LOCATED_AT",
+      "confidence": 0.9,
+      "evidence": "GEO_LOCATION_RECORD_RAW_094"
+    },
+    {
+      "source": "RAW_095",
+      "target": "PHONE_9379627705",
+      "relationship": "USES",
+      "confidence": 0.95,
+      "evidence": "CDR_SUBSCRIBER_LOG_RAW_095"
+    },
+    {
+      "source": "RAW_095",
+      "target": "ADDR_Ahmedabad",
+      "relationship": "LOCATED_AT",
+      "confidence": 0.9,
+      "evidence": "GEO_LOCATION_RECORD_RAW_095"
+    },
+    {
+      "source": "RAW_096",
+      "target": "PHONE_7077661511",
+      "relationship": "USES",
+      "confidence": 0.95,
+      "evidence": "CDR_SUBSCRIBER_LOG_RAW_096"
+    },
+    {
+      "source": "RAW_096",
+      "target": "ADDR_Pune",
+      "relationship": "LOCATED_AT",
+      "confidence": 0.9,
+      "evidence": "GEO_LOCATION_RECORD_RAW_096"
+    },
+    {
+      "source": "RAW_097",
+      "target": "PHONE_9679746384",
+      "relationship": "USES",
+      "confidence": 0.95,
+      "evidence": "CDR_SUBSCRIBER_LOG_RAW_097"
+    },
+    {
+      "source": "RAW_097",
+      "target": "ADDR_Kolkata",
+      "relationship": "LOCATED_AT",
+      "confidence": 0.9,
+      "evidence": "GEO_LOCATION_RECORD_RAW_097"
+    },
+    {
+      "source": "RAW_098",
+      "target": "PHONE_7484686860",
+      "relationship": "USES",
+      "confidence": 0.95,
+      "evidence": "CDR_SUBSCRIBER_LOG_RAW_098"
+    },
+    {
+      "source": "RAW_098",
+      "target": "ADDR_Chennai",
+      "relationship": "LOCATED_AT",
+      "confidence": 0.9,
+      "evidence": "GEO_LOCATION_RECORD_RAW_098"
+    },
+    {
+      "source": "RAW_099",
+      "target": "PHONE_8161557137",
+      "relationship": "USES",
+      "confidence": 0.95,
+      "evidence": "CDR_SUBSCRIBER_LOG_RAW_099"
+    },
+    {
+      "source": "RAW_099",
+      "target": "ADDR_Bengaluru",
+      "relationship": "LOCATED_AT",
+      "confidence": 0.9,
+      "evidence": "GEO_LOCATION_RECORD_RAW_099"
+    },
+    {
+      "source": "RAW_100",
+      "target": "PHONE_8110717268",
+      "relationship": "USES",
+      "confidence": 0.95,
+      "evidence": "CDR_SUBSCRIBER_LOG_RAW_100"
+    },
+    {
+      "source": "RAW_100",
+      "target": "ADDR_Pune",
+      "relationship": "LOCATED_AT",
+      "confidence": 0.9,
+      "evidence": "GEO_LOCATION_RECORD_RAW_100"
+    },
+    {
+      "source": "RAW_001",
+      "target": "ACCT_RAW_001",
+      "relationship": "OWNS",
+      "confidence": 0.94,
+      "evidence": "FINANCIAL_KYC_VERIFICATION_RAW_001"
+    },
+    {
+      "source": "RAW_004",
+      "target": "ACCT_RAW_004",
+      "relationship": "OWNS",
+      "confidence": 0.94,
+      "evidence": "FINANCIAL_KYC_VERIFICATION_RAW_004"
+    },
+    {
+      "source": "RAW_006",
+      "target": "ACCT_RAW_006",
+      "relationship": "OWNS",
+      "confidence": 0.94,
+      "evidence": "FINANCIAL_KYC_VERIFICATION_RAW_006"
+    },
+    {
+      "source": "RAW_007",
+      "target": "ACCT_RAW_007",
+      "relationship": "OWNS",
+      "confidence": 0.94,
+      "evidence": "FINANCIAL_KYC_VERIFICATION_RAW_007"
+    },
+    {
+      "source": "RAW_008",
+      "target": "ACCT_RAW_008",
+      "relationship": "OWNS",
+      "confidence": 0.94,
+      "evidence": "FINANCIAL_KYC_VERIFICATION_RAW_008"
+    },
+    {
+      "source": "RAW_009",
+      "target": "ACCT_RAW_009",
+      "relationship": "OWNS",
+      "confidence": 0.94,
+      "evidence": "FINANCIAL_KYC_VERIFICATION_RAW_009"
+    },
+    {
+      "source": "RAW_010",
+      "target": "ACCT_RAW_010",
+      "relationship": "OWNS",
+      "confidence": 0.94,
+      "evidence": "FINANCIAL_KYC_VERIFICATION_RAW_010"
+    },
+    {
+      "source": "RAW_013",
+      "target": "ACCT_RAW_013",
+      "relationship": "OWNS",
+      "confidence": 0.94,
+      "evidence": "FINANCIAL_KYC_VERIFICATION_RAW_013"
+    },
+    {
+      "source": "RAW_016",
+      "target": "ACCT_RAW_016",
+      "relationship": "OWNS",
+      "confidence": 0.94,
+      "evidence": "FINANCIAL_KYC_VERIFICATION_RAW_016"
+    },
+    {
+      "source": "RAW_019",
+      "target": "ACCT_RAW_019",
+      "relationship": "OWNS",
+      "confidence": 0.94,
+      "evidence": "FINANCIAL_KYC_VERIFICATION_RAW_019"
+    },
+    {
+      "source": "RAW_022",
+      "target": "ACCT_RAW_022",
+      "relationship": "OWNS",
+      "confidence": 0.94,
+      "evidence": "FINANCIAL_KYC_VERIFICATION_RAW_022"
+    },
+    {
+      "source": "RAW_025",
+      "target": "ACCT_RAW_025",
+      "relationship": "OWNS",
+      "confidence": 0.94,
+      "evidence": "FINANCIAL_KYC_VERIFICATION_RAW_025"
+    },
+    {
+      "source": "RAW_028",
+      "target": "ACCT_RAW_028",
+      "relationship": "OWNS",
+      "confidence": 0.94,
+      "evidence": "FINANCIAL_KYC_VERIFICATION_RAW_028"
+    },
+    {
+      "source": "RAW_031",
+      "target": "ACCT_RAW_031",
+      "relationship": "OWNS",
+      "confidence": 0.94,
+      "evidence": "FINANCIAL_KYC_VERIFICATION_RAW_031"
+    },
+    {
+      "source": "RAW_034",
+      "target": "ACCT_RAW_034",
+      "relationship": "OWNS",
+      "confidence": 0.94,
+      "evidence": "FINANCIAL_KYC_VERIFICATION_RAW_034"
+    },
+    {
+      "source": "RAW_037",
+      "target": "ACCT_RAW_037",
+      "relationship": "OWNS",
+      "confidence": 0.94,
+      "evidence": "FINANCIAL_KYC_VERIFICATION_RAW_037"
+    },
+    {
+      "source": "RAW_040",
+      "target": "ACCT_RAW_040",
+      "relationship": "OWNS",
+      "confidence": 0.94,
+      "evidence": "FINANCIAL_KYC_VERIFICATION_RAW_040"
+    },
+    {
+      "source": "RAW_043",
+      "target": "ACCT_RAW_043",
+      "relationship": "OWNS",
+      "confidence": 0.94,
+      "evidence": "FINANCIAL_KYC_VERIFICATION_RAW_043"
+    },
+    {
+      "source": "RAW_046",
+      "target": "ACCT_RAW_046",
+      "relationship": "OWNS",
+      "confidence": 0.94,
+      "evidence": "FINANCIAL_KYC_VERIFICATION_RAW_046"
+    },
+    {
+      "source": "RAW_049",
+      "target": "ACCT_RAW_049",
+      "relationship": "OWNS",
+      "confidence": 0.94,
+      "evidence": "FINANCIAL_KYC_VERIFICATION_RAW_049"
+    },
+    {
+      "source": "RAW_052",
+      "target": "ACCT_RAW_052",
+      "relationship": "OWNS",
+      "confidence": 0.94,
+      "evidence": "FINANCIAL_KYC_VERIFICATION_RAW_052"
+    },
+    {
+      "source": "RAW_055",
+      "target": "ACCT_RAW_055",
+      "relationship": "OWNS",
+      "confidence": 0.94,
+      "evidence": "FINANCIAL_KYC_VERIFICATION_RAW_055"
+    },
+    {
+      "source": "RAW_058",
+      "target": "ACCT_RAW_058",
+      "relationship": "OWNS",
+      "confidence": 0.94,
+      "evidence": "FINANCIAL_KYC_VERIFICATION_RAW_058"
+    },
+    {
+      "source": "RAW_061",
+      "target": "ACCT_RAW_061",
+      "relationship": "OWNS",
+      "confidence": 0.94,
+      "evidence": "FINANCIAL_KYC_VERIFICATION_RAW_061"
+    },
+    {
+      "source": "RAW_064",
+      "target": "ACCT_RAW_064",
+      "relationship": "OWNS",
+      "confidence": 0.94,
+      "evidence": "FINANCIAL_KYC_VERIFICATION_RAW_064"
+    },
+    {
+      "source": "RAW_065",
+      "target": "ACCT_RAW_065",
+      "relationship": "OWNS",
+      "confidence": 0.94,
+      "evidence": "FINANCIAL_KYC_VERIFICATION_RAW_065"
+    },
+    {
+      "source": "RAW_067",
+      "target": "ACCT_RAW_067",
+      "relationship": "OWNS",
+      "confidence": 0.94,
+      "evidence": "FINANCIAL_KYC_VERIFICATION_RAW_067"
+    },
+    {
+      "source": "RAW_070",
+      "target": "ACCT_RAW_070",
+      "relationship": "OWNS",
+      "confidence": 0.94,
+      "evidence": "FINANCIAL_KYC_VERIFICATION_RAW_070"
+    },
+    {
+      "source": "RAW_073",
+      "target": "ACCT_RAW_073",
+      "relationship": "OWNS",
+      "confidence": 0.94,
+      "evidence": "FINANCIAL_KYC_VERIFICATION_RAW_073"
+    },
+    {
+      "source": "RAW_076",
+      "target": "ACCT_RAW_076",
+      "relationship": "OWNS",
+      "confidence": 0.94,
+      "evidence": "FINANCIAL_KYC_VERIFICATION_RAW_076"
+    },
+    {
+      "source": "RAW_079",
+      "target": "ACCT_RAW_079",
+      "relationship": "OWNS",
+      "confidence": 0.94,
+      "evidence": "FINANCIAL_KYC_VERIFICATION_RAW_079"
+    },
+    {
+      "source": "RAW_082",
+      "target": "ACCT_RAW_082",
+      "relationship": "OWNS",
+      "confidence": 0.94,
+      "evidence": "FINANCIAL_KYC_VERIFICATION_RAW_082"
+    },
+    {
+      "source": "RAW_085",
+      "target": "ACCT_RAW_085",
+      "relationship": "OWNS",
+      "confidence": 0.94,
+      "evidence": "FINANCIAL_KYC_VERIFICATION_RAW_085"
+    },
+    {
+      "source": "RAW_088",
+      "target": "ACCT_RAW_088",
+      "relationship": "OWNS",
+      "confidence": 0.94,
+      "evidence": "FINANCIAL_KYC_VERIFICATION_RAW_088"
+    },
+    {
+      "source": "RAW_091",
+      "target": "ACCT_RAW_091",
+      "relationship": "OWNS",
+      "confidence": 0.94,
+      "evidence": "FINANCIAL_KYC_VERIFICATION_RAW_091"
+    },
+    {
+      "source": "RAW_094",
+      "target": "ACCT_RAW_094",
+      "relationship": "OWNS",
+      "confidence": 0.94,
+      "evidence": "FINANCIAL_KYC_VERIFICATION_RAW_094"
+    },
+    {
+      "source": "RAW_097",
+      "target": "ACCT_RAW_097",
+      "relationship": "OWNS",
+      "confidence": 0.94,
+      "evidence": "FINANCIAL_KYC_VERIFICATION_RAW_097"
+    },
+    {
+      "source": "RAW_100",
+      "target": "ACCT_RAW_100",
+      "relationship": "OWNS",
+      "confidence": 0.94,
+      "evidence": "FINANCIAL_KYC_VERIFICATION_RAW_100"
+    },
+    {
+      "source": "RAW_001",
+      "target": "VEH_RAW_001",
+      "relationship": "USES",
+      "confidence": 0.9,
+      "evidence": "ANPR_SURVEILLANCE_CAMERA_RAW_001"
+    },
+    {
+      "source": "RAW_006",
+      "target": "VEH_RAW_006",
+      "relationship": "USES",
+      "confidence": 0.9,
+      "evidence": "ANPR_SURVEILLANCE_CAMERA_RAW_006"
+    },
+    {
+      "source": "RAW_011",
+      "target": "VEH_RAW_011",
+      "relationship": "USES",
+      "confidence": 0.9,
+      "evidence": "ANPR_SURVEILLANCE_CAMERA_RAW_011"
+    },
+    {
+      "source": "RAW_016",
+      "target": "VEH_RAW_016",
+      "relationship": "USES",
+      "confidence": 0.9,
+      "evidence": "ANPR_SURVEILLANCE_CAMERA_RAW_016"
+    },
+    {
+      "source": "RAW_021",
+      "target": "VEH_RAW_021",
+      "relationship": "USES",
+      "confidence": 0.9,
+      "evidence": "ANPR_SURVEILLANCE_CAMERA_RAW_021"
+    },
+    {
+      "source": "RAW_026",
+      "target": "VEH_RAW_026",
+      "relationship": "USES",
+      "confidence": 0.9,
+      "evidence": "ANPR_SURVEILLANCE_CAMERA_RAW_026"
+    },
+    {
+      "source": "RAW_031",
+      "target": "VEH_RAW_031",
+      "relationship": "USES",
+      "confidence": 0.9,
+      "evidence": "ANPR_SURVEILLANCE_CAMERA_RAW_031"
+    },
+    {
+      "source": "RAW_036",
+      "target": "VEH_RAW_036",
+      "relationship": "USES",
+      "confidence": 0.9,
+      "evidence": "ANPR_SURVEILLANCE_CAMERA_RAW_036"
+    },
+    {
+      "source": "RAW_041",
+      "target": "VEH_RAW_041",
+      "relationship": "USES",
+      "confidence": 0.9,
+      "evidence": "ANPR_SURVEILLANCE_CAMERA_RAW_041"
+    },
+    {
+      "source": "RAW_046",
+      "target": "VEH_RAW_046",
+      "relationship": "USES",
+      "confidence": 0.9,
+      "evidence": "ANPR_SURVEILLANCE_CAMERA_RAW_046"
+    },
+    {
+      "source": "RAW_051",
+      "target": "VEH_RAW_051",
+      "relationship": "USES",
+      "confidence": 0.9,
+      "evidence": "ANPR_SURVEILLANCE_CAMERA_RAW_051"
+    },
+    {
+      "source": "RAW_056",
+      "target": "VEH_RAW_056",
+      "relationship": "USES",
+      "confidence": 0.9,
+      "evidence": "ANPR_SURVEILLANCE_CAMERA_RAW_056"
+    },
+    {
+      "source": "RAW_061",
+      "target": "VEH_RAW_061",
+      "relationship": "USES",
+      "confidence": 0.9,
+      "evidence": "ANPR_SURVEILLANCE_CAMERA_RAW_061"
+    },
+    {
+      "source": "RAW_065",
+      "target": "VEH_RAW_065",
+      "relationship": "USES",
+      "confidence": 0.9,
+      "evidence": "ANPR_SURVEILLANCE_CAMERA_RAW_065"
+    },
+    {
+      "source": "RAW_066",
+      "target": "VEH_RAW_066",
+      "relationship": "USES",
+      "confidence": 0.9,
+      "evidence": "ANPR_SURVEILLANCE_CAMERA_RAW_066"
+    },
+    {
+      "source": "RAW_071",
+      "target": "VEH_RAW_071",
+      "relationship": "USES",
+      "confidence": 0.9,
+      "evidence": "ANPR_SURVEILLANCE_CAMERA_RAW_071"
+    },
+    {
+      "source": "RAW_076",
+      "target": "VEH_RAW_076",
+      "relationship": "USES",
+      "confidence": 0.9,
+      "evidence": "ANPR_SURVEILLANCE_CAMERA_RAW_076"
+    },
+    {
+      "source": "RAW_081",
+      "target": "VEH_RAW_081",
+      "relationship": "USES",
+      "confidence": 0.9,
+      "evidence": "ANPR_SURVEILLANCE_CAMERA_RAW_081"
+    },
+    {
+      "source": "RAW_086",
+      "target": "VEH_RAW_086",
+      "relationship": "USES",
+      "confidence": 0.9,
+      "evidence": "ANPR_SURVEILLANCE_CAMERA_RAW_086"
+    },
+    {
+      "source": "RAW_091",
+      "target": "VEH_RAW_091",
+      "relationship": "USES",
+      "confidence": 0.9,
+      "evidence": "ANPR_SURVEILLANCE_CAMERA_RAW_091"
+    },
+    {
+      "source": "RAW_096",
+      "target": "VEH_RAW_096",
+      "relationship": "USES",
+      "confidence": 0.9,
+      "evidence": "ANPR_SURVEILLANCE_CAMERA_RAW_096"
+    },
     {
       "source": "RAW_001",
       "target": "RAW_002",

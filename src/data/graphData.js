@@ -1,4 +1,5 @@
 import mockData from "../../mockData.json";
+import syntheticDataset from "../../synthetic_dataset.json";
 
 export const ENTITY_TYPES = {
   PERSON: "person",
@@ -17,11 +18,11 @@ function createNode(entity) {
   return {
     id: entity.entity_id,
     entity_type: entity.entity_type,
-    canonical_name: entity.canonical_name,
+    canonical_name: entity.canonical_name || entity.name,
     aliases: entity.aliases || [],
     attributes: entity.attributes || {},
     confidence: entity.confidence ?? 0,
-    label: entity.canonical_name || entity.entity_id,
+    label: entity.canonical_name || entity.name || entity.entity_id,
   };
 }
 
@@ -40,13 +41,21 @@ function createLink(relationship) {
 
 /*
  * ---------------------------------------------------------
- * ORIGINAL SIH MOCK DATA
+ * RICH DATASET
  * ---------------------------------------------------------
  */
 
-const baseNodes = (mockData.nodes || []).map(createNode);
+const baseNodes = (
+  syntheticDataset?.raw_records?.length
+    ? syntheticDataset.raw_records
+    : mockData.nodes || []
+).map(createNode);
 
-const baseLinks = (mockData.links || []).map(createLink);
+const baseLinks = (
+  syntheticDataset?.raw_relationships?.length
+    ? syntheticDataset.raw_relationships
+    : mockData.links || []
+).map(createLink);
 
 /*
  * ---------------------------------------------------------
