@@ -3825,22 +3825,6 @@
         "risk_score": 0.84
       },
       "confidence": 0.16
-    },
-    {
-      "entity_id": "VEH_RAW_032",
-      "entity_type": "vehicle",
-      "name": "GJ 01 AB 7532",
-      "aliases": [
-        "Patel Family Sedan"
-      ],
-      "attributes": {
-        "category": "Sedan/Family Car",
-        "registered_owner": "Farhan Patel & Ishita Patel",
-        "toll_plaza_hit": "NH48 Toll Plaza",
-        "status": "ANPR Monitored",
-        "risk_score": 0.34
-      },
-      "confidence": 0.66
     }
   ],
   "raw_relationships": [
@@ -6041,104 +6025,6 @@
       "relationship": "CALLED",
       "confidence": 0.89,
       "evidence": "CDR_MULE_CALL_006_017"
-    },
-    {
-      "source": "RAW_032",
-      "target": "VEH_RAW_032",
-      "relationship": "USES",
-      "confidence": 0.91,
-      "evidence": "INSURANCE_POLICY_PATEL_CO_DRIVER"
-    },
-    {
-      "source": "RAW_075",
-      "target": "VEH_RAW_032",
-      "relationship": "USES",
-      "confidence": 0.89,
-      "evidence": "ANPR_TOLL_CAMERA_PATEL_CO_DRIVER"
-    },
-    {
-      "source": "RAW_013",
-      "target": "RAW_095",
-      "relationship": "KNOWS",
-      "confidence": 0.9,
-      "evidence": "PATEL_FAMILY_COMMUNICATION_LOG"
-    },
-    {
-      "source": "RAW_001",
-      "target": "RAW_002",
-      "relationship": "KNOWS",
-      "confidence": 0.94,
-      "evidence": "NAIR_HOUSEHOLD_RESIDENCE_RECORD"
-    },
-    {
-      "source": "RAW_006",
-      "target": "RAW_012",
-      "relationship": "KNOWS",
-      "confidence": 0.88,
-      "evidence": "BHAT_FAMILY_RECORD"
-    },
-    {
-      "source": "RAW_009",
-      "target": "RAW_015",
-      "relationship": "KNOWS",
-      "confidence": 0.87,
-      "evidence": "KULKARNI_RESIDENTIAL_LEASE"
-    },
-    {
-      "source": "RAW_011",
-      "target": "RAW_017",
-      "relationship": "KNOWS",
-      "confidence": 0.92,
-      "evidence": "REDDY_FAMILY_JOINT_ACCOUNT"
-    },
-    {
-      "source": "RAW_010",
-      "target": "RAW_018",
-      "relationship": "KNOWS",
-      "confidence": 0.89,
-      "evidence": "SHETTY_ASSOCIATES_REGISTRY"
-    },
-    {
-      "source": "RAW_065",
-      "target": "RAW_070",
-      "relationship": "KNOWS",
-      "confidence": 0.91,
-      "evidence": "PILLAI_CIVIL_RECORD"
-    },
-    {
-      "source": "P031",
-      "target": "VEH_07",
-      "relationship": "USES",
-      "confidence": 0.85,
-      "evidence": "ANPR_TOLL_CO_DRIVER_VEH07"
-    },
-    {
-      "source": "RAW_002",
-      "target": "VEH_RAW_001",
-      "relationship": "USES",
-      "confidence": 0.88,
-      "evidence": "SHARED_VEHICLE_LOG_RAW001_002"
-    },
-    {
-      "source": "RAW_010",
-      "target": "VEH_RAW_006",
-      "relationship": "USES",
-      "confidence": 0.86,
-      "evidence": "ANPR_TOLL_CO_TRAVEL_RAW006_010"
-    },
-    {
-      "source": "RAW_017",
-      "target": "VEH_RAW_011",
-      "relationship": "USES",
-      "confidence": 0.9,
-      "evidence": "SHARED_FAMILY_VEHICLE_RAW011_017"
-    },
-    {
-      "source": "RAW_070",
-      "target": "VEH_RAW_065",
-      "relationship": "USES",
-      "confidence": 0.87,
-      "evidence": "ANPR_CO_DRIVER_RAW065_070"
     }
   ]
 }

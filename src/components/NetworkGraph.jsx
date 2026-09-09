@@ -13,9 +13,6 @@ import {
   RotateCcw,
   Maximize2,
   Network,
-  X,
-  Eye,
-  EyeOff,
 } from "lucide-react";
 
 import { investigationGraph } from "../data/graphData";
@@ -551,67 +548,21 @@ function NetworkGraph({
     }, [selectedNode, graph]);
 
   /* ==================================================
-     ISOLATED SUBGRAPH (ONLY SELECTED & RELATED ENTITIES)
-  ================================================== */
-
-  const [isolateRelated, setIsolateRelated] = useState(true);
-
-  const relatedNodeIds = useMemo(() => {
-    if (!selectedNode) return null;
-    const ids = new Set([selectedNode.id]);
-    const allLinks = (graph && graph.links) || investigationGraph.links || [];
-    allLinks.forEach((link) => {
-      const s = getNodeId(link.source);
-      const t = getNodeId(link.target);
-      if (s === selectedNode.id) {
-        ids.add(t);
-      } else if (t === selectedNode.id) {
-        ids.add(s);
-      }
-    });
-    return ids;
-  }, [selectedNode?.id, graph]);
-
-  const displayedGraph = useMemo(() => {
-    if (!isolateRelated || !selectedNode || !relatedNodeIds) {
-      return filteredGraph;
-    }
-
-    const isolatedNodes = filteredGraph.nodes.filter((node) =>
-      relatedNodeIds.has(node.id)
-    );
-
-    const isolatedLinks = filteredGraph.links.filter((link) => {
-      const s = getNodeId(link.source);
-      const t = getNodeId(link.target);
-      return relatedNodeIds.has(s) && relatedNodeIds.has(t);
-    });
-
-    return {
-      nodes: isolatedNodes,
-      links: isolatedLinks,
-    };
-  }, [filteredGraph, isolateRelated, selectedNode?.id, relatedNodeIds]);
-
-  /* ==================================================
      SIMULATION FORCES (PREVENTS CROWDING)
   ================================================== */
 
   useEffect(() => {
     if (!graphRef.current) return;
+    // Disperse 400+ nodes to eliminate clumping & overlapping
     const charge = graphRef.current.d3Force("charge");
     if (charge) {
-      if (isolateRelated && selectedNode) {
-        charge.strength(-420).distanceMax(650);
-      } else {
-        charge.strength(-340).distanceMax(900);
-      }
+      charge.strength(-340).distanceMax(900);
     }
     const link = graphRef.current.d3Force("link");
     if (link) {
-      link.distance(isolateRelated && selectedNode ? 100 : 70);
+      link.distance(70);
     }
-  }, [displayedGraph, isolateRelated, selectedNode?.id]);
+  }, [filteredGraph]);
 
   /* ==================================================
      AUTO-FOCUS ON SELECTED NODE
@@ -636,27 +587,20 @@ function NetworkGraph({
     lastSelectedNodeIdRef.current = selectedNode.id;
     hasAutoFocusedInitialRef.current = true;
 
-    setTimeout(() => {
-      if (!graphRef.current) return;
-      if (isolateRelated) {
-        graphRef.current.zoomToFit(500, 90);
-      } else {
-        const targetNode = (displayedGraph.nodes || []).find(
-          (n) => n.id === selectedNode.id
-        );
-        if (
-          targetNode &&
-          typeof targetNode.x === "number" &&
-          typeof targetNode.y === "number" &&
-          !isNaN(targetNode.x) &&
-          !isNaN(targetNode.y)
-        ) {
-          graphRef.current.centerAt(targetNode.x, targetNode.y, 450);
-          graphRef.current.zoom(1.6, 450);
-        }
-      }
-    }, 120);
-  }, [selectedNode?.id, autoFocusNode, isolateRelated]);
+    const targetNode = (filteredGraph.nodes || []).find(
+      (n) => n.id === selectedNode.id
+    );
+    if (
+      targetNode &&
+      typeof targetNode.x === "number" &&
+      typeof targetNode.y === "number" &&
+      !isNaN(targetNode.x) &&
+      !isNaN(targetNode.y)
+    ) {
+      graphRef.current.centerAt(targetNode.x, targetNode.y, 450);
+      graphRef.current.zoom(1.6, 450);
+    }
+  }, [selectedNode?.id, autoFocusNode]);
 
   /* ==================================================
      ZOOM CONTROLS
@@ -1230,7 +1174,7 @@ function NetworkGraph({
         ref={graphRef}
 
         graphData={
-          displayedGraph
+          filteredGraph
         }
 
         width={
@@ -1255,133 +1199,128 @@ function NetworkGraph({
           ctx,
           globalScale
         ) => {
+          const r =
+            getNodeRadius(
+              node
+            );
+
           ctx.fillStyle =
             color;
 
           ctx.beginPath();
 
-          const scale =
-            Math.max(
-              globalScale || 1,
-              0.45
-            );
-
           ctx.arc(
             node.x,
             node.y,
-            24 / scale,
+            Math.max(
+              r + 10,
+              12
+            ),
             0,
-            Math.PI * 2
+            2 * Math.PI,
+            false
           );
 
           ctx.fill();
         }}
 
-        /* LINKS */
+        nodeLabel={null}
 
-        linkColor={(link) =>
-          getRelationshipColor(
-            link.relationship
-          )
+        linkCanvasObjectMode={() =>
+          "after"
         }
 
-        linkWidth={(link) => {
-          if (!selectedNode) {
-            return 2;
-          }
+        linkCanvasObject={
+          renderLink
+        }
 
-          const connected =
+        linkDirectionalParticles={(
+          link
+        ) => {
+          const s =
             getNodeId(
               link.source
-            ) ===
-              selectedNode.id ||
+            );
+
+          const t =
             getNodeId(
               link.target
-            ) ===
-              selectedNode.id;
+            );
 
-          return connected
-            ? 3
-            : 2;
+          const isHighlighted =
+            highlightedLinks.has(
+              `${s}-${t}`
+            ) ||
+            highlightedLinks.has(
+              `${t}-${s}`
+            );
+
+          return isHighlighted
+            ? 5
+            : 0;
         }}
-
-        linkOpacity={0.92}
-
-        linkDirectionalArrowLength={
-          6
-        }
-
-        linkDirectionalArrowRelPos={
-          0.96
-        }
-
-        /* SELECTED LINK PARTICLES */
-
-        linkDirectionalParticles={
-          (link) => {
-            if (!selectedNode) {
-              return 0;
-            }
-
-            const connected =
-              getNodeId(
-                link.source
-              ) ===
-                selectedNode.id ||
-              getNodeId(
-                link.target
-              ) ===
-                selectedNode.id;
-
-            return connected
-              ? 2
-              : 0;
-          }
-        }
 
         linkDirectionalParticleWidth={
           2.5
         }
 
         linkDirectionalParticleSpeed={
-          0.005
+          0.007
         }
 
-        linkCanvasObject={
-          renderLinkLabel
+        linkDirectionalParticleColor={() =>
+          "#2dd4bf"
         }
 
-        linkCanvasObjectMode={
-          () => "after"
-        }
+        onNodeClick={(
+          node,
+          event
+        ) => {
+          handleNodeClick(
+            node,
+            event
+          );
+        }}
 
-        /* NODE SELECT */
-
-        onNodeClick={(node) => {
-          onNodeSelect?.(
+        onNodeHover={(
+          node
+        ) => {
+          handleNodeHover(
             node
           );
         }}
 
-        onNodeHover={(node) => {
-          setHoveredNode(
-            node || null
+        onLinkHover={(
+          link
+        ) => {
+          setHoveredLink(
+            link || null
           );
         }}
 
-        /* FORCE */
+        enableNodeDrag={
+          true
+        }
 
-        d3AlphaDecay={0.018}
+        enableZoomInteraction={
+          true
+        }
 
-        d3VelocityDecay={0.3}
+        enablePanInteraction={
+          true
+        }
 
-        cooldownTicks={180}
+        cooldownTicks={
+          100
+        }
 
-        warmupTicks={100}
+        d3AlphaDecay={
+          0.02
+        }
 
-        minZoom={0.04}
-
-        maxZoom={12}
+        d3VelocityDecay={
+          0.3
+        }
 
         onRenderFramePre={
           renderBackground
@@ -1398,60 +1337,6 @@ function NetworkGraph({
           }
         }}
       />
-
-      {/* ==================================================
-          ISOLATED SUBGRAPH FOCUS BANNER
-      ================================================== */}
-
-      {selectedNode && (
-        <div className="absolute top-4 left-1/2 -translate-x-1/2 z-20 flex items-center gap-3 rounded-xl border border-teal-500/40 bg-slate-950/90 px-4 py-2 shadow-2xl backdrop-blur-md">
-          <div className="flex items-center gap-2">
-            <span className="relative flex h-2.5 w-2.5">
-              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-teal-400 opacity-75"></span>
-              <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-teal-500"></span>
-            </span>
-            <span className="text-xs font-medium text-slate-300">
-              Focused: <strong className="text-teal-300 font-semibold">{selectedNode.canonical_name || selectedNode.name || selectedNode.id}</strong>
-            </span>
-            <span className="rounded-md bg-teal-500/10 border border-teal-500/20 px-2 py-0.5 text-[11px] font-semibold text-teal-300">
-              {displayedGraph.nodes.length} entities • {displayedGraph.links.length} links
-            </span>
-          </div>
-
-          <div className="h-4 w-px bg-slate-800" />
-
-          <button
-            type="button"
-            onClick={() => setIsolateRelated((prev) => !prev)}
-            className={`flex items-center gap-1.5 rounded-lg px-2.5 py-1 text-xs font-semibold transition border ${
-              isolateRelated
-                ? "border-slate-700 bg-slate-800 text-slate-200 hover:border-teal-500/40 hover:text-white"
-                : "border-teal-500/40 bg-teal-500/20 text-teal-300"
-            }`}
-          >
-            {isolateRelated ? (
-              <>
-                <Eye size={13} className="text-teal-400" />
-                <span>Show Full Network</span>
-              </>
-            ) : (
-              <>
-                <EyeOff size={13} className="text-slate-400" />
-                <span>Show Related Only</span>
-              </>
-            )}
-          </button>
-
-          <button
-            type="button"
-            onClick={() => onNodeSelect?.(null)}
-            className="rounded-lg p-1 text-slate-400 hover:text-rose-400 hover:bg-rose-500/10 transition"
-            title="Clear focus and return to full graph"
-          >
-            <X size={14} />
-          </button>
-        </div>
-      )}
 
       {/* ==================================================
           NETWORK INFO
@@ -1504,7 +1389,7 @@ function NetworkGraph({
           <div className="mt-1 text-lg font-bold text-white">
 
             {
-              displayedGraph.nodes
+              filteredGraph.nodes
                 .length
             }{" "}
 
@@ -1517,7 +1402,7 @@ function NetworkGraph({
           <div className="text-xs text-slate-500">
 
             {
-              displayedGraph.links
+              filteredGraph.links
                 .length
             }{" "}
             relationships
