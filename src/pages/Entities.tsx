@@ -2,6 +2,7 @@ import { useState, useMemo } from "react"
 import { Link } from "react-router-dom"
 import { Search, User, Phone, CreditCard, Car, Building2, MapPin, ArrowUpRight } from "lucide-react"
 import { investigationGraph } from "../data/graphData"
+import EntityProfileCard from "../components/EntityProfileCard"
 
 const TYPE_ICONS: Record<string, any> = {
   person: User,
@@ -66,6 +67,9 @@ function Entities() {
           </span>
         </div>
       </div>
+
+      {/* Featured Primary Suspect Profile Card */}
+      <EntityProfileCard />
 
       {/* Filter and Search Bar */}
       <div className="flex flex-col gap-3 sm:flex-row sm:items-center">

@@ -3,39 +3,50 @@ import SectionCard from "../components/SectionCard"
 import StatCard from "../components/StatCard"
 import ActivityList from "../components/ActivityList"
 import GraphPlaceholder from "../components/GraphPlaceholder"
+import RiskDistributionChart from "../components/RiskDistributionChart"
+import InvestigationTimelineChart from "../components/InvestigationTimelineChart"
+import NetworkExplanationCard from "../components/NetworkExplanationCard"
 
 function Dashboard() {
   const stats = [
     {
-      label: "Investigations",
+      label: "Active Investigations",
       value: dashboardStats.investigations,
     },
     {
-      label: "Entities",
+      label: "Resolved Entities",
       value: dashboardStats.entities,
     },
     {
-      label: "Relationships",
+      label: "Mapped Relationships",
       value: dashboardStats.relationships,
     },
     {
-      label: "High-Risk Networks",
+      label: "High-Risk Syndicates",
       value: dashboardStats.highRiskNetworks,
     },
   ]
 
   return (
-    <div>
+    <div className="space-y-6">
       {/* Dashboard Header */}
-      <div className="mb-8">
-        <h2 className="page-title">Dashboard</h2>
+      <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
+        <div>
+          <h2 className="page-title">Executive Intelligence Dashboard</h2>
+          <p className="mt-1 text-sm muted-text">
+            Automated intelligence overview, risk categorization, and syndicate link analysis
+          </p>
+        </div>
 
-        <p className="mt-2 muted-text">
-          Overview of investigations and criminal networks
-        </p>
+        <div className="flex items-center gap-2 text-xs font-semibold text-emerald-400">
+          <span className="flex items-center gap-1.5 rounded-lg border border-emerald-500/30 bg-emerald-500/10 px-3 py-1.5">
+            <span className="h-2 w-2 rounded-full bg-emerald-400 animate-pulse" />
+            LIVE TELEMETRY STREAM
+          </span>
+        </div>
       </div>
 
-      {/* Statistics */}
+      {/* Statistics Cards */}
       <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
         {stats.map((stat) => (
           <StatCard
@@ -46,36 +57,44 @@ function Dashboard() {
         ))}
       </div>
 
-      {/* Network Overview + High-Risk Networks */}
-      <div className="mt-6 grid gap-6 lg:grid-cols-3">
+      {/* Network Overview Card */}
+      <SectionCard
+        title="Interactive Network Overview"
+        description="Graph intelligence engine and syndicate cluster analysis"
+      >
+        <GraphPlaceholder />
+      </SectionCard>
+
+      {/* Analytics Charts Grid: Risk Distribution + Timeline */}
+      <div className="grid gap-6 lg:grid-cols-2">
         <SectionCard
-          title="Network Overview"
-          description="Interactive criminal network visualization"
-          className="min-h-80 lg:col-span-2"
+          title="Risk Level Distribution"
+          description="Identified syndicate entities categorized by calculated threat severity"
         >
-          <GraphPlaceholder />
+          <RiskDistributionChart />
         </SectionCard>
 
         <SectionCard
-          title="High-Risk Networks"
-          description="Networks requiring investigator attention"
-          className="min-h-80"
+          title="Investigation Activity Timeline"
+          description="Cross-border relationship detection velocity and evidence events"
         >
-          <div className="mt-6 text-4xl font-bold">
-            {dashboardStats.highRiskNetworks}
-          </div>
-
-          <p className="mt-2 text-sm muted-text">
-            networks flagged for review
-          </p>
+          <InvestigationTimelineChart />
         </SectionCard>
       </div>
 
-      {/* Recent Activity */}
-      <div className="mt-6">
+      {/* Bottom Grid: Explain Network + Recent Activity */}
+      <div className="grid gap-6 lg:grid-cols-3">
         <SectionCard
-          title="Recent Activity"
-          description="Latest investigation intelligence updates"
+          title="Automated Network Explanation"
+          description="Evidence-driven rationale for high-priority syndicate flags"
+          className="lg:col-span-2"
+        >
+          <NetworkExplanationCard />
+        </SectionCard>
+
+        <SectionCard
+          title="Recent Investigation Feed"
+          description="Latest suspect identifications & link alerts"
         >
           <ActivityList />
         </SectionCard>
