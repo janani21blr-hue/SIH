@@ -1,16 +1,36 @@
-# React + Vite
+# SIH26189 - Criminal Network Analysis & Intelligence Platform
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+AI-Powered Criminal Network Analysis System (CNAS) built with React, TypeScript, Vite, Tailwind CSS, and React Force Graph.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- **Executive Intelligence Dashboard**: Real-time overview of active investigations, suspect entities, flagged relationships, and high-risk criminal networks.
+- **Interactive Force Network Graph**: Visual graph exploration powered by `react-force-graph-2d` with dynamic physics simulation, zoom/pan controls, and particle flows.
+- **Deep Investigation Workbench**:
+  - Entity category filters (People, Phones, Accounts, Vehicles, Companies, Addresses).
+  - Relationship type filtering and confidence indicators.
+  - Multi-hop investigation path tracking with breadcrumbs and backtrack navigation.
+  - Collapsible inspector panel with entity dossiers and evidence links.
+- **Entity Directory**: Searchable list of identified criminal personas and digital identifiers.
+- **Reports & Intelligence Briefings**: Structured summaries of network patterns.
 
-## React Compiler
+## Getting Started
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+### Prerequisites
+- Node.js (v18+ recommended)
+- npm
 
-## Expanding the ESLint configuration
+### Installation
+```bash
+npm install
+```
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### Development Server
+```bash
+npm run dev
+```
+
+### Production Build
+```bash
+npm run build
+```

@@ -15,6 +15,15 @@
   color: #e2e8f0;
   background: #020817;
 
+  --background: #020617;
+  --surface: #0f172a;
+  --surface-hover: #1e293b;
+  --border: #1e293b;
+  --text: #f8fafc;
+  --text-muted: #94a3b8;
+  --primary: #3b82f6;
+  --radius: 0.75rem;
+
   font-synthesis: none;
   text-rendering: optimizeLegibility;
 
@@ -51,6 +60,26 @@ body {
       transparent 30%
     ),
     #020817;
+}
+
+/* ==================================================
+   MAYANK DASHBOARD UTILITIES
+================================================== */
+
+.app-surface {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+}
+
+.muted-text {
+  color: var(--text-muted);
+}
+
+.page-title {
+  color: var(--text);
+  font-size: 1.5rem;
+  font-weight: 700;
 }
 
 /* ==================================================
