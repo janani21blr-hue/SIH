@@ -1186,13 +1186,113 @@ function Investigation() {
       >
 
         {/* ==================================================
+            LEFT SIDEBAR (Entity Details & Threat/Risk Score)
+        ================================================== */}
+
+        <aside className="sih-sidebar">
+
+          <section
+            className="
+              sih-dark-panel
+              sih-sidebar-details
+              overflow-hidden
+            "
+          >
+
+            {selectedNode ? (
+              <EntityDetails
+                node={
+                  selectedNode
+                }
+
+                selectedNode={
+                  selectedNode
+                }
+
+                relationships={
+                  selectedRelationships
+                }
+
+                entityMap={
+                  entityMap
+                }
+
+                onNodeSelect={
+                  handleNodeSelect
+                }
+              />
+            ) : (
+              <div
+                className="
+                  flex
+                  h-full
+                  min-h-[360px]
+                  items-center
+                  justify-center
+                  p-6
+                  text-center
+                "
+              >
+
+                <div>
+
+                  <div
+                    className="
+                      mx-auto
+                      flex
+                      h-12
+                      w-12
+                      items-center
+                      justify-center
+                      rounded-xl
+                      border
+                      border-slate-700
+                      bg-slate-900
+                      text-slate-600
+                    "
+                  >
+                    <Network
+                      size={21}
+                    />
+                  </div>
+
+                  <p
+                    className="
+                      mt-3
+                      text-sm
+                      font-semibold
+                      text-slate-400
+                    "
+                  >
+                    No entity selected
+                  </p>
+
+                  <p
+                    className="
+                      mt-1
+                      text-xs
+                      text-slate-600
+                    "
+                  >
+                    Select an entity from the network to view entity score and risk profile.
+                  </p>
+
+                </div>
+
+              </div>
+            )}
+
+          </section>
+
+        </aside>
+
+        {/* ==================================================
             CENTER GRAPH
         ================================================== */}
 
         <section
           className="
             min-w-0
-            w-full
             overflow-hidden
           "
         >

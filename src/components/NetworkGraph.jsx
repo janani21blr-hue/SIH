@@ -113,13 +113,13 @@ function drawEntityIcon(
 
   ctx.translate(x, y);
 
-  ctx.scale(1.4, 1.4);
+  ctx.scale(0.85, 0.85);
 
   ctx.strokeStyle =
     getEntityColor(type);
 
   ctx.lineWidth =
-    1.25 / scale;
+    1.1 / scale;
 
   ctx.lineCap = "round";
   ctx.lineJoin = "round";
