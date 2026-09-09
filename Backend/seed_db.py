@@ -270,30 +270,15 @@ def seed():
                 evid = raw_rel.get("evidence", "SYNTH_LOG_REF")
                 add_relationship(source=src, target=tgt, relationship=rel, confidence=conf, evidence=evid)
 
-        # 4.5. Enforce connection degree rules: >7 connections -> elevated risk, inverse confidence
-        from collections import Counter
-        degrees = Counter()
-        for src, tgt, _, _, _ in relationships_list:
-            degrees[src] += 1
-            degrees[tgt] += 1
-
+        # 4.5. Enforce randomized risk score & inverse confidence (no degree > 7 elevated risk constraint)
         for eid, ent in entities_dict.items():
-            deg = degrees[eid]
             attrs = dict(ent.attributes or {})
-            if deg > 7:
-                risk = attrs.get("risk_score", 0.85)
-                if risk < 0.80:
-                    risk = round(random.uniform(0.82, 0.95), 2)
-                attrs["risk_score"] = risk
-                ent.attributes = attrs
-                ent.confidence = round(1.0 - risk, 2)
-            else:
-                risk = attrs.get("risk_score")
-                if risk is None:
-                    risk = round(random.uniform(0.10, 0.65), 2)
-                attrs["risk_score"] = risk
-                ent.attributes = attrs
-                ent.confidence = round(1.0 - risk, 2)
+            risk = attrs.get("risk_score")
+            if risk is None:
+                risk = round(random.uniform(0.10, 0.65), 2)
+            attrs["risk_score"] = risk
+            ent.attributes = attrs
+            ent.confidence = round(1.0 - risk, 2)
 
         # 5. Insert all relationships, ensuring BOTH source and target exist
         valid_rels_count = 0
