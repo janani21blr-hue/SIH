@@ -814,11 +814,9 @@ function Investigation() {
                 >
 
                   {searchResults.map(
-                    (node) => (
+                    (node, index) => (
                       <button
-                        key={
-                          node.id
-                        }
+                        key={`${node.id}-${index}`}
                         type="button"
                         onClick={() =>
                           selectSearchResult(
