@@ -747,16 +747,32 @@ function NetworkGraph({
         link.relationship
       );
 
+    const targetLinkFontSize =
+      Math.min(
+        13.5,
+        Math.max(
+          9,
+          9 +
+            Math.max(
+              0,
+              globalScale - 0.7
+            ) *
+              3
+        )
+      );
+
     const fontSize =
-      8 /
+      targetLinkFontSize /
       globalScale;
 
     const paddingX =
-      4 /
+      (targetLinkFontSize *
+        0.5) /
       globalScale;
 
     const paddingY =
-      2.5 /
+      (targetLinkFontSize *
+        0.28) /
       globalScale;
 
     ctx.save();
@@ -948,13 +964,13 @@ function NetworkGraph({
       globalScale
     );
 
-    /* LABEL (DECLUTTERED & COMPACT) */
+    /* LABEL (RESPONSIVE TO ZOOM) */
 
     const shouldShowLabel =
       isSelected ||
       isHovered ||
-      globalScale >= 0.82 ||
-      (type === "person" && globalScale >= 0.6);
+      globalScale >= 0.7 ||
+      (type === "person" && globalScale >= 0.5);
 
     if (!shouldShowLabel) {
       return;
@@ -963,8 +979,23 @@ function NetworkGraph({
     const name =
       getNodeName(node);
 
+    // Font size scales dynamically with zoom: from 10.5px up to 16.5px on screen
+    const targetScreenFontSize =
+      Math.min(
+        16.5,
+        Math.max(
+          10.5,
+          10.5 +
+            Math.max(
+              0,
+              globalScale - 0.5
+            ) *
+              4
+        )
+      );
+
     const labelSize =
-      7.5 /
+      targetScreenFontSize /
       globalScale;
 
     ctx.save();
@@ -972,34 +1003,43 @@ function NetworkGraph({
     ctx.font =
       `600 ${labelSize}px Inter, Arial, sans-serif`;
 
-    const maxLen = isSelected ? 24 : isHovered ? 20 : 15;
+    const maxLen =
+      isSelected
+        ? 32
+        : isHovered
+        ? 26
+        : globalScale > 1.2
+        ? 22
+        : 16;
+
     const displayName =
       name.length > maxLen ? `${name.slice(0, maxLen - 1)}…` : name;
 
     const textWidth = ctx.measureText(displayName).width;
-    const paddingX = 4 / globalScale;
-    const paddingY = 2 / globalScale;
+    const paddingX = (targetScreenFontSize * 0.55) / globalScale;
+    const paddingY = (targetScreenFontSize * 0.28) / globalScale;
     const pillHeight = labelSize + paddingY * 2;
     const pillWidth = textWidth + paddingX * 2;
     const pillX = node.x - pillWidth / 2;
-    const pillY = node.y + radius + 3.5 / scale;
+    const pillY = node.y + radius + 4 / scale;
 
     // Dark pill background for crisp readability
     ctx.fillStyle = "rgba(2, 8, 23, 0.92)";
     ctx.beginPath();
+    const pillRadius = Math.max(3, targetScreenFontSize * 0.3) / globalScale;
     if (ctx.roundRect) {
-      ctx.roundRect(pillX, pillY, pillWidth, pillHeight, 3 / globalScale);
+      ctx.roundRect(pillX, pillY, pillWidth, pillHeight, pillRadius);
     } else {
       ctx.rect(pillX, pillY, pillWidth, pillHeight);
     }
     ctx.fill();
 
     ctx.strokeStyle = isSelected
-      ? "rgba(45, 212, 191, 0.6)"
+      ? "rgba(45, 212, 191, 0.7)"
       : isHovered
-      ? "rgba(56, 189, 248, 0.6)"
-      : "rgba(71, 85, 105, 0.6)";
-    ctx.lineWidth = 0.85 / globalScale;
+      ? "rgba(56, 189, 248, 0.7)"
+      : "rgba(71, 85, 105, 0.65)";
+    ctx.lineWidth = 1 / globalScale;
     ctx.stroke();
 
     // Text inside pill
@@ -1009,37 +1049,56 @@ function NetworkGraph({
       ? "#ffffff"
       : isHovered
       ? "#f8fafc"
-      : "#cbd5e1";
+      : "#e2e8f0";
     ctx.fillText(displayName, node.x, pillY + pillHeight / 2);
 
     /* SELECTED ID */
 
     if (
       isSelected &&
-      globalScale > 0.75
+      globalScale > 0.65
     ) {
       const id =
         node?.id || "";
 
+      const targetIdScreenSize =
+        Math.min(
+          13,
+          Math.max(
+            9,
+            9 +
+              Math.max(
+                0,
+                globalScale - 0.5
+              ) *
+                3
+          )
+        );
+
       const idSize =
-        9 /
+        targetIdScreenSize /
         globalScale;
 
       ctx.font =
         `500 ${idSize}px Inter, Arial, sans-serif`;
 
       const idWidth = ctx.measureText(id).width;
-      const idPillW = idWidth + 8 / globalScale;
-      const idPillH = idSize + 4 / globalScale;
-      const idPillY = pillY + pillHeight + 3 / globalScale;
+      const idPillW = idWidth + (targetIdScreenSize * 0.75) / globalScale;
+      const idPillH = idSize + (targetIdScreenSize * 0.4) / globalScale;
+      const idPillY = pillY + pillHeight + 3.5 / globalScale;
 
-      ctx.fillStyle = "rgba(15, 23, 42, 0.92)";
+      ctx.fillStyle = "rgba(15, 23, 42, 0.94)";
       ctx.beginPath();
-      ctx.roundRect(node.x - idPillW / 2, idPillY, idPillW, idPillH, 3 / globalScale);
+      const idRadius = Math.max(2.5, targetIdScreenSize * 0.25) / globalScale;
+      if (ctx.roundRect) {
+        ctx.roundRect(node.x - idPillW / 2, idPillY, idPillW, idPillH, idRadius);
+      } else {
+        ctx.rect(node.x - idPillW / 2, idPillY, idPillW, idPillH);
+      }
       ctx.fill();
 
-      ctx.strokeStyle = "rgba(45, 212, 191, 0.35)";
-      ctx.lineWidth = 0.8 / globalScale;
+      ctx.strokeStyle = "rgba(45, 212, 191, 0.45)";
+      ctx.lineWidth = 0.9 / globalScale;
       ctx.stroke();
 
       ctx.textAlign = "center";
