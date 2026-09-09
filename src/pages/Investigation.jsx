@@ -217,6 +217,26 @@ function Investigation() {
     useRef(460);
 
   /* ==================================================
+     GRAPH HEIGHT RESIZING
+  ================================================== */
+
+  const [
+    graphHeight,
+    setGraphHeight,
+  ] = useState(720);
+
+  const [
+    isResizingHeight,
+    setIsResizingHeight,
+  ] = useState(false);
+
+  const resizeStartY =
+    useRef(0);
+
+  const resizeStartHeight =
+    useRef(720);
+
+  /* ==================================================
      ENTITY MAP
   ================================================== */
 
@@ -569,12 +589,12 @@ function Investigation() {
         resizeStartWidth.current +
         delta;
 
-      const minWidth = 320;
+      const minWidth = 240;
 
       const maxWidth =
         Math.min(
-          750,
-          rect.width * 0.6
+          950,
+          rect.width * 0.75
         );
 
       const nextWidth =
@@ -595,6 +615,67 @@ function Investigation() {
     () => {
 
       setIsResizingDetails(
+        false
+      );
+
+      document.body.style.cursor =
+        "";
+
+      document.body.style.userSelect =
+        "";
+    };
+
+  /* ==================================================
+     HEIGHT RESIZE HANDLERS
+  ================================================== */
+
+  const startHeightResize =
+    (event) => {
+
+      event.preventDefault();
+      event.stopPropagation();
+
+      resizeStartY.current =
+        event.clientY;
+
+      resizeStartHeight.current =
+        graphHeight;
+
+      setIsResizingHeight(true);
+
+      document.body.style.cursor =
+        "ns-resize";
+
+      document.body.style.userSelect =
+        "none";
+    };
+
+  const resizeHeightMoveHandler =
+    (event) => {
+
+      const deltaY =
+        event.clientY -
+        resizeStartY.current;
+
+      const nextHeight =
+        Math.max(
+          450,
+          Math.min(
+            1300,
+            resizeStartHeight.current +
+              deltaY
+          )
+        );
+
+      setGraphHeight(
+        nextHeight
+      );
+    };
+
+  const finishHeightResize =
+    () => {
+
+      setIsResizingHeight(
         false
       );
 
@@ -1268,9 +1349,12 @@ function Investigation() {
               className="
                 relative
                 flex
-                min-h-[620px]
                 w-full
               "
+              style={{
+                height: `${graphHeight}px`,
+                minHeight: "450px",
+              }}
             >
 
               {/* GRAPH */}
@@ -1473,6 +1557,43 @@ function Investigation() {
 
             </div>
 
+            {/* ==================================================
+                GRAPH HEIGHT RESIZE HANDLE
+            ================================================== */}
+
+            <div
+              role="separator"
+              aria-label="Resize graph height"
+              onPointerDown={
+                startHeightResize
+              }
+              className={`
+                group
+                relative
+                flex
+                h-4
+                w-full
+                cursor-ns-resize
+                items-center
+                justify-center
+                border-t
+                border-slate-800
+                bg-[#071426]
+                transition-colors
+                hover:bg-teal-500/20
+                ${
+                  isResizingHeight
+                    ? "bg-teal-500/30"
+                    : ""
+                }
+              `}
+              title="Drag up or down to resize graph height"
+            >
+              <div className="flex items-center gap-1.5">
+                <div className="h-1 w-12 rounded-full bg-slate-600 transition-colors group-hover:bg-teal-400" />
+              </div>
+            </div>
+
           </div>
 
           {/* ==================================================
@@ -1519,6 +1640,17 @@ function Investigation() {
           }
           onEnd={
             finishDetailsResize
+          }
+        />
+      )}
+
+      {isResizingHeight && (
+        <ResizeListeners
+          onMove={
+            resizeHeightMoveHandler
+          }
+          onEnd={
+            finishHeightResize
           }
         />
       )}

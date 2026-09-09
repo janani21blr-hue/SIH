@@ -113,13 +113,13 @@ function drawEntityIcon(
 
   ctx.translate(x, y);
 
-  ctx.scale(0.5, 0.5);
+  ctx.scale(1.05, 1.05);
 
   ctx.strokeStyle =
     getEntityColor(type);
 
   ctx.lineWidth =
-    0.95 / scale;
+    1.2 / scale;
 
   ctx.lineCap = "round";
   ctx.lineJoin = "round";
@@ -547,6 +547,23 @@ function NetworkGraph({
     }, [selectedNode, graph]);
 
   /* ==================================================
+     SIMULATION FORCES (PREVENTS CROWDING)
+  ================================================== */
+
+  useEffect(() => {
+    if (!graphRef.current) return;
+    // Disperse 400+ nodes to eliminate clumping & overlapping
+    const charge = graphRef.current.d3Force("charge");
+    if (charge) {
+      charge.strength(-340).distanceMax(900);
+    }
+    const link = graphRef.current.d3Force("link");
+    if (link) {
+      link.distance(70);
+    }
+  }, [filteredGraph]);
+
+  /* ==================================================
      ZOOM CONTROLS
   ================================================== */
 
@@ -557,7 +574,7 @@ function NetworkGraph({
 
     graphRef.current.zoom(
       graphRef.current.zoom() *
-        1.25,
+        1.35,
       250
     );
   };
@@ -569,7 +586,7 @@ function NetworkGraph({
 
     graphRef.current.zoom(
       graphRef.current.zoom() /
-        1.25,
+        1.35,
       250
     );
   };
@@ -851,10 +868,10 @@ function NetworkGraph({
 
     const screenRadius =
       isSelected
-        ? 20
+        ? 22
         : isHovered
-          ? 17
-          : 14;
+          ? 19
+          : 16;
 
     const radius =
       screenRadius /
@@ -931,9 +948,15 @@ function NetworkGraph({
       globalScale
     );
 
-    /* LABEL */
+    /* LABEL (DECLUTTERED & COMPACT) */
 
-    if (globalScale < 0.4) {
+    const shouldShowLabel =
+      isSelected ||
+      isHovered ||
+      globalScale >= 0.82 ||
+      (type === "person" && globalScale >= 0.6);
+
+    if (!shouldShowLabel) {
       return;
     }
 
@@ -941,7 +964,7 @@ function NetworkGraph({
       getNodeName(node);
 
     const labelSize =
-      12 /
+      7.5 /
       globalScale;
 
     ctx.save();
@@ -949,29 +972,45 @@ function NetworkGraph({
     ctx.font =
       `600 ${labelSize}px Inter, Arial, sans-serif`;
 
-    const textWidth = ctx.measureText(name).width;
-    const paddingX = 6 / globalScale;
-    const paddingY = 3 / globalScale;
+    const maxLen = isSelected ? 24 : isHovered ? 20 : 15;
+    const displayName =
+      name.length > maxLen ? `${name.slice(0, maxLen - 1)}…` : name;
+
+    const textWidth = ctx.measureText(displayName).width;
+    const paddingX = 4 / globalScale;
+    const paddingY = 2 / globalScale;
     const pillHeight = labelSize + paddingY * 2;
     const pillWidth = textWidth + paddingX * 2;
     const pillX = node.x - pillWidth / 2;
-    const pillY = node.y + radius + 5 / scale;
+    const pillY = node.y + radius + 3.5 / scale;
 
     // Dark pill background for crisp readability
-    ctx.fillStyle = "rgba(2, 8, 23, 0.88)";
+    ctx.fillStyle = "rgba(2, 8, 23, 0.92)";
     ctx.beginPath();
-    ctx.roundRect(pillX, pillY, pillWidth, pillHeight, 4 / globalScale);
+    if (ctx.roundRect) {
+      ctx.roundRect(pillX, pillY, pillWidth, pillHeight, 3 / globalScale);
+    } else {
+      ctx.rect(pillX, pillY, pillWidth, pillHeight);
+    }
     ctx.fill();
 
-    ctx.strokeStyle = isSelected ? "rgba(45, 212, 191, 0.5)" : "rgba(51, 65, 85, 0.7)";
-    ctx.lineWidth = 1 / globalScale;
+    ctx.strokeStyle = isSelected
+      ? "rgba(45, 212, 191, 0.6)"
+      : isHovered
+      ? "rgba(56, 189, 248, 0.6)"
+      : "rgba(71, 85, 105, 0.6)";
+    ctx.lineWidth = 0.85 / globalScale;
     ctx.stroke();
 
     // Text inside pill
     ctx.textAlign = "center";
     ctx.textBaseline = "middle";
-    ctx.fillStyle = isSelected ? "#ffffff" : "#f1f5f9";
-    ctx.fillText(name, node.x, pillY + pillHeight / 2);
+    ctx.fillStyle = isSelected
+      ? "#ffffff"
+      : isHovered
+      ? "#f8fafc"
+      : "#cbd5e1";
+    ctx.fillText(displayName, node.x, pillY + pillHeight / 2);
 
     /* SELECTED ID */
 
@@ -1026,7 +1065,7 @@ function NetworkGraph({
       className="
         relative
         h-full
-        min-h-[620px]
+        min-h-[420px]
         w-full
         overflow-hidden
         bg-[#020817]
@@ -1186,9 +1225,9 @@ function NetworkGraph({
 
         warmupTicks={100}
 
-        minZoom={0.4}
+        minZoom={0.04}
 
-        maxZoom={5}
+        maxZoom={12}
 
         onRenderFramePre={
           renderBackground
