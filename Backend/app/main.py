@@ -42,7 +42,8 @@ app.include_router(investigations.router, prefix="/api")
 BASE_DIR = Path(__file__).resolve().parents[2]
 DIST_DIR = BASE_DIR / "dist"
 
-# Serve Vite assets
+
+# Serve React assets
 if (DIST_DIR / "assets").exists():
     app.mount(
         "/assets",
@@ -51,6 +52,7 @@ if (DIST_DIR / "assets").exists():
     )
 
 
+# Serve React homepage
 @app.get("/")
 def serve_frontend():
     index_file = DIST_DIR / "index.html"
@@ -63,8 +65,10 @@ def serve_frontend():
     }
 
 
+# React Router fallback
 @app.get("/{full_path:path}")
 def serve_react_routes(full_path: str):
+
     # Don't intercept API requests
     if full_path.startswith("api/"):
         return {"detail": "API endpoint not found"}
