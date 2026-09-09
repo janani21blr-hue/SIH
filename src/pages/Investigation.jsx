@@ -5,6 +5,8 @@ import {
   useState,
 } from "react";
 
+import { useSearchParams } from "react-router-dom";
+
 import {
   Search,
   Network,
@@ -118,7 +120,21 @@ function getNodeType(node) {
    INVESTIGATION
 ================================================== */
 
+function findMatchingNode(nodes, idOrName) {
+  if (!idOrName || !nodes || nodes.length === 0) return null;
+  const target = String(idOrName).trim().toLowerCase();
+  return (
+    nodes.find((n) => {
+      const id = String(n.id || n.entity_id || "").toLowerCase();
+      const canonical = String(n.canonical_name || n.name || "").toLowerCase();
+      return id === target || canonical === target;
+    }) || null
+  );
+}
+
 function Investigation() {
+  const [searchParams] = useSearchParams();
+  const entityIdFromUrl = searchParams.get("entityId");
 
   /* ==================================================
      SELECTED NODE
@@ -137,10 +153,16 @@ function Investigation() {
   const [
     selectedNode,
     setSelectedNode,
-  ] = useState(
-    investigationGraph.nodes?.[0] ||
+  ] = useState(() => {
+    if (entityIdFromUrl) {
+      const match = findMatchingNode(investigationGraph.nodes, entityIdFromUrl);
+      if (match) return match;
+    }
+    return (
+      investigationGraph.nodes?.[0] ||
       null
-  );
+    );
+  });
 
   useEffect(() => {
     let isMounted = true;
@@ -150,9 +172,20 @@ function Investigation() {
           setGraphData(data);
           setIsLiveGraph(true);
           setSelectedNode((current) => {
+            if (entityIdFromUrl) {
+              const match = findMatchingNode(data.nodes, entityIdFromUrl);
+              if (match) return match;
+            }
             if (!current) return data.nodes[0];
             const exists = data.nodes.find((n) => n.id === current.id);
             return exists || data.nodes[0];
+          });
+          setInvestigationPath((currentPath) => {
+            if (entityIdFromUrl) {
+              const match = findMatchingNode(data.nodes, entityIdFromUrl);
+              if (match) return [match];
+            }
+            return currentPath;
           });
         }
       })
@@ -160,7 +193,17 @@ function Investigation() {
     return () => {
       isMounted = false;
     };
-  }, []);
+  }, [entityIdFromUrl]);
+
+  // Sync selected node when URL query param changes
+  useEffect(() => {
+    if (!entityIdFromUrl || !graphData?.nodes) return;
+    const match = findMatchingNode(graphData.nodes, entityIdFromUrl);
+    if (match) {
+      setSelectedNode(match);
+      setInvestigationPath([match]);
+    }
+  }, [entityIdFromUrl, graphData]);
 
   /* ==================================================
      SEARCH
@@ -187,14 +230,18 @@ function Investigation() {
   const [
     investigationPath,
     setInvestigationPath,
-  ] = useState(
-    investigationGraph.nodes?.[0]
+  ] = useState(() => {
+    if (entityIdFromUrl) {
+      const match = findMatchingNode(investigationGraph.nodes, entityIdFromUrl);
+      if (match) return [match];
+    }
+    return investigationGraph.nodes?.[0]
       ? [
           investigationGraph
             .nodes[0],
         ]
-      : []
-  );
+      : [];
+  });
 
   /* ==================================================
      RIGHT PANEL WIDTH

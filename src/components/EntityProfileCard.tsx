@@ -108,7 +108,7 @@ function EntityProfileCard({ entity = defaultEntity }: { entity?: EntityProfile 
       <div className="mt-5 flex items-center justify-between border-t border-slate-800/80 pt-3">
         <span className="text-xs text-slate-500">Cross-referenced in 4 investigations</span>
         <Link
-          to="/investigations"
+          to={`/investigations?entityId=${encodeURIComponent(entity.entity_id || "")}`}
           className="inline-flex items-center gap-1.5 text-xs font-semibold text-teal-400 hover:text-teal-300 transition"
         >
           <span>Focus in Network Graph</span>

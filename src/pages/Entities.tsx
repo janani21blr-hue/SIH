@@ -205,7 +205,7 @@ function Entities() {
                 </span>
 
                 <Link
-                  to="/investigations"
+                  to={`/investigations?entityId=${encodeURIComponent(entity.id || entity.entity_id || "")}`}
                   className="inline-flex items-center gap-1 text-teal-400 hover:text-teal-300 font-medium"
                 >
                   <span>View in Graph</span>

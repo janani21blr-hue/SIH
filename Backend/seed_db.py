@@ -51,7 +51,6 @@ def seed():
 
         project_root = os.path.dirname(os.path.dirname(__file__))
         synthetic_path = os.path.join(project_root, "synthetic_dataset.json")
-        mock_path = os.path.join(project_root, "mockData.json")
 
         entities_dict = {}
         relationships_list = []
@@ -74,28 +73,6 @@ def seed():
 
         def add_relationship(source, target, relationship, confidence=0.88, evidence=""):
             relationships_list.append((source, target, relationship, confidence, evidence))
-
-        # 1. Primary high-risk suspects from mockData.json
-        if os.path.exists(mock_path):
-            with open(mock_path, "r") as f:
-                mock_data = json.load(f)
-                for node in mock_data.get("nodes", []):
-                    add_entity(
-                        entity_id=node["entity_id"],
-                        entity_type=node.get("entity_type", "person"),
-                        canonical_name=node.get("canonical_name", node["entity_id"]),
-                        aliases=node.get("aliases", []),
-                        attributes=node.get("attributes", {}),
-                        confidence=node.get("confidence", 0.95),
-                    )
-                for link in mock_data.get("links", []):
-                    add_relationship(
-                        source=link["source"],
-                        target=link["target"],
-                        relationship=link.get("relationship", "ASSOCIATED_WITH"),
-                        confidence=link.get("confidence", 0.90),
-                        evidence=link.get("evidence", "MOCK_INTELLIGENCE_REF"),
-                    )
 
         # 2. Demo rich graph records (phones, accounts, vehicles, addresses)
         demo_nodes = [

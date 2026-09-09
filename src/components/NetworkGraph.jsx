@@ -564,6 +564,27 @@ function NetworkGraph({
   }, [filteredGraph]);
 
   /* ==================================================
+     AUTO-FOCUS ON SELECTED NODE
+  ================================================== */
+
+  useEffect(() => {
+    if (!selectedNode || !graphRef.current) return;
+    const targetNode = (filteredGraph.nodes || []).find(
+      (n) => n.id === selectedNode.id
+    );
+    if (
+      targetNode &&
+      typeof targetNode.x === "number" &&
+      typeof targetNode.y === "number" &&
+      !isNaN(targetNode.x) &&
+      !isNaN(targetNode.y)
+    ) {
+      graphRef.current.centerAt(targetNode.x, targetNode.y, 500);
+      graphRef.current.zoom(1.6, 500);
+    }
+  }, [selectedNode?.id, filteredGraph]);
+
+  /* ==================================================
      ZOOM CONTROLS
   ================================================== */
 

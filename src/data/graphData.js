@@ -1,4 +1,3 @@
-import mockData from "../../mockData.json";
 import syntheticDataset from "../../synthetic_dataset.json";
 
 export const ENTITY_TYPES = {
@@ -45,17 +44,8 @@ function createLink(relationship) {
  * ---------------------------------------------------------
  */
 
-const baseNodes = (
-  syntheticDataset?.raw_records?.length
-    ? syntheticDataset.raw_records
-    : mockData.nodes || []
-).map(createNode);
-
-const baseLinks = (
-  syntheticDataset?.raw_relationships?.length
-    ? syntheticDataset.raw_relationships
-    : mockData.links || []
-).map(createLink);
+const baseNodes = (syntheticDataset?.raw_records || []).map(createNode);
+const baseLinks = (syntheticDataset?.raw_relationships || []).map(createLink);
 
 /*
  * ---------------------------------------------------------
