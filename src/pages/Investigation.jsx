@@ -1439,6 +1439,10 @@ function Investigation() {
                   graph={
                     graphData
                   }
+
+                  autoFocusNode={
+                    Boolean(entityIdFromUrl)
+                  }
                 />
 
               </div>

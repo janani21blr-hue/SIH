@@ -4,6 +4,7 @@ import { Search, User, Phone, CreditCard, Car, Building2, MapPin, ArrowUpRight, 
 import { investigationGraph } from "../data/graphData"
 import EntityProfileCard from "../components/EntityProfileCard"
 import { fetchEntities } from "../services/api"
+import { useNetworkFilters } from "../context/NetworkFilterContext"
 
 const TYPE_ICONS: Record<string, any> = {
   person: User,
@@ -23,12 +24,15 @@ const TYPE_COLORS: Record<string, string> = {
   address: "border-rose-500/30 bg-rose-500/10 text-rose-400",
 }
 
+const FILTER_TABS = ["all", "person", "phone", "account", "vehicle", "company", "address"]
+
 function Entities() {
   const [search, setSearch] = useState("")
   const [selectedType, setSelectedType] = useState<string>("all")
   const [nodes, setNodes] = useState<any[]>(investigationGraph.nodes || [])
   const [isLive, setIsLive] = useState(false)
   const [loading, setLoading] = useState(false)
+  const { activeFilters } = useNetworkFilters()
 
   const loadEntities = async () => {
     setLoading(true)
@@ -49,28 +53,42 @@ function Entities() {
     loadEntities()
   }, [])
 
-  const entityTypes = useMemo(() => {
-    const types = new Set(nodes.map((n: any) => n.entity_type || n.type || "unknown"))
-    return ["all", ...Array.from(types)]
+  // Deduplicate nodes by id/entity_id so React keys and counts are strictly unique
+  const uniqueNodes = useMemo(() => {
+    const seen = new Set<string>()
+    return (nodes || []).filter((node: any) => {
+      const id = String(node.id || node.entity_id || "")
+      if (!id || seen.has(id)) return false
+      seen.add(id)
+      return true
+    })
   }, [nodes])
 
   const filteredNodes = useMemo(() => {
-    return nodes.filter((node: any) => {
-      const type = (node.entity_type || node.type || "").toLowerCase()
+    return uniqueNodes.filter((node: any) => {
+      const type = (node.entity_type || node.type || "").toLowerCase().trim()
       const name = (node.canonical_name || node.name || node.id || "").toLowerCase()
       const id = String(node.id || node.entity_id || "").toLowerCase()
       const aliases = Array.isArray(node.aliases) ? node.aliases.join(" ").toLowerCase() : ""
 
-      const matchesType = selectedType === "all" || type === selectedType
+      // Match tab filter
+      const matchesType = selectedType === "all" || type === selectedType.toLowerCase()
+
+      // Match sidebar active filters (if customized)
+      const matchesSidebar =
+        activeFilters.length === 0 ||
+        activeFilters.length === 6 ||
+        activeFilters.includes(type)
+
       const matchesSearch =
         !search.trim() ||
         name.includes(search.toLowerCase()) ||
         id.includes(search.toLowerCase()) ||
         aliases.includes(search.toLowerCase())
 
-      return matchesType && matchesSearch
+      return matchesType && matchesSidebar && matchesSearch
     })
-  }, [nodes, search, selectedType])
+  }, [uniqueNodes, search, selectedType, activeFilters])
 
   return (
     <div className="space-y-6">
@@ -95,7 +113,7 @@ function Entities() {
           )}
 
           <span className="rounded-md border border-teal-500/30 bg-teal-500/10 px-3 py-1.5 text-teal-400">
-            {filteredNodes.length} of {nodes.length} Entities Indexed
+            {filteredNodes.length} of {uniqueNodes.length} Entities Indexed
           </span>
 
           <button
@@ -126,12 +144,12 @@ function Entities() {
         </div>
 
         <div className="flex flex-wrap gap-1.5">
-          {entityTypes.map((type) => (
+          {FILTER_TABS.map((type) => (
             <button
               key={type}
               onClick={() => setSelectedType(type)}
               className={`rounded-lg px-3 py-2 text-xs font-medium capitalize transition ${
-                selectedType === type
+                selectedType.toLowerCase() === type.toLowerCase()
                   ? "bg-teal-500/20 text-teal-300 border border-teal-500/40"
                   : "bg-slate-900 text-slate-400 border border-slate-800 hover:text-white"
               }`}
@@ -144,14 +162,15 @@ function Entities() {
 
       {/* Entities Grid */}
       <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-        {filteredNodes.map((entity: any) => {
-          const type = (entity.entity_type || entity.type || "person").toLowerCase()
+        {filteredNodes.map((entity: any, idx: number) => {
+          const type = (entity.entity_type || entity.type || "person").toLowerCase().trim()
           const Icon = TYPE_ICONS[type] || User
           const colorClass = TYPE_COLORS[type] || "border-slate-700 bg-slate-800 text-slate-300"
+          const cardKey = `${entity.id || entity.entity_id || "entity"}-${type}-${idx}`
 
           return (
             <div
-              key={entity.id}
+              key={cardKey}
               className="app-surface flex flex-col justify-between p-5 transition hover:border-slate-700 hover:shadow-lg hover:shadow-teal-950/10"
             >
               <div>

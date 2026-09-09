@@ -379,6 +379,7 @@ function NetworkGraph({
   activeFilters,
   activeRelationshipFilters,
   graph = investigationGraph,
+  autoFocusNode = false,
 }) {
   const graphRef =
     useRef(null);
@@ -567,8 +568,25 @@ function NetworkGraph({
      AUTO-FOCUS ON SELECTED NODE
   ================================================== */
 
+  const hasAutoFocusedInitialRef = useRef(false);
+  const lastSelectedNodeIdRef = useRef(null);
+  const hasFittedInitialRef = useRef(false);
+
   useEffect(() => {
     if (!selectedNode || !graphRef.current) return;
+
+    // If initial mount without explicit URL autofocus requested, do not zoom
+    if (!autoFocusNode && !hasAutoFocusedInitialRef.current) {
+      hasAutoFocusedInitialRef.current = true;
+      lastSelectedNodeIdRef.current = selectedNode.id;
+      return;
+    }
+
+    // Only zoom when the selected node ID actually changes
+    if (lastSelectedNodeIdRef.current === selectedNode.id) return;
+    lastSelectedNodeIdRef.current = selectedNode.id;
+    hasAutoFocusedInitialRef.current = true;
+
     const targetNode = (filteredGraph.nodes || []).find(
       (n) => n.id === selectedNode.id
     );
@@ -579,10 +597,10 @@ function NetworkGraph({
       !isNaN(targetNode.x) &&
       !isNaN(targetNode.y)
     ) {
-      graphRef.current.centerAt(targetNode.x, targetNode.y, 500);
-      graphRef.current.zoom(1.6, 500);
+      graphRef.current.centerAt(targetNode.x, targetNode.y, 450);
+      graphRef.current.zoom(1.6, 450);
     }
-  }, [selectedNode?.id, filteredGraph]);
+  }, [selectedNode?.id, autoFocusNode]);
 
   /* ==================================================
      ZOOM CONTROLS
@@ -1312,6 +1330,13 @@ function NetworkGraph({
         onRenderFramePre={
           renderBackground
         }
+
+        onEngineStop={() => {
+          if (!hasFittedInitialRef.current && !autoFocusNode && graphRef.current) {
+            hasFittedInitialRef.current = true;
+            graphRef.current.zoomToFit(450, 60);
+          }
+        }}
       />
 
       {/* ==================================================

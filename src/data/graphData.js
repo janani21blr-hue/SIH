@@ -266,15 +266,26 @@ const demoLinks = [
  * ---------------------------------------------------------
  */
 
-export const graphNodes = [
-  ...baseNodes,
-  ...demoNodes.map(createNode),
-];
+// Deduplicate nodes so each entity ID is strictly unique
+const rawNodes = [...baseNodes, ...demoNodes.map(createNode)];
+const seenNodeIds = new Set();
+export const graphNodes = rawNodes.filter((node) => {
+  if (!node.id || seenNodeIds.has(node.id)) return false;
+  seenNodeIds.add(node.id);
+  return true;
+});
 
-export const graphLinks = [
-  ...baseLinks,
-  ...demoLinks.map(createLink),
-];
+// Deduplicate links
+const rawLinks = [...baseLinks, ...demoLinks.map(createLink)];
+const seenLinkKeys = new Set();
+export const graphLinks = rawLinks.filter((link) => {
+  const s = typeof link.source === "object" ? link.source.id : link.source;
+  const t = typeof link.target === "object" ? link.target.id : link.target;
+  const key = `${s}_${t}_${link.relationship}`;
+  if (seenLinkKeys.has(key)) return false;
+  seenLinkKeys.add(key);
+  return true;
+});
 
 export const investigationGraph = {
   nodes: graphNodes,
