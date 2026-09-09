@@ -9,7 +9,7 @@
         "Raj Kumar"
       ],
       "attributes": {
-        "risk_score": 0.88,
+        "risk_score": 0.06,
         "location": "Delhi"
       },
       "confidence": 0.94
@@ -20,7 +20,8 @@
       "name": "+91 9876543210",
       "aliases": [],
       "attributes": {
-        "provider": "Airtel"
+        "provider": "Airtel",
+        "risk_score": 0.05
       },
       "confidence": 0.99
     },
@@ -32,7 +33,8 @@
         "Global Exports"
       ],
       "attributes": {
-        "registration": "U12345DL2023PTC123456"
+        "registration": "U12345DL2023PTC123456",
+        "risk_score": 0.13
       },
       "confidence": 0.87
     },
@@ -45,7 +47,7 @@
       ],
       "attributes": {
         "location": "Delhi",
-        "risk_score": 0.91
+        "risk_score": 0.09
       },
       "confidence": 0.91
     },
@@ -58,7 +60,7 @@
       ],
       "attributes": {
         "location": "Gurgaon",
-        "risk_score": 0.89
+        "risk_score": 0.11
       },
       "confidence": 0.89
     },
@@ -69,7 +71,8 @@
       "aliases": [],
       "attributes": {
         "provider": "Jio",
-        "circle": "Delhi"
+        "circle": "Delhi",
+        "risk_score": 0.05
       },
       "confidence": 0.97
     },
@@ -80,7 +83,8 @@
       "aliases": [],
       "attributes": {
         "provider": "Airtel",
-        "circle": "Haryana"
+        "circle": "Haryana",
+        "risk_score": 0.05
       },
       "confidence": 0.95
     },
@@ -91,7 +95,8 @@
       "aliases": [],
       "attributes": {
         "bank": "HDFC Bank",
-        "type": "Current"
+        "type": "Current",
+        "risk_score": 0.07
       },
       "confidence": 0.93
     },
@@ -102,7 +107,8 @@
       "aliases": [],
       "attributes": {
         "bank": "ICICI Bank",
-        "type": "Savings"
+        "type": "Savings",
+        "risk_score": 0.1
       },
       "confidence": 0.9
     },
@@ -113,7 +119,8 @@
       "aliases": [],
       "attributes": {
         "category": "SUV",
-        "owner": "Anil Sharma"
+        "owner": "Anil Sharma",
+        "risk_score": 0.14
       },
       "confidence": 0.86
     },
@@ -125,7 +132,8 @@
         "North Star"
       ],
       "attributes": {
-        "registration": "DEMO-COMP-12"
+        "registration": "DEMO-COMP-12",
+        "risk_score": 0.12
       },
       "confidence": 0.88
     },
@@ -135,7 +143,8 @@
       "name": "Sector 18, Gurgaon Hub",
       "aliases": [],
       "attributes": {
-        "city": "Gurgaon"
+        "city": "Gurgaon",
+        "risk_score": 0.16
       },
       "confidence": 0.84
     },
@@ -147,7 +156,8 @@
         "CP Delhi"
       ],
       "attributes": {
-        "city": "Delhi"
+        "city": "Delhi",
+        "risk_score": 0.1
       },
       "confidence": 0.9
     },
@@ -160,7 +170,8 @@
       ],
       "attributes": {
         "city": "Delhi",
-        "zone": "Investigation Regional Hub"
+        "zone": "Investigation Regional Hub",
+        "risk_score": 0.08
       },
       "confidence": 0.92
     },
@@ -173,7 +184,8 @@
       ],
       "attributes": {
         "city": "Mumbai",
-        "zone": "Investigation Regional Hub"
+        "zone": "Investigation Regional Hub",
+        "risk_score": 0.08
       },
       "confidence": 0.92
     },
@@ -186,7 +198,8 @@
       ],
       "attributes": {
         "city": "Bengaluru",
-        "zone": "Investigation Regional Hub"
+        "zone": "Investigation Regional Hub",
+        "risk_score": 0.08
       },
       "confidence": 0.92
     },
@@ -199,7 +212,8 @@
       ],
       "attributes": {
         "city": "Chennai",
-        "zone": "Investigation Regional Hub"
+        "zone": "Investigation Regional Hub",
+        "risk_score": 0.08
       },
       "confidence": 0.92
     },
@@ -212,7 +226,8 @@
       ],
       "attributes": {
         "city": "Kolkata",
-        "zone": "Investigation Regional Hub"
+        "zone": "Investigation Regional Hub",
+        "risk_score": 0.08
       },
       "confidence": 0.92
     },
@@ -225,7 +240,8 @@
       ],
       "attributes": {
         "city": "Hyderabad",
-        "zone": "Investigation Regional Hub"
+        "zone": "Investigation Regional Hub",
+        "risk_score": 0.08
       },
       "confidence": 0.92
     },
@@ -238,7 +254,8 @@
       ],
       "attributes": {
         "city": "Pune",
-        "zone": "Investigation Regional Hub"
+        "zone": "Investigation Regional Hub",
+        "risk_score": 0.08
       },
       "confidence": 0.92
     },
@@ -251,7 +268,8 @@
       ],
       "attributes": {
         "city": "Ahmedabad",
-        "zone": "Investigation Regional Hub"
+        "zone": "Investigation Regional Hub",
+        "risk_score": 0.08
       },
       "confidence": 0.92
     },
@@ -264,7 +282,8 @@
       ],
       "attributes": {
         "city": "Jaipur",
-        "zone": "Investigation Regional Hub"
+        "zone": "Investigation Regional Hub",
+        "risk_score": 0.08
       },
       "confidence": 0.92
     },
@@ -277,7 +296,8 @@
       ],
       "attributes": {
         "city": "Lucknow",
-        "zone": "Investigation Regional Hub"
+        "zone": "Investigation Regional Hub",
+        "risk_score": 0.08
       },
       "confidence": 0.92
     },
@@ -288,7 +308,8 @@
       "aliases": [],
       "attributes": {
         "phone": "8695753998",
-        "address": "Delhi"
+        "address": "Delhi",
+        "risk_score": 0.08
       },
       "confidence": 0.92,
       "phone": "8695753998",
@@ -302,7 +323,8 @@
       "attributes": {
         "provider": "Vi",
         "circle": "Delhi",
-        "sim_status": "Active"
+        "sim_status": "Active",
+        "risk_score": 0.05
       },
       "confidence": 0.96
     },
@@ -313,7 +335,8 @@
       "aliases": [],
       "attributes": {
         "phone": "8570621944",
-        "address": "Bengaluru"
+        "address": "Bengaluru",
+        "risk_score": 0.08
       },
       "confidence": 0.92,
       "phone": "8570621944",
@@ -327,7 +350,8 @@
       "attributes": {
         "provider": "Jio",
         "circle": "Bengaluru",
-        "sim_status": "Active"
+        "sim_status": "Active",
+        "risk_score": 0.05
       },
       "confidence": 0.96
     },
@@ -338,7 +362,8 @@
       "aliases": [],
       "attributes": {
         "phone": "7161042648",
-        "address": "Bengaluru"
+        "address": "Bengaluru",
+        "risk_score": 0.08
       },
       "confidence": 0.92,
       "phone": "7161042648",
@@ -352,7 +377,8 @@
       "attributes": {
         "provider": "Jio",
         "circle": "Bengaluru",
-        "sim_status": "Active"
+        "sim_status": "Active",
+        "risk_score": 0.05
       },
       "confidence": 0.96
     },
@@ -363,7 +389,8 @@
       "aliases": [],
       "attributes": {
         "phone": "8033639716",
-        "address": "Bengaluru"
+        "address": "Bengaluru",
+        "risk_score": 0.08
       },
       "confidence": 0.92,
       "phone": "8033639716",
@@ -377,7 +404,8 @@
       "attributes": {
         "provider": "Vi",
         "circle": "Bengaluru",
-        "sim_status": "Active"
+        "sim_status": "Active",
+        "risk_score": 0.05
       },
       "confidence": 0.96
     },
@@ -388,7 +416,8 @@
       "aliases": [],
       "attributes": {
         "phone": "7531725347",
-        "address": "Lucknow"
+        "address": "Lucknow",
+        "risk_score": 0.08
       },
       "confidence": 0.92,
       "phone": "7531725347",
@@ -402,7 +431,8 @@
       "attributes": {
         "provider": "Airtel",
         "circle": "Lucknow",
-        "sim_status": "Active"
+        "sim_status": "Active",
+        "risk_score": 0.05
       },
       "confidence": 0.96
     },
@@ -413,7 +443,8 @@
       "aliases": [],
       "attributes": {
         "phone": "7265695473",
-        "address": "Lucknow"
+        "address": "Lucknow",
+        "risk_score": 0.08
       },
       "confidence": 0.92,
       "phone": "7265695473",
@@ -427,7 +458,8 @@
       "attributes": {
         "provider": "Jio",
         "circle": "Lucknow",
-        "sim_status": "Active"
+        "sim_status": "Active",
+        "risk_score": 0.05
       },
       "confidence": 0.96
     },
@@ -438,7 +470,8 @@
       "aliases": [],
       "attributes": {
         "phone": "7200071088",
-        "address": "Jaipur"
+        "address": "Jaipur",
+        "risk_score": 0.08
       },
       "confidence": 0.92,
       "phone": "7200071088",
@@ -452,7 +485,8 @@
       "attributes": {
         "provider": "Jio",
         "circle": "Jaipur",
-        "sim_status": "Active"
+        "sim_status": "Active",
+        "risk_score": 0.05
       },
       "confidence": 0.96
     },
@@ -463,7 +497,8 @@
       "aliases": [],
       "attributes": {
         "phone": "7619570852",
-        "address": "Jaipur"
+        "address": "Jaipur",
+        "risk_score": 0.08
       },
       "confidence": 0.92,
       "phone": "7619570852",
@@ -477,7 +512,8 @@
       "attributes": {
         "provider": "Jio",
         "circle": "Jaipur",
-        "sim_status": "Active"
+        "sim_status": "Active",
+        "risk_score": 0.05
       },
       "confidence": 0.96
     },
@@ -488,7 +524,8 @@
       "aliases": [],
       "attributes": {
         "phone": "9929179284",
-        "address": "Bengaluru"
+        "address": "Bengaluru",
+        "risk_score": 0.08
       },
       "confidence": 0.92,
       "phone": "9929179284",
@@ -502,7 +539,8 @@
       "attributes": {
         "provider": "Vi",
         "circle": "Bengaluru",
-        "sim_status": "Active"
+        "sim_status": "Active",
+        "risk_score": 0.05
       },
       "confidence": 0.96
     },
@@ -513,7 +551,8 @@
       "aliases": [],
       "attributes": {
         "phone": "7806899909",
-        "address": "Hyderabad"
+        "address": "Hyderabad",
+        "risk_score": 0.08
       },
       "confidence": 0.92,
       "phone": "7806899909",
@@ -527,7 +566,8 @@
       "attributes": {
         "provider": "Jio",
         "circle": "Hyderabad",
-        "sim_status": "Active"
+        "sim_status": "Active",
+        "risk_score": 0.05
       },
       "confidence": 0.96
     },
@@ -538,7 +578,8 @@
       "aliases": [],
       "attributes": {
         "phone": "9423943363",
-        "address": "Delhi"
+        "address": "Delhi",
+        "risk_score": 0.08
       },
       "confidence": 0.92,
       "phone": "9423943363",
@@ -552,7 +593,8 @@
       "attributes": {
         "provider": "Vi",
         "circle": "Delhi",
-        "sim_status": "Active"
+        "sim_status": "Active",
+        "risk_score": 0.05
       },
       "confidence": 0.96
     },
@@ -563,7 +605,8 @@
       "aliases": [],
       "attributes": {
         "phone": "9132084004",
-        "address": "Jaipur"
+        "address": "Jaipur",
+        "risk_score": 0.08
       },
       "confidence": 0.92,
       "phone": "9132084004",
@@ -577,7 +620,8 @@
       "attributes": {
         "provider": "Vi",
         "circle": "Jaipur",
-        "sim_status": "Active"
+        "sim_status": "Active",
+        "risk_score": 0.05
       },
       "confidence": 0.96
     },
@@ -588,7 +632,8 @@
       "aliases": [],
       "attributes": {
         "phone": "8999744784",
-        "address": "Lucknow"
+        "address": "Lucknow",
+        "risk_score": 0.08
       },
       "confidence": 0.92,
       "phone": "8999744784",
@@ -602,7 +647,8 @@
       "attributes": {
         "provider": "Vi",
         "circle": "Lucknow",
-        "sim_status": "Active"
+        "sim_status": "Active",
+        "risk_score": 0.05
       },
       "confidence": 0.96
     },
@@ -613,7 +659,8 @@
       "aliases": [],
       "attributes": {
         "phone": "8287489453",
-        "address": "Chennai"
+        "address": "Chennai",
+        "risk_score": 0.08
       },
       "confidence": 0.92,
       "phone": "8287489453",
@@ -627,7 +674,8 @@
       "attributes": {
         "provider": "Jio",
         "circle": "Chennai",
-        "sim_status": "Active"
+        "sim_status": "Active",
+        "risk_score": 0.05
       },
       "confidence": 0.96
     },
@@ -638,7 +686,8 @@
       "aliases": [],
       "attributes": {
         "phone": "8048386555",
-        "address": "Mumbai"
+        "address": "Mumbai",
+        "risk_score": 0.08
       },
       "confidence": 0.92,
       "phone": "8048386555",
@@ -652,7 +701,8 @@
       "attributes": {
         "provider": "Vi",
         "circle": "Mumbai",
-        "sim_status": "Active"
+        "sim_status": "Active",
+        "risk_score": 0.05
       },
       "confidence": 0.96
     },
@@ -663,7 +713,8 @@
       "aliases": [],
       "attributes": {
         "phone": "9490630939",
-        "address": "Ahmedabad"
+        "address": "Ahmedabad",
+        "risk_score": 0.08
       },
       "confidence": 0.92,
       "phone": "9490630939",
@@ -677,7 +728,8 @@
       "attributes": {
         "provider": "Airtel",
         "circle": "Ahmedabad",
-        "sim_status": "Active"
+        "sim_status": "Active",
+        "risk_score": 0.05
       },
       "confidence": 0.96
     },
@@ -688,7 +740,8 @@
       "aliases": [],
       "attributes": {
         "phone": "7260573195",
-        "address": "Kolkata"
+        "address": "Kolkata",
+        "risk_score": 0.08
       },
       "confidence": 0.92,
       "phone": "7260573195",
@@ -702,7 +755,8 @@
       "attributes": {
         "provider": "Jio",
         "circle": "Kolkata",
-        "sim_status": "Active"
+        "sim_status": "Active",
+        "risk_score": 0.05
       },
       "confidence": 0.96
     },
@@ -713,7 +767,8 @@
       "aliases": [],
       "attributes": {
         "phone": "8222328495",
-        "address": "Pune"
+        "address": "Pune",
+        "risk_score": 0.08
       },
       "confidence": 0.92,
       "phone": "8222328495",
@@ -727,7 +782,8 @@
       "attributes": {
         "provider": "Jio",
         "circle": "Pune",
-        "sim_status": "Active"
+        "sim_status": "Active",
+        "risk_score": 0.05
       },
       "confidence": 0.96
     },
@@ -738,7 +794,8 @@
       "aliases": [],
       "attributes": {
         "phone": "7096907015",
-        "address": "Ahmedabad"
+        "address": "Ahmedabad",
+        "risk_score": 0.08
       },
       "confidence": 0.92,
       "phone": "7096907015",
@@ -752,7 +809,8 @@
       "attributes": {
         "provider": "Jio",
         "circle": "Ahmedabad",
-        "sim_status": "Active"
+        "sim_status": "Active",
+        "risk_score": 0.05
       },
       "confidence": 0.96
     },
@@ -763,7 +821,8 @@
       "aliases": [],
       "attributes": {
         "phone": "9623879480",
-        "address": "Mumbai"
+        "address": "Mumbai",
+        "risk_score": 0.08
       },
       "confidence": 0.92,
       "phone": "9623879480",
@@ -777,7 +836,8 @@
       "attributes": {
         "provider": "Jio",
         "circle": "Mumbai",
-        "sim_status": "Active"
+        "sim_status": "Active",
+        "risk_score": 0.05
       },
       "confidence": 0.96
     },
@@ -788,7 +848,8 @@
       "aliases": [],
       "attributes": {
         "phone": "7937195259",
-        "address": "Kolkata"
+        "address": "Kolkata",
+        "risk_score": 0.08
       },
       "confidence": 0.92,
       "phone": "7937195259",
@@ -802,7 +863,8 @@
       "attributes": {
         "provider": "Jio",
         "circle": "Kolkata",
-        "sim_status": "Active"
+        "sim_status": "Active",
+        "risk_score": 0.05
       },
       "confidence": 0.96
     },
@@ -813,7 +875,8 @@
       "aliases": [],
       "attributes": {
         "phone": "8063497603",
-        "address": "Pune"
+        "address": "Pune",
+        "risk_score": 0.08
       },
       "confidence": 0.92,
       "phone": "8063497603",
@@ -827,7 +890,8 @@
       "attributes": {
         "provider": "Vi",
         "circle": "Pune",
-        "sim_status": "Active"
+        "sim_status": "Active",
+        "risk_score": 0.05
       },
       "confidence": 0.96
     },
@@ -838,7 +902,8 @@
       "aliases": [],
       "attributes": {
         "phone": "7346094055",
-        "address": "Bengaluru"
+        "address": "Bengaluru",
+        "risk_score": 0.08
       },
       "confidence": 0.92,
       "phone": "7346094055",
@@ -852,7 +917,8 @@
       "attributes": {
         "provider": "Vi",
         "circle": "Bengaluru",
-        "sim_status": "Active"
+        "sim_status": "Active",
+        "risk_score": 0.05
       },
       "confidence": 0.96
     },
@@ -863,7 +929,8 @@
       "aliases": [],
       "attributes": {
         "phone": "9359826449",
-        "address": "Kolkata"
+        "address": "Kolkata",
+        "risk_score": 0.08
       },
       "confidence": 0.92,
       "phone": "9359826449",
@@ -877,7 +944,8 @@
       "attributes": {
         "provider": "Jio",
         "circle": "Kolkata",
-        "sim_status": "Active"
+        "sim_status": "Active",
+        "risk_score": 0.05
       },
       "confidence": 0.96
     },
@@ -888,7 +956,8 @@
       "aliases": [],
       "attributes": {
         "phone": "9363175007",
-        "address": "Kolkata"
+        "address": "Kolkata",
+        "risk_score": 0.08
       },
       "confidence": 0.92,
       "phone": "9363175007",
@@ -902,7 +971,8 @@
       "attributes": {
         "provider": "Vi",
         "circle": "Kolkata",
-        "sim_status": "Active"
+        "sim_status": "Active",
+        "risk_score": 0.05
       },
       "confidence": 0.96
     },
@@ -913,7 +983,8 @@
       "aliases": [],
       "attributes": {
         "phone": "8540910400",
-        "address": "Pune"
+        "address": "Pune",
+        "risk_score": 0.08
       },
       "confidence": 0.92,
       "phone": "8540910400",
@@ -927,7 +998,8 @@
       "attributes": {
         "provider": "Jio",
         "circle": "Pune",
-        "sim_status": "Active"
+        "sim_status": "Active",
+        "risk_score": 0.05
       },
       "confidence": 0.96
     },
@@ -938,7 +1010,8 @@
       "aliases": [],
       "attributes": {
         "phone": "7356416554",
-        "address": "Bengaluru"
+        "address": "Bengaluru",
+        "risk_score": 0.08
       },
       "confidence": 0.92,
       "phone": "7356416554",
@@ -952,7 +1025,8 @@
       "attributes": {
         "provider": "Vi",
         "circle": "Bengaluru",
-        "sim_status": "Active"
+        "sim_status": "Active",
+        "risk_score": 0.05
       },
       "confidence": 0.96
     },
@@ -963,7 +1037,8 @@
       "aliases": [],
       "attributes": {
         "phone": "9828307593",
-        "address": "Chennai"
+        "address": "Chennai",
+        "risk_score": 0.08
       },
       "confidence": 0.92,
       "phone": "9828307593",
@@ -977,7 +1052,8 @@
       "attributes": {
         "provider": "Vi",
         "circle": "Chennai",
-        "sim_status": "Active"
+        "sim_status": "Active",
+        "risk_score": 0.05
       },
       "confidence": 0.96
     },
@@ -988,7 +1064,8 @@
       "aliases": [],
       "attributes": {
         "phone": "9530266207",
-        "address": "Bengaluru"
+        "address": "Bengaluru",
+        "risk_score": 0.08
       },
       "confidence": 0.92,
       "phone": "9530266207",
@@ -1002,7 +1079,8 @@
       "attributes": {
         "provider": "Vi",
         "circle": "Bengaluru",
-        "sim_status": "Active"
+        "sim_status": "Active",
+        "risk_score": 0.05
       },
       "confidence": 0.96
     },
@@ -1013,7 +1091,8 @@
       "aliases": [],
       "attributes": {
         "phone": "7017581913",
-        "address": "Bengaluru"
+        "address": "Bengaluru",
+        "risk_score": 0.08
       },
       "confidence": 0.92,
       "phone": "7017581913",
@@ -1027,7 +1106,8 @@
       "attributes": {
         "provider": "Vi",
         "circle": "Bengaluru",
-        "sim_status": "Active"
+        "sim_status": "Active",
+        "risk_score": 0.05
       },
       "confidence": 0.96
     },
@@ -1038,7 +1118,8 @@
       "aliases": [],
       "attributes": {
         "phone": "8585932013",
-        "address": "Lucknow"
+        "address": "Lucknow",
+        "risk_score": 0.08
       },
       "confidence": 0.92,
       "phone": "8585932013",
@@ -1052,7 +1133,8 @@
       "attributes": {
         "provider": "Airtel",
         "circle": "Lucknow",
-        "sim_status": "Active"
+        "sim_status": "Active",
+        "risk_score": 0.05
       },
       "confidence": 0.96
     },
@@ -1063,7 +1145,8 @@
       "aliases": [],
       "attributes": {
         "phone": "7538981926",
-        "address": "Jaipur"
+        "address": "Jaipur",
+        "risk_score": 0.08
       },
       "confidence": 0.92,
       "phone": "7538981926",
@@ -1077,7 +1160,8 @@
       "attributes": {
         "provider": "Jio",
         "circle": "Jaipur",
-        "sim_status": "Active"
+        "sim_status": "Active",
+        "risk_score": 0.05
       },
       "confidence": 0.96
     },
@@ -1088,7 +1172,8 @@
       "aliases": [],
       "attributes": {
         "phone": "9904257243",
-        "address": "Delhi"
+        "address": "Delhi",
+        "risk_score": 0.08
       },
       "confidence": 0.92,
       "phone": "9904257243",
@@ -1102,7 +1187,8 @@
       "attributes": {
         "provider": "Airtel",
         "circle": "Delhi",
-        "sim_status": "Active"
+        "sim_status": "Active",
+        "risk_score": 0.05
       },
       "confidence": 0.96
     },
@@ -1113,7 +1199,8 @@
       "aliases": [],
       "attributes": {
         "phone": "9402053832",
-        "address": "Pune"
+        "address": "Pune",
+        "risk_score": 0.08
       },
       "confidence": 0.92,
       "phone": "9402053832",
@@ -1127,7 +1214,8 @@
       "attributes": {
         "provider": "Vi",
         "circle": "Pune",
-        "sim_status": "Active"
+        "sim_status": "Active",
+        "risk_score": 0.05
       },
       "confidence": 0.96
     },
@@ -1138,7 +1226,8 @@
       "aliases": [],
       "attributes": {
         "phone": "8692732589",
-        "address": "Mumbai"
+        "address": "Mumbai",
+        "risk_score": 0.08
       },
       "confidence": 0.92,
       "phone": "8692732589",
@@ -1152,7 +1241,8 @@
       "attributes": {
         "provider": "Airtel",
         "circle": "Mumbai",
-        "sim_status": "Active"
+        "sim_status": "Active",
+        "risk_score": 0.05
       },
       "confidence": 0.96
     },
@@ -1163,7 +1253,8 @@
       "aliases": [],
       "attributes": {
         "phone": "8719888006",
-        "address": "Delhi"
+        "address": "Delhi",
+        "risk_score": 0.08
       },
       "confidence": 0.92,
       "phone": "8719888006",
@@ -1177,7 +1268,8 @@
       "attributes": {
         "provider": "Jio",
         "circle": "Delhi",
-        "sim_status": "Active"
+        "sim_status": "Active",
+        "risk_score": 0.05
       },
       "confidence": 0.96
     },
@@ -1188,7 +1280,8 @@
       "aliases": [],
       "attributes": {
         "phone": "7896631050",
-        "address": "Ahmedabad"
+        "address": "Ahmedabad",
+        "risk_score": 0.08
       },
       "confidence": 0.92,
       "phone": "7896631050",
@@ -1202,7 +1295,8 @@
       "attributes": {
         "provider": "Jio",
         "circle": "Ahmedabad",
-        "sim_status": "Active"
+        "sim_status": "Active",
+        "risk_score": 0.05
       },
       "confidence": 0.96
     },
@@ -1213,7 +1307,8 @@
       "aliases": [],
       "attributes": {
         "phone": "8460519317",
-        "address": "Lucknow"
+        "address": "Lucknow",
+        "risk_score": 0.08
       },
       "confidence": 0.92,
       "phone": "8460519317",
@@ -1227,7 +1322,8 @@
       "attributes": {
         "provider": "Vi",
         "circle": "Lucknow",
-        "sim_status": "Active"
+        "sim_status": "Active",
+        "risk_score": 0.05
       },
       "confidence": 0.96
     },
@@ -1238,7 +1334,8 @@
       "aliases": [],
       "attributes": {
         "phone": "7001001928",
-        "address": "Lucknow"
+        "address": "Lucknow",
+        "risk_score": 0.08
       },
       "confidence": 0.92,
       "phone": "7001001928",
@@ -1252,7 +1349,8 @@
       "attributes": {
         "provider": "Airtel",
         "circle": "Lucknow",
-        "sim_status": "Active"
+        "sim_status": "Active",
+        "risk_score": 0.05
       },
       "confidence": 0.96
     },
@@ -1263,7 +1361,8 @@
       "aliases": [],
       "attributes": {
         "phone": "7435786140",
-        "address": "Hyderabad"
+        "address": "Hyderabad",
+        "risk_score": 0.08
       },
       "confidence": 0.92,
       "phone": "7435786140",
@@ -1277,7 +1376,8 @@
       "attributes": {
         "provider": "Airtel",
         "circle": "Hyderabad",
-        "sim_status": "Active"
+        "sim_status": "Active",
+        "risk_score": 0.05
       },
       "confidence": 0.96
     },
@@ -1288,7 +1388,8 @@
       "aliases": [],
       "attributes": {
         "phone": "7302003101",
-        "address": "Chennai"
+        "address": "Chennai",
+        "risk_score": 0.08
       },
       "confidence": 0.92,
       "phone": "7302003101",
@@ -1302,7 +1403,8 @@
       "attributes": {
         "provider": "Airtel",
         "circle": "Chennai",
-        "sim_status": "Active"
+        "sim_status": "Active",
+        "risk_score": 0.05
       },
       "confidence": 0.96
     },
@@ -1313,7 +1415,8 @@
       "aliases": [],
       "attributes": {
         "phone": "7638019485",
-        "address": "Kolkata"
+        "address": "Kolkata",
+        "risk_score": 0.08
       },
       "confidence": 0.92,
       "phone": "7638019485",
@@ -1327,7 +1430,8 @@
       "attributes": {
         "provider": "Jio",
         "circle": "Kolkata",
-        "sim_status": "Active"
+        "sim_status": "Active",
+        "risk_score": 0.05
       },
       "confidence": 0.96
     },
@@ -1338,7 +1442,8 @@
       "aliases": [],
       "attributes": {
         "phone": "8564070056",
-        "address": "Ahmedabad"
+        "address": "Ahmedabad",
+        "risk_score": 0.08
       },
       "confidence": 0.92,
       "phone": "8564070056",
@@ -1352,7 +1457,8 @@
       "attributes": {
         "provider": "Jio",
         "circle": "Ahmedabad",
-        "sim_status": "Active"
+        "sim_status": "Active",
+        "risk_score": 0.05
       },
       "confidence": 0.96
     },
@@ -1363,7 +1469,8 @@
       "aliases": [],
       "attributes": {
         "phone": "9096236324",
-        "address": "Ahmedabad"
+        "address": "Ahmedabad",
+        "risk_score": 0.08
       },
       "confidence": 0.92,
       "phone": "9096236324",
@@ -1377,7 +1484,8 @@
       "attributes": {
         "provider": "Airtel",
         "circle": "Ahmedabad",
-        "sim_status": "Active"
+        "sim_status": "Active",
+        "risk_score": 0.05
       },
       "confidence": 0.96
     },
@@ -1388,7 +1496,8 @@
       "aliases": [],
       "attributes": {
         "phone": "8339395518",
-        "address": "Mumbai"
+        "address": "Mumbai",
+        "risk_score": 0.08
       },
       "confidence": 0.92,
       "phone": "8339395518",
@@ -1402,7 +1511,8 @@
       "attributes": {
         "provider": "Jio",
         "circle": "Mumbai",
-        "sim_status": "Active"
+        "sim_status": "Active",
+        "risk_score": 0.05
       },
       "confidence": 0.96
     },
@@ -1413,7 +1523,8 @@
       "aliases": [],
       "attributes": {
         "phone": "8471609726",
-        "address": "Kolkata"
+        "address": "Kolkata",
+        "risk_score": 0.08
       },
       "confidence": 0.92,
       "phone": "8471609726",
@@ -1427,7 +1538,8 @@
       "attributes": {
         "provider": "Jio",
         "circle": "Kolkata",
-        "sim_status": "Active"
+        "sim_status": "Active",
+        "risk_score": 0.05
       },
       "confidence": 0.96
     },
@@ -1438,7 +1550,8 @@
       "aliases": [],
       "attributes": {
         "phone": "7693373550",
-        "address": "Jaipur"
+        "address": "Jaipur",
+        "risk_score": 0.08
       },
       "confidence": 0.92,
       "phone": "7693373550",
@@ -1452,7 +1565,8 @@
       "attributes": {
         "provider": "Airtel",
         "circle": "Jaipur",
-        "sim_status": "Active"
+        "sim_status": "Active",
+        "risk_score": 0.05
       },
       "confidence": 0.96
     },
@@ -1463,7 +1577,8 @@
       "aliases": [],
       "attributes": {
         "phone": "9268848248",
-        "address": "Hyderabad"
+        "address": "Hyderabad",
+        "risk_score": 0.08
       },
       "confidence": 0.92,
       "phone": "9268848248",
@@ -1477,7 +1592,8 @@
       "attributes": {
         "provider": "Jio",
         "circle": "Hyderabad",
-        "sim_status": "Active"
+        "sim_status": "Active",
+        "risk_score": 0.05
       },
       "confidence": 0.96
     },
@@ -1488,7 +1604,8 @@
       "aliases": [],
       "attributes": {
         "phone": "9268212773",
-        "address": "Kolkata"
+        "address": "Kolkata",
+        "risk_score": 0.08
       },
       "confidence": 0.92,
       "phone": "9268212773",
@@ -1502,7 +1619,8 @@
       "attributes": {
         "provider": "Airtel",
         "circle": "Kolkata",
-        "sim_status": "Active"
+        "sim_status": "Active",
+        "risk_score": 0.05
       },
       "confidence": 0.96
     },
@@ -1513,7 +1631,8 @@
       "aliases": [],
       "attributes": {
         "phone": "9990142407",
-        "address": "Kolkata"
+        "address": "Kolkata",
+        "risk_score": 0.08
       },
       "confidence": 0.92,
       "phone": "9990142407",
@@ -1527,7 +1646,8 @@
       "attributes": {
         "provider": "Airtel",
         "circle": "Kolkata",
-        "sim_status": "Active"
+        "sim_status": "Active",
+        "risk_score": 0.05
       },
       "confidence": 0.96
     },
@@ -1538,7 +1658,8 @@
       "aliases": [],
       "attributes": {
         "phone": "7717440070",
-        "address": "Hyderabad"
+        "address": "Hyderabad",
+        "risk_score": 0.08
       },
       "confidence": 0.92,
       "phone": "7717440070",
@@ -1552,7 +1673,8 @@
       "attributes": {
         "provider": "Vi",
         "circle": "Hyderabad",
-        "sim_status": "Active"
+        "sim_status": "Active",
+        "risk_score": 0.05
       },
       "confidence": 0.96
     },
@@ -1563,7 +1685,8 @@
       "aliases": [],
       "attributes": {
         "phone": "9326013068",
-        "address": "Jaipur"
+        "address": "Jaipur",
+        "risk_score": 0.08
       },
       "confidence": 0.92,
       "phone": "9326013068",
@@ -1577,7 +1700,8 @@
       "attributes": {
         "provider": "Airtel",
         "circle": "Jaipur",
-        "sim_status": "Active"
+        "sim_status": "Active",
+        "risk_score": 0.05
       },
       "confidence": 0.96
     },
@@ -1588,7 +1712,8 @@
       "aliases": [],
       "attributes": {
         "phone": "7957956674",
-        "address": "Lucknow"
+        "address": "Lucknow",
+        "risk_score": 0.08
       },
       "confidence": 0.92,
       "phone": "7957956674",
@@ -1602,7 +1727,8 @@
       "attributes": {
         "provider": "Jio",
         "circle": "Lucknow",
-        "sim_status": "Active"
+        "sim_status": "Active",
+        "risk_score": 0.05
       },
       "confidence": 0.96
     },
@@ -1613,7 +1739,8 @@
       "aliases": [],
       "attributes": {
         "phone": "8720926262",
-        "address": "Chennai"
+        "address": "Chennai",
+        "risk_score": 0.08
       },
       "confidence": 0.92,
       "phone": "8720926262",
@@ -1627,7 +1754,8 @@
       "attributes": {
         "provider": "Vi",
         "circle": "Chennai",
-        "sim_status": "Active"
+        "sim_status": "Active",
+        "risk_score": 0.05
       },
       "confidence": 0.96
     },
@@ -1638,7 +1766,8 @@
       "aliases": [],
       "attributes": {
         "phone": "9116481898",
-        "address": "Hyderabad"
+        "address": "Hyderabad",
+        "risk_score": 0.08
       },
       "confidence": 0.92,
       "phone": "9116481898",
@@ -1652,7 +1781,8 @@
       "attributes": {
         "provider": "Airtel",
         "circle": "Hyderabad",
-        "sim_status": "Active"
+        "sim_status": "Active",
+        "risk_score": 0.05
       },
       "confidence": 0.96
     },
@@ -1663,7 +1793,8 @@
       "aliases": [],
       "attributes": {
         "phone": "7119988828",
-        "address": "Kolkata"
+        "address": "Kolkata",
+        "risk_score": 0.08
       },
       "confidence": 0.92,
       "phone": "7119988828",
@@ -1677,7 +1808,8 @@
       "attributes": {
         "provider": "Vi",
         "circle": "Kolkata",
-        "sim_status": "Active"
+        "sim_status": "Active",
+        "risk_score": 0.05
       },
       "confidence": 0.96
     },
@@ -1688,7 +1820,8 @@
       "aliases": [],
       "attributes": {
         "phone": "7831698692",
-        "address": "Lucknow"
+        "address": "Lucknow",
+        "risk_score": 0.08
       },
       "confidence": 0.92,
       "phone": "7831698692",
@@ -1702,7 +1835,8 @@
       "attributes": {
         "provider": "Jio",
         "circle": "Lucknow",
-        "sim_status": "Active"
+        "sim_status": "Active",
+        "risk_score": 0.05
       },
       "confidence": 0.96
     },
@@ -1713,7 +1847,8 @@
       "aliases": [],
       "attributes": {
         "phone": "8501175503",
-        "address": "Hyderabad"
+        "address": "Hyderabad",
+        "risk_score": 0.08
       },
       "confidence": 0.92,
       "phone": "8501175503",
@@ -1727,7 +1862,8 @@
       "attributes": {
         "provider": "Airtel",
         "circle": "Hyderabad",
-        "sim_status": "Active"
+        "sim_status": "Active",
+        "risk_score": 0.05
       },
       "confidence": 0.96
     },
@@ -1738,7 +1874,8 @@
       "aliases": [],
       "attributes": {
         "phone": "7438761609",
-        "address": "Chennai"
+        "address": "Chennai",
+        "risk_score": 0.08
       },
       "confidence": 0.92,
       "phone": "7438761609",
@@ -1752,7 +1889,8 @@
       "attributes": {
         "provider": "Jio",
         "circle": "Chennai",
-        "sim_status": "Active"
+        "sim_status": "Active",
+        "risk_score": 0.05
       },
       "confidence": 0.96
     },
@@ -1763,7 +1901,8 @@
       "aliases": [],
       "attributes": {
         "phone": "8450571437",
-        "address": "Chennai"
+        "address": "Chennai",
+        "risk_score": 0.08
       },
       "confidence": 0.92,
       "phone": "8450571437",
@@ -1777,7 +1916,8 @@
       "attributes": {
         "provider": "Vi",
         "circle": "Chennai",
-        "sim_status": "Active"
+        "sim_status": "Active",
+        "risk_score": 0.05
       },
       "confidence": 0.96
     },
@@ -1788,7 +1928,8 @@
       "aliases": [],
       "attributes": {
         "phone": "9621055949",
-        "address": "Delhi"
+        "address": "Delhi",
+        "risk_score": 0.08
       },
       "confidence": 0.92,
       "phone": "9621055949",
@@ -1802,7 +1943,8 @@
       "attributes": {
         "provider": "Airtel",
         "circle": "Delhi",
-        "sim_status": "Active"
+        "sim_status": "Active",
+        "risk_score": 0.05
       },
       "confidence": 0.96
     },
@@ -1813,7 +1955,8 @@
       "aliases": [],
       "attributes": {
         "phone": "7364120811",
-        "address": "Mumbai"
+        "address": "Mumbai",
+        "risk_score": 0.08
       },
       "confidence": 0.92,
       "phone": "7364120811",
@@ -1827,7 +1970,8 @@
       "attributes": {
         "provider": "Vi",
         "circle": "Mumbai",
-        "sim_status": "Active"
+        "sim_status": "Active",
+        "risk_score": 0.05
       },
       "confidence": 0.96
     },
@@ -1838,7 +1982,8 @@
       "aliases": [],
       "attributes": {
         "phone": "7856070305",
-        "address": "Ahmedabad"
+        "address": "Ahmedabad",
+        "risk_score": 0.08
       },
       "confidence": 0.92,
       "phone": "7856070305",
@@ -1852,7 +1997,8 @@
       "attributes": {
         "provider": "Vi",
         "circle": "Ahmedabad",
-        "sim_status": "Active"
+        "sim_status": "Active",
+        "risk_score": 0.05
       },
       "confidence": 0.96
     },
@@ -1863,7 +2009,8 @@
       "aliases": [],
       "attributes": {
         "phone": "9730921541",
-        "address": "Hyderabad"
+        "address": "Hyderabad",
+        "risk_score": 0.08
       },
       "confidence": 0.92,
       "phone": "9730921541",
@@ -1877,7 +2024,8 @@
       "attributes": {
         "provider": "Airtel",
         "circle": "Hyderabad",
-        "sim_status": "Active"
+        "sim_status": "Active",
+        "risk_score": 0.05
       },
       "confidence": 0.96
     },
@@ -1888,7 +2036,8 @@
       "aliases": [],
       "attributes": {
         "phone": "8700113406",
-        "address": "Ahmedabad"
+        "address": "Ahmedabad",
+        "risk_score": 0.08
       },
       "confidence": 0.92,
       "phone": "8700113406",
@@ -1902,7 +2051,8 @@
       "attributes": {
         "provider": "Vi",
         "circle": "Ahmedabad",
-        "sim_status": "Active"
+        "sim_status": "Active",
+        "risk_score": 0.05
       },
       "confidence": 0.96
     },
@@ -1913,7 +2063,8 @@
       "aliases": [],
       "attributes": {
         "phone": "7545625652",
-        "address": "Delhi"
+        "address": "Delhi",
+        "risk_score": 0.08
       },
       "confidence": 0.92,
       "phone": "7545625652",
@@ -1927,7 +2078,8 @@
       "attributes": {
         "provider": "Jio",
         "circle": "Delhi",
-        "sim_status": "Active"
+        "sim_status": "Active",
+        "risk_score": 0.05
       },
       "confidence": 0.96
     },
@@ -1938,7 +2090,8 @@
       "aliases": [],
       "attributes": {
         "phone": "8998679710",
-        "address": "Bengaluru"
+        "address": "Bengaluru",
+        "risk_score": 0.08
       },
       "confidence": 0.92,
       "phone": "8998679710",
@@ -1952,7 +2105,8 @@
       "attributes": {
         "provider": "Vi",
         "circle": "Bengaluru",
-        "sim_status": "Active"
+        "sim_status": "Active",
+        "risk_score": 0.05
       },
       "confidence": 0.96
     },
@@ -1963,7 +2117,8 @@
       "aliases": [],
       "attributes": {
         "phone": "9037347501",
-        "address": "Hyderabad"
+        "address": "Hyderabad",
+        "risk_score": 0.08
       },
       "confidence": 0.92,
       "phone": "9037347501",
@@ -1977,7 +2132,8 @@
       "attributes": {
         "provider": "Jio",
         "circle": "Hyderabad",
-        "sim_status": "Active"
+        "sim_status": "Active",
+        "risk_score": 0.05
       },
       "confidence": 0.96
     },
@@ -1988,7 +2144,8 @@
       "aliases": [],
       "attributes": {
         "phone": "7091898034",
-        "address": "Delhi"
+        "address": "Delhi",
+        "risk_score": 0.08
       },
       "confidence": 0.92,
       "phone": "7091898034",
@@ -2002,7 +2159,8 @@
       "attributes": {
         "provider": "Jio",
         "circle": "Delhi",
-        "sim_status": "Active"
+        "sim_status": "Active",
+        "risk_score": 0.05
       },
       "confidence": 0.96
     },
@@ -2013,7 +2171,8 @@
       "aliases": [],
       "attributes": {
         "phone": "7441402617",
-        "address": "Jaipur"
+        "address": "Jaipur",
+        "risk_score": 0.08
       },
       "confidence": 0.92,
       "phone": "7441402617",
@@ -2027,7 +2186,8 @@
       "attributes": {
         "provider": "Vi",
         "circle": "Jaipur",
-        "sim_status": "Active"
+        "sim_status": "Active",
+        "risk_score": 0.05
       },
       "confidence": 0.96
     },
@@ -2038,7 +2198,8 @@
       "aliases": [],
       "attributes": {
         "phone": "8863197321",
-        "address": "Chennai"
+        "address": "Chennai",
+        "risk_score": 0.08
       },
       "confidence": 0.92,
       "phone": "8863197321",
@@ -2052,7 +2213,8 @@
       "attributes": {
         "provider": "Jio",
         "circle": "Chennai",
-        "sim_status": "Active"
+        "sim_status": "Active",
+        "risk_score": 0.05
       },
       "confidence": 0.96
     },
@@ -2063,7 +2225,8 @@
       "aliases": [],
       "attributes": {
         "phone": "8081622282",
-        "address": "Chennai"
+        "address": "Chennai",
+        "risk_score": 0.08
       },
       "confidence": 0.92,
       "phone": "8081622282",
@@ -2077,7 +2240,8 @@
       "attributes": {
         "provider": "Airtel",
         "circle": "Chennai",
-        "sim_status": "Active"
+        "sim_status": "Active",
+        "risk_score": 0.05
       },
       "confidence": 0.96
     },
@@ -2088,7 +2252,8 @@
       "aliases": [],
       "attributes": {
         "phone": "8400113410",
-        "address": "Kolkata"
+        "address": "Kolkata",
+        "risk_score": 0.08
       },
       "confidence": 0.92,
       "phone": "8400113410",
@@ -2102,7 +2267,8 @@
       "attributes": {
         "provider": "Jio",
         "circle": "Kolkata",
-        "sim_status": "Active"
+        "sim_status": "Active",
+        "risk_score": 0.05
       },
       "confidence": 0.96
     },
@@ -2113,7 +2279,8 @@
       "aliases": [],
       "attributes": {
         "phone": "7562957179",
-        "address": "Delhi"
+        "address": "Delhi",
+        "risk_score": 0.08
       },
       "confidence": 0.92,
       "phone": "7562957179",
@@ -2127,7 +2294,8 @@
       "attributes": {
         "provider": "Jio",
         "circle": "Delhi",
-        "sim_status": "Active"
+        "sim_status": "Active",
+        "risk_score": 0.05
       },
       "confidence": 0.96
     },
@@ -2138,7 +2306,8 @@
       "aliases": [],
       "attributes": {
         "phone": "8967786445",
-        "address": "Lucknow"
+        "address": "Lucknow",
+        "risk_score": 0.08
       },
       "confidence": 0.92,
       "phone": "8967786445",
@@ -2152,7 +2321,8 @@
       "attributes": {
         "provider": "Jio",
         "circle": "Lucknow",
-        "sim_status": "Active"
+        "sim_status": "Active",
+        "risk_score": 0.05
       },
       "confidence": 0.96
     },
@@ -2163,7 +2333,8 @@
       "aliases": [],
       "attributes": {
         "phone": "9154565813",
-        "address": "Bengaluru"
+        "address": "Bengaluru",
+        "risk_score": 0.08
       },
       "confidence": 0.92,
       "phone": "9154565813",
@@ -2177,7 +2348,8 @@
       "attributes": {
         "provider": "Airtel",
         "circle": "Bengaluru",
-        "sim_status": "Active"
+        "sim_status": "Active",
+        "risk_score": 0.05
       },
       "confidence": 0.96
     },
@@ -2188,7 +2360,8 @@
       "aliases": [],
       "attributes": {
         "phone": "7080336781",
-        "address": "Ahmedabad"
+        "address": "Ahmedabad",
+        "risk_score": 0.08
       },
       "confidence": 0.92,
       "phone": "7080336781",
@@ -2202,7 +2375,8 @@
       "attributes": {
         "provider": "Airtel",
         "circle": "Ahmedabad",
-        "sim_status": "Active"
+        "sim_status": "Active",
+        "risk_score": 0.05
       },
       "confidence": 0.96
     },
@@ -2213,7 +2387,8 @@
       "aliases": [],
       "attributes": {
         "phone": "7016889873",
-        "address": "Bengaluru"
+        "address": "Bengaluru",
+        "risk_score": 0.08
       },
       "confidence": 0.92,
       "phone": "7016889873",
@@ -2227,7 +2402,8 @@
       "attributes": {
         "provider": "Airtel",
         "circle": "Bengaluru",
-        "sim_status": "Active"
+        "sim_status": "Active",
+        "risk_score": 0.05
       },
       "confidence": 0.96
     },
@@ -2238,7 +2414,8 @@
       "aliases": [],
       "attributes": {
         "phone": "9390044639",
-        "address": "Delhi"
+        "address": "Delhi",
+        "risk_score": 0.08
       },
       "confidence": 0.92,
       "phone": "9390044639",
@@ -2252,7 +2429,8 @@
       "attributes": {
         "provider": "Vi",
         "circle": "Delhi",
-        "sim_status": "Active"
+        "sim_status": "Active",
+        "risk_score": 0.05
       },
       "confidence": 0.96
     },
@@ -2263,7 +2441,8 @@
       "aliases": [],
       "attributes": {
         "phone": "7455736473",
-        "address": "Jaipur"
+        "address": "Jaipur",
+        "risk_score": 0.08
       },
       "confidence": 0.92,
       "phone": "7455736473",
@@ -2277,7 +2456,8 @@
       "attributes": {
         "provider": "Airtel",
         "circle": "Jaipur",
-        "sim_status": "Active"
+        "sim_status": "Active",
+        "risk_score": 0.05
       },
       "confidence": 0.96
     },
@@ -2288,7 +2468,8 @@
       "aliases": [],
       "attributes": {
         "phone": "7181242849",
-        "address": "Mumbai"
+        "address": "Mumbai",
+        "risk_score": 0.08
       },
       "confidence": 0.92,
       "phone": "7181242849",
@@ -2302,7 +2483,8 @@
       "attributes": {
         "provider": "Jio",
         "circle": "Mumbai",
-        "sim_status": "Active"
+        "sim_status": "Active",
+        "risk_score": 0.05
       },
       "confidence": 0.96
     },
@@ -2313,7 +2495,8 @@
       "aliases": [],
       "attributes": {
         "phone": "9412609344",
-        "address": "Delhi"
+        "address": "Delhi",
+        "risk_score": 0.08
       },
       "confidence": 0.92,
       "phone": "9412609344",
@@ -2327,7 +2510,8 @@
       "attributes": {
         "provider": "Airtel",
         "circle": "Delhi",
-        "sim_status": "Active"
+        "sim_status": "Active",
+        "risk_score": 0.05
       },
       "confidence": 0.96
     },
@@ -2338,7 +2522,8 @@
       "aliases": [],
       "attributes": {
         "phone": "8398499907",
-        "address": "Lucknow"
+        "address": "Lucknow",
+        "risk_score": 0.08
       },
       "confidence": 0.92,
       "phone": "8398499907",
@@ -2352,7 +2537,8 @@
       "attributes": {
         "provider": "Airtel",
         "circle": "Lucknow",
-        "sim_status": "Active"
+        "sim_status": "Active",
+        "risk_score": 0.05
       },
       "confidence": 0.96
     },
@@ -2363,7 +2549,8 @@
       "aliases": [],
       "attributes": {
         "phone": "9199716799",
-        "address": "Chennai"
+        "address": "Chennai",
+        "risk_score": 0.08
       },
       "confidence": 0.92,
       "phone": "9199716799",
@@ -2377,7 +2564,8 @@
       "attributes": {
         "provider": "Jio",
         "circle": "Chennai",
-        "sim_status": "Active"
+        "sim_status": "Active",
+        "risk_score": 0.05
       },
       "confidence": 0.96
     },
@@ -2388,7 +2576,8 @@
       "aliases": [],
       "attributes": {
         "phone": "8942810371",
-        "address": "Jaipur"
+        "address": "Jaipur",
+        "risk_score": 0.08
       },
       "confidence": 0.92,
       "phone": "8942810371",
@@ -2402,7 +2591,8 @@
       "attributes": {
         "provider": "Vi",
         "circle": "Jaipur",
-        "sim_status": "Active"
+        "sim_status": "Active",
+        "risk_score": 0.05
       },
       "confidence": 0.96
     },
@@ -2413,7 +2603,8 @@
       "aliases": [],
       "attributes": {
         "phone": "9247168347",
-        "address": "Kolkata"
+        "address": "Kolkata",
+        "risk_score": 0.08
       },
       "confidence": 0.92,
       "phone": "9247168347",
@@ -2427,7 +2618,8 @@
       "attributes": {
         "provider": "Airtel",
         "circle": "Kolkata",
-        "sim_status": "Active"
+        "sim_status": "Active",
+        "risk_score": 0.05
       },
       "confidence": 0.96
     },
@@ -2438,7 +2630,8 @@
       "aliases": [],
       "attributes": {
         "phone": "8922119101",
-        "address": "Bengaluru"
+        "address": "Bengaluru",
+        "risk_score": 0.08
       },
       "confidence": 0.92,
       "phone": "8922119101",
@@ -2452,7 +2645,8 @@
       "attributes": {
         "provider": "Vi",
         "circle": "Bengaluru",
-        "sim_status": "Active"
+        "sim_status": "Active",
+        "risk_score": 0.05
       },
       "confidence": 0.96
     },
@@ -2463,7 +2657,8 @@
       "aliases": [],
       "attributes": {
         "phone": "8685192164",
-        "address": "Ahmedabad"
+        "address": "Ahmedabad",
+        "risk_score": 0.08
       },
       "confidence": 0.92,
       "phone": "8685192164",
@@ -2477,7 +2672,8 @@
       "attributes": {
         "provider": "Vi",
         "circle": "Ahmedabad",
-        "sim_status": "Active"
+        "sim_status": "Active",
+        "risk_score": 0.05
       },
       "confidence": 0.96
     },
@@ -2488,7 +2684,8 @@
       "aliases": [],
       "attributes": {
         "phone": "9882590715",
-        "address": "Chennai"
+        "address": "Chennai",
+        "risk_score": 0.08
       },
       "confidence": 0.92,
       "phone": "9882590715",
@@ -2502,7 +2699,8 @@
       "attributes": {
         "provider": "Vi",
         "circle": "Chennai",
-        "sim_status": "Active"
+        "sim_status": "Active",
+        "risk_score": 0.05
       },
       "confidence": 0.96
     },
@@ -2513,7 +2711,8 @@
       "aliases": [],
       "attributes": {
         "phone": "8300430508",
-        "address": "Mumbai"
+        "address": "Mumbai",
+        "risk_score": 0.08
       },
       "confidence": 0.92,
       "phone": "8300430508",
@@ -2527,7 +2726,8 @@
       "attributes": {
         "provider": "Jio",
         "circle": "Mumbai",
-        "sim_status": "Active"
+        "sim_status": "Active",
+        "risk_score": 0.05
       },
       "confidence": 0.96
     },
@@ -2538,7 +2738,8 @@
       "aliases": [],
       "attributes": {
         "phone": "8572745251",
-        "address": "Bengaluru"
+        "address": "Bengaluru",
+        "risk_score": 0.08
       },
       "confidence": 0.92,
       "phone": "8572745251",
@@ -2552,7 +2753,8 @@
       "attributes": {
         "provider": "Vi",
         "circle": "Bengaluru",
-        "sim_status": "Active"
+        "sim_status": "Active",
+        "risk_score": 0.05
       },
       "confidence": 0.96
     },
@@ -2563,7 +2765,8 @@
       "aliases": [],
       "attributes": {
         "phone": "9008910111",
-        "address": "Chennai"
+        "address": "Chennai",
+        "risk_score": 0.08
       },
       "confidence": 0.92,
       "phone": "9008910111",
@@ -2577,7 +2780,8 @@
       "attributes": {
         "provider": "Vi",
         "circle": "Chennai",
-        "sim_status": "Active"
+        "sim_status": "Active",
+        "risk_score": 0.05
       },
       "confidence": 0.96
     },
@@ -2588,7 +2792,8 @@
       "aliases": [],
       "attributes": {
         "phone": "7960836459",
-        "address": "Bengaluru"
+        "address": "Bengaluru",
+        "risk_score": 0.08
       },
       "confidence": 0.92,
       "phone": "7960836459",
@@ -2602,7 +2807,8 @@
       "attributes": {
         "provider": "Jio",
         "circle": "Bengaluru",
-        "sim_status": "Active"
+        "sim_status": "Active",
+        "risk_score": 0.05
       },
       "confidence": 0.96
     },
@@ -2613,7 +2819,8 @@
       "aliases": [],
       "attributes": {
         "phone": "7840716950",
-        "address": "Hyderabad"
+        "address": "Hyderabad",
+        "risk_score": 0.08
       },
       "confidence": 0.92,
       "phone": "7840716950",
@@ -2627,7 +2834,8 @@
       "attributes": {
         "provider": "Vi",
         "circle": "Hyderabad",
-        "sim_status": "Active"
+        "sim_status": "Active",
+        "risk_score": 0.05
       },
       "confidence": 0.96
     },
@@ -2638,7 +2846,8 @@
       "aliases": [],
       "attributes": {
         "phone": "9379627705",
-        "address": "Ahmedabad"
+        "address": "Ahmedabad",
+        "risk_score": 0.08
       },
       "confidence": 0.92,
       "phone": "9379627705",
@@ -2652,7 +2861,8 @@
       "attributes": {
         "provider": "Vi",
         "circle": "Ahmedabad",
-        "sim_status": "Active"
+        "sim_status": "Active",
+        "risk_score": 0.05
       },
       "confidence": 0.96
     },
@@ -2663,7 +2873,8 @@
       "aliases": [],
       "attributes": {
         "phone": "7077661511",
-        "address": "Pune"
+        "address": "Pune",
+        "risk_score": 0.08
       },
       "confidence": 0.92,
       "phone": "7077661511",
@@ -2677,7 +2888,8 @@
       "attributes": {
         "provider": "Jio",
         "circle": "Pune",
-        "sim_status": "Active"
+        "sim_status": "Active",
+        "risk_score": 0.05
       },
       "confidence": 0.96
     },
@@ -2688,7 +2900,8 @@
       "aliases": [],
       "attributes": {
         "phone": "9679746384",
-        "address": "Kolkata"
+        "address": "Kolkata",
+        "risk_score": 0.08
       },
       "confidence": 0.92,
       "phone": "9679746384",
@@ -2702,7 +2915,8 @@
       "attributes": {
         "provider": "Jio",
         "circle": "Kolkata",
-        "sim_status": "Active"
+        "sim_status": "Active",
+        "risk_score": 0.05
       },
       "confidence": 0.96
     },
@@ -2713,7 +2927,8 @@
       "aliases": [],
       "attributes": {
         "phone": "7484686860",
-        "address": "Chennai"
+        "address": "Chennai",
+        "risk_score": 0.08
       },
       "confidence": 0.92,
       "phone": "7484686860",
@@ -2727,7 +2942,8 @@
       "attributes": {
         "provider": "Airtel",
         "circle": "Chennai",
-        "sim_status": "Active"
+        "sim_status": "Active",
+        "risk_score": 0.05
       },
       "confidence": 0.96
     },
@@ -2738,7 +2954,8 @@
       "aliases": [],
       "attributes": {
         "phone": "8161557137",
-        "address": "Bengaluru"
+        "address": "Bengaluru",
+        "risk_score": 0.08
       },
       "confidence": 0.92,
       "phone": "8161557137",
@@ -2752,7 +2969,8 @@
       "attributes": {
         "provider": "Airtel",
         "circle": "Bengaluru",
-        "sim_status": "Active"
+        "sim_status": "Active",
+        "risk_score": 0.05
       },
       "confidence": 0.96
     },
@@ -2763,7 +2981,8 @@
       "aliases": [],
       "attributes": {
         "phone": "8110717268",
-        "address": "Pune"
+        "address": "Pune",
+        "risk_score": 0.08
       },
       "confidence": 0.92,
       "phone": "8110717268",
@@ -2777,7 +2996,8 @@
       "attributes": {
         "provider": "Airtel",
         "circle": "Pune",
-        "sim_status": "Active"
+        "sim_status": "Active",
+        "risk_score": 0.05
       },
       "confidence": 0.96
     },
@@ -2792,7 +3012,8 @@
         "bank": "State Bank of India",
         "branch": "Central Commercial Branch",
         "flag": "High-Risk Shared Mule Account",
-        "reported_balance": "\u20b942,50,000"
+        "reported_balance": "\u20b942,50,000",
+        "risk_score": 0.05
       },
       "confidence": 0.98
     },
@@ -2804,7 +3025,8 @@
       "attributes": {
         "bank": "Kotak Mahindra Bank",
         "account_type": "Savings/Current",
-        "status": "Monitored"
+        "status": "Monitored",
+        "risk_score": 0.07
       },
       "confidence": 0.93
     },
@@ -2816,7 +3038,8 @@
       "attributes": {
         "bank": "ICICI Bank",
         "account_type": "Savings/Current",
-        "status": "Monitored"
+        "status": "Monitored",
+        "risk_score": 0.07
       },
       "confidence": 0.93
     },
@@ -2828,7 +3051,8 @@
       "attributes": {
         "bank": "Axis Bank",
         "account_type": "Savings/Current",
-        "status": "Monitored"
+        "status": "Monitored",
+        "risk_score": 0.07
       },
       "confidence": 0.93
     },
@@ -2840,7 +3064,8 @@
       "attributes": {
         "bank": "HDFC Bank",
         "account_type": "Savings/Current",
-        "status": "Monitored"
+        "status": "Monitored",
+        "risk_score": 0.07
       },
       "confidence": 0.93
     },
@@ -2852,7 +3077,8 @@
       "attributes": {
         "bank": "ICICI Bank",
         "account_type": "Savings/Current",
-        "status": "Monitored"
+        "status": "Monitored",
+        "risk_score": 0.07
       },
       "confidence": 0.93
     },
@@ -2864,7 +3090,8 @@
       "attributes": {
         "bank": "HDFC Bank",
         "account_type": "Savings/Current",
-        "status": "Monitored"
+        "status": "Monitored",
+        "risk_score": 0.07
       },
       "confidence": 0.93
     },
@@ -2876,7 +3103,8 @@
       "attributes": {
         "bank": "Axis Bank",
         "account_type": "Savings/Current",
-        "status": "Monitored"
+        "status": "Monitored",
+        "risk_score": 0.07
       },
       "confidence": 0.93
     },
@@ -2888,7 +3116,8 @@
       "attributes": {
         "bank": "Punjab National Bank",
         "account_type": "Savings/Current",
-        "status": "Monitored"
+        "status": "Monitored",
+        "risk_score": 0.07
       },
       "confidence": 0.93
     },
@@ -2900,7 +3129,8 @@
       "attributes": {
         "bank": "Axis Bank",
         "account_type": "Savings/Current",
-        "status": "Monitored"
+        "status": "Monitored",
+        "risk_score": 0.07
       },
       "confidence": 0.93
     },
@@ -2912,7 +3142,8 @@
       "attributes": {
         "bank": "HDFC Bank",
         "account_type": "Savings/Current",
-        "status": "Monitored"
+        "status": "Monitored",
+        "risk_score": 0.07
       },
       "confidence": 0.93
     },
@@ -2924,7 +3155,8 @@
       "attributes": {
         "bank": "ICICI Bank",
         "account_type": "Savings/Current",
-        "status": "Monitored"
+        "status": "Monitored",
+        "risk_score": 0.07
       },
       "confidence": 0.93
     },
@@ -2936,7 +3168,8 @@
       "attributes": {
         "bank": "Kotak Mahindra Bank",
         "account_type": "Savings/Current",
-        "status": "Monitored"
+        "status": "Monitored",
+        "risk_score": 0.07
       },
       "confidence": 0.93
     },
@@ -2948,7 +3181,8 @@
       "attributes": {
         "bank": "Axis Bank",
         "account_type": "Savings/Current",
-        "status": "Monitored"
+        "status": "Monitored",
+        "risk_score": 0.07
       },
       "confidence": 0.93
     },
@@ -2960,7 +3194,8 @@
       "attributes": {
         "bank": "ICICI Bank",
         "account_type": "Savings/Current",
-        "status": "Monitored"
+        "status": "Monitored",
+        "risk_score": 0.07
       },
       "confidence": 0.93
     },
@@ -2972,7 +3207,8 @@
       "attributes": {
         "bank": "Punjab National Bank",
         "account_type": "Savings/Current",
-        "status": "Monitored"
+        "status": "Monitored",
+        "risk_score": 0.07
       },
       "confidence": 0.93
     },
@@ -2984,7 +3220,8 @@
       "attributes": {
         "bank": "Punjab National Bank",
         "account_type": "Savings/Current",
-        "status": "Monitored"
+        "status": "Monitored",
+        "risk_score": 0.07
       },
       "confidence": 0.93
     },
@@ -2996,7 +3233,8 @@
       "attributes": {
         "bank": "Punjab National Bank",
         "account_type": "Savings/Current",
-        "status": "Monitored"
+        "status": "Monitored",
+        "risk_score": 0.07
       },
       "confidence": 0.93
     },
@@ -3008,7 +3246,8 @@
       "attributes": {
         "bank": "ICICI Bank",
         "account_type": "Savings/Current",
-        "status": "Monitored"
+        "status": "Monitored",
+        "risk_score": 0.07
       },
       "confidence": 0.93
     },
@@ -3020,7 +3259,8 @@
       "attributes": {
         "bank": "Axis Bank",
         "account_type": "Savings/Current",
-        "status": "Monitored"
+        "status": "Monitored",
+        "risk_score": 0.07
       },
       "confidence": 0.93
     },
@@ -3032,7 +3272,8 @@
       "attributes": {
         "bank": "ICICI Bank",
         "account_type": "Savings/Current",
-        "status": "Monitored"
+        "status": "Monitored",
+        "risk_score": 0.07
       },
       "confidence": 0.93
     },
@@ -3044,7 +3285,8 @@
       "attributes": {
         "bank": "ICICI Bank",
         "account_type": "Savings/Current",
-        "status": "Monitored"
+        "status": "Monitored",
+        "risk_score": 0.07
       },
       "confidence": 0.93
     },
@@ -3056,7 +3298,8 @@
       "attributes": {
         "bank": "Kotak Mahindra Bank",
         "account_type": "Savings/Current",
-        "status": "Monitored"
+        "status": "Monitored",
+        "risk_score": 0.07
       },
       "confidence": 0.93
     },
@@ -3068,7 +3311,8 @@
       "attributes": {
         "bank": "Kotak Mahindra Bank",
         "account_type": "Savings/Current",
-        "status": "Monitored"
+        "status": "Monitored",
+        "risk_score": 0.07
       },
       "confidence": 0.93
     },
@@ -3080,7 +3324,8 @@
       "attributes": {
         "bank": "Axis Bank",
         "account_type": "Savings/Current",
-        "status": "Monitored"
+        "status": "Monitored",
+        "risk_score": 0.07
       },
       "confidence": 0.93
     },
@@ -3092,7 +3337,8 @@
       "attributes": {
         "bank": "Kotak Mahindra Bank",
         "account_type": "Savings/Current",
-        "status": "Monitored"
+        "status": "Monitored",
+        "risk_score": 0.07
       },
       "confidence": 0.93
     },
@@ -3104,7 +3350,8 @@
       "attributes": {
         "bank": "Punjab National Bank",
         "account_type": "Savings/Current",
-        "status": "Monitored"
+        "status": "Monitored",
+        "risk_score": 0.07
       },
       "confidence": 0.93
     },
@@ -3116,7 +3363,8 @@
       "attributes": {
         "bank": "Kotak Mahindra Bank",
         "account_type": "Savings/Current",
-        "status": "Monitored"
+        "status": "Monitored",
+        "risk_score": 0.07
       },
       "confidence": 0.93
     },
@@ -3128,7 +3376,8 @@
       "attributes": {
         "bank": "Punjab National Bank",
         "account_type": "Savings/Current",
-        "status": "Monitored"
+        "status": "Monitored",
+        "risk_score": 0.07
       },
       "confidence": 0.93
     },
@@ -3140,7 +3389,8 @@
       "attributes": {
         "bank": "Axis Bank",
         "account_type": "Savings/Current",
-        "status": "Monitored"
+        "status": "Monitored",
+        "risk_score": 0.07
       },
       "confidence": 0.93
     },
@@ -3152,7 +3402,8 @@
       "attributes": {
         "bank": "ICICI Bank",
         "account_type": "Savings/Current",
-        "status": "Monitored"
+        "status": "Monitored",
+        "risk_score": 0.07
       },
       "confidence": 0.93
     },
@@ -3164,7 +3415,8 @@
       "attributes": {
         "bank": "ICICI Bank",
         "account_type": "Savings/Current",
-        "status": "Monitored"
+        "status": "Monitored",
+        "risk_score": 0.07
       },
       "confidence": 0.93
     },
@@ -3176,7 +3428,8 @@
       "attributes": {
         "bank": "Kotak Mahindra Bank",
         "account_type": "Savings/Current",
-        "status": "Monitored"
+        "status": "Monitored",
+        "risk_score": 0.07
       },
       "confidence": 0.93
     },
@@ -3188,7 +3441,8 @@
       "attributes": {
         "bank": "Punjab National Bank",
         "account_type": "Savings/Current",
-        "status": "Monitored"
+        "status": "Monitored",
+        "risk_score": 0.07
       },
       "confidence": 0.93
     },
@@ -3200,7 +3454,8 @@
       "attributes": {
         "bank": "HDFC Bank",
         "account_type": "Savings/Current",
-        "status": "Monitored"
+        "status": "Monitored",
+        "risk_score": 0.07
       },
       "confidence": 0.93
     },
@@ -3212,7 +3467,8 @@
       "attributes": {
         "bank": "HDFC Bank",
         "account_type": "Savings/Current",
-        "status": "Monitored"
+        "status": "Monitored",
+        "risk_score": 0.07
       },
       "confidence": 0.93
     },
@@ -3224,7 +3480,8 @@
       "attributes": {
         "bank": "HDFC Bank",
         "account_type": "Savings/Current",
-        "status": "Monitored"
+        "status": "Monitored",
+        "risk_score": 0.07
       },
       "confidence": 0.93
     },
@@ -3236,7 +3493,8 @@
       "attributes": {
         "bank": "ICICI Bank",
         "account_type": "Savings/Current",
-        "status": "Monitored"
+        "status": "Monitored",
+        "risk_score": 0.07
       },
       "confidence": 0.93
     },
@@ -3248,7 +3506,8 @@
       "attributes": {
         "bank": "ICICI Bank",
         "account_type": "Savings/Current",
-        "status": "Monitored"
+        "status": "Monitored",
+        "risk_score": 0.07
       },
       "confidence": 0.93
     },
@@ -3262,7 +3521,8 @@
       "attributes": {
         "category": "Commercial Truck/SUV",
         "toll_plaza_hit": "NH48 Toll Plaza",
-        "status": "ANPR Monitored"
+        "status": "ANPR Monitored",
+        "risk_score": 0.09
       },
       "confidence": 0.91
     },
@@ -3276,7 +3536,8 @@
       "attributes": {
         "category": "Commercial Truck/SUV",
         "toll_plaza_hit": "NH48 Toll Plaza",
-        "status": "ANPR Monitored"
+        "status": "ANPR Monitored",
+        "risk_score": 0.09
       },
       "confidence": 0.91
     },
@@ -3290,7 +3551,8 @@
       "attributes": {
         "category": "Commercial Truck/SUV",
         "toll_plaza_hit": "NH48 Toll Plaza",
-        "status": "ANPR Monitored"
+        "status": "ANPR Monitored",
+        "risk_score": 0.09
       },
       "confidence": 0.91
     },
@@ -3304,7 +3566,8 @@
       "attributes": {
         "category": "Commercial Truck/SUV",
         "toll_plaza_hit": "NH48 Toll Plaza",
-        "status": "ANPR Monitored"
+        "status": "ANPR Monitored",
+        "risk_score": 0.09
       },
       "confidence": 0.91
     },
@@ -3318,7 +3581,8 @@
       "attributes": {
         "category": "Commercial Truck/SUV",
         "toll_plaza_hit": "NH48 Toll Plaza",
-        "status": "ANPR Monitored"
+        "status": "ANPR Monitored",
+        "risk_score": 0.09
       },
       "confidence": 0.91
     },
@@ -3332,7 +3596,8 @@
       "attributes": {
         "category": "Commercial Truck/SUV",
         "toll_plaza_hit": "NH48 Toll Plaza",
-        "status": "ANPR Monitored"
+        "status": "ANPR Monitored",
+        "risk_score": 0.09
       },
       "confidence": 0.91
     },
@@ -3346,7 +3611,8 @@
       "attributes": {
         "category": "Commercial Truck/SUV",
         "toll_plaza_hit": "NH48 Toll Plaza",
-        "status": "ANPR Monitored"
+        "status": "ANPR Monitored",
+        "risk_score": 0.09
       },
       "confidence": 0.91
     },
@@ -3360,7 +3626,8 @@
       "attributes": {
         "category": "Commercial Truck/SUV",
         "toll_plaza_hit": "NH48 Toll Plaza",
-        "status": "ANPR Monitored"
+        "status": "ANPR Monitored",
+        "risk_score": 0.09
       },
       "confidence": 0.91
     },
@@ -3374,7 +3641,8 @@
       "attributes": {
         "category": "Commercial Truck/SUV",
         "toll_plaza_hit": "NH48 Toll Plaza",
-        "status": "ANPR Monitored"
+        "status": "ANPR Monitored",
+        "risk_score": 0.09
       },
       "confidence": 0.91
     },
@@ -3388,7 +3656,8 @@
       "attributes": {
         "category": "Commercial Truck/SUV",
         "toll_plaza_hit": "NH48 Toll Plaza",
-        "status": "ANPR Monitored"
+        "status": "ANPR Monitored",
+        "risk_score": 0.09
       },
       "confidence": 0.91
     },
@@ -3402,7 +3671,8 @@
       "attributes": {
         "category": "Commercial Truck/SUV",
         "toll_plaza_hit": "NH48 Toll Plaza",
-        "status": "ANPR Monitored"
+        "status": "ANPR Monitored",
+        "risk_score": 0.09
       },
       "confidence": 0.91
     },
@@ -3416,7 +3686,8 @@
       "attributes": {
         "category": "Commercial Truck/SUV",
         "toll_plaza_hit": "NH48 Toll Plaza",
-        "status": "ANPR Monitored"
+        "status": "ANPR Monitored",
+        "risk_score": 0.09
       },
       "confidence": 0.91
     },
@@ -3430,7 +3701,8 @@
       "attributes": {
         "category": "Commercial Truck/SUV",
         "toll_plaza_hit": "NH48 Toll Plaza",
-        "status": "ANPR Monitored"
+        "status": "ANPR Monitored",
+        "risk_score": 0.09
       },
       "confidence": 0.91
     },
@@ -3444,7 +3716,8 @@
       "attributes": {
         "category": "Commercial Truck/SUV",
         "toll_plaza_hit": "NH48 Toll Plaza",
-        "status": "ANPR Monitored"
+        "status": "ANPR Monitored",
+        "risk_score": 0.09
       },
       "confidence": 0.91
     },
@@ -3458,7 +3731,8 @@
       "attributes": {
         "category": "Commercial Truck/SUV",
         "toll_plaza_hit": "NH48 Toll Plaza",
-        "status": "ANPR Monitored"
+        "status": "ANPR Monitored",
+        "risk_score": 0.09
       },
       "confidence": 0.91
     },
@@ -3472,7 +3746,8 @@
       "attributes": {
         "category": "Commercial Truck/SUV",
         "toll_plaza_hit": "NH48 Toll Plaza",
-        "status": "ANPR Monitored"
+        "status": "ANPR Monitored",
+        "risk_score": 0.09
       },
       "confidence": 0.91
     },
@@ -3486,7 +3761,8 @@
       "attributes": {
         "category": "Commercial Truck/SUV",
         "toll_plaza_hit": "NH48 Toll Plaza",
-        "status": "ANPR Monitored"
+        "status": "ANPR Monitored",
+        "risk_score": 0.09
       },
       "confidence": 0.91
     },
@@ -3500,7 +3776,8 @@
       "attributes": {
         "category": "Commercial Truck/SUV",
         "toll_plaza_hit": "NH48 Toll Plaza",
-        "status": "ANPR Monitored"
+        "status": "ANPR Monitored",
+        "risk_score": 0.09
       },
       "confidence": 0.91
     },
@@ -3514,7 +3791,8 @@
       "attributes": {
         "category": "Commercial Truck/SUV",
         "toll_plaza_hit": "NH48 Toll Plaza",
-        "status": "ANPR Monitored"
+        "status": "ANPR Monitored",
+        "risk_score": 0.09
       },
       "confidence": 0.91
     },
@@ -3528,7 +3806,8 @@
       "attributes": {
         "category": "Commercial Truck/SUV",
         "toll_plaza_hit": "NH48 Toll Plaza",
-        "status": "ANPR Monitored"
+        "status": "ANPR Monitored",
+        "risk_score": 0.09
       },
       "confidence": 0.91
     },
@@ -3542,7 +3821,8 @@
       "attributes": {
         "category": "Commercial Truck/SUV",
         "toll_plaza_hit": "NH48 Toll Plaza",
-        "status": "ANPR Monitored"
+        "status": "ANPR Monitored",
+        "risk_score": 0.09
       },
       "confidence": 0.91
     }

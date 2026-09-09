@@ -302,15 +302,7 @@ body {
 
   z-index: 5;
 
-  display: grid;
-
-  grid-template-columns:
-    360px
-    minmax(0, 1fr);
-
-  align-items: stretch;
-
-  gap: 18px;
+  display: block;
 
   width: 100%;
 
@@ -519,20 +511,7 @@ body {
    RESPONSIVE
 ================================================== */
 
-@media (max-width: 1100px) {
-  .sih-workspace {
-    grid-template-columns:
-      320px
-      minmax(0, 1fr);
-  }
-}
-
 @media (max-width: 850px) {
-  .sih-workspace {
-    grid-template-columns:
-      1fr;
-  }
-
   .sih-sidebar {
     min-height: auto;
   }

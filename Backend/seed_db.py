@@ -59,12 +59,14 @@ def seed():
         def add_entity(entity_id, entity_type, canonical_name, aliases=None, attributes=None, confidence=0.92):
             if entity_id in entities_dict:
                 return
+            attrs = dict(attributes or {})
+            attrs["risk_score"] = round(max(0.05, min(0.95, 1.0 - confidence)), 2)
             ent = EntityModel(
                 entity_id=entity_id,
                 entity_type=entity_type,
                 canonical_name=canonical_name,
                 aliases=aliases or [],
-                attributes=attributes or {},
+                attributes=attrs,
                 confidence=confidence,
             )
             entities_dict[entity_id] = ent
@@ -97,8 +99,8 @@ def seed():
 
         # 2. Demo rich graph records (phones, accounts, vehicles, addresses)
         demo_nodes = [
-            ("P017", "person", "Anil Sharma", ["A. Sharma"], {"location": "Delhi", "risk_score": 0.91}, 0.91),
-            ("P031", "person", "Vikram Singh", ["V. Singh"], {"location": "Gurgaon", "risk_score": 0.89}, 0.89),
+            ("P017", "person", "Anil Sharma", ["A. Sharma"], {"location": "Delhi", "risk_score": 0.09}, 0.91),
+            ("P031", "person", "Vikram Singh", ["V. Singh"], {"location": "Gurgaon", "risk_score": 0.11}, 0.89),
             ("PHONE_08", "phone", "+91 9811122233", [], {"provider": "Jio", "circle": "Delhi"}, 0.97),
             ("PHONE_21", "phone", "+91 9898989898", [], {"provider": "Airtel", "circle": "Haryana"}, 0.95),
             ("ACC_12", "account", "HDFC Bank •••• 4821", [], {"bank": "HDFC Bank", "type": "Current"}, 0.93),

@@ -114,13 +114,13 @@ function Sidebar() {
                   key={f.key}
                   type="button"
                   onClick={() => toggleFilter(f.key)}
-                  className={`flex items-center gap-1.5 rounded-lg px-2.5 py-2 text-xs font-medium transition border ${
+                  className={`flex items-center gap-1.5 rounded-lg px-2 py-1.5 text-[11px] font-medium transition border ${
                     isActive
                       ? "border-teal-500/40 bg-teal-500/15 text-teal-200 shadow-sm shadow-teal-950/20"
                       : "border-slate-800/80 bg-slate-900/50 text-slate-500 hover:border-slate-700 hover:text-slate-300"
                   }`}
                 >
-                  <Icon size={13} className={isActive ? f.color : "text-slate-500"} />
+                  <Icon size={12} className={isActive ? f.color : "text-slate-500"} />
                   <span className="capitalize">{f.label}</span>
                 </button>
               )
