@@ -1,7 +1,29 @@
+import { useState, useEffect } from "react"
 import { NavLink } from "react-router-dom"
-import { LayoutDashboard, Network, Users, FileText, ShieldAlert } from "lucide-react"
+import { LayoutDashboard, Network, Users, FileText, ShieldAlert, Database } from "lucide-react"
+import { checkBackendHealth, type HealthStatus } from "../services/api"
 
 function Sidebar() {
+  const [health, setHealth] = useState<HealthStatus>({ connected: false, status: "checking" })
+
+  useEffect(() => {
+    let mounted = true
+
+    const poll = async () => {
+      const res = await checkBackendHealth()
+      if (mounted) {
+        setHealth(res)
+      }
+    }
+
+    poll()
+    const interval = setInterval(poll, 10000)
+    return () => {
+      mounted = false
+      clearInterval(interval)
+    }
+  }, [])
+
   const navItems = [
     { name: "Dashboard", path: "/", icon: LayoutDashboard },
     { name: "Investigations", path: "/investigations", icon: Network },
@@ -49,15 +71,29 @@ function Sidebar() {
         </nav>
       </div>
 
-      <div className="rounded-xl border border-slate-800/80 bg-slate-900/50 p-3.5">
-        <div className="flex items-center justify-between text-xs text-slate-400">
-          <span>System Status</span>
-          <span className="flex items-center gap-1.5 text-emerald-400 font-medium">
-            <span className="h-1.5 w-1.5 rounded-full bg-emerald-400 animate-pulse" />
-            Active
-          </span>
+      <div className="space-y-2">
+        <div className="rounded-xl border border-slate-800/80 bg-slate-900/50 p-3.5">
+          <div className="flex items-center justify-between text-xs text-slate-400">
+            <span className="flex items-center gap-1.5">
+              <Database size={13} className="text-slate-400" />
+              FastAPI Backend
+            </span>
+            {health.connected ? (
+              <span className="flex items-center gap-1.5 text-emerald-400 font-medium">
+                <span className="h-2 w-2 rounded-full bg-emerald-400 animate-pulse" />
+                Live :8000
+              </span>
+            ) : (
+              <span className="flex items-center gap-1.5 text-amber-400 font-medium">
+                <span className="h-2 w-2 rounded-full bg-amber-400" />
+                Local Cache
+              </span>
+            )}
+          </div>
+          <p className="mt-1.5 text-[11px] text-slate-500">
+            {health.connected ? "SQLite Connected (sih_investigation.db)" : "Syncing live telemetry..."}
+          </p>
         </div>
-        <p className="mt-1.5 text-[11px] text-slate-500">SIH26189 Neural Engine</p>
       </div>
     </aside>
   )

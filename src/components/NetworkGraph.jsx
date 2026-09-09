@@ -372,6 +372,7 @@ function NetworkGraph({
   onNodeSelect,
   activeFilters,
   activeRelationshipFilters,
+  graph = investigationGraph,
 }) {
   const graphRef =
     useRef(null);
@@ -440,7 +441,7 @@ function NetworkGraph({
   const entityFilteredGraph =
     useMemo(() => {
       return filterGraph(
-        investigationGraph,
+        graph || investigationGraph,
         activeFilters ||
           [
             "person",
@@ -451,7 +452,7 @@ function NetworkGraph({
             "address",
           ]
       );
-    }, [activeFilters]);
+    }, [graph, activeFilters]);
 
   /* ==================================================
      RELATIONSHIP FILTER
@@ -517,7 +518,7 @@ function NetworkGraph({
         return [];
       }
 
-      return investigationGraph.links.filter(
+      return ((graph && graph.links) || investigationGraph.links).filter(
         (link) => {
           const sourceId =
             getNodeId(
@@ -537,7 +538,7 @@ function NetworkGraph({
           );
         }
       );
-    }, [selectedNode]);
+    }, [selectedNode, graph]);
 
   /* ==================================================
      ZOOM CONTROLS

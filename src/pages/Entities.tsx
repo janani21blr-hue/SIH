@@ -1,8 +1,9 @@
-import { useState, useMemo } from "react"
+import { useState, useMemo, useEffect } from "react"
 import { Link } from "react-router-dom"
-import { Search, User, Phone, CreditCard, Car, Building2, MapPin, ArrowUpRight } from "lucide-react"
+import { Search, User, Phone, CreditCard, Car, Building2, MapPin, ArrowUpRight, Database, RefreshCw } from "lucide-react"
 import { investigationGraph } from "../data/graphData"
 import EntityProfileCard from "../components/EntityProfileCard"
+import { fetchEntities } from "../services/api"
 
 const TYPE_ICONS: Record<string, any> = {
   person: User,
@@ -25,8 +26,28 @@ const TYPE_COLORS: Record<string, string> = {
 function Entities() {
   const [search, setSearch] = useState("")
   const [selectedType, setSelectedType] = useState<string>("all")
+  const [nodes, setNodes] = useState<any[]>(investigationGraph.nodes || [])
+  const [isLive, setIsLive] = useState(false)
+  const [loading, setLoading] = useState(false)
 
-  const nodes = investigationGraph.nodes || []
+  const loadEntities = async () => {
+    setLoading(true)
+    try {
+      const data = await fetchEntities()
+      if (data && data.length > 0) {
+        setNodes(data)
+        setIsLive(true)
+      }
+    } catch {
+      // Keep fallback
+    } finally {
+      setLoading(false)
+    }
+  }
+
+  useEffect(() => {
+    loadEntities()
+  }, [])
 
   const entityTypes = useMemo(() => {
     const types = new Set(nodes.map((n: any) => n.entity_type || n.type || "unknown"))
@@ -37,7 +58,7 @@ function Entities() {
     return nodes.filter((node: any) => {
       const type = (node.entity_type || node.type || "").toLowerCase()
       const name = (node.canonical_name || node.name || node.id || "").toLowerCase()
-      const id = String(node.id || "").toLowerCase()
+      const id = String(node.id || node.entity_id || "").toLowerCase()
       const aliases = Array.isArray(node.aliases) ? node.aliases.join(" ").toLowerCase() : ""
 
       const matchesType = selectedType === "all" || type === selectedType
@@ -61,10 +82,30 @@ function Entities() {
           </p>
         </div>
 
-        <div className="flex items-center gap-2 text-xs font-semibold text-teal-400">
-          <span className="rounded-md border border-teal-500/30 bg-teal-500/10 px-3 py-1.5">
+        <div className="flex items-center gap-2 text-xs font-semibold">
+          {isLive && (
+            <span className="flex items-center gap-1.5 rounded-md border border-emerald-500/30 bg-emerald-500/10 px-2.5 py-1.5 text-emerald-400">
+              <span className="relative flex h-2 w-2">
+                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75"></span>
+                <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-500"></span>
+              </span>
+              <Database size={13} />
+              SQLite DB Active
+            </span>
+          )}
+
+          <span className="rounded-md border border-teal-500/30 bg-teal-500/10 px-3 py-1.5 text-teal-400">
             {filteredNodes.length} of {nodes.length} Entities Indexed
           </span>
+
+          <button
+            onClick={loadEntities}
+            disabled={loading}
+            title="Refresh entities from backend"
+            className="rounded-md border border-slate-800 bg-slate-900 p-1.5 text-slate-400 hover:text-slate-200 transition"
+          >
+            <RefreshCw size={14} className={loading ? "animate-spin" : ""} />
+          </button>
         </div>
       </div>
 

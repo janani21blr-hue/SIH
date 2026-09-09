@@ -28,6 +28,9 @@ import InvestigationSummary from "../components/InvestigationSummary";
 import {
   investigationGraph,
 } from "../data/graphData";
+import {
+  fetchGraphData,
+} from "../services/api";
 
 /* ==================================================
    ENTITY FILTERS
@@ -117,12 +120,42 @@ function Investigation() {
   ================================================== */
 
   const [
+    graphData,
+    setGraphData,
+  ] = useState(investigationGraph);
+
+  const [
+    isLiveGraph,
+    setIsLiveGraph,
+  ] = useState(false);
+
+  const [
     selectedNode,
     setSelectedNode,
   ] = useState(
     investigationGraph.nodes?.[0] ||
       null
   );
+
+  useEffect(() => {
+    let isMounted = true;
+    fetchGraphData()
+      .then((data) => {
+        if (isMounted && data && data.nodes && data.nodes.length > 0) {
+          setGraphData(data);
+          setIsLiveGraph(true);
+          setSelectedNode((current) => {
+            if (!current) return data.nodes[0];
+            const exists = data.nodes.find((n) => n.id === current.id);
+            return exists || data.nodes[0];
+          });
+        }
+      })
+      .catch(() => {});
+    return () => {
+      isMounted = false;
+    };
+  }, []);
 
   /* ==================================================
      SEARCH
@@ -207,7 +240,7 @@ function Investigation() {
     useMemo(() => {
       const map = {};
 
-      investigationGraph.nodes.forEach(
+      (graphData.nodes || []).forEach(
         (node) => {
           map[node.id] =
             node;
@@ -215,7 +248,7 @@ function Investigation() {
       );
 
       return map;
-    }, []);
+    }, [graphData]);
 
   /* ==================================================
      RELATIONSHIP TYPES
@@ -225,7 +258,7 @@ function Investigation() {
     useMemo(() => {
       return [
         ...new Set(
-          investigationGraph.links
+          (graphData.links || [])
             .map(
               (link) =>
                 link.relationship
@@ -233,7 +266,7 @@ function Investigation() {
             .filter(Boolean)
         ),
       ].sort();
-    }, []);
+    }, [graphData]);
 
   /* ==================================================
      SEARCH RESULTS
@@ -250,7 +283,7 @@ function Investigation() {
         return [];
       }
 
-      return investigationGraph.nodes
+      return (graphData.nodes || [])
         .filter((node) => {
           const name =
             getNodeName(
@@ -293,7 +326,7 @@ function Investigation() {
           );
         })
         .slice(0, 8);
-    }, [searchTerm]);
+    }, [searchTerm, graphData]);
 
   /* ==================================================
      SELECTED RELATIONSHIPS
@@ -305,7 +338,7 @@ function Investigation() {
         return [];
       }
 
-      return investigationGraph.links.filter(
+      return (graphData.links || []).filter(
         (link) => {
           const sourceId =
             getNodeId(
@@ -325,7 +358,7 @@ function Investigation() {
           );
         }
       );
-    }, [selectedNode]);
+    }, [selectedNode, graphData]);
 
   /* ==================================================
      PATH RELATIONSHIPS
@@ -356,7 +389,7 @@ function Investigation() {
               ];
 
             const relationship =
-              investigationGraph.links.find(
+              (graphData.links || []).find(
                 (link) => {
                   const sourceId =
                     getNodeId(
@@ -393,6 +426,7 @@ function Investigation() {
         );
     }, [
       investigationPath,
+      graphData,
     ]);
 
   /* ==================================================
@@ -1015,13 +1049,15 @@ function Investigation() {
 
               <span
                 className="
+                  relative
+                  flex
                   h-2
                   w-2
-                  rounded-full
-                  bg-emerald-400
-                  shadow-[0_0_10px_rgba(52,211,153,.7)]
                 "
-              />
+              >
+                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75"></span>
+                <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-400 shadow-[0_0_10px_rgba(52,211,153,.7)]"></span>
+              </span>
 
               <span
                 className="
@@ -1030,7 +1066,7 @@ function Investigation() {
                   text-emerald-300
                 "
               >
-                Live Analysis
+                {isLiveGraph ? "SQLite Backend Live" : "Live Analysis"}
               </span>
 
             </div>
@@ -1770,6 +1806,10 @@ function Investigation() {
                   activeRelationshipFilters={
                     activeRelationshipFilters
                   }
+
+                  graph={
+                    graphData
+                  }
                 />
 
               </div>
@@ -1957,7 +1997,7 @@ function Investigation() {
               }
 
               graph={
-                investigationGraph
+                graphData
               }
             />
 
