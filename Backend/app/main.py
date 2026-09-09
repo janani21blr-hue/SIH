@@ -30,10 +30,7 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-# -------------------------
 # API routes
-# -------------------------
-
 app.include_router(health.router, prefix="/api")
 app.include_router(entities.router, prefix="/api")
 app.include_router(graph.router, prefix="/api")
@@ -41,22 +38,17 @@ app.include_router(relationships.router, prefix="/api")
 app.include_router(investigations.router, prefix="/api")
 
 
-# -------------------------
-# React frontend
-# -------------------------
-
+# React production build
 BASE_DIR = Path(__file__).resolve().parents[2]
 DIST_DIR = BASE_DIR / "dist"
 
-if DIST_DIR.exists():
-    assets_dir = DIST_DIR / "assets"
-
-    if assets_dir.exists():
-        app.mount(
-            "/assets",
-            StaticFiles(directory=str(assets_dir)),
-            name="assets",
-        )
+# Serve Vite assets
+if (DIST_DIR / "assets").exists():
+    app.mount(
+        "/assets",
+        StaticFiles(directory=str(DIST_DIR / "assets")),
+        name="assets",
+    )
 
 
 @app.get("/")
@@ -73,11 +65,9 @@ def serve_frontend():
 
 @app.get("/{full_path:path}")
 def serve_react_routes(full_path: str):
-    # Let API requests be handled by the API routers
+    # Don't intercept API requests
     if full_path.startswith("api/"):
-        return {
-            "detail": "API endpoint not found"
-        }
+        return {"detail": "API endpoint not found"}
 
     requested_file = DIST_DIR / full_path
 
