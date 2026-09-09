@@ -30,17 +30,21 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
+# -------------------------
 # API routes
-API_PREFIX = "/api"
+# -------------------------
 
-app.include_router(health.router, prefix=API_PREFIX)
-app.include_router(entities.router, prefix=API_PREFIX)
-app.include_router(graph.router, prefix=API_PREFIX)
-app.include_router(relationships.router, prefix=API_PREFIX)
-app.include_router(investigations.router, prefix=API_PREFIX)
+app.include_router(health.router, prefix="/api")
+app.include_router(entities.router, prefix="/api")
+app.include_router(graph.router, prefix="/api")
+app.include_router(relationships.router, prefix="/api")
+app.include_router(investigations.router, prefix="/api")
 
 
-# React production build
+# -------------------------
+# React frontend
+# -------------------------
+
 BASE_DIR = Path(__file__).resolve().parents[2]
 DIST_DIR = BASE_DIR / "dist"
 
@@ -56,20 +60,20 @@ if DIST_DIR.exists():
 
 
 @app.get("/")
-async def serve_frontend():
+def serve_frontend():
     index_file = DIST_DIR / "index.html"
 
     if index_file.exists():
         return FileResponse(index_file)
 
     return {
-        "message": "AI Criminal Network Analysis API is running"
+        "message": "Frontend build not found"
     }
 
 
 @app.get("/{full_path:path}")
-async def serve_react_routes(full_path: str):
-    # Never intercept API routes
+def serve_react_routes(full_path: str):
+    # Let API requests be handled by the API routers
     if full_path.startswith("api/"):
         return {
             "detail": "API endpoint not found"
@@ -77,7 +81,6 @@ async def serve_react_routes(full_path: str):
 
     requested_file = DIST_DIR / full_path
 
-    # Serve existing static files
     if requested_file.is_file():
         return FileResponse(requested_file)
 
@@ -88,5 +91,5 @@ async def serve_react_routes(full_path: str):
         return FileResponse(index_file)
 
     return {
-        "message": "AI Criminal Network Analysis API is running"
+        "message": "Frontend build not found"
     }
