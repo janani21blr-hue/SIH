@@ -1,7 +1,7 @@
 import { investigationGraph } from "../data/graphData"
 import { dashboardStats } from "../data/mockData"
 
-const API_BASE = "/api"
+const API_BASE = "/api";
 
 export interface BackendEntity {
   entity_id: string
