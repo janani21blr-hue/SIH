@@ -407,7 +407,7 @@ function NetworkGraph({
   ================================================== */
 
   // Stable refs so the native listener never has stale closures
-  const filteredGraphRef = useRef(filteredGraph);
+  const filteredGraphRef = useRef(null);
   const onNodeSelectRef = useRef(onNodeSelect);
 
   useEffect(() => {
