@@ -20,9 +20,12 @@ export function filterNodes(nodes, activeFilters) {
     return nodes;
   }
 
-  return nodes.filter((node) =>
-    activeFilters.includes(node.entity_type)
-  );
+  const activeSet = new Set(activeFilters.map((f) => String(f).toLowerCase()));
+
+  return (nodes || []).filter((node) => {
+    const type = String(node.entity_type || node.type || "").toLowerCase();
+    return activeSet.has(type);
+  });
 }
 
 // ------------------------------------------------------------
@@ -31,23 +34,22 @@ export function filterNodes(nodes, activeFilters) {
 
 export function filterLinks(links, filteredNodes) {
   // Create a Set for fast entity lookup.
-  //
-  // Set.has() is much faster than repeatedly searching through
-  // the complete nodes array when the graph becomes large.
-  const visibleNodeIds = new Set(
-    filteredNodes.map((node) => node.id)
-  );
+  const visibleNodeIds = new Set();
+  (filteredNodes || []).forEach((node) => {
+    if (node.id) visibleNodeIds.add(String(node.id));
+    if (node.entity_id) visibleNodeIds.add(String(node.entity_id));
+  });
 
-  return links.filter((link) => {
+  return (links || []).filter((link) => {
     const sourceId =
       typeof link.source === "object"
-        ? link.source.id
-        : link.source;
+        ? String(link.source.id || link.source.entity_id)
+        : String(link.source);
 
     const targetId =
       typeof link.target === "object"
-        ? link.target.id
-        : link.target;
+        ? String(link.target.id || link.target.entity_id)
+        : String(link.target);
 
     return (
       visibleNodeIds.has(sourceId) &&

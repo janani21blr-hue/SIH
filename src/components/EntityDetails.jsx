@@ -60,7 +60,7 @@ function getNodeId(value) {
     value &&
     typeof value === "object"
   ) {
-    return value.id;
+    return value.id || value.entity_id;
   }
 
   return value;
@@ -143,7 +143,7 @@ function resolveConnectedEntity(
     );
 
   const currentId =
-    currentNode?.id;
+    currentNode?.id || currentNode?.entity_id;
 
   let connectedId = null;
 
@@ -171,7 +171,7 @@ function resolveConnectedEntity(
     connectedEndpoint &&
     typeof connectedEndpoint ===
       "object" &&
-    connectedEndpoint.id
+    (connectedEndpoint.id || connectedEndpoint.entity_id)
   ) {
     return connectedEndpoint;
   }
@@ -860,8 +860,9 @@ function EntityDetails({
                       relationship.target
                     );
 
+                  const currentNodeId = node.id || node.entity_id;
                   const connectedId =
-                    sourceId === node.id
+                    sourceId === currentNodeId
                       ? targetId
                       : sourceId;
 

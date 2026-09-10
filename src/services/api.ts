@@ -83,8 +83,9 @@ export async function fetchEntities(): Promise<BackendEntity[]> {
   }
   // Fallback
   return (investigationGraph.nodes || []).map((n: any) => ({
-    id: n.id,
-    entity_id: n.id,
+    ...n,
+    id: n.id || n.entity_id,
+    entity_id: n.entity_id || n.id,
     entity_type: n.entity_type || n.type || "person",
     canonical_name: n.canonical_name || n.name || n.id,
     aliases: n.aliases || [],
@@ -129,9 +130,21 @@ export async function fetchGraphData(): Promise<{ nodes: any[]; links: any[] }> 
     console.warn("Backend /graph offline, using fallback graph:", err)
   }
 
+  // Clone fallback graph so force-graph mutations don't alter the source dataset
   return {
-    nodes: investigationGraph.nodes || [],
-    links: investigationGraph.links || [],
+    nodes: (investigationGraph.nodes || []).map((n: any) => ({
+      ...n,
+      id: n.id || n.entity_id,
+      entity_id: n.entity_id || n.id,
+      entity_type: n.entity_type || n.type || "person",
+      canonical_name: n.canonical_name || n.name || n.id,
+      label: n.canonical_name || n.name || n.id,
+    })),
+    links: (investigationGraph.links || []).map((l: any) => ({
+      ...l,
+      source: typeof l.source === "object" ? l.source.id || l.source.entity_id : l.source,
+      target: typeof l.target === "object" ? l.target.id || l.target.entity_id : l.target,
+    })),
   }
 }
 
@@ -155,16 +168,23 @@ export async function fetchInvestigations(): Promise<BackendInvestigation[]> {
     {
       investigation_id: "INV-2026-001",
       title: "Operation Nexus: Hawala Financial Channel Disruption",
-      description: "Cross-border money laundering ring utilizing shell telecom SIMs.",
+      description: "Cross-border money laundering ring utilizing shell telecom SIMs, mule accounts, and corporate directorships.",
       status: "ACTIVE",
       risk_score: 0.94,
     },
     {
       investigation_id: "INV-2026-002",
       title: "Syndicate Logistics & Toll ANPR Movement Tracking",
-      description: "Commercial vehicles operating unauthorized transit corridors.",
+      description: "Fleet of suspect commercial vehicles operating unauthorized transit corridors in Gujarat, Haryana and Delhi NCR.",
       status: "ACTIVE",
       risk_score: 0.84,
+    },
+    {
+      investigation_id: "INV-2026-003",
+      title: "Corporate Front Shell Companies MCA Registry Audit",
+      description: "Dormant companies activated with identical registered office addresses sharing bank signatory credentials.",
+      status: "UNDER_REVIEW",
+      risk_score: 0.76,
     },
   ]
 }

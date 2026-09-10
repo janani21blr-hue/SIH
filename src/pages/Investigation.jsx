@@ -94,7 +94,7 @@ const RELATIONSHIP_COLORS = {
 
 function getNodeId(value) {
   return typeof value === "object"
-    ? value?.id
+    ? value?.id || value?.entity_id
     : value;
 }
 
@@ -290,8 +290,8 @@ function Investigation() {
 
       (graphData.nodes || []).forEach(
         (node) => {
-          map[node.id] =
-            node;
+          if (node.id) map[node.id] = node;
+          if (node.entity_id) map[node.entity_id] = node;
         }
       );
 
@@ -386,6 +386,8 @@ function Investigation() {
         return [];
       }
 
+      const selId = selectedNode.id || selectedNode.entity_id;
+
       return (graphData.links || []).filter(
         (link) => {
           const sourceId =
@@ -399,10 +401,8 @@ function Investigation() {
             );
 
           return (
-            sourceId ===
-              selectedNode.id ||
-            targetId ===
-              selectedNode.id
+            sourceId === selId ||
+            targetId === selId
           );
         }
       );
@@ -499,11 +499,11 @@ function Investigation() {
       setInvestigationPath(
         (currentPath) => {
 
+          const selId = node.id || node.entity_id;
           const existingIndex =
             currentPath.findIndex(
               (item) =>
-                item.id ===
-                node.id
+                (item.id || item.entity_id) === selId
             );
 
           if (

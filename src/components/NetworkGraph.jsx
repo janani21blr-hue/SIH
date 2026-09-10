@@ -617,8 +617,9 @@ function NetworkGraph({
       return;
     }
 
-    lastSelectedNodeIdRef.current =
-      selectedNode.id;
+    const selId = selectedNode.id || selectedNode.entity_id;
+
+    lastSelectedNodeIdRef.current = selId;
 
     hasAutoFocusedInitialRef.current =
       true;
@@ -628,8 +629,8 @@ function NetworkGraph({
         filteredGraph.nodes || []
       ).find(
         (n) =>
-          n.id ===
-          selectedNode.id
+          n.id === selId ||
+          n.entity_id === selId
       );
 
     if (
@@ -1065,6 +1066,7 @@ function NetworkGraph({
         globalScale >= 0.5);
 
     if (!shouldShowLabel) {
+      node.__labelPill = null;
       return;
     }
 
@@ -1152,6 +1154,13 @@ function NetworkGraph({
       globalScale;
 
     ctx.beginPath();
+
+    node.__labelPill = {
+      x: node.x - pillWidth / 2,
+      y: pillY,
+      w: pillWidth,
+      h: pillHeight,
+    };
 
     if (ctx.roundRect) {
       ctx.roundRect(
@@ -1247,6 +1256,10 @@ function NetworkGraph({
         pillHeight +
         3.5 /
         globalScale;
+
+      if (node.__labelPill) {
+        node.__labelPill.h += (3.5 / globalScale + idPillH);
+      }
 
       ctx.fillStyle =
         "rgba(15, 23, 42, 0.94)";
@@ -1361,21 +1374,39 @@ function NetworkGraph({
 
           ctx.beginPath();
 
-          const scale =
+          const curScale =
             Math.max(
               globalScale || 1,
-              0.45
+              0.05
+            );
+
+          // Generous clickable radius: guarantees at least 26px on screen regardless of zoom
+          const hitRadius =
+            Math.max(
+              26 / curScale,
+              18
             );
 
           ctx.arc(
             node.x,
             node.y,
-            24 / scale,
+            hitRadius,
             0,
             Math.PI * 2
           );
 
           ctx.fill();
+
+          if (node.__labelPill) {
+            ctx.beginPath();
+            ctx.rect(
+              node.__labelPill.x - 4 / curScale,
+              node.__labelPill.y - 2 / curScale,
+              node.__labelPill.w + 8 / curScale,
+              node.__labelPill.h + 4 / curScale
+            );
+            ctx.fill();
+          }
         }}
 
         /* LINKS */
