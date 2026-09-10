@@ -406,17 +406,10 @@ function NetworkGraph({
      the clicked node. Works the same on localhost and prod.
   ================================================== */
 
-  // Stable refs so the native listener never has stale closures
+  // Stable refs — updated every render so the native listener never has stale closures
   const filteredGraphRef = useRef(null);
   const onNodeSelectRef = useRef(onNodeSelect);
-
-  useEffect(() => {
-    filteredGraphRef.current = filteredGraph;
-  }, [filteredGraph]);
-
-  useEffect(() => {
-    onNodeSelectRef.current = onNodeSelect;
-  }, [onNodeSelect]);
+  onNodeSelectRef.current = onNodeSelect; // always-fresh, no effect needed
 
   useEffect(() => {
     // Give ForceGraph2D ~1 s to mount its <canvas>
@@ -600,6 +593,9 @@ function NetworkGraph({
       entityFilteredGraph,
       activeRelationshipFilters,
     ]);
+
+  // Keep ref fresh every render (no effect needed — render is synchronous)
+  filteredGraphRef.current = filteredGraph;
 
   /* ==================================================
      SELECTED RELATIONSHIPS
