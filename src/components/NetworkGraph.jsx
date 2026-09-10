@@ -397,25 +397,7 @@ function NetworkGraph({
     height: 620,
   });
 
-  const pointerDownPosRef = useRef({ x: 0, y: 0 });
-  const nodeClickedRef = useRef(false);
 
-  const handlePointerDown = (e) => {
-    pointerDownPosRef.current = { x: e.clientX, y: e.clientY };
-    nodeClickedRef.current = false;
-  };
-
-  const handlePointerUp = (e) => {
-    setTimeout(() => {
-      if (!nodeClickedRef.current) {
-        const dx = e.clientX - pointerDownPosRef.current.x;
-        const dy = e.clientY - pointerDownPosRef.current.y;
-        if (Math.hypot(dx, dy) < 6) {
-          onNodeSelect?.(null);
-        }
-      }
-    }, 40);
-  };
 
   /* ==================================================
      DIMENSION OBSERVER
@@ -1357,8 +1339,6 @@ function NetworkGraph({
   return (
     <div
       ref={containerRef}
-      onPointerDown={handlePointerDown}
-      onPointerUp={handlePointerUp}
       className="
         relative
         h-full
@@ -1518,10 +1498,13 @@ function NetworkGraph({
         /* NODE SELECT */
 
         onNodeClick={(node) => {
-          nodeClickedRef.current = true;
           onNodeSelect?.(
             node
           );
+        }}
+
+        onBackgroundClick={() => {
+          onNodeSelect?.(null);
         }}
 
         onNodeHover={(node) => {
