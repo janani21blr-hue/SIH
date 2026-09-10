@@ -400,6 +400,55 @@ function NetworkGraph({
 
 
   /* ==================================================
+     DRAG SENSITIVITY FIX
+     force-graph marks ANY pointermove as a drag when
+     onBackgroundClick is registered, killing node clicks
+     for trackpad users. We intercept the canvas events
+     in the capture phase and suppress moves < 8px.
+  ================================================== */
+
+  const pointerOriginRef = useRef(null);
+
+  useEffect(() => {
+    // Wait for ForceGraph2D to mount and expose its canvas
+    const timer = setTimeout(() => {
+      const canvas = containerRef.current?.querySelector("canvas");
+      if (!canvas) return;
+
+      const onDown = (e) => {
+        pointerOriginRef.current = { x: e.clientX, y: e.clientY };
+      };
+
+      const onMove = (e) => {
+        if (!pointerOriginRef.current) return;
+        if (e.pressure === 0 && !e.buttons) return; // not pressing
+        const dx = e.clientX - pointerOriginRef.current.x;
+        const dy = e.clientY - pointerOriginRef.current.y;
+        if (Math.hypot(dx, dy) < 8) {
+          // Tiny movement — stop force-graph from seeing it as a drag
+          e.stopImmediatePropagation();
+        }
+      };
+
+      const onUp = () => {
+        pointerOriginRef.current = null;
+      };
+
+      canvas.addEventListener("pointerdown", onDown, true);
+      canvas.addEventListener("pointermove", onMove, true);
+      canvas.addEventListener("pointerup", onUp, true);
+
+      return () => {
+        canvas.removeEventListener("pointerdown", onDown, true);
+        canvas.removeEventListener("pointermove", onMove, true);
+        canvas.removeEventListener("pointerup", onUp, true);
+      };
+    }, 500);
+
+    return () => clearTimeout(timer);
+  }, []);
+
+  /* ==================================================
      DIMENSION OBSERVER
   ================================================== */
 
