@@ -400,50 +400,89 @@ function NetworkGraph({
 
 
   /* ==================================================
-     DRAG SENSITIVITY FIX
-     force-graph marks ANY pointermove as a drag when
-     onBackgroundClick is registered, killing node clicks
-     for trackpad users. We intercept the canvas events
-     in the capture phase and suppress moves < 8px.
+     CUSTOM CLICK HANDLER
+     Bypasses force-graph's shadow canvas entirely.
+     Uses screen2GraphCoords + Euclidean distance to find
+     the clicked node. Works the same on localhost and prod.
   ================================================== */
 
-  const pointerOriginRef = useRef(null);
+  // Stable refs so the native listener never has stale closures
+  const filteredGraphRef = useRef(filteredGraph);
+  const onNodeSelectRef = useRef(onNodeSelect);
 
   useEffect(() => {
-    // Wait for ForceGraph2D to mount and expose its canvas
+    filteredGraphRef.current = filteredGraph;
+  }, [filteredGraph]);
+
+  useEffect(() => {
+    onNodeSelectRef.current = onNodeSelect;
+  }, [onNodeSelect]);
+
+  useEffect(() => {
+    // Give ForceGraph2D ~1 s to mount its <canvas>
     const timer = setTimeout(() => {
-      const canvas = containerRef.current?.querySelector("canvas");
+      const canvas =
+        containerRef.current?.querySelector("canvas");
       if (!canvas) return;
 
-      const onDown = (e) => {
-        pointerOriginRef.current = { x: e.clientX, y: e.clientY };
+      let downPos = null;
+
+      const onPointerDown = (e) => {
+        downPos = { x: e.clientX, y: e.clientY };
       };
 
-      const onMove = (e) => {
-        if (!pointerOriginRef.current) return;
-        if (e.pressure === 0 && !e.buttons) return; // not pressing
-        const dx = e.clientX - pointerOriginRef.current.x;
-        const dy = e.clientY - pointerOriginRef.current.y;
-        if (Math.hypot(dx, dy) < 8) {
-          // Tiny movement — stop force-graph from seeing it as a drag
-          e.stopImmediatePropagation();
+      const onClick = (e) => {
+        if (!graphRef.current) return;
+
+        // Skip if the user dragged (panned the graph)
+        if (downPos) {
+          const dist = Math.hypot(
+            e.clientX - downPos.x,
+            e.clientY - downPos.y
+          );
+          if (dist > 6) return;
         }
+
+        const rect = canvas.getBoundingClientRect();
+        const sx = e.clientX - rect.left;
+        const sy = e.clientY - rect.top;
+
+        // Convert screen px → graph coordinates
+        const gc =
+          graphRef.current.screen2GraphCoords(sx, sy);
+
+        // Hit radius in graph units (matches visual node radius)
+        const zoom = graphRef.current.zoom();
+        const hitR = 22 / Math.max(zoom, 0.45);
+
+        // Find the closest node within hitR
+        const nodes =
+          filteredGraphRef.current?.nodes ?? [];
+        let best = null;
+        let bestD = hitR;
+        for (const node of nodes) {
+          if (node.x == null || node.y == null) continue;
+          const d = Math.hypot(
+            node.x - gc.x,
+            node.y - gc.y
+          );
+          if (d < bestD) {
+            bestD = d;
+            best = node;
+          }
+        }
+
+        onNodeSelectRef.current?.(best); // null = deselect
       };
 
-      const onUp = () => {
-        pointerOriginRef.current = null;
-      };
-
-      canvas.addEventListener("pointerdown", onDown, true);
-      canvas.addEventListener("pointermove", onMove, true);
-      canvas.addEventListener("pointerup", onUp, true);
+      canvas.addEventListener("pointerdown", onPointerDown);
+      canvas.addEventListener("click", onClick);
 
       return () => {
-        canvas.removeEventListener("pointerdown", onDown, true);
-        canvas.removeEventListener("pointermove", onMove, true);
-        canvas.removeEventListener("pointerup", onUp, true);
+        canvas.removeEventListener("pointerdown", onPointerDown);
+        canvas.removeEventListener("click", onClick);
       };
-    }, 500);
+    }, 1000);
 
     return () => clearTimeout(timer);
   }, []);
@@ -1545,16 +1584,6 @@ function NetworkGraph({
         }
 
         /* NODE SELECT */
-
-        onNodeClick={(node) => {
-          onNodeSelect?.(
-            node
-          );
-        }}
-
-        onBackgroundClick={() => {
-          onNodeSelect?.(null);
-        }}
 
         onNodeHover={(node) => {
           setHoveredNode(
