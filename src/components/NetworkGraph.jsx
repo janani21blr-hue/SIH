@@ -53,7 +53,7 @@ const ENTITY_COLORS = {
 
 function getNodeId(value) {
   return typeof value === "object"
-    ? value?.id
+    ? value?.id || value?.entity_id
     : value;
 }
 
@@ -62,6 +62,7 @@ function getNodeName(node) {
     node?.canonical_name ||
     node?.name ||
     node?.label ||
+    node?.entity_id ||
     node?.id ||
     "Unknown entity"
   );
@@ -396,6 +397,26 @@ function NetworkGraph({
     height: 620,
   });
 
+  const pointerDownPosRef = useRef({ x: 0, y: 0 });
+  const nodeClickedRef = useRef(false);
+
+  const handlePointerDown = (e) => {
+    pointerDownPosRef.current = { x: e.clientX, y: e.clientY };
+    nodeClickedRef.current = false;
+  };
+
+  const handlePointerUp = (e) => {
+    setTimeout(() => {
+      if (!nodeClickedRef.current) {
+        const dx = e.clientX - pointerDownPosRef.current.x;
+        const dy = e.clientY - pointerDownPosRef.current.y;
+        if (Math.hypot(dx, dy) < 6) {
+          onNodeSelect?.(null);
+        }
+      }
+    }, 40);
+  };
+
   /* ==================================================
      DIMENSION OBSERVER
   ================================================== */
@@ -520,6 +541,9 @@ function NetworkGraph({
         return [];
       }
 
+      const selId =
+        selectedNode.id || selectedNode.entity_id;
+
       return (
         (graph && graph.links) ||
         investigationGraph.links
@@ -536,10 +560,8 @@ function NetworkGraph({
             );
 
           return (
-            sourceId ===
-            selectedNode.id ||
-            targetId ===
-            selectedNode.id
+            sourceId === selId ||
+            targetId === selId
           );
         }
       );
@@ -954,13 +976,17 @@ function NetworkGraph({
     ctx,
     globalScale
   ) => {
+    const selId =
+      selectedNode?.id || selectedNode?.entity_id;
+    const nodeId =
+      node?.id || node?.entity_id;
     const isSelected =
-      selectedNode?.id ===
-      node.id;
+      Boolean(selId && nodeId && selId === nodeId);
 
+    const hovId =
+      hoveredNode?.id || hoveredNode?.entity_id;
     const isHovered =
-      hoveredNode?.id ===
-      node.id;
+      Boolean(hovId && nodeId && hovId === nodeId);
 
     const type =
       getNodeType(node);
@@ -1331,6 +1357,8 @@ function NetworkGraph({
   return (
     <div
       ref={containerRef}
+      onPointerDown={handlePointerDown}
+      onPointerUp={handlePointerUp}
       className="
         relative
         h-full
@@ -1374,18 +1402,23 @@ function NetworkGraph({
 
           ctx.beginPath();
 
-          const curScale =
+          const scale =
             Math.max(
               globalScale || 1,
-              0.05
+              0.45
             );
 
-          // Generous clickable radius: guarantees at least 26px on screen regardless of zoom
+          const selId =
+            selectedNode?.id || selectedNode?.entity_id;
+          const nodeId =
+            node?.id || node?.entity_id;
+          const isSel =
+            Boolean(selId && nodeId && selId === nodeId);
+
+          // Generous hit radius matching visual icon + comfortable buffer, without overlapping adjacent nodes
           const hitRadius =
-            Math.max(
-              26 / curScale,
-              18
-            );
+            (isSel ? 26 : 22) /
+            scale;
 
           ctx.arc(
             node.x,
@@ -1396,17 +1429,6 @@ function NetworkGraph({
           );
 
           ctx.fill();
-
-          if (node.__labelPill) {
-            ctx.beginPath();
-            ctx.rect(
-              node.__labelPill.x - 4 / curScale,
-              node.__labelPill.y - 2 / curScale,
-              node.__labelPill.w + 8 / curScale,
-              node.__labelPill.h + 4 / curScale
-            );
-            ctx.fill();
-          }
         }}
 
         /* LINKS */
@@ -1422,15 +1444,18 @@ function NetworkGraph({
             return 2;
           }
 
+          const selId =
+            selectedNode.id || selectedNode.entity_id;
+
           const connected =
             getNodeId(
               link.source
             ) ===
-            selectedNode.id ||
+            selId ||
             getNodeId(
               link.target
             ) ===
-            selectedNode.id;
+            selId;
 
           return connected
             ? 3
@@ -1455,15 +1480,18 @@ function NetworkGraph({
               return 0;
             }
 
+            const selId =
+              selectedNode.id || selectedNode.entity_id;
+
             const connected =
               getNodeId(
                 link.source
               ) ===
-              selectedNode.id ||
+              selId ||
               getNodeId(
                 link.target
               ) ===
-              selectedNode.id;
+              selId;
 
             return connected
               ? 2
@@ -1490,6 +1518,7 @@ function NetworkGraph({
         /* NODE SELECT */
 
         onNodeClick={(node) => {
+          nodeClickedRef.current = true;
           onNodeSelect?.(
             node
           );
@@ -1518,10 +1547,6 @@ function NetworkGraph({
         onRenderFramePre={
           renderBackground
         }
-
-        onBackgroundClick={() => {
-          onNodeSelect?.(null);
-        }}
 
         onEngineStop={() => {
           if (
