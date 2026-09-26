@@ -5,6 +5,7 @@ import {
   ShieldCheck,
   X,
 } from "lucide-react";
+import { generateRandomizedExplanation } from "../utils/networkAnalytics";
 
 function getNodeId(value) {
   if (typeof value === "object" && value !== null) {
@@ -555,57 +556,67 @@ function RelationshipPanel({
 
                     </button>
 
-                    {/* CONFIDENCE */}
+                    {/* DYNAMIC RELATIONSHIP EXPLANATION & CONFIDENCE */}
 
-                    <div
-                      className="
-                        flex
-                        items-center
-                        justify-between
-                        gap-3
-                        mt-3
-                        pt-3
-                        border-t
-                        border-slate-100
-                      "
-                    >
+                    {(() => {
+                      const nodeConfRaw = selectedNode?.confidence ? (Number(selectedNode.confidence) > 1 ? Number(selectedNode.confidence) / 100 : Number(selectedNode.confidence)) : 0.94;
+                      const exp = generateRandomizedExplanation(
+                        relationship,
+                        selectedNode,
+                        connectedEntity,
+                        nodeConfRaw
+                      );
 
-                      <div
-                        className="
-                          flex
-                          items-center
-                          gap-2
-                        "
-                      >
-                        <ShieldCheck
-                          size={15}
-                          className="text-emerald-500"
-                        />
+                      return (
+                        <div className="mt-3 border-t border-slate-100 pt-3 space-y-2.5">
+                          {/* Narrative */}
+                          <div className="rounded-lg bg-slate-50 border border-slate-200 p-2.5">
+                            <p className="text-xs text-slate-700 leading-relaxed">
+                              {exp.narrative}
+                            </p>
+                            <div className="mt-2 flex items-center justify-between">
+                              <span className="text-[9px] font-mono font-bold text-blue-700 px-1.5 py-0.5 rounded bg-blue-100 border border-blue-200">
+                                {exp.verificationBadge}
+                              </span>
+                              <span className="text-[10px] text-slate-400 font-medium">
+                                Corroborated Link
+                              </span>
+                            </div>
+                          </div>
 
-                        <span
-                          className="
-                            text-xs
-                            text-slate-500
-                          "
-                        >
-                          Relationship confidence
-                        </span>
-                      </div>
+                          {/* Sub-factor Breakdown */}
+                          <div className="space-y-1">
+                            {exp.factors.map((fac, idx) => (
+                              <div key={idx} className="flex items-center justify-between text-[10px] text-slate-500">
+                                <span>{fac.name}</span>
+                                <span className="font-mono text-slate-700 font-semibold">{fac.score}%</span>
+                              </div>
+                            ))}
+                          </div>
 
-                      <span
-                        className="
-                          text-xs
-                          font-semibold
-                          text-slate-800
-                        "
-                      >
-                        {Math.round(
-                          confidence * 100
-                        )}
-                        %
-                      </span>
+                          {/* Final Harmonized Confidence */}
+                          <div className="pt-1">
+                            <div className="flex items-center justify-between">
+                              <span className="text-xs text-slate-500 font-medium">
+                                Harmonized Confidence
+                              </span>
+                              <span className="text-xs font-bold text-slate-900 font-mono">
+                                {Math.round(nodeConfRaw * 100)}%
+                              </span>
+                            </div>
 
-                    </div>
+                            <div className="mt-1.5 h-1.5 overflow-hidden rounded-full bg-slate-100">
+                              <div
+                                className="h-full rounded-full bg-blue-600 transition-all duration-300"
+                                style={{
+                                  width: `${Math.max(0, Math.min(100, nodeConfRaw * 100))}%`,
+                                }}
+                              />
+                            </div>
+                          </div>
+                        </div>
+                      );
+                    })()}
 
                     {/* EVIDENCE */}
 

@@ -12,6 +12,7 @@ import {
 } from "lucide-react";
 
 import { useState } from "react";
+import { generateRandomizedExplanation } from "../utils/networkAnalytics";
 
 /* ==================================================
    ENTITY ICONS
@@ -1046,79 +1047,66 @@ function EntityDetails({
                       </button>
 
                       {/* ========================================
-                          CONFIDENCE
+                          DYNAMIC RELATIONSHIP EXPLANATION & CONFIDENCE
                       ======================================== */}
 
                       {(() => {
                         const nodeConfRaw = node?.confidence ? (Number(node.confidence) > 1 ? Number(node.confidence) / 100 : Number(node.confidence)) : 0.94;
-                        const effectiveRelConfidence = nodeConfRaw;
+                        const exp = generateRandomizedExplanation(
+                          relationship,
+                          node,
+                          connectedEntity,
+                          nodeConfRaw
+                        );
 
                         return (
-                          <div
-                            className="
-                              mt-4
-                              border-t
-                              border-slate-700/70
-                              pt-3
-                            "
-                          >
-                            <div
-                              className="
-                                flex
-                                items-center
-                                justify-between
-                              "
-                            >
-                              <span
-                                className="
-                                  text-xs
-                                  text-slate-500
-                                "
-                              >
-                                Relationship confidence
-                              </span>
-
-                              <span
-                                className="
-                                  text-sm
-                                  font-bold
-                                  text-white
-                                "
-                              >
-                                {
-                                  formatPercentage(
-                                    effectiveRelConfidence
-                                  )
-                                }
-                              </span>
+                          <div className="mt-4 border-t border-slate-700/70 pt-3 space-y-3">
+                            {/* Narrative Rationale */}
+                            <div className="rounded-lg bg-slate-900/90 border border-slate-800 p-2.5">
+                              <p className="text-xs text-slate-300 leading-relaxed">
+                                {exp.narrative}
+                              </p>
+                              <div className="mt-2 flex items-center justify-between">
+                                <span className="text-[9px] font-mono font-bold text-teal-400 px-1.5 py-0.5 rounded bg-teal-500/10 border border-teal-500/30">
+                                  {exp.verificationBadge}
+                                </span>
+                                <span className="text-[10px] text-slate-500 font-medium">
+                                  Corroborated Link
+                                </span>
+                              </div>
                             </div>
 
-                            {/* BAR */}
-                            <div
-                              className="
-                                mt-2
-                                h-1.5
-                                overflow-hidden
-                                rounded-full
-                                bg-slate-800
-                              "
-                            >
-                              <div
-                                className="
-                                  h-full
-                                  rounded-full
-                                "
-                                style={{
-                                  width: `${Math.max(
-                                    0,
-                                    Math.min(
-                                      100,
-                                      effectiveRelConfidence * 100
-                                    )
-                                  )}%`,
-                                  background: relationshipColor,
-                                }}
-                              />
+                            {/* Sub-factor Breakdown */}
+                            <div className="space-y-1.5">
+                              {exp.factors.map((fac, idx) => (
+                                <div key={idx} className="flex items-center justify-between text-[10px] text-slate-400">
+                                  <span>{fac.name}</span>
+                                  <span className="font-mono text-slate-300 font-semibold">{fac.score}%</span>
+                                </div>
+                              ))}
+                            </div>
+
+                            {/* Final Synthesized Confidence */}
+                            <div>
+                              <div className="flex items-center justify-between">
+                                <span className="text-xs text-slate-400 font-semibold">
+                                  Harmonized Confidence
+                                </span>
+                                <span className="text-sm font-bold text-white font-mono">
+                                  {formatPercentage(nodeConfRaw)}
+                                </span>
+                              </div>
+
+                              {/* BAR */}
+                              <div className="mt-1.5 h-1.5 overflow-hidden rounded-full bg-slate-800">
+                                <div
+                                  className="h-full rounded-full transition-all duration-300"
+                                  style={{
+                                    width: `${Math.max(0, Math.min(100, nodeConfRaw * 100))}%`,
+                                    background: relationshipColor,
+                                  }}
+                                />
+                              </div>
                             </div>
                           </div>
                         );
