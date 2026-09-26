@@ -82,6 +82,37 @@ function Sidebar() {
           })}
         </nav>
 
+        {/* AI TACTICAL MODULES SHORTCUTS */}
+        <div className="mt-5 rounded-xl border border-slate-800/80 bg-slate-900/40 p-3">
+          <div className="text-[10px] font-bold uppercase tracking-wider text-teal-400 mb-2 flex items-center justify-between">
+            <span>AI Modules</span>
+            <span className="px-1.5 py-0.2 rounded bg-teal-500/20 text-[9px] font-mono">LIVE</span>
+          </div>
+          <div className="space-y-1 text-xs">
+            <NavLink
+              to="/investigations"
+              className="flex items-center justify-between py-1 px-1.5 rounded hover:bg-slate-800 text-slate-300 hover:text-teal-300 transition"
+            >
+              <span>✨ FIR Ingestion</span>
+              <span className="text-[10px] text-slate-500 font-mono">NLP</span>
+            </NavLink>
+            <NavLink
+              to="/investigations"
+              className="flex items-center justify-between py-1 px-1.5 rounded hover:bg-slate-800 text-slate-300 hover:text-rose-300 transition"
+            >
+              <span>👑 Key Influencers</span>
+              <span className="text-[10px] text-rose-400 font-mono">Ranked</span>
+            </NavLink>
+            <NavLink
+              to="/investigations"
+              className="flex items-center justify-between py-1 px-1.5 rounded hover:bg-slate-800 text-slate-300 hover:text-amber-300 transition"
+            >
+              <span>🚨 Pattern Radar</span>
+              <span className="text-[10px] text-amber-400 font-mono">4 Rings</span>
+            </NavLink>
+          </div>
+        </div>
+
         {/* GRAPH & NODE FILTERS */}
         <div className="mt-6 border-t border-slate-800/80 pt-4">
           <div className="flex items-center justify-between px-1 mb-2">
