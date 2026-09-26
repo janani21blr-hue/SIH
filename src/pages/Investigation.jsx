@@ -21,11 +21,23 @@ import {
   ChevronRight,
   RotateCcw,
   GripVertical,
+  Sparkles,
+  Crown,
+  ShieldAlert,
+  Clock,
+  Scale,
+  FileCheck2,
+  Layers,
 } from "lucide-react";
 
 import NetworkGraph from "../components/NetworkGraph";
 import EntityDetails from "../components/EntityDetails";
 import InvestigationSummary from "../components/InvestigationSummary";
+import UnstructuredIngestionModal from "../components/UnstructuredIngestionModal";
+import KeyInfluencersPanel from "../components/KeyInfluencersPanel";
+import PatternRadarModal from "../components/PatternRadarModal";
+import TimelinePlayback from "../components/TimelinePlayback";
+import CourtDossierModal from "../components/CourtDossierModal";
 
 import {
   investigationGraph,
@@ -34,6 +46,10 @@ import {
   fetchGraphData,
 } from "../services/api";
 import { useNetworkFilters } from "../context/NetworkFilterContext";
+import {
+  analyzeNetworkInfluencers,
+  detectSuspiciousPatterns,
+} from "../utils/networkAnalytics";
 
 /* ==================================================
    ENTITY FILTERS
@@ -279,6 +295,89 @@ function Investigation() {
 
   const resizeStartHeight =
     useRef(720);
+
+  /* ==================================================
+     INTELLIGENCE TOOLS & MODALS
+  ================================================== */
+  const [isIngestionOpen, setIsIngestionOpen] = useState(false);
+  const [isInfluencersOpen, setIsInfluencersOpen] = useState(false);
+  const [isPatternsOpen, setIsPatternsOpen] = useState(false);
+  const [isTimelineOpen, setIsTimelineOpen] = useState(false);
+  const [isDossierOpen, setIsDossierOpen] = useState(false);
+  const [isolatedPattern, setIsolatedPattern] = useState(null);
+  const [timelineStepEvent, setTimelineStepEvent] = useState(null);
+
+  const influencers = useMemo(() => {
+    return analyzeNetworkInfluencers(graphData.nodes || [], graphData.links || []);
+  }, [graphData]);
+
+  const patterns = useMemo(() => {
+    return detectSuspiciousPatterns(graphData.nodes || [], graphData.links || []);
+  }, [graphData]);
+
+  const handleIngestExtractedData = (newNodes, newLinks) => {
+    setGraphData((prev) => {
+      const existingNodeIds = new Set((prev.nodes || []).map((n) => n.id || n.entity_id));
+      const mergedNodes = [...(prev.nodes || [])];
+      newNodes.forEach((node) => {
+        if (!existingNodeIds.has(node.id)) {
+          mergedNodes.push({
+            ...node,
+            label: node.canonical_name || node.name || node.id,
+            entity_type: node.entity_type,
+            confidence: node.confidence ?? 0.94,
+          });
+          existingNodeIds.add(node.id);
+        }
+      });
+
+      const existingLinkKeys = new Set(
+        (prev.links || []).map(
+          (l) => `${l.source?.id || l.source}-${l.target?.id || l.target}-${l.relationship}`
+        )
+      );
+      const mergedLinks = [...(prev.links || [])];
+      newLinks.forEach((link) => {
+        const key = `${link.source}-${link.target}-${link.relationship}`;
+        if (!existingLinkKeys.has(key)) {
+          mergedLinks.push(link);
+          existingLinkKeys.add(key);
+        }
+      });
+
+      return { nodes: mergedNodes, links: mergedLinks };
+    });
+
+    if (newNodes.length > 0) {
+      handleNodeSelect(newNodes[0]);
+    }
+  };
+
+  const effectiveGraphData = useMemo(() => {
+    if (isolatedPattern && isolatedPattern.nodeIds?.length > 0) {
+      const pNodeIds = new Set(isolatedPattern.nodeIds);
+      const subNodes = (graphData.nodes || []).filter((n) => pNodeIds.has(n.id || n.entity_id));
+      const subLinks = (graphData.links || []).filter((l) => {
+        const s = typeof l.source === "object" ? l.source.id || l.source.entity_id : l.source;
+        const t = typeof l.target === "object" ? l.target.id || l.target.entity_id : l.target;
+        return pNodeIds.has(s) && pNodeIds.has(t);
+      });
+      return { nodes: subNodes, links: subLinks };
+    }
+
+    if (timelineStepEvent && timelineStepEvent.activeNodeIds?.length > 0) {
+      const tNodeIds = new Set(timelineStepEvent.activeNodeIds);
+      const subNodes = (graphData.nodes || []).filter((n) => tNodeIds.has(n.id || n.entity_id));
+      const subLinks = (graphData.links || []).filter((l) => {
+        const s = typeof l.source === "object" ? l.source.id || l.source.entity_id : l.source;
+        const t = typeof l.target === "object" ? l.target.id || l.target.entity_id : l.target;
+        return tNodeIds.has(s) && tNodeIds.has(t);
+      });
+      return { nodes: subNodes, links: subLinks };
+    }
+
+    return graphData;
+  }, [graphData, isolatedPattern, timelineStepEvent]);
 
   /* ==================================================
      ENTITY MAP
@@ -1101,6 +1200,79 @@ function Investigation() {
       </header>
 
       {/* ==================================================
+          INTELLIGENCE & ANALYTICS ACTION TOOLBAR
+      ================================================== */}
+      <div className="border-b border-slate-800/80 bg-slate-950/70 px-5 py-2.5 lg:px-7 flex items-center justify-between gap-3 overflow-x-auto">
+        <div className="flex items-center gap-2 shrink-0">
+          <button
+            type="button"
+            onClick={() => setIsIngestionOpen(true)}
+            className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-teal-500/10 border border-teal-500/30 text-teal-300 hover:bg-teal-500/20 text-xs font-bold transition shadow-sm"
+          >
+            <Sparkles size={14} className="text-teal-400" />
+            <span>AI Ingest FIR / Unstructured</span>
+          </button>
+
+          <button
+            type="button"
+            onClick={() => setIsInfluencersOpen(true)}
+            className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-rose-500/10 border border-rose-500/30 text-rose-300 hover:bg-rose-500/20 text-xs font-bold transition"
+          >
+            <Crown size={14} className="text-rose-400" />
+            <span>Key Influencers</span>
+            <span className="px-1.5 py-0.2 rounded-full bg-rose-500/20 text-[10px] font-mono">
+              {influencers.length}
+            </span>
+          </button>
+
+          <button
+            type="button"
+            onClick={() => setIsPatternsOpen(true)}
+            className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-amber-500/10 border border-amber-500/30 text-amber-300 hover:bg-amber-500/20 text-xs font-bold transition"
+          >
+            <ShieldAlert size={14} className="text-amber-400" />
+            <span>Pattern Radar</span>
+            <span className="px-1.5 py-0.2 rounded-full bg-amber-500/20 text-[10px] font-mono">
+              {patterns.length}
+            </span>
+          </button>
+
+          <button
+            type="button"
+            onClick={() => setIsTimelineOpen(true)}
+            className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-blue-500/10 border border-blue-500/30 text-blue-300 hover:bg-blue-500/20 text-xs font-bold transition"
+          >
+            <Clock size={14} className="text-blue-400" />
+            <span>Timeline Playback</span>
+          </button>
+        </div>
+
+        <div className="flex items-center gap-2 shrink-0">
+          {isolatedPattern && (
+            <div className="flex items-center gap-2 bg-teal-500/20 border border-teal-500/40 px-2.5 py-1 rounded-lg text-xs text-teal-300">
+              <span className="font-semibold">Isolated Ring: {isolatedPattern.title}</span>
+              <button
+                type="button"
+                onClick={() => setIsolatedPattern(null)}
+                className="underline font-bold text-teal-200 ml-1"
+              >
+                Reset
+              </button>
+            </div>
+          )}
+
+          <button
+            type="button"
+            onClick={() => setIsDossierOpen(true)}
+            className="flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl bg-slate-800 border border-slate-700 text-slate-200 hover:bg-slate-700 text-xs font-bold transition shadow-sm"
+          >
+            <Scale size={14} className="text-teal-400" />
+            <span>Court Dossier & Notice</span>
+          </button>
+        </div>
+      </div>
+
+      {/* ==================================================
           INVESTIGATION PATH
       ================================================== */}
 
@@ -1434,7 +1606,7 @@ function Investigation() {
                   }
 
                   graph={
-                    graphData
+                    effectiveGraphData
                   }
 
                   autoFocusNode={
@@ -1702,6 +1874,50 @@ function Investigation() {
           }
         />
       )}
+
+      {/* ==================================================
+          INTELLIGENCE MODALS & DRAWERS
+      ================================================== */}
+      <UnstructuredIngestionModal
+        isOpen={isIngestionOpen}
+        onClose={() => setIsIngestionOpen(false)}
+        onIngest={handleIngestExtractedData}
+      />
+
+      <KeyInfluencersPanel
+        isOpen={isInfluencersOpen}
+        onClose={() => setIsInfluencersOpen(false)}
+        influencers={influencers}
+        onSelectEntity={(id) => {
+          const match = (graphData.nodes || []).find((n) => (n.id || n.entity_id) === id);
+          if (match) handleNodeSelect(match);
+        }}
+        selectedEntityId={selectedNode?.id || selectedNode?.entity_id}
+      />
+
+      <PatternRadarModal
+        isOpen={isPatternsOpen}
+        onClose={() => setIsPatternsOpen(false)}
+        patterns={patterns}
+        onIsolatePattern={(pat) => setIsolatedPattern(pat)}
+        activeIsolatedPatternId={isolatedPattern?.id}
+        onClearIsolation={() => setIsolatedPattern(null)}
+      />
+
+      <TimelinePlayback
+        isOpen={isTimelineOpen}
+        onClose={() => setIsTimelineOpen(false)}
+        onStepChange={(evt) => setTimelineStepEvent(evt)}
+      />
+
+      <CourtDossierModal
+        isOpen={isDossierOpen}
+        onClose={() => setIsDossierOpen(false)}
+        nodes={graphData.nodes || []}
+        links={graphData.links || []}
+        influencers={influencers}
+        patterns={patterns}
+      />
 
     </div>
   );

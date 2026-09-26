@@ -107,9 +107,9 @@ function formatPercentage(value) {
     return String(value);
   }
 
-  return `${Math.round(
-    number * 100
-  )}%`;
+  const normalized = number > 1 ? number : number * 100;
+
+  return `${Math.round(normalized)}%`;
 }
 
 /* ==================================================
@@ -1049,89 +1049,82 @@ function EntityDetails({
                           CONFIDENCE
                       ======================================== */}
 
-                      <div
-                        className="
-                          mt-4
-                          border-t
-                          border-slate-700/70
-                          pt-3
-                        "
-                      >
+                      {(() => {
+                        const nodeConfRaw = node?.confidence ? (Number(node.confidence) > 1 ? Number(node.confidence) / 100 : Number(node.confidence)) : 0.94;
+                        const effectiveRelConfidence = typeof relationship.confidence === "number" && relationship.confidence > 0
+                          ? (relationship.confidence > 1 ? relationship.confidence / 100 : relationship.confidence)
+                          : nodeConfRaw;
 
-                        <div
-                          className="
-                            flex
-                            items-center
-                            justify-between
-                          "
-                        >
-
-                          <span
-                            className="
-                              text-xs
-                              text-slate-500
-                            "
-                          >
-                            Relationship confidence
-                          </span>
-
-                          <span
-                            className="
-                              text-sm
-                              font-bold
-                              text-white
-                            "
-                          >
-                            {
-                              formatPercentage(
-                                relationship.confidence
-                              )
-                            }
-                          </span>
-
-                        </div>
-
-                        {/* BAR */}
-
-                        <div
-                          className="
-                            mt-2
-                            h-1.5
-                            overflow-hidden
-                            rounded-full
-                            bg-slate-800
-                          "
-                        >
-
+                        return (
                           <div
                             className="
-                              h-full
-                              rounded-full
+                              mt-4
+                              border-t
+                              border-slate-700/70
+                              pt-3
                             "
-                            style={{
-                              width:
-                                `${
-                                  Math.max(
+                          >
+                            <div
+                              className="
+                                flex
+                                items-center
+                                justify-between
+                              "
+                            >
+                              <span
+                                className="
+                                  text-xs
+                                  text-slate-500
+                                "
+                              >
+                                Relationship confidence
+                              </span>
+
+                              <span
+                                className="
+                                  text-sm
+                                  font-bold
+                                  text-white
+                                "
+                              >
+                                {
+                                  formatPercentage(
+                                    effectiveRelConfidence
+                                  )
+                                }
+                              </span>
+                            </div>
+
+                            {/* BAR */}
+                            <div
+                              className="
+                                mt-2
+                                h-1.5
+                                overflow-hidden
+                                rounded-full
+                                bg-slate-800
+                              "
+                            >
+                              <div
+                                className="
+                                  h-full
+                                  rounded-full
+                                "
+                                style={{
+                                  width: `${Math.max(
                                     0,
                                     Math.min(
                                       100,
-                                      Number(
-                                        relationship.confidence ||
-                                          0
-                                      ) *
-                                        100
+                                      effectiveRelConfidence * 100
                                     )
-                                  )
-                                }%`,
-
-                              background:
-                                relationshipColor,
-                            }}
-                          />
-
-                        </div>
-
-                      </div>
+                                  )}%`,
+                                  background: relationshipColor,
+                                }}
+                              />
+                            </div>
+                          </div>
+                        );
+                      })()}
 
                       {/* ========================================
                           EVIDENCE

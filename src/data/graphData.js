@@ -183,7 +183,7 @@ const demoLinks = [
     source: "P017",
     target: "ACC_12",
     relationship: "OWNS",
-    confidence: 0.89,
+    confidence: 0.94,
     evidence: "demo_account_record_12",
   },
 
@@ -191,7 +191,7 @@ const demoLinks = [
     source: "P017",
     target: "VEH_07",
     relationship: "USES",
-    confidence: 0.86,
+    confidence: 0.91,
     evidence: "demo_vehicle_record_07",
   },
 
@@ -199,7 +199,7 @@ const demoLinks = [
     source: "P017",
     target: "ADDR_04",
     relationship: "ASSOCIATED_WITH",
-    confidence: 0.82,
+    confidence: 0.91,
     evidence: "demo_address_record_04",
   },
 
@@ -207,7 +207,7 @@ const demoLinks = [
     source: "P031",
     target: "PHONE_21",
     relationship: "USES",
-    confidence: 0.92,
+    confidence: 0.93,
     evidence: "demo_phone_record_21",
   },
 
@@ -215,7 +215,7 @@ const demoLinks = [
     source: "P031",
     target: "ACC_19",
     relationship: "OWNS",
-    confidence: 0.87,
+    confidence: 0.91,
     evidence: "demo_account_record_19",
   },
 
@@ -223,7 +223,7 @@ const demoLinks = [
     source: "P031",
     target: "COMP_12",
     relationship: "DIRECTOR_OF",
-    confidence: 0.9,
+    confidence: 0.91,
     evidence: "demo_company_record_12",
   },
 
@@ -231,7 +231,7 @@ const demoLinks = [
     source: "P031",
     target: "ADDR_04",
     relationship: "ASSOCIATED_WITH",
-    confidence: 0.79,
+    confidence: 0.89,
     evidence: "demo_address_record_04",
   },
 
@@ -239,7 +239,7 @@ const demoLinks = [
     source: "COMP_12",
     target: "ADDR_09",
     relationship: "REGISTERED_AT",
-    confidence: 0.91,
+    confidence: 0.93,
     evidence: "demo_company_address_09",
   },
 
@@ -247,7 +247,7 @@ const demoLinks = [
     source: "P042",
     target: "ADDR_09",
     relationship: "ASSOCIATED_WITH",
-    confidence: 0.83,
+    confidence: 0.90,
     evidence: "demo_address_record_09",
   },
 
@@ -255,7 +255,7 @@ const demoLinks = [
     source: "COMP_05",
     target: "ADDR_09",
     relationship: "REGISTERED_AT",
-    confidence: 0.88,
+    confidence: 0.92,
     evidence: "demo_company_address_09",
   },
 ];

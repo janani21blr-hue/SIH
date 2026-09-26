@@ -105,6 +105,109 @@ function Dashboard() {
         ))}
       </div>
 
+      {/* AI Intelligence Tactical Action Cards */}
+      <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+        <a
+          href="/investigations"
+          className="group relative rounded-2xl border border-teal-500/30 bg-gradient-to-br from-teal-500/10 to-slate-900/60 p-4 transition hover:border-teal-400 hover:shadow-lg hover:shadow-teal-500/10 flex flex-col justify-between"
+        >
+          <div>
+            <div className="flex items-center justify-between mb-2">
+              <span className="p-2 rounded-xl bg-teal-500/20 text-teal-400 border border-teal-500/30">
+                ✨
+              </span>
+              <span className="text-[10px] font-mono px-2 py-0.5 rounded-full bg-teal-500/10 text-teal-300 font-bold border border-teal-500/30">
+                AI NLP INGEST
+              </span>
+            </div>
+            <h4 className="text-sm font-bold text-white group-hover:text-teal-300 transition">
+              Unstructured FIR Ingestion
+            </h4>
+            <p className="text-xs text-slate-400 mt-1">
+              Extract entities, phones & bank accounts from raw police memos and CDR logs.
+            </p>
+          </div>
+          <div className="mt-3 text-xs font-semibold text-teal-400 flex items-center gap-1">
+            Launch Ingestion Tool →
+          </div>
+        </a>
+
+        <a
+          href="/investigations"
+          className="group relative rounded-2xl border border-rose-500/30 bg-gradient-to-br from-rose-500/10 to-slate-900/60 p-4 transition hover:border-rose-400 hover:shadow-lg hover:shadow-rose-500/10 flex flex-col justify-between"
+        >
+          <div>
+            <div className="flex items-center justify-between mb-2">
+              <span className="p-2 rounded-xl bg-rose-500/20 text-rose-400 border border-rose-500/30">
+                👑
+              </span>
+              <span className="text-[10px] font-mono px-2 py-0.5 rounded-full bg-rose-500/10 text-rose-300 font-bold border border-rose-500/30">
+                CENTRALITY
+              </span>
+            </div>
+            <h4 className="text-sm font-bold text-white group-hover:text-rose-300 transition">
+              Key Influencers & Kingpins
+            </h4>
+            <p className="text-xs text-slate-400 mt-1">
+              Identify syndicate masterminds and financial mules using PageRank & Betweenness.
+            </p>
+          </div>
+          <div className="mt-3 text-xs font-semibold text-rose-400 flex items-center gap-1">
+            View Influencer Radar →
+          </div>
+        </a>
+
+        <a
+          href="/investigations"
+          className="group relative rounded-2xl border border-amber-500/30 bg-gradient-to-br from-amber-500/10 to-slate-900/60 p-4 transition hover:border-amber-400 hover:shadow-lg hover:shadow-amber-500/10 flex flex-col justify-between"
+        >
+          <div>
+            <div className="flex items-center justify-between mb-2">
+              <span className="p-2 rounded-xl bg-amber-500/20 text-amber-400 border border-amber-500/30">
+                🚨
+              </span>
+              <span className="text-[10px] font-mono px-2 py-0.5 rounded-full bg-amber-500/10 text-amber-300 font-bold border border-amber-500/30">
+                4 RINGS FLAGGED
+              </span>
+            </div>
+            <h4 className="text-sm font-bold text-white group-hover:text-amber-300 transition">
+              Suspicious Crime Radar
+            </h4>
+            <p className="text-xs text-slate-400 mt-1">
+              Detect circular Hawala loops, SIM bursts, and co-located shell companies.
+            </p>
+          </div>
+          <div className="mt-3 text-xs font-semibold text-amber-400 flex items-center gap-1">
+            Isolate Threat Rings →
+          </div>
+        </a>
+
+        <a
+          href="/reports"
+          className="group relative rounded-2xl border border-blue-500/30 bg-gradient-to-br from-blue-500/10 to-slate-900/60 p-4 transition hover:border-blue-400 hover:shadow-lg hover:shadow-blue-500/10 flex flex-col justify-between"
+        >
+          <div>
+            <div className="flex items-center justify-between mb-2">
+              <span className="p-2 rounded-xl bg-blue-500/20 text-blue-400 border border-blue-500/30">
+                ⚖️
+              </span>
+              <span className="text-[10px] font-mono px-2 py-0.5 rounded-full bg-blue-500/10 text-blue-300 font-bold border border-blue-500/30">
+                SEC 91 CrPC
+              </span>
+            </div>
+            <h4 className="text-sm font-bold text-white group-hover:text-blue-300 transition">
+              Court Intelligence Dossier
+            </h4>
+            <p className="text-xs text-slate-400 mt-1">
+              Generate 65B-compliant briefs and draft bank freeze / CDR notices instantly.
+            </p>
+          </div>
+          <div className="mt-3 text-xs font-semibold text-blue-400 flex items-center gap-1">
+            Generate Legal Dossier →
+          </div>
+        </a>
+      </div>
+
       {/* Network Overview Card */}
       <SectionCard
         title="Interactive Network Overview"
