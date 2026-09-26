@@ -3,7 +3,7 @@ function Header() {
     <header className="flex items-center justify-between border-b border-slate-800 bg-slate-950 px-6 py-4">
       <div>
         <h1 className="text-xl font-semibold">
-          Criminal Network Analysis System
+          NETRAA AI
         </h1>
         <p className="mt-1 text-xs text-slate-400">
           Investigation Intelligence Platform

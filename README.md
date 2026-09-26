@@ -1,6 +1,6 @@
-# SIH26189 - Criminal Network Analysis & Intelligence Platform
+# NETRAA AI - Investigation Intelligence Platform
 
-AI-Powered Criminal Network Analysis System (CNAS) built with React, TypeScript, Vite, Tailwind CSS, Recharts, and React Force Graph.
+AI-Powered Investigation Intelligence & Criminal Network Analysis Platform (NETRAA AI) built with React, TypeScript, Vite, Tailwind CSS, Recharts, and React Force Graph.
 
 ## Features
 

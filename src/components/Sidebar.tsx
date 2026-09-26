@@ -51,7 +51,7 @@ function Sidebar() {
             <ShieldAlert size={22} />
           </div>
           <div>
-            <h2 className="text-base font-bold tracking-tight text-white">CNAS</h2>
+            <h2 className="text-base font-bold tracking-tight text-white">NETRAA AI</h2>
             <p className="text-[11px] text-slate-400">Intelligence Platform</p>
           </div>
         </div>

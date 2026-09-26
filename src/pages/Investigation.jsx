@@ -941,7 +941,7 @@ function Investigation() {
                   text-white
                 "
               >
-                SIH26189
+                NETRAA AI
               </div>
 
               <div
@@ -950,7 +950,7 @@ function Investigation() {
                   text-slate-500
                 "
               >
-                Criminal Network Analysis
+                Investigation Intelligence
               </div>
 
             </div>
