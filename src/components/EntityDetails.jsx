@@ -1051,9 +1051,7 @@ function EntityDetails({
 
                       {(() => {
                         const nodeConfRaw = node?.confidence ? (Number(node.confidence) > 1 ? Number(node.confidence) / 100 : Number(node.confidence)) : 0.94;
-                        const effectiveRelConfidence = typeof relationship.confidence === "number" && relationship.confidence > 0
-                          ? (relationship.confidence > 1 ? relationship.confidence / 100 : relationship.confidence)
-                          : nodeConfRaw;
+                        const effectiveRelConfidence = nodeConfRaw;
 
                         return (
                           <div

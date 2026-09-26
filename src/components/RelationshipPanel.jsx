@@ -416,7 +416,7 @@ function RelationshipPanel({
                   );
 
                 const confidence =
-                  relationship.confidence ?? 0;
+                  selectedNode.confidence ?? (relationship.confidence ?? 0.94);
 
                 return (
                   <div

@@ -972,9 +972,7 @@ function InvestigationSummary({
 
                       {(() => {
                         const nodeConfRaw = selectedNode?.confidence ? (Number(selectedNode.confidence) > 1 ? Number(selectedNode.confidence) / 100 : Number(selectedNode.confidence)) : 0.94;
-                        const effectiveRelConfidence = typeof relationship.confidence === "number" && relationship.confidence > 0
-                          ? (relationship.confidence > 1 ? relationship.confidence / 100 : relationship.confidence)
-                          : nodeConfRaw;
+                        const effectiveRelConfidence = nodeConfRaw;
 
                         return (
                           <div
